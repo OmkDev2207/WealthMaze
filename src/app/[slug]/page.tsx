@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Metadata } from "next";
 import { allCalculators, getCalculatorById } from "@/data/calculators";
+import { programmaticPages, getProgrammaticPageById } from "@/data/programmatic";
 import { CalculatorPage } from "@/components/CalculatorPage";
 import { notFound as nextNotFound } from "next/navigation";
 
@@ -9,15 +10,43 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return allCalculators.map((calc) => ({
+  const calculatorParams = allCalculators.map((calc) => ({
     slug: calc.id,
   }));
+  const programmaticParams = programmaticPages.map((page) => ({
+    slug: page.id,
+  }));
+  return [...calculatorParams, ...programmaticParams];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const config = getCalculatorById(resolvedParams.slug);
+  const slug = resolvedParams.slug;
 
+  const progConfig = getProgrammaticPageById(slug);
+  if (progConfig) {
+    return {
+      title: progConfig.seoTitle,
+      description: progConfig.seoDescription,
+      alternates: {
+        canonical: `https://wealthmaze.com/${progConfig.id}`,
+      },
+      openGraph: {
+        title: progConfig.seoTitle,
+        description: progConfig.seoDescription,
+        type: "website",
+        url: `https://wealthmaze.com/${progConfig.id}`,
+        siteName: "WealthMaze",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: progConfig.seoTitle,
+        description: progConfig.seoDescription,
+      },
+    };
+  }
+
+  const config = getCalculatorById(slug);
   if (!config) {
     return { title: "Calculator Not Found - WealthMaze" };
   }
@@ -40,20 +69,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: config.seoTitle,
       description: config.seoDescription,
     },
-    // JSON-LD injected via other prop instead of script tags in render tree
   };
 }
 
 export default async function CalculatorSlugPage({ params }: PageProps) {
   const resolvedParams = await params;
-  const config = getCalculatorById(resolvedParams.slug);
+  const slug = resolvedParams.slug;
+
+  const progConfig = getProgrammaticPageById(slug);
+  const calculatorId = progConfig ? progConfig.parentCalculatorId : slug;
+  const config = getCalculatorById(calculatorId);
 
   if (!config) {
     nextNotFound();
   }
 
   // Build JSON-LD schemas as strings for injection via dangerouslySetInnerHTML
-  // These are placed directly in <head> via Next.js metadata + raw approach below
   const faqSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -67,8 +98,8 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
   const toolSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FinancialProduct",
-    "name": config.name,
-    "description": config.description,
+    "name": progConfig ? progConfig.name : config.name,
+    "description": progConfig ? progConfig.seoDescription : config.description,
     "provider": {
       "@type": "Organization",
       "name": "WealthMaze",
@@ -81,23 +112,29 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wealthmaze.com" },
-      { "@type": "ListItem", "position": 2, "name": config.name, "item": `https://wealthmaze.com/${config.id}` },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": progConfig ? progConfig.name : config.name,
+        "item": `https://wealthmaze.com/${progConfig ? progConfig.id : config.id}`,
+      },
     ],
   });
 
   return (
     <>
-      {/*
-        Next.js App Router Server Components CAN render <script> tags with
-        dangerouslySetInnerHTML as long as they are in a Server Component (no "use client").
-        This page is a Server Component, so this is correct and recommended for JSON-LD.
-      */}
-      {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+      {/* Next.js App Router Server Components JSON-LD injection */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toolSchema }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
 
-      <CalculatorPage calculatorId={config.id} />
+      <CalculatorPage
+        calculatorId={calculatorId}
+        overrides={progConfig?.defaultOverrides}
+        customTitle={progConfig?.name}
+        customDescription={progConfig?.seoDescription}
+        customEducationalContent={progConfig?.educationalContent}
+      />
     </>
   );
 }
