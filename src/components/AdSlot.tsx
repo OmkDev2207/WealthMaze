@@ -8,48 +8,71 @@ interface AdSlotProps {
 }
 
 export function AdSlot({ position, className = "" }: AdSlotProps) {
-  // Styles based on positions to match standard AdSense sizes
-  // and prevent Cumulative Layout Shift (CLS)
-  let sizeClasses = "";
-  let label = "ADVERTISEMENT";
+  let containerClasses = "";
+  let label = "Advertisement";
+  let sizeLabel = "";
 
   switch (position) {
     case "header":
-      // Leaderboard (970x250) for desktop
-      sizeClasses = "hidden md:flex w-[970px] h-[250px] mx-auto my-4";
+      // Desktop Billboard 970×250 — hidden on mobile
+      containerClasses = "hidden md:flex w-full max-w-[970px] mx-auto my-4";
+      sizeLabel = "970×250 — Leaderboard";
       break;
+
     case "top":
-      // Mobile Top Banner (320x50), hidden on desktop
-      sizeClasses = "flex md:hidden w-[320px] h-[50px] mx-auto my-2";
+      // Mobile Banner — large rectangle instead of tiny 320×50
+      containerClasses = "flex md:hidden w-full mx-auto my-3";
+      sizeLabel = "320×100 — Mobile Banner";
       break;
+
     case "sidebar":
-      // Half Page (300x600)
-      sizeClasses = "flex w-full md:w-[300px] h-[600px] mx-auto my-4";
+      // Half Page 300×600
+      containerClasses = "flex w-full md:w-[300px] mx-auto my-4";
+      sizeLabel = "300×600 — Half Page";
       break;
+
     case "in-content":
-      // Banner in desktop reading content
-      sizeClasses = "hidden md:flex w-[728px] h-[90px] mx-auto my-6";
+      // In-article desktop banner
+      containerClasses = "hidden md:flex w-full max-w-[728px] mx-auto my-6";
+      sizeLabel = "728×90 — In-Content";
       break;
+
     case "mid-content":
-      // Mobile inline banner (336x280)
-      sizeClasses = "flex md:hidden w-[336px] h-[280px] mx-auto my-4";
+      // Mobile large rectangle — good earning unit
+      containerClasses = "flex md:hidden w-full mx-auto my-4";
+      sizeLabel = "336×280 — Mobile Rectangle";
       break;
+
     case "footer":
-      // Large Leaderboard (970x250) for desktop, standard mobile footer banner (320x50)
-      sizeClasses = "flex w-[320px] md:w-[728px] lg:w-[970px] h-[50px] md:h-[250px] mx-auto my-6";
+      // Full-width footer across all sizes
+      containerClasses = "flex w-full max-w-[970px] mx-auto my-6";
+      sizeLabel = "970×90 — Footer Leaderboard";
       break;
   }
 
+  // Heights matched to standard AdSense unit sizes
+  const heightMap: Record<string, number> = {
+    header: 250,
+    top: 100,
+    sidebar: 600,
+    "in-content": 90,
+    "mid-content": 280,
+    footer: 90,
+  };
+
+  const height = heightMap[position] ?? 100;
+
   return (
     <div
-      className={`relative flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-950 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-400 dark:text-zinc-600 transition-colors overflow-hidden ${sizeClasses} ${className}`}
+      className={`relative flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900/50 border border-dashed border-zinc-200 dark:border-zinc-700 rounded-xl text-zinc-400 dark:text-zinc-500 overflow-hidden print:hidden ${containerClasses} ${className}`}
+      style={{ minHeight: height }}
       aria-label="Advertisement Placeholder"
     >
-      <span className="absolute top-1 left-2 text-[9px] font-semibold tracking-wider text-zinc-400/80 dark:text-zinc-600/80 uppercase">
+      <span className="absolute top-1.5 left-3 text-[9px] font-bold tracking-widest text-zinc-300 dark:text-zinc-600 uppercase">
         {label}
       </span>
-      <div className="text-xs font-medium opacity-60">Ad Space</div>
-      <div className="text-[10px] opacity-40">AdSense Compliant Slot</div>
+      <div className="text-xs font-semibold opacity-50 mt-2">Ad Space</div>
+      <div className="text-[10px] opacity-30 mt-0.5">{sizeLabel}</div>
     </div>
   );
 }
