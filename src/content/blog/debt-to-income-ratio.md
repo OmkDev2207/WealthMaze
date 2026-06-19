@@ -10,7 +10,7 @@ The Debt-to-Income ratio is a percentage that compares your total monthly debt p
 
 The formula is:
 
-\[DTI = \frac{\text{Total Monthly Debt Payments}}{\text{Gross Monthly Income}} \times 100\]
+**DTI = ( Total Monthly Debt Payments / Gross Monthly Income ) x 100**
 
 ## How Banks Interpret DTI Ratios
 

@@ -28,6 +28,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: progConfig.seoTitle,
       description: progConfig.seoDescription,
+      keywords: [
+        progConfig.name,
+        "WealthMaze",
+        "financial calculator",
+        "SIP planner",
+        "investment tool",
+        progConfig.seoTitle,
+        ...progConfig.name.split(" "),
+      ],
       alternates: {
         canonical: `https://wealthmaze.com/${progConfig.id}`,
       },
@@ -54,6 +63,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: config.seoTitle,
     description: config.seoDescription,
+    keywords: [
+      config.name,
+      config.category,
+      "WealthMaze",
+      `${config.name} calculator`,
+      "financial planner",
+      "investment tool",
+      config.seoTitle,
+      ...config.name.split(" "),
+    ],
     alternates: {
       canonical: `https://wealthmaze.com/${config.id}`,
     },

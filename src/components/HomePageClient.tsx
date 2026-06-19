@@ -27,6 +27,38 @@ const trendingIds = [
   "cagr-calculator",
 ];
 
+const semanticKeywordsMap: Record<string, string[]> = {
+  "sip-calculator": ["sip", "mutual fund", "monthly investment", "compound interest", "wealth", "money", "grow", "saving", "investing"],
+  "lumpsum-calculator": ["lumpsum", "mutual fund", "one time investment", "compound", "wealth", "money", "saving", "investing"],
+  "mutual-fund-return-calculator": ["mutual fund", "returns", "sip", "lumpsum", "compound", "wealth", "money", "investing"],
+  "cagr-calculator": ["cagr", "annual growth rate", "compound interest", "stock returns", "mutual fund returns", "investment math", "money"],
+  "xirr-calculator": ["xirr", "irr", "internal rate of return", "sip returns", "mutual fund returns", "cash flow", "money"],
+  "swp-calculator": ["swp", "systematic withdrawal plan", "pension", "monthly income", "retirement", "mutual fund", "money"],
+  "goal-based-investment-calculator": ["goal", "target wealth", "plan savings", "future cost", "house", "car", "education", "money"],
+  "retirement-calculator": ["retirement", "pension", "old age savings", "fire", "retirement corpus", "money", "savings"],
+  "fire-calculator": ["fire", "financial independence retire early", "financial freedom", "retirement", "passive income", "money"],
+  "net-worth-calculator": ["net worth", "assets", "liabilities", "wealth", "debt", "balance sheet", "money", "property", "house"],
+  "how-long-until-1-crore": ["1 crore", "crore", "target wealth", "milestone", "crorepath", "money", "savings"],
+  "inflation-impact-calculator": ["inflation", "purchasing power", "cost of living", "future value of money", "price rise", "money"],
+  "financial-freedom-calculator": ["financial freedom", "fire", "passive income", "retirement", "wealth target", "money"],
+  "emi-calculator": ["emi", "loan emi", "home loan", "house loan", "car loan", "vehicle loan", "personal loan", "interest", "mortgage", "bank"],
+  "loan-prepayment-calculator": ["prepayment", "loan closure", "save interest", "home loan", "house loan", "car loan", "debt payoff"],
+  "fd-calculator": ["fd", "fixed deposit", "bank deposit", "guaranteed interest", "savings", "safe investment", "money"],
+  "rd-calculator": ["rd", "recurring deposit", "monthly savings", "bank deposit", "guaranteed interest", "money"],
+  "ppf-calculator": ["ppf", "public provident fund", "tax free savings", "government scheme", "long term saving", "money"],
+  "epf-calculator": ["epf", "employee provident fund", "pf", "salary savings", "retirement", "government scheme", "money"],
+  "nps-calculator": ["nps", "national pension system", "pension", "retirement", "tax deduction", "government scheme", "money"],
+  "stock-return-calculator": ["stock", "equity", "shares", "returns", "cagr", "market gains", "trading", "investing", "money"],
+  "portfolio-return-calculator": ["portfolio", "stocks", "mutual funds", "returns", "weighted average", "investment gains", "money"],
+  "dividend-yield-calculator": ["dividend", "passive income", "dividend yield", "stock income", "shares", "payout", "money"],
+  "position-size-calculator": ["position size", "risk management", "stop loss", "trading size", "stocks", "forex", "money"],
+  "income-tax-calculator": ["tax", "income tax", "salary tax", "slabs", "new tax regime", "old tax regime", "deductions", "government", "money"],
+  "capital-gains-calculator": ["capital gains", "tax", "shares tax", "property tax", "house sale tax", "mutual fund tax", "money"],
+  "gold-investment-calculator": ["gold", "physical gold", "sovereign gold bond", "sgb", "hedge", "inflation", "jewelry", "money"],
+  "gold-sip-calculator": ["gold sip", "paper gold", "monthly gold savings", "gold ETF", "hedge", "inflation", "money"],
+  "silver-investment-calculator": ["silver", "precious metal", "silver rate", "commodity", "inflation", "money"]
+};
+
 export function HomePageClient() {
   const [searchQuery, setSearchQuery] = React.useState("");
   const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
@@ -38,10 +70,18 @@ export function HomePageClient() {
         selectedCategory === null ||
         calc.category.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-") === selectedCategory;
 
+      const calcKeywords = semanticKeywordsMap[calc.id] || [];
       const matchesSearch =
         calc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         calc.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        calc.category.toLowerCase().includes(searchQuery.toLowerCase());
+        calc.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        calcKeywords.some((keyword) => keyword.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (searchQuery.length >= 3 && (
+          "wealthmaze".includes(searchQuery.toLowerCase()) ||
+          "wealth".includes(searchQuery.toLowerCase()) ||
+          "maze".includes(searchQuery.toLowerCase()) ||
+          "weal".includes(searchQuery.toLowerCase())
+        ));
 
       return matchesCategory && matchesSearch;
     });

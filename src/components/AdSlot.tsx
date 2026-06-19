@@ -14,9 +14,9 @@ export function AdSlot({ position, className = "" }: AdSlotProps) {
 
   switch (position) {
     case "header":
-      // Desktop Billboard 970×250 — hidden on mobile
-      containerClasses = "hidden md:flex w-full max-w-[970px] mx-auto my-4";
-      sizeLabel = "970×250 — Leaderboard";
+      // Top Ad Banner — 970×250 on desktop, 300×250 on mobile for maximum AdSense revenue
+      containerClasses = "flex w-full max-w-[970px] mx-auto my-4 px-4";
+      sizeLabel = "Desktop: 970×250 Billboard | Mobile: 300×250 Rectangle";
       break;
 
     case "top":
@@ -64,7 +64,7 @@ export function AdSlot({ position, className = "" }: AdSlotProps) {
 
   return (
     <div
-      className={`relative flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900/50 border border-dashed border-zinc-200 dark:border-zinc-700 rounded-xl text-zinc-400 dark:text-zinc-500 overflow-hidden print:hidden ${containerClasses} ${className}`}
+      className={`relative flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900/50 border border-dashed border-zinc-200 dark:border-zinc-700 rounded-xl text-zinc-400 dark:text-zinc-500 overflow-hidden max-w-full print:hidden ${containerClasses} ${className}`}
       style={{ minHeight: height }}
       aria-label="Advertisement Placeholder"
     >

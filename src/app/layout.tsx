@@ -1,28 +1,19 @@
 import * as React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
-import { Wallet } from "lucide-react";
+import { Wallet, Home, Calculator, BookOpen, Compass } from "lucide-react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { HeaderNavigation } from "@/components/HeaderNavigation";
 
 export const metadata: Metadata = {
   title: "WealthMaze - Calculate Your Financial Future",
   description: "WealthMaze helps you navigate complex financial decisions through simple, accurate, and easy-to-use calculators. Plan investments, calculate loan EMIs, and track wealth.",
-  keywords: ["SIP calculator", "age calculator", "gold calculator", "loan calculator", "financial calculators", "investment tools"],
+  keywords: ["WealthMaze", "wealthmaze", "wealth", "maze", "weal", "SIP calculator", "age calculator", "gold calculator", "loan calculator", "financial calculators", "investment tools"],
   metadataBase: new URL("https://wealthmaze.com"),
   openGraph: {
     title: "WealthMaze - Calculate Your Financial Future",
@@ -47,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className="h-full antialiased"
       suppressHydrationWarning
     >
       {/* Google AdSense — loads after page is interactive, never blocks render */}
@@ -76,13 +67,8 @@ export default function RootLayout({
                 </div>
               </Link>
 
-              <div className="flex items-center space-x-4">
-                <Link
-                  href="/sip-calculator"
-                  className="hidden sm:inline-flex items-center justify-center px-4 h-9 text-xs font-semibold text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white transition-colors"
-                >
-                  Featured SIP Calculator
-                </Link>
+              <div className="flex items-center space-x-2 sm:space-x-4">
+                <HeaderNavigation />
                 <ThemeToggle />
               </div>
             </div>
@@ -165,6 +151,38 @@ export default function RootLayout({
               }),
             }}
           />
+
+          {/* Mobile Bottom Tab Navigation */}
+          <nav className="fixed bottom-0 left-0 right-0 h-14 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-150 dark:border-zinc-900 flex items-center justify-around z-45 md:hidden print:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.03)] pb-safe">
+            <Link
+              href="/"
+              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
+            >
+              <Home className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Home</span>
+            </Link>
+            <Link
+              href="/sip-calculator"
+              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
+            >
+              <Calculator className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Calculators</span>
+            </Link>
+            <Link
+              href="/blog"
+              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
+            >
+              <BookOpen className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Blog</span>
+            </Link>
+            <Link
+              href="/about"
+              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
+            >
+              <Compass className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Explore</span>
+            </Link>
+          </nav>
         </ThemeProvider>
       </body>
     </html>

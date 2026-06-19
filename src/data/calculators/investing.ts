@@ -82,7 +82,7 @@ export const investingCalculators: CalculatorConfig[] = [
       },
       {
         title: "How Does a SIP Calculator Work?",
-        content: "The SIP calculator uses the future value of an annuity formula to compute returns. The compound interest is calculated on a monthly frequency because investments occur monthly. The math is governed by the formula:\n\n\\[FV = P \\times \\frac{(1 + i)^n - 1}{i} \\times (1 + i)\\]\n\nWhere:\n- **FV** = Future Value (the terminal maturity value)\n- **P** = Monthly Investment amount\n- **i** = Monthly interest rate (annual expected return / 12 / 100)\n- **n** = Number of monthly payments (duration in years * 12)\n\nThis calculator automates this calculation instantly, saving you from complex calculations and potential manual errors."
+        content: "The SIP calculator uses the future value of an annuity formula to compute returns. The compound interest is calculated on a monthly frequency because investments occur monthly. The math is governed by the formula:\n\n**FV = P x [ ((1 + i)^n - 1) / i ] x (1 + i)**\n\nWhere:\n- **FV** = Future Value (the terminal maturity value)\n- **P** = Monthly Investment amount\n- **i** = Monthly interest rate (annual expected return / 12 / 100)\n- **n** = Number of monthly payments (duration in years * 12)\n\nThis calculator automates this calculation instantly, saving you from complex calculations and potential manual errors."
       },
       {
         title: "The Power of Rupee Cost Averaging",
@@ -160,7 +160,7 @@ export const investingCalculators: CalculatorConfig[] = [
       },
       {
         title: "How to Compute Lumpsum Returns?",
-        content: "The Lumpsum Calculator uses the classic compound interest formula to estimate future value:\n\n\\[FV = PV \\times (1 + r)^t\\]\n\nWhere:\n- **FV** = Future Value of the investment\n- **PV** = Present Value (initial lumpsum amount)\n- **r** = Annual return rate (entered as decimal, e.g., 12% = 0.12)\n- **t** = Time period in years\n\nThis simple compounding logic shows the dramatic power of compounding over long durations when money is left untouched."
+        content: "The Lumpsum Calculator uses the classic compound interest formula to estimate future value:\n\n**FV = PV x (1 + r)^t**\n\nWhere:\n- **FV** = Future Value of the investment\n- **PV** = Present Value (initial lumpsum amount)\n- **r** = Annual return rate (entered as decimal, e.g., 12% = 0.12)\n- **t** = Time period in years\n\nThis simple compounding logic shows the dramatic power of compounding over long durations when money is left untouched."
       },
       {
         title: "SIP vs. Lumpsum: Which is Better?",
@@ -284,7 +284,7 @@ export const investingCalculators: CalculatorConfig[] = [
       },
       {
         title: "The CAGR Formula",
-        content: "CAGR is calculated mathematically as:\n\n\\[CAGR = \\left( \\frac{Final\\ Value}{Initial\\ Value} \\right)^{\\frac{1}{t}} - 1\\]\n\nWhere:\n- **Final Value** = Value at the end of the period\n- **Initial Value** = Initial investment amount\n- **t** = Number of years (can be fractional)\n\nUnlike simple returns, CAGR accounts for compounding, preventing distortions caused by volatile swings."
+        content: "CAGR is calculated mathematically as:\n\n**CAGR = ( Final Value / Initial Value )^(1 / t) - 1**\n\nWhere:\n- **Final Value** = Value at the end of the period\n- **Initial Value** = Initial investment amount\n- **t** = Number of years (can be fractional)\n\nUnlike simple returns, CAGR accounts for compounding, preventing distortions caused by volatile swings."
       }
     ],
     faqs: [

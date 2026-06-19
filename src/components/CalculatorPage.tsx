@@ -8,7 +8,7 @@ import { CalculatorChart } from "./CalculatorChart";
 import { CalculatorResults } from "./CalculatorResults";
 import { AdSlot } from "./AdSlot";
 import Link from "next/link";
-import { ChevronRight, ArrowLeft, Calendar, User } from "lucide-react";
+import { ChevronRight, ArrowLeft, Calendar, User, Eye, X } from "lucide-react";
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -18,6 +18,27 @@ interface CalculatorPageProps {
   customEducationalContent?: { title: string; content: string }[];
 }
 
+// Helper to format values on the mobile sticky summary bar
+const formatSummaryValue = (val: number, format?: string, unit?: string) => {
+  if (isNaN(val)) return "₹0";
+  if (format === "currency") {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0,
+    }).format(val);
+  }
+  if (format === "percent") {
+    return `${val.toFixed(2)}%`;
+  }
+  if (format === "number") {
+    return new Intl.NumberFormat("en-IN", {
+      maximumFractionDigits: 2,
+    }).format(val);
+  }
+  return `${val} ${unit || ""}`;
+};
+
 function CalculatorPageInner({
   calculatorId,
   overrides,
@@ -26,6 +47,9 @@ function CalculatorPageInner({
   customEducationalContent,
 }: CalculatorPageProps) {
   const config = getCalculatorById(calculatorId)!;
+
+  // Mobile sticky dismiss state
+  const [isStickyDismissed, setIsStickyDismissed] = React.useState(false);
 
   // Initialize values with overrides or defaults
   const [values, setValues] = React.useState<Record<string, number>>(() =>
@@ -52,7 +76,6 @@ function CalculatorPageInner({
     if (hasUrlParams) {
       setValues((prev) => ({ ...prev, ...urlValues }));
     } else {
-      // Reinitialize default values (or overrides) when calculatorId changes
       setValues(
         config.inputs.reduce((acc, input) => {
           acc[input.id] = overrides && overrides[input.id] !== undefined ? overrides[input.id] : input.default;
@@ -100,8 +123,22 @@ function CalculatorPageInner({
   const displayDescription = customDescription || config.description;
   const displayEducationalContent = customEducationalContent || config.educationalContent;
 
+  // Find primary output to show in sticky bottom bar for mobile
+  const primaryOutput = React.useMemo(() => {
+    return (
+      config.outputs.find(
+        (out) =>
+          out.id.toLowerCase().includes("total") ||
+          out.id.toLowerCase().includes("maturity") ||
+          out.id.toLowerCase().includes("corpus") ||
+          out.id.toLowerCase().includes("worth") ||
+          out.id.toLowerCase().includes("emi")
+      ) || config.outputs[0]
+    );
+  }, [config]);
+
   return (
-    <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8 print:p-0">
+    <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8 print:p-0 pb-20 md:pb-8">
       {/* Breadcrumbs */}
       <nav className="flex items-center space-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500 print:hidden">
         <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-300">
@@ -150,7 +187,7 @@ function CalculatorPageInner({
       {/* Core Calculator Area */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Side: Inputs */}
-        <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
+        <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
           <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
             Calculator Inputs
           </h2>
@@ -166,8 +203,8 @@ function CalculatorPageInner({
         </div>
 
         {/* Right Side: Charts & Results */}
-        <div className="lg:col-span-7 space-y-6 print:w-full">
-          <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
+        <div className="lg:col-span-7 space-y-6 print:w-full" id="calc-results-section">
+          <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
             <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
               Calculation Output & Analysis
             </h2>
@@ -291,6 +328,43 @@ function CalculatorPageInner({
           </div>
         </aside>
       </section>
+
+      {/* Mobile Sticky Results Summary (UX booster) */}
+      {primaryOutput && !isStickyDismissed && (
+        <div className="fixed bottom-14 left-0 right-0 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-900 pl-4 pr-10 py-3 shadow-lg z-40 flex items-center justify-between md:hidden animate-in slide-in-from-bottom duration-300">
+          <div className="flex flex-col pr-2">
+            <span className="text-[9px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider leading-none">
+              Live {primaryOutput.label}
+            </span>
+            <span className="text-sm font-black text-emerald-600 dark:text-emerald-400 tracking-tight mt-1">
+              {formatSummaryValue(
+                result.values[primaryOutput.id] ?? 0,
+                primaryOutput.format,
+                primaryOutput.unit
+              )}
+            </span>
+          </div>
+          <button
+            onClick={() => {
+              const element = document.getElementById("calc-results-section");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="flex items-center space-x-1 px-2.5 h-8 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-[9px] uppercase tracking-wider rounded-lg transition-colors shrink-0"
+          >
+            <Eye className="h-3 w-3" />
+            <span>Show Results</span>
+          </button>
+          <button
+            onClick={() => setIsStickyDismissed(true)}
+            className="absolute top-2.5 right-2 p-1.5 text-zinc-400 hover:text-zinc-650 dark:text-zinc-500 dark:hover:text-zinc-350 transition-colors focus:outline-none"
+            aria-label="Dismiss summary"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      )}
     </article>
   );
 }

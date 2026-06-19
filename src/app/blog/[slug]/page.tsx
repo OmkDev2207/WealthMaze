@@ -30,6 +30,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${post.title} | WealthMaze Guides`,
     description: post.description,
+    keywords: [
+      post.title,
+      post.category,
+      ...post.tags,
+      "personal finance",
+      "financial advice",
+      "wealth building",
+      "money tips",
+    ],
     alternates: {
       canonical: `https://wealthmaze.com/blog/${post.slug}`,
     },
