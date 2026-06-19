@@ -23,6 +23,7 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Invested Amount", format: "currency" },
       { id: "interestEarned", label: "Interest Earned", format: "currency" },
       { id: "maturityValue", label: "Maturity Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.principal;
@@ -44,8 +45,10 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
+      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
+
       return {
-        values: { investedAmount: p, interestEarned, maturityValue },
+        values: { investedAmount: p, interestEarned, maturityValue, purchasingPower },
         chartData,
       };
     },
@@ -76,6 +79,7 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "interestEarned", label: "Interest Earned", format: "currency" },
       { id: "maturityValue", label: "Maturity Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyDeposit;
@@ -101,8 +105,10 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
+      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
+
       return {
-        values: { investedAmount, interestEarned, maturityValue },
+        values: { investedAmount, interestEarned, maturityValue, purchasingPower },
         chartData,
       };
     },
@@ -133,6 +139,7 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "interestEarned", label: "Interest Earned", format: "currency" },
       { id: "maturityValue", label: "Maturity Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.yearlyInvestment;
@@ -155,8 +162,10 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
+      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
+
       return {
-        values: { investedAmount, interestEarned, maturityValue },
+        values: { investedAmount, interestEarned, maturityValue, purchasingPower },
         chartData,
       };
     },
@@ -188,6 +197,7 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "totalEmployeeContribution", label: "Employee Contribution", format: "currency" },
       { id: "totalEmployerContribution", label: "Employer Contribution", format: "currency" },
       { id: "totalCorpus", label: "Total Accumulated EPF", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       let salary = inputs.basicSalary;
@@ -223,8 +233,10 @@ export const savingsCalculators: CalculatorConfig[] = [
         salary = salary * (1 + inc);
       }
 
+      const purchasingPower = epfBalance / Math.pow(1 + 0.06, t);
+
       return {
-        values: { totalEmployeeContribution: totalEmpCont, totalEmployerContribution: totalEmprCont, totalCorpus: epfBalance },
+        values: { totalEmployeeContribution: totalEmpCont, totalEmployerContribution: totalEmprCont, totalCorpus: epfBalance, purchasingPower },
         chartData,
       };
     },
@@ -258,6 +270,7 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "totalCorpus", label: "Maturity NPS Corpus", format: "currency" },
       { id: "lumpsumWithdrawn", label: "Lumpsum Tax-Free Withdrawal (60%)", format: "currency" },
       { id: "monthlyPension", label: "Estimated Monthly Pension", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyContribution;
@@ -290,8 +303,10 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
+      const purchasingPower = totalCorpus / Math.pow(1 + 0.06, yearsToInvest);
+
       return {
-        values: { totalInvested, totalCorpus, lumpsumWithdrawn, monthlyPension },
+        values: { totalInvested, totalCorpus, lumpsumWithdrawn, monthlyPension, purchasingPower },
         chartData,
       };
     },

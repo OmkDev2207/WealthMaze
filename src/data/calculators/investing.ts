@@ -26,6 +26,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Invested Amount", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyInvestment;
@@ -59,8 +60,10 @@ export const investingCalculators: CalculatorConfig[] = [
       const lumpsumValue = lumpsumEquivalent * Math.pow(1 + r / 100, t);
       const savingsValue = investedAmount * Math.pow(1 + 4 / 100, t);
 
+      const purchasingPower = totalValue / Math.pow(1 + 0.06, t);
+
       return {
-        values: { investedAmount, estReturns, totalValue },
+        values: { investedAmount, estReturns, totalValue, purchasingPower },
         chartData,
         comparison: {
           title: "Alternative Investment Scenarios",
@@ -114,6 +117,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Invested Amount", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const pv = inputs.lumpsumAmount;
@@ -137,8 +141,10 @@ export const investingCalculators: CalculatorConfig[] = [
       const fdValue = pv * Math.pow(1 + 6 / 100, t);
       const inflationAdjusted = totalValue / Math.pow(1 + 6 / 100, t);
 
+      const purchasingPower = totalValue / Math.pow(1 + 0.06, t);
+
       return {
-        values: { investedAmount, estReturns, totalValue },
+        values: { investedAmount, estReturns, totalValue, purchasingPower },
         chartData,
         comparison: {
           title: "Growth Comparisons & Purchasing Power",
@@ -186,6 +192,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const lumpsum = inputs.lumpsumAmount;
@@ -215,8 +222,10 @@ export const investingCalculators: CalculatorConfig[] = [
         });
       }
 
+      const purchasingPower = totalValue / Math.pow(1 + 0.06, t);
+
       return {
-        values: { investedAmount, estReturns, totalValue },
+        values: { investedAmount, estReturns, totalValue, purchasingPower },
         chartData,
       };
     },
@@ -807,6 +816,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested Amount", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyInvestment;
@@ -843,8 +853,10 @@ export const investingCalculators: CalculatorConfig[] = [
       }
       const normalEstReturns = normalTotalValue - normalInvested;
 
+      const purchasingPower = totalValue / Math.pow(1 + 0.06, t);
+
       return {
-        values: { investedAmount, estReturns, totalValue },
+        values: { investedAmount, estReturns, totalValue, purchasingPower },
         chartData,
         comparison: {
           title: "Step-Up SIP vs. Standard SIP Comparison",
