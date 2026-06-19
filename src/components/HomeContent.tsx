@@ -30,8 +30,8 @@ export function HomeContent() {
       a: "The 50/30/20 rule is a simple budgeting guideline: allocate 50% of your net income to Needs (housing, utilities, groceries), 30% to Wants (dining out, hobbies, travel), and 20% to Savings, investments, and debt prepayments."
     },
     {
-      q: "What is the difference between the Old and New tax regimes in India?",
-      a: "The Old Tax Regime offers lower tax rates for lower income brackets and permits various deductions (like Section 80C, 80D, and HRA). The New Tax Regime features simplified, lower tax slabs across the board but eliminates almost all deductions and exemptions. The ideal choice depends on your deductions level."
+      q: "How does tax planning fit into overall wealth management?",
+      a: "Tax planning is the practice of organizing your investments and declarations to legally minimize your tax liability. By utilizing tax-advantaged accounts, long-term capital gains tax exemptions, and standard deductible allowances, you can retain a larger portion of your portfolio to compound over time."
     },
     {
       q: "What is the 4% rule in retirement planning?",
@@ -146,21 +146,17 @@ export function HomeContent() {
 
             <article className="space-y-4">
               <h2 className="text-xl sm:text-2xl font-black text-zinc-900 dark:text-white tracking-tight border-b border-zinc-100 dark:border-zinc-900 pb-3">
-                3. Tax Planning: Old vs. New Regime Slabs & Capital Gains
+                3. Tax Planning: Maximizing Efficiency & Capital Gains
               </h2>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Tax planning is a core component of overall <strong>wealth planning</strong>. A <strong>tax calculator</strong> helps optimize your income declarations and capital gains liabilities.
+                Tax planning is a core component of overall <strong>wealth planning</strong>. A <strong>tax calculator</strong> helps optimize your asset distribution and estimate potential tax liabilities.
               </p>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">Old vs. New Tax Regimes</h3>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">Capital Gains & Asset Taxation</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Taxpayers in India have the choice of two filing methods:
+                Different asset classes are subject to different tax rates depending on their holding periods. Short-term capital gains are typically taxed at standard income bracket rates, while long-term capital gains often benefit from lower preferential rates to encourage patient investing.
               </p>
-              <ul className="list-disc pl-5 text-xs text-zinc-550 dark:text-zinc-400 space-y-1">
-                <li><strong>Old Tax Regime:</strong> Features higher slab rates but permits tax-deductible exemptions such as Section 80C (PPF, ELSS, Insurance), Section 80D (Health Insurance), and Home Loan Interest under Section 24.</li>
-                <li><strong>New Tax Regime:</strong> Features lower slab rates across the board but eliminates almost all tax deductions.</li>
-              </ul>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Our <strong>income tax calculator</strong> lets you compute both options side-by-side to identify which regime minimizes your annual tax liability.
+                Estimating your potential tax drag is critical for measuring your true, net-of-tax portfolio returns. Structuring your asset allocation using tax-advantaged accounts helps insulate your compounding returns from excessive tax leakage.
               </p>
             </article>
 
