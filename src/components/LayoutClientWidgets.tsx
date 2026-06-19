@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
+import { AdSenseLoader } from "./AdSenseLoader";
 
 const MobileBottomNav = dynamic(
   () => import("./MobileBottomNav").then((mod) => mod.MobileBottomNav),
@@ -18,6 +19,7 @@ export function LayoutClientWidgets() {
     <>
       <MobileBottomNav />
       <CookieConsent />
+      <AdSenseLoader />
     </>
   );
 }

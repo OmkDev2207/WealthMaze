@@ -26,6 +26,46 @@ const CalculatorChart = dynamic(
   }
 );
 
+function DeferredChart({ chartData, calculatorId }: { chartData: any[]; calculatorId: string }) {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="w-full min-h-[320px] flex flex-col justify-center">
+      {isVisible ? (
+        <CalculatorChart chartData={chartData} calculatorId={calculatorId} />
+      ) : (
+        <div className="w-full h-80 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-150 dark:border-zinc-800 rounded-xl animate-pulse flex items-center justify-center text-xs font-bold text-zinc-400">
+          Loading interactive chart data...
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface CalculatorPageProps {
   calculatorId: string;
   overrides?: Record<string, number>;
@@ -191,7 +231,7 @@ function CalculatorPageInner({
             <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none space-y-4">
               <CalculatorResults outputs={config.outputs} result={result} calculatorName={config.name} />
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-805">
-                <CalculatorChart chartData={result.chartData} calculatorId={config.id} />
+                <DeferredChart chartData={result.chartData} calculatorId={config.id} />
               </div>
             </div>
           </div>
@@ -304,7 +344,7 @@ function CalculatorPageInner({
                   <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 mb-4">
                     Visualizing Your Growth
                   </h3>
-                  <CalculatorChart chartData={result.chartData} calculatorId={config.id} />
+                  <DeferredChart chartData={result.chartData} calculatorId={config.id} />
                 </div>
 
                 {/* Embed this Tool Section (Strategy B) */}
