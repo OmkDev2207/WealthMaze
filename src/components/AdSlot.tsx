@@ -3,7 +3,7 @@
 import * as React from "react";
 
 interface AdSlotProps {
-  position: "header" | "sidebar" | "in-content" | "footer" | "top" | "mid-content" | "below-results" | "below-content" | "below-faq";
+  position: "header" | "sidebar" | "in-content" | "footer" | "top" | "mid-content" | "below-results" | "below-content" | "below-faq" | "below-inputs";
   className?: string;
 }
 
@@ -12,6 +12,7 @@ export function AdSlot({ position, className = "" }: AdSlotProps) {
   let label = "Advertisement";
   let sizeLabel = "";
   let minHeightClass = "";
+
 
   switch (position) {
     case "header":
@@ -42,6 +43,13 @@ export function AdSlot({ position, className = "" }: AdSlotProps) {
       // Mobile large rectangle — good earning unit
       containerClasses = "flex md:hidden w-full mx-auto my-4";
       sizeLabel = "336×280 — Mobile Rectangle";
+      break;
+
+    case "below-inputs":
+      // Desktop-only ad below inputs to fill layout gaps (336×280 or 300×250)
+      containerClasses = "hidden lg:flex w-full max-w-[336px] mx-auto my-4";
+      sizeLabel = "Desktop: 336×280 / 300×250 Rectangle";
+      minHeightClass = "min-h-[280px]";
       break;
 
     case "below-results":
