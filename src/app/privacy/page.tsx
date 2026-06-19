@@ -43,7 +43,7 @@ export default function PrivacyPage() {
 
       <section className="space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
         <p>
-          At <strong>WealthMaze</strong> (accessible from wealthmaze.vercel.app), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by WealthMaze and how we use it.
+          At <strong>WealthMaze</strong> (accessible from wealthmaze.com), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by WealthMaze and how we use it.
         </p>
 
         <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">1. Log Files &amp; Analytics</h2>
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
 
         <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">4. Google AdSense &amp; DART Cookies</h2>
         <p>
-          Google, as a third-party vendor, uses cookies (known as DART cookies) to serve ads based upon visits to wealthmaze.vercel.app and other sites on the internet. Visitors may choose to decline DART cookies by visiting the Google ad and content network Privacy Policy at:{" "}
+          Google, as a third-party vendor, uses cookies (known as DART cookies) to serve ads based upon visits to wealthmaze.com and other sites on the internet. Visitors may choose to decline DART cookies by visiting the Google ad and content network Privacy Policy at:{" "}
           <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-emerald-500 hover:underline">
             https://policies.google.com/technologies/ads
           </a>.

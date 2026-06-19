@@ -60,12 +60,14 @@ export function CookieConsent() {
 
       <div className="flex items-center space-x-2 pt-1">
         <button
+          id="cookie-accept-all"
           onClick={handleAccept}
           className="flex-1 h-9 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl shadow-md shadow-emerald-500/10 transition-colors focus:outline-none"
         >
           Accept All
         </button>
         <button
+          id="cookie-dismiss-banner"
           onClick={() => setShowConsent(false)}
           className="px-3 h-9 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 text-xs font-bold rounded-xl transition-colors focus:outline-none"
         >

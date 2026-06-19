@@ -128,35 +128,6 @@ export default function RootLayout({
             </div>
           </footer>
 
-          {/* Inject Global Schemas into page */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "WealthMaze",
-                "url": siteConfig.url,
-                "logo": `${siteConfig.url}/logo.png`,
-              }),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "url": `${siteConfig.url}/`,
-                "potentialAction": {
-                  "@type": "SearchAction",
-                  "target": `${siteConfig.url}/?q={search_term_string}`,
-                  "query-input": "required name=search_term_string"
-                }
-              }),
-            }}
-          />
-
           {/* Client-only layout widgets loaded dynamically */}
           <LayoutClientWidgets />
 

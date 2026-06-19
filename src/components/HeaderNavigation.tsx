@@ -79,6 +79,9 @@ export function HeaderNavigation() {
             onClick={() => setIsOpen(!isOpen)}
             onMouseEnter={() => setIsOpen(true)}
             className="flex items-center space-x-1 hover:text-emerald-500 transition-colors focus:outline-none h-16"
+            aria-expanded={isOpen}
+            aria-haspopup="true"
+            aria-controls="calculators-dropdown"
           >
             <span>Calculators</span>
             <ChevronDown className="h-3 w-3" />
@@ -88,6 +91,9 @@ export function HeaderNavigation() {
           {isOpen && (
             <div
               onMouseLeave={() => setIsOpen(false)}
+              id="calculators-dropdown"
+              role="menu"
+              aria-label="Calculators Categories"
               className="absolute left-1/2 -translate-x-1/2 top-14 w-[560px] bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-900 rounded-2xl shadow-xl p-5 grid grid-cols-2 gap-4 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
             >
               {categories.map((cat) => {
