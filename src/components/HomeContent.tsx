@@ -181,6 +181,9 @@ export function HomeContent() {
 
           {/* Right Column: FAQ Archive */}
           <div className="lg:col-span-4 space-y-6">
+            {/* Sidebar Ad Slot */}
+            <AdSlot position="sidebar" />
+
             <div className="bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-150 dark:border-zinc-800 p-5 rounded-2xl space-y-5">
               <div className="flex items-center space-x-2">
                 <HelpIcon className="h-5 w-5 text-emerald-500 shrink-0" />
@@ -202,9 +205,6 @@ export function HomeContent() {
                 ))}
               </div>
             </div>
-
-            {/* Sidebar Ad Slot */}
-            <AdSlot position="sidebar" />
           </div>
 
         </div>

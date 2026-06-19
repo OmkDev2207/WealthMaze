@@ -256,75 +256,78 @@ function CalculatorPageInner({
         </div>
       </header>
 
-      {/* Ad slot top (Mobile) */}
-      <AdSlot position="top" />
+      {/* Main Responsive Page Layout Grid */}
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+        {/* Left Column (col-span-12 xl:col-span-9) */}
+        <div className="col-span-12 xl:col-span-9 space-y-8">
+          
+          {/* Ad slot top (Mobile) */}
+          <AdSlot position="top" />
 
-      {/* Core Calculator Area */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Left Side: Inputs */}
-        <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
-          <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
-            Calculator Inputs
-          </h2>
-          <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} />
+          {/* Core Calculator Area */}
+          <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Left Side: Inputs */}
+            <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
+              <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
+                Calculator Inputs
+              </h2>
+              <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} />
 
-          {/* Disclaimer */}
-          <div className="p-4 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/80 rounded-xl text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500 print:hidden">
-            <h3 className="font-bold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">
-              Financial Disclaimer
-            </h3>
-            Information provided on WealthMaze is for educational purposes only. All return calculations are estimates based on user inputs. Not financial advice.
-          </div>
-        </div>
-
-        {/* Right Side: Charts & Results */}
-        <div className="lg:col-span-7 space-y-6 print:w-full" id="calc-results-section">
-          <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
-            <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
-              Calculation Output & Analysis
-            </h2>
-            <CalculatorResults outputs={config.outputs} result={result} calculatorName={config.name} />
-
-            <div className="hidden print:block text-[10px] text-zinc-400 mt-6 border-t pt-4">
-              Report generated via WealthMaze. Calculate your financial future at wealthmaze.com.
-            </div>
-
-            {/* Interactive Chart */}
-            <div className="print:hidden pt-4 border-t border-zinc-100 dark:border-zinc-800">
-              <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 mb-4">
-                Visualizing Your Growth
-              </h3>
-              <CalculatorChart chartData={result.chartData} calculatorId={config.id} />
-            </div>
-
-            {/* Embed this Tool Section (Strategy B) */}
-            <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-2.5 print:hidden">
-              <h3 className="text-xs font-bold text-zinc-850 dark:text-zinc-200 uppercase tracking-wider">
-                Embed this Calculator
-              </h3>
-              <p className="text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500">
-                Copy this clean widget code to embed this calculator directly on your website or blog:
-              </p>
-              <div className="relative">
-                <textarea
-                  readOnly
-                  value={`<iframe src="${siteConfig.url}/embed/${config.id}" width="100%" height="700" style="border:none; border-radius:12px; overflow:hidden;" scrolling="no"></iframe>\n<p style="text-align:center; font-size:10px; color:#a1a1aa;">Calculators powered by <a href="${siteConfig.url}" target="_blank" rel="noopener">WealthMaze</a></p>`}
-                  className="w-full h-20 text-[10px] font-mono p-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-emerald-500 text-zinc-600 dark:text-zinc-400"
-                  onClick={(e) => (e.target as HTMLTextAreaElement).select()}
-                />
+              {/* Disclaimer */}
+              <div className="p-4 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/80 rounded-xl text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500 print:hidden">
+                <h3 className="font-bold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">
+                  Financial Disclaimer
+                </h3>
+                Information provided on WealthMaze is for educational purposes only. All return calculations are estimates based on user inputs. Not financial advice.
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Mobile Mid Ad */}
-      <AdSlot position="mid-content" />
+            {/* Right Side: Charts & Results */}
+            <div className="lg:col-span-7 space-y-6 print:w-full" id="calc-results-section">
+              <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
+                <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
+                  Calculation Output & Analysis
+                </h2>
+                <CalculatorResults outputs={config.outputs} result={result} calculatorName={config.name} />
 
-      {/* Educational Guide + Related Articles/Calculators Sidebar */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6 border-t border-zinc-200 dark:border-zinc-800 print:hidden">
-        <div className="lg:col-span-8 space-y-6">
-          <div className="prose prose-zinc dark:prose-invert max-w-none">
+                <div className="hidden print:block text-[10px] text-zinc-400 mt-6 border-t pt-4">
+                  Report generated via WealthMaze. Calculate your financial future at wealthmaze.com.
+                </div>
+
+                {/* Interactive Chart */}
+                <div className="print:hidden pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                  <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 mb-4">
+                    Visualizing Your Growth
+                  </h3>
+                  <CalculatorChart chartData={result.chartData} calculatorId={config.id} />
+                </div>
+
+                {/* Embed this Tool Section (Strategy B) */}
+                <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-2.5 print:hidden">
+                  <h3 className="text-xs font-bold text-zinc-850 dark:text-zinc-200 uppercase tracking-wider">
+                    Embed this Calculator
+                  </h3>
+                  <p className="text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500">
+                    Copy this clean widget code to embed this calculator directly on your website or blog:
+                  </p>
+                  <div className="relative">
+                    <textarea
+                      readOnly
+                      value={`<iframe src="${siteConfig.url}/embed/${config.id}" width="100%" height="700" style="border:none; border-radius:12px; overflow:hidden;" scrolling="no"></iframe>\n<p style="text-align:center; font-size:10px; color:#a1a1aa;">Calculators powered by <a href="${siteConfig.url}" target="_blank" rel="noopener">WealthMaze</a></p>`}
+                      className="w-full h-20 text-[10px] font-mono p-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-emerald-500 text-zinc-600 dark:text-zinc-400"
+                      onClick={(e) => (e.target as HTMLTextAreaElement).select()}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* AD 1: Below results summary */}
+          <AdSlot position="below-results" />
+
+          {/* Explanation: Educational Guide */}
+          <div className="prose prose-zinc dark:prose-invert max-w-none pt-6 border-t border-zinc-200 dark:border-zinc-800">
             <h2 className="text-2xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-4">
               Educational Guide
             </h2>
@@ -340,10 +343,21 @@ function CalculatorPageInner({
             </div>
           </div>
 
-          <AdSlot position="in-content" />
+          {/* AD 2: Below first content section */}
+          <AdSlot position="below-content" />
 
+          {/* Related Content inline */}
+          <div className="pt-6 border-t border-zinc-200 dark:border-zinc-800">
+            <RelatedContent
+              calculators={relatedCalculators}
+              posts={relatedArticles}
+              layout="grid"
+            />
+          </div>
+
+          {/* FAQ Section */}
           {config.faqs.length > 0 && (
-            <div className="space-y-4 pt-6 border-t border-zinc-100 dark:border-zinc-800">
+            <div className="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800">
               <h2 className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">
                 Frequently Asked Questions (FAQ)
               </h2>
@@ -356,7 +370,7 @@ function CalculatorPageInner({
                     <h4 className="font-bold text-zinc-800 dark:text-zinc-200 text-sm">
                       {faq.question}
                     </h4>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1.5 leading-relaxed">
+                    <p className="text-xs text-zinc-550 dark:text-zinc-400 mt-1.5 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -364,18 +378,17 @@ function CalculatorPageInner({
               </div>
             </div>
           )}
+
+          {/* AD 3: Below FAQ */}
+          <AdSlot position="below-faq" />
+
         </div>
 
-        {/* Sidebar — powered by the internal link graph */}
-        <aside className="lg:col-span-4 space-y-6">
-          <RelatedContent
-            calculators={relatedCalculators}
-            posts={relatedArticles}
-            layout="sidebar"
-          />
+        {/* Right Column: Sidebar (rendered only if enough width exists >= 1280px) */}
+        <aside className="hidden xl:block xl:col-span-3 space-y-6 print:hidden">
           <AdSlot position="sidebar" />
         </aside>
-      </section>
+      </div>
 
       {/* Mobile Sticky Results Summary (UX booster) */}
       {primaryOutput && !isStickyDismissed && (

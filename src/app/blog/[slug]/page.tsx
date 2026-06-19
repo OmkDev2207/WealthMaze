@@ -243,6 +243,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Sidebar with Related Content via link graph */}
             <aside className="lg:col-span-4 space-y-6">
+              <AdSlot position="sidebar" />
               <RelatedContent
                 calculators={graphRelatedCalcs}
                 posts={graphRelatedPosts.slice(0, 3)}
@@ -250,7 +251,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                 postHeading="Related Articles"
                 layout="sidebar"
               />
-              <AdSlot position="sidebar" />
             </aside>
           </div>
         </div>
