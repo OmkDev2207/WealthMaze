@@ -2,9 +2,10 @@ import { MetadataRoute } from "next";
 import { allCalculators } from "@/data/calculators";
 import { blogPosts } from "@/data/blog/posts";
 import { programmaticPages } from "@/data/programmatic";
+import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://wealthmaze.com";
+  const baseUrl = siteConfig.url;
 
   // All static page routes
   const staticPages = [

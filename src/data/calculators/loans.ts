@@ -167,5 +167,93 @@ export const loansCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Are there penalties for home loan prepayment?", answer: "Under RBI rules in India, banks are not allowed to charge prepayment penalties on floating-rate home loans. For fixed-rate loans or personal loans, lenders may charge a 2-4% prepayment fee." }
     ]
+  },
+  {
+    id: "loan-comparison-calculator",
+    name: "Loan Comparison Calculator",
+    category: "Loans",
+    description: "Compare two loan scenarios side-by-side to analyze differences in interest rate, principal amount, or tenure.",
+    seoTitle: "Loan Comparison Calculator - Compare Loan EMIs Side-by-Side | WealthMaze",
+    seoDescription: "Compare two loan offers side-by-side. Calculate how differences in principal, interest rates, or tenure affect your monthly EMI and total interest payable.",
+    inputs: [
+      { id: "loanAmountA", label: "Scenario A: Loan Amount", type: "slider", min: 100000, max: 20000000, step: 50000, default: 3000000, unit: "₹" },
+      { id: "interestRateA", label: "Scenario A: Interest Rate (p.a.)", type: "slider", min: 5, max: 25, step: 0.1, default: 8.5, unit: "%" },
+      { id: "tenureA", label: "Scenario A: Loan Tenure", type: "slider", min: 1, max: 30, step: 1, default: 20, unit: "Yr" },
+      { id: "loanAmountB", label: "Scenario B: Loan Amount", type: "slider", min: 100000, max: 20000000, step: 50000, default: 3000000, unit: "₹" },
+      { id: "interestRateB", label: "Scenario B: Interest Rate (p.a.)", type: "slider", min: 5, max: 25, step: 0.1, default: 9.5, unit: "%" },
+      { id: "tenureB", label: "Scenario B: Loan Tenure", type: "slider", min: 1, max: 30, step: 1, default: 20, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "emiA", label: "Scenario A: Monthly EMI", format: "currency" },
+      { id: "emiB", label: "Scenario B: Monthly EMI", format: "currency" },
+      { id: "interestDifference", label: "Interest Difference", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const pA = inputs.loanAmountA;
+      const rA = inputs.interestRateA;
+      const tA = inputs.tenureA;
+
+      const pB = inputs.loanAmountB;
+      const rB = inputs.interestRateB;
+      const tB = inputs.tenureB;
+
+      // Scenario A calculations
+      const monthlyRateA = rA / (12 * 100);
+      const totalMonthsA = tA * 12;
+      const emiA = pA * monthlyRateA * Math.pow(1 + monthlyRateA, totalMonthsA) / (Math.pow(1 + monthlyRateA, totalMonthsA) - 1);
+      const totalPaymentA = emiA * totalMonthsA;
+      const totalInterestA = totalPaymentA - pA;
+
+      // Scenario B calculations
+      const monthlyRateB = rB / (12 * 100);
+      const totalMonthsB = tB * 12;
+      const emiB = pB * monthlyRateB * Math.pow(1 + monthlyRateB, totalMonthsB) / (Math.pow(1 + monthlyRateB, totalMonthsB) - 1);
+      const totalPaymentB = emiB * totalMonthsB;
+      const totalInterestB = totalPaymentB - pB;
+
+      const emiDifference = Math.abs(emiB - emiA);
+      const interestDifference = Math.abs(totalInterestB - totalInterestA);
+
+      // Chart data
+      const chartData = [
+        { name: "Scenario A Total Interest", Value: Math.round(totalInterestA) },
+        { name: "Scenario B Total Interest", Value: Math.round(totalInterestB) },
+      ];
+
+      // Format currency helper inside calculation
+      const formatCurrency = (val: number) => {
+        return new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+          maximumFractionDigits: 0,
+        }).format(val);
+      };
+
+      return {
+        values: { emiA, emiB, interestDifference },
+        chartData,
+        comparison: {
+          title: "Detailed Loan Offers Comparison",
+          headers: ["Offer Metric", "Scenario A", "Scenario B", "Difference"],
+          rows: [
+            ["Principal Loan Amount", formatCurrency(pA), formatCurrency(pB), formatCurrency(Math.abs(pB - pA))],
+            ["Annual Interest Rate", `${rA}%`, `${rB}%`, `${Math.abs(rB - rA).toFixed(1)}%`],
+            ["Tenure (Years)", `${tA} Years`, `${tB} Years`, `${Math.abs(tB - tA)} Years`],
+            ["Equated Monthly EMI", formatCurrency(emiA), formatCurrency(emiB), formatCurrency(emiDifference)],
+            ["Total Interest Payable", formatCurrency(totalInterestA), formatCurrency(totalInterestB), formatCurrency(interestDifference)],
+            ["Total Cumulative Cost", formatCurrency(totalPaymentA), formatCurrency(totalPaymentB), formatCurrency(Math.abs(totalPaymentB - totalPaymentA))],
+          ],
+        },
+      };
+    },
+    educationalContent: [
+      {
+        title: "Comparing Home Loan Offers",
+        content: "When banks compete for your home loan, even a tiny 0.1% or 0.25% variance in interest rates can save you thousands or lakhs in cumulative interest payments over a 20-year timeline. Comparing offers lets you negotiate effectively and evaluate the benefit of changing loan terms or prepaying."
+      }
+    ],
+    faqs: [
+      { question: "Is a lower EMI always better?", answer: "Not necessarily. A lower EMI achieved by extending the loan tenure (e.g. 15 to 20 years) results in a much higher total interest burden. Always compare both the EMI and the total interest payable." }
+    ]
   }
 ];

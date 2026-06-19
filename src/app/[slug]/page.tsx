@@ -4,6 +4,7 @@ import { allCalculators, getCalculatorById } from "@/data/calculators";
 import { programmaticPages, getProgrammaticPageById } from "@/data/programmatic";
 import { CalculatorPage } from "@/components/CalculatorPage";
 import { notFound as nextNotFound } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -38,13 +39,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ...progConfig.name.split(" "),
       ],
       alternates: {
-        canonical: `https://wealthmaze.com/${progConfig.id}`,
+        canonical: `${siteConfig.url}/${progConfig.id}`,
       },
       openGraph: {
         title: progConfig.seoTitle,
         description: progConfig.seoDescription,
         type: "website",
-        url: `https://wealthmaze.com/${progConfig.id}`,
+        url: `${siteConfig.url}/${progConfig.id}`,
         siteName: "WealthMaze",
       },
       twitter: {
@@ -74,13 +75,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ...config.name.split(" "),
     ],
     alternates: {
-      canonical: `https://wealthmaze.com/${config.id}`,
+      canonical: `${siteConfig.url}/${config.id}`,
     },
     openGraph: {
       title: config.seoTitle,
       description: config.seoDescription,
       type: "website",
-      url: `https://wealthmaze.com/${config.id}`,
+      url: `${siteConfig.url}/${config.id}`,
       siteName: "WealthMaze",
     },
     twitter: {
@@ -122,7 +123,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
     "provider": {
       "@type": "Organization",
       "name": "WealthMaze",
-      "url": "https://wealthmaze.com",
+      "url": siteConfig.url,
     },
   });
 
@@ -130,12 +131,12 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wealthmaze.com" },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
       {
         "@type": "ListItem",
         "position": 2,
         "name": progConfig ? progConfig.name : config.name,
-        "item": `https://wealthmaze.com/${progConfig ? progConfig.id : config.id}`,
+        "item": `${siteConfig.url}/${progConfig ? progConfig.id : config.id}`,
       },
     ],
   });

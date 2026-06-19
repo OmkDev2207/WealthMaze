@@ -6,21 +6,24 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
-import { Wallet, Home, Calculator, BookOpen, Compass } from "lucide-react";
+import { Wallet } from "lucide-react";
 
 import { HeaderNavigation } from "@/components/HeaderNavigation";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { CookieConsent } from "@/components/CookieConsent";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "WealthMaze - Calculate Your Financial Future",
   description: "WealthMaze helps you navigate complex financial decisions through simple, accurate, and easy-to-use calculators. Plan investments, calculate loan EMIs, and track wealth.",
-  keywords: ["WealthMaze", "wealthmaze", "wealth", "maze", "weal", "SIP calculator", "age calculator", "gold calculator", "loan calculator", "financial calculators", "investment tools"],
-  metadataBase: new URL("https://wealthmaze.com"),
+  keywords: siteConfig.keywords,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: "WealthMaze - Calculate Your Financial Future",
     description: "Navigate complex financial decisions through simple, accurate, and easy-to-use calculators.",
     type: "website",
     locale: "en_IN",
-    url: "https://wealthmaze.com",
+    url: siteConfig.url,
     siteName: "WealthMaze",
   },
   twitter: {
@@ -131,8 +134,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "WealthMaze",
-                "url": "https://wealthmaze.com",
-                "logo": "https://wealthmaze.com/logo.png",
+                "url": siteConfig.url,
+                "logo": `${siteConfig.url}/logo.png`,
               }),
             }}
           />
@@ -142,10 +145,10 @@ export default function RootLayout({
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "url": "https://wealthmaze.com/",
+                "url": `${siteConfig.url}/`,
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": "https://wealthmaze.com/?q={search_term_string}",
+                  "target": `${siteConfig.url}/?q={search_term_string}`,
                   "query-input": "required name=search_term_string"
                 }
               }),
@@ -153,36 +156,10 @@ export default function RootLayout({
           />
 
           {/* Mobile Bottom Tab Navigation */}
-          <nav className="fixed bottom-0 left-0 right-0 h-14 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-150 dark:border-zinc-900 flex items-center justify-around z-45 md:hidden print:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.03)] pb-safe">
-            <Link
-              href="/"
-              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
-            >
-              <Home className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Home</span>
-            </Link>
-            <Link
-              href="/sip-calculator"
-              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
-            >
-              <Calculator className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Calculators</span>
-            </Link>
-            <Link
-              href="/blog"
-              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
-            >
-              <BookOpen className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Blog</span>
-            </Link>
-            <Link
-              href="/about"
-              className="flex flex-col items-center justify-center flex-grow py-1 text-zinc-400 dark:text-zinc-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors group"
-            >
-              <Compass className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span className="text-[9px] font-bold mt-1 uppercase tracking-wider">Explore</span>
-            </Link>
-          </nav>
+          <MobileBottomNav />
+
+          {/* Cookie Consent Banner */}
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

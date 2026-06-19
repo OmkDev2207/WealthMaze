@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { notFound as nextNotFound } from "next/navigation";
 import { blogPosts } from "@/data/blog/posts";
 import { BlogClient } from "@/components/BlogClient";
+import { siteConfig } from "@/config/site";
 
 interface PageProps {
   params: Promise<{ category: string }>;
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${categoryName} Financial Guides - WealthMaze`,
     description: `Read financial guides and expert advice on ${categoryName} calculators, wealth tips, and investment math.`,
     alternates: {
-      canonical: `https://wealthmaze.com/blog/category/${categoryParam}`,
+      canonical: `${siteConfig.url}/blog/category/${categoryParam}`,
     },
   };
 }

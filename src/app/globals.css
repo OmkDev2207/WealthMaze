@@ -110,3 +110,19 @@ input[type="range"]::-webkit-slider-thumb:hover {
     color: #000000 !important;
   }
 }
+
+/* Embed Mode Styling Overrides (Strategy B) */
+html.embed-mode header,
+html.embed-mode footer,
+html.embed-mode nav,
+html.embed-mode #cookie-consent-banner,
+html.embed-mode [aria-label="Advertisement Placeholder"] {
+  display: none !important;
+}
+
+html.embed-mode body {
+  background: transparent !important;
+  padding: 0 !important;
+  min-height: auto !important;
+}
+

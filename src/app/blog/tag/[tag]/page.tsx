@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { notFound as nextNotFound } from "next/navigation";
 import { blogPosts } from "@/data/blog/posts";
 import { BlogClient } from "@/components/BlogClient";
+import { siteConfig } from "@/config/site";
 
 interface PageProps {
   params: Promise<{ tag: string }>;
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `Articles tagged with #${tagDisplay} - WealthMaze`,
     description: `Browse all articles, calculators, and tutorials tagged with #${tagDisplay} on WealthMaze.`,
     alternates: {
-      canonical: `https://wealthmaze.com/blog/tag/${tagParam}`,
+      canonical: `${siteConfig.url}/blog/tag/${tagParam}`,
     },
   };
 }

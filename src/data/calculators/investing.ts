@@ -725,5 +725,94 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How often should I calculate my net worth?", answer: "Calculating your net worth once a quarter or once a year is standard. Regular tracking highlights whether your assets are growing faster than your debts over time." }
     ]
+  },
+  {
+    id: "sip-comparison-calculator",
+    name: "SIP Comparison Calculator",
+    category: "Investing",
+    description: "Compare two Systematic Investment Plan (SIP) scenarios side-by-side to analyze the impact of different monthly investments, expected returns, or time periods.",
+    seoTitle: "SIP Comparison Calculator - Compare Mutual Fund SIPs Side-by-Side | WealthMaze",
+    seoDescription: "Compare two different mutual fund SIP investment scenarios side-by-side. Calculate how differences in monthly SIP amounts, returns, or tenure affect your long-term wealth corpus.",
+    inputs: [
+      { id: "monthlyInvestmentA", label: "Scenario A: Monthly Investment", type: "slider", min: 500, max: 1000000, step: 500, default: 10000, unit: "₹" },
+      { id: "expectedReturnA", label: "Scenario A: Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
+      { id: "timePeriodA", label: "Scenario A: Time Period", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: "Yr" },
+      { id: "monthlyInvestmentB", label: "Scenario B: Monthly Investment", type: "slider", min: 500, max: 1000000, step: 500, default: 15000, unit: "₹" },
+      { id: "expectedReturnB", label: "Scenario B: Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 15, unit: "%" },
+      { id: "timePeriodB", label: "Scenario B: Time Period", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "totalValueA", label: "Scenario A: Total Value", format: "currency" },
+      { id: "totalValueB", label: "Scenario B: Total Value", format: "currency" },
+      { id: "difference", label: "Wealth Difference", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const pA = inputs.monthlyInvestmentA;
+      const rA = inputs.expectedReturnA;
+      const tA = inputs.timePeriodA;
+      
+      const pB = inputs.monthlyInvestmentB;
+      const rB = inputs.expectedReturnB;
+      const tB = inputs.timePeriodB;
+
+      // Scenario A calculation
+      const iA = rA / (12 * 100);
+      const nA = tA * 12;
+      const totalValueA = pA * ((Math.pow(1 + iA, nA) - 1) / iA) * (1 + iA);
+      const investedA = pA * nA;
+      const returnsA = totalValueA - investedA;
+
+      // Scenario B calculation
+      const iB = rB / (12 * 100);
+      const nB = tB * 12;
+      const totalValueB = pB * ((Math.pow(1 + iB, nB) - 1) / iB) * (1 + iB);
+      const investedB = pB * nB;
+      const returnsB = totalValueB - investedB;
+
+      const difference = Math.abs(totalValueB - totalValueA);
+
+      // Chart Data
+      const maxYears = Math.max(tA, tB);
+      const chartData = [];
+      for (let yr = 1; yr <= maxYears; yr++) {
+        const valA = yr <= tA ? pA * ((Math.pow(1 + iA, yr * 12) - 1) / iA) * (1 + iA) : totalValueA;
+        const valB = yr <= tB ? pB * ((Math.pow(1 + iB, yr * 12) - 1) / iB) * (1 + iB) : totalValueB;
+        chartData.push({
+          name: `Yr ${yr}`,
+          "Scenario A Wealth": Math.round(valA),
+          "Scenario B Wealth": Math.round(valB),
+        });
+      }
+
+      return {
+        values: { totalValueA, totalValueB, difference },
+        chartData,
+        comparison: {
+          title: "Detailed Scenario Comparison",
+          headers: ["Metric", "Scenario A", "Scenario B", "Difference"],
+          rows: [
+            ["Monthly Contribution", formatIndianCurrency(pA), formatIndianCurrency(pB), formatIndianCurrency(Math.abs(pB - pA))],
+            ["Annual Return Rate", `${rA}%`, `${rB}%`, `${Math.abs(rB - rA).toFixed(1)}%`],
+            ["Tenure (Years)", `${tA} Years`, `${tB} Years`, `${Math.abs(tB - tA)} Years`],
+            ["Total Principal Invested", formatIndianCurrency(investedA), formatIndianCurrency(investedB), formatIndianCurrency(Math.abs(investedB - investedA))],
+            ["Estimated Interest Earned", formatIndianCurrency(returnsA), formatIndianCurrency(returnsB), formatIndianCurrency(Math.abs(returnsB - returnsA))],
+            ["Maturity Corpus Value", formatIndianCurrency(totalValueA), formatIndianCurrency(totalValueB), formatIndianCurrency(difference)],
+          ],
+        },
+      };
+    },
+    educationalContent: [
+      {
+        title: "Why Compare SIP Scenarios?",
+        content: "Comparing two investment scenarios side-by-side helps visualize how minor adjustments to your savings rate or estimated portfolio returns can dramatically compound over time. This makes it easy to understand the value of increasing your monthly investments (step-up SIP) or searching for funds with slightly better historical yields."
+      },
+      {
+        title: "The Step-Up SIP Concept",
+        content: "A Step-Up SIP involves increasing your monthly contribution periodically (e.g., by 10% each year as your income grows). By comparing a flat ₹10,000 monthly SIP with a higher average monthly contribution, you can see how much faster you can achieve major financial targets like buying a car or funding retirement."
+      }
+    ],
+    faqs: [
+      { question: "How does return rate affect the final corpus?", answer: "Because compounding is exponential, even a 1% or 2% difference in annual return rates (such as 12% vs 14%) can yield a difference of several lakhs or crores over 20-30 years." }
+    ]
   }
 ];

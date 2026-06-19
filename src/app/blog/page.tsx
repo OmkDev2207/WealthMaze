@@ -2,17 +2,18 @@ import * as React from "react";
 import { Metadata } from "next";
 import { blogPosts } from "@/data/blog/posts";
 import { BlogClient } from "@/components/BlogClient";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "WealthMaze Blog - Financial Guides, Calculators & Tips",
   description: "Read expert articles on mutual fund SIPs, loan EMIs, tax saving strategies under the old vs new regimes, personal budgeting rules, and wealth creation.",
   alternates: {
-    canonical: "https://wealthmaze.com/blog",
+    canonical: `${siteConfig.url}/blog`,
   },
   openGraph: {
     title: "WealthMaze Blog - Financial Guides & Investment Tips",
     description: "Read expert articles on mutual fund SIPs, loan EMIs, tax saving, personal budgeting rules, and wealth creation.",
-    url: "https://wealthmaze.com/blog",
+    url: `${siteConfig.url}/blog`,
     type: "website",
     siteName: "WealthMaze",
   },

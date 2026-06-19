@@ -131,6 +131,208 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
       },
     ],
   },
+  {
+    id: "sip-calculator-2000-per-month",
+    parentCalculatorId: "sip-calculator",
+    name: "SIP Calculator for ₹2,000/Month",
+    seoTitle: "SIP Calculator for ₹2000 Per Month Mutual Fund | WealthMaze",
+    seoDescription: "Calculate the future value of a ₹2,000 monthly SIP investment. See how much wealth you can build over 5, 10, or 20 years with compound returns.",
+    defaultOverrides: {
+      monthlyInvestment: 2000,
+    },
+    educationalContent: [
+      {
+        title: "Starting Small: The Power of a ₹2,000 Monthly SIP",
+        content: "Starting a Systematic Investment Plan (SIP) with just ₹2,000 per month can yield substantial long-term wealth thanks to compounding. By investing ₹2,000 consistently, you build financial discipline and benefit from rupee cost averaging without straining your budget.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-3000-per-month",
+    parentCalculatorId: "sip-calculator",
+    name: "SIP Calculator for ₹3,000/Month",
+    seoTitle: "SIP Calculator for ₹3000 Per Month Mutual Fund | WealthMaze",
+    seoDescription: "Estimate compounding returns for a ₹3,000 monthly mutual fund investment. Check maturity value and total principal paid over 10 to 30 years.",
+    defaultOverrides: {
+      monthlyInvestment: 3000,
+    },
+    educationalContent: [
+      {
+        title: "Growing Your Portfolio: A ₹3,000 Monthly Commitment",
+        content: "A ₹3,000 monthly SIP is a fantastic entry point for young professionals. It establishes a strong baseline for investing without putting a major squeeze on daily expenses.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-10000-per-month",
+    parentCalculatorId: "sip-calculator",
+    name: "SIP Calculator for ₹10,000/Month",
+    seoTitle: "SIP Calculator for ₹10000 Per Month Mutual Fund | WealthMaze",
+    seoDescription: "Calculate the future value of a ₹10,000 monthly SIP. Analyze total returns, principal invested, and long-term compounding growth.",
+    defaultOverrides: {
+      monthlyInvestment: 10000,
+    },
+    educationalContent: [
+      {
+        title: "Accelerating Wealth: The Power of a ₹10,000 Monthly SIP",
+        content: "A monthly commitment of ₹10,000 represents a serious savings discipline. Over 10-20 years, it compounds into a major financial safety net, perfect for retirement planning or child education.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-20000-per-month",
+    parentCalculatorId: "sip-calculator",
+    name: "SIP Calculator for ₹20,000/Month",
+    seoTitle: "SIP Calculator for ₹20000 Per Month Mutual Fund | WealthMaze",
+    seoDescription: "Determine the future value of a ₹20,000 monthly SIP. Use the compound interest engine to plan targets like buying a home or early retirement.",
+    defaultOverrides: {
+      monthlyInvestment: 20000,
+    },
+    educationalContent: [
+      {
+        title: "Fast-Tracking Financial Freedom: A ₹20,000 Monthly SIP",
+        content: "Investing ₹20,000 monthly puts you on the fast-track to financial independence. At a typical 12% p.a. expected return rate, a ₹20,000 monthly investment grows to over ₹2 Crore in just 22 years.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-15-years",
+    parentCalculatorId: "sip-calculator",
+    name: "15-Year SIP Return Calculator",
+    seoTitle: "15 Year SIP Calculator - Long-Term Mutual Fund Planning | WealthMaze",
+    seoDescription: "Calculate the value of your mutual fund investments over a 15-year period. Estimate principal accumulation and compounded growth.",
+    defaultOverrides: {
+      timePeriod: 15,
+    },
+    educationalContent: [
+      {
+        title: "The 15-Year Compounding Curve",
+        content: "A 15-year timeline is considered the standard for long-term equity investing. It allows you to compound capital through multiple business cycles, smoothing out short-term stock market volatility.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-25-years",
+    parentCalculatorId: "sip-calculator",
+    name: "25-Year SIP Return Calculator",
+    seoTitle: "25 Year SIP Calculator - Target Long-Term Wealth | WealthMaze",
+    seoDescription: "See how much a monthly SIP grows over 25 years. Check how the hockey-stick compounding curve delivers huge wealth returns over two and a half decades.",
+    defaultOverrides: {
+      timePeriod: 25,
+    },
+    educationalContent: [
+      {
+        title: "Generational Wealth Building: The 25-Year Horizon",
+        content: "Over a 25-year investment timeline, the power of compound interest dominates. Because interest is earned on accumulated interest for 300 months, the total returns often dwarf the original principal contributed by several times.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-30-years",
+    parentCalculatorId: "sip-calculator",
+    name: "30-Year SIP Return Calculator",
+    seoTitle: "30 Year SIP Calculator - Ultimate Retirement planning | WealthMaze",
+    seoDescription: "Calculate mutual fund SIP growth over a 30-year career timeline. See how time creates substantial multi-crore retirement corpuses.",
+    defaultOverrides: {
+      timePeriod: 30,
+    },
+    educationalContent: [
+      {
+        title: "The Ultimate Compounding Engine: 30 Years of SIP",
+        content: "A 30-year timeline represents a full working career. A modest ₹5,000 monthly SIP can grow to over ₹1.7 Crore in 30 years at 12% p.a., proving that patience is the ultimate wealth builder.",
+      },
+    ],
+  },
+  {
+    id: "home-loan-emi-calculator-30-lakhs",
+    parentCalculatorId: "emi-calculator",
+    name: "Home Loan EMI Calculator for ₹30 Lakhs",
+    seoTitle: "EMI Calculator for ₹30 Lakhs Home Loan | WealthMaze",
+    seoDescription: "Calculate your monthly EMI, total interest, and outstanding schedule for a ₹30 Lakh housing loan.",
+    defaultOverrides: {
+      loanAmount: 3000000,
+      interestRate: 8.5,
+      tenure: 20,
+    },
+    educationalContent: [
+      {
+        title: "Planning a ₹30 Lakh Housing Loan",
+        content: "For a ₹30 Lakh home loan at an 8.5% interest rate for 20 years, your monthly EMI is ~₹26,035. Understanding this helps you review housing budget limits before applying for finance.",
+      },
+    ],
+  },
+  {
+    id: "home-loan-emi-calculator-50-lakhs",
+    parentCalculatorId: "emi-calculator",
+    name: "Home Loan EMI Calculator for ₹50 Lakhs",
+    seoTitle: "EMI Calculator for ₹50 Lakhs Home Loan | WealthMaze",
+    seoDescription: "Plan housing costs by calculating EMIs and total interest payable on a ₹50 Lakh home loan.",
+    defaultOverrides: {
+      loanAmount: 5000000,
+      interestRate: 8.5,
+      tenure: 20,
+    },
+    educationalContent: [
+      {
+        title: "Structuring a ₹50 Lakh Home Loan",
+        content: "A ₹50 Lakh home loan at 8.5% p.a. for 20 years carries an EMI of ~₹43,391. Total interest payable amounts to ~₹54.1 Lakhs, proving that making periodic prepayments is highly recommended.",
+      },
+    ],
+  },
+  {
+    id: "home-loan-emi-calculator-75-lakhs",
+    parentCalculatorId: "emi-calculator",
+    name: "Home Loan EMI Calculator for ₹75 Lakhs",
+    seoTitle: "EMI Calculator for ₹75 Lakhs Home Loan | WealthMaze",
+    seoDescription: "Check EMI costs, interest splits, and tenure timelines for a ₹75 Lakh mortgage.",
+    defaultOverrides: {
+      loanAmount: 7500000,
+      interestRate: 8.5,
+      tenure: 20,
+    },
+    educationalContent: [
+      {
+        title: "Managing a ₹75 Lakh Mortgage",
+        content: "At 8.5% p.a. for 20 years, a ₹75 Lakh home loan requires a monthly EMI of ~₹65,087. Total interest accumulates to ~₹81.2 Lakhs over the full tenure.",
+      },
+    ],
+  },
+  {
+    id: "car-loan-emi-calculator-5-lakhs",
+    parentCalculatorId: "emi-calculator",
+    name: "Car Loan EMI Calculator for ₹5 Lakhs",
+    seoTitle: "EMI Calculator for ₹5 Lakhs Car Loan | WealthMaze",
+    seoDescription: "Calculate auto EMIs and interest payable on a ₹5 Lakh car loan. Plan your vehicle budget.",
+    defaultOverrides: {
+      loanAmount: 500000,
+      interestRate: 9.5,
+      tenure: 5,
+    },
+    educationalContent: [
+      {
+        title: "Auto Finance for a ₹5 Lakh Vehicle Loan",
+        content: "A ₹5 Lakh car loan at 9.5% p.a. interest for 5 years requires a monthly payment of ~₹10,501. Always review prepayment policies for vehicle loans.",
+      },
+    ],
+  },
+  {
+    id: "car-loan-emi-calculator-10-lakhs",
+    parentCalculatorId: "emi-calculator",
+    name: "Car Loan EMI Calculator for ₹10 Lakhs",
+    seoTitle: "EMI Calculator for ₹10 Lakhs Car Loan | WealthMaze",
+    seoDescription: "Determine monthly EMIs, principal, and interest splits for a ₹10 Lakh auto loan.",
+    defaultOverrides: {
+      loanAmount: 1000000,
+      interestRate: 9.5,
+      tenure: 5,
+    },
+    educationalContent: [
+      {
+        title: "Vehicle Finance for a ₹10 Lakh Loan",
+        content: "For a ₹10 Lakh auto loan at a 9.5% interest rate over a 5-year tenure, the Equated Monthly Installment (EMI) comes out to ~₹21,002.",
+      },
+    ],
+  },
 ];
 
 export const getProgrammaticPageById = (id: string): ProgrammaticPageConfig | undefined => {

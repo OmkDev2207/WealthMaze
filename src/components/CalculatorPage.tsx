@@ -9,6 +9,7 @@ import { CalculatorResults } from "./CalculatorResults";
 import { AdSlot } from "./AdSlot";
 import Link from "next/link";
 import { ChevronRight, ArrowLeft, Calendar, User, Eye, X } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -16,6 +17,7 @@ interface CalculatorPageProps {
   customTitle?: string;
   customDescription?: string;
   customEducationalContent?: { title: string; content: string }[];
+  isEmbed?: boolean;
 }
 
 // Helper to format values on the mobile sticky summary bar
@@ -45,6 +47,7 @@ function CalculatorPageInner({
   customTitle,
   customDescription,
   customEducationalContent,
+  isEmbed = false,
 }: CalculatorPageProps) {
   const config = getCalculatorById(calculatorId)!;
 
@@ -137,6 +140,56 @@ function CalculatorPageInner({
     );
   }, [config]);
 
+  if (isEmbed) {
+    return (
+      <div className="w-full p-4 space-y-4 print:p-0">
+        <header className="flex items-center justify-between pb-3 border-b border-zinc-100 dark:border-zinc-900">
+          <div className="flex items-center space-x-2">
+            <span className="text-sm font-black tracking-tight text-emerald-500">WealthMaze</span>
+            <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">/ {displayTitle}</span>
+          </div>
+          <Link
+            href={`${siteConfig.url}/${config.id}`}
+            target="_blank"
+            rel="noopener"
+            className="text-[10px] font-bold text-emerald-500 hover:underline"
+          >
+            Full Version
+          </Link>
+        </header>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+          {/* Left Side: Inputs */}
+          <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none">
+            <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} />
+          </div>
+
+          {/* Right Side: Charts & Results */}
+          <div className="lg:col-span-7 space-y-4">
+            <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none space-y-4">
+              <CalculatorResults outputs={config.outputs} result={result} calculatorName={config.name} />
+              <div className="pt-4 border-t border-zinc-100 dark:border-zinc-805">
+                <CalculatorChart chartData={result.chartData} calculatorId={config.id} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer className="text-center pt-1 text-[9px] text-zinc-400">
+          Calculators powered by{" "}
+          <a
+            href={siteConfig.url}
+            target="_blank"
+            rel="noopener"
+            className="text-emerald-500 hover:underline font-semibold"
+          >
+            WealthMaze
+          </a>
+        </footer>
+      </div>
+    );
+  }
+
   return (
     <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8 print:p-0 pb-20 md:pb-8">
       {/* Breadcrumbs */}
@@ -220,6 +273,24 @@ function CalculatorPageInner({
                 Visualizing Your Growth
               </h3>
               <CalculatorChart chartData={result.chartData} calculatorId={config.id} />
+            </div>
+
+            {/* Embed this Tool Section (Strategy B) */}
+            <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-2.5 print:hidden">
+              <h3 className="text-xs font-bold text-zinc-850 dark:text-zinc-200 uppercase tracking-wider">
+                Embed this Calculator
+              </h3>
+              <p className="text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500">
+                Copy this clean widget code to embed this calculator directly on your website or blog:
+              </p>
+              <div className="relative">
+                <textarea
+                  readOnly
+                  value={`<iframe src="${siteConfig.url}/embed/${config.id}" width="100%" height="700" style="border:none; border-radius:12px; overflow:hidden;" scrolling="no"></iframe>\n<p style="text-align:center; font-size:10px; color:#a1a1aa;">Calculators powered by <a href="${siteConfig.url}" target="_blank" rel="noopener">WealthMaze</a></p>`}
+                  className="w-full h-20 text-[10px] font-mono p-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-emerald-500 text-zinc-600 dark:text-zinc-400"
+                  onClick={(e) => (e.target as HTMLTextAreaElement).select()}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -375,6 +446,7 @@ export function CalculatorPage({
   customTitle,
   customDescription,
   customEducationalContent,
+  isEmbed = false,
 }: CalculatorPageProps) {
   const config = getCalculatorById(calculatorId);
   if (!config) {
@@ -387,6 +459,7 @@ export function CalculatorPage({
       customTitle={customTitle}
       customDescription={customDescription}
       customEducationalContent={customEducationalContent}
+      isEmbed={isEmbed}
     />
   );
 }

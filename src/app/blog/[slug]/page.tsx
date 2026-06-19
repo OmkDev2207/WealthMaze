@@ -8,6 +8,7 @@ import { getPostBySlug, blogPosts } from "@/data/blog/posts";
 import { getCalculatorById } from "@/data/calculators";
 import { Markdown } from "@/components/Markdown";
 import { Calendar, User, Clock, ArrowLeft, ChevronRight, Calculator } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,13 +41,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "money tips",
     ],
     alternates: {
-      canonical: `https://wealthmaze.com/blog/${post.slug}`,
+      canonical: `${siteConfig.url}/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
-      url: `https://wealthmaze.com/blog/${post.slug}`,
+      url: `${siteConfig.url}/blog/${post.slug}`,
       siteName: "WealthMaze",
       publishedTime: new Date(post.publishedAt).toISOString(),
       authors: [post.author.name],
@@ -98,19 +99,19 @@ export default async function BlogPostPage({ params }: PageProps) {
     "author": {
       "@type": "Organization",
       "name": "WealthMaze",
-      "url": "https://wealthmaze.com",
+      "url": siteConfig.url,
     },
     "publisher": {
       "@type": "Organization",
       "name": "WealthMaze",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://wealthmaze.com/favicon.ico",
+        "url": `${siteConfig.url}/favicon.ico`,
       },
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://wealthmaze.com/blog/${post.slug}`,
+      "@id": `${siteConfig.url}/blog/${post.slug}`,
     },
   });
 
