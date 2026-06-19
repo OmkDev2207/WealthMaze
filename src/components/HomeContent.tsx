@@ -113,11 +113,11 @@ export function HomeContent() {
                 1. Comprehensive Investment Planning & Mutual Fund Compounding
               </h2>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Success in investing is rarely about timing the market; it is about time in the market. When you utilize an **investment calculator** or a **mutual fund calculator**, you are examining the math of exponential growth.
+                Success in investing is rarely about timing the market; it is about time in the market. When you utilize an <strong>investment calculator</strong> or a <strong>mutual fund calculator</strong>, you are examining the math of exponential growth.
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">The Power of Systematic Investment Plans (SIP)</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                A **SIP calculator** helps visualize how small monthly savings build massive long-term wealth. Investing ₹5,000 monthly for 20 years at an expected 12% annual return compounds to approximately ₹50 Lakhs. Crucially, the principal you contribute is only ₹12 Lakhs—the remaining ₹38 Lakhs is the result of compounding interest.
+                A <strong>SIP calculator</strong> helps visualize how small monthly savings build massive long-term wealth. Investing ₹5,000 monthly for 20 years at an expected 12% annual return compounds to approximately ₹50 Lakhs. Crucially, the principal you contribute is only ₹12 Lakhs—the remaining ₹38 Lakhs is the result of compounding interest.
               </p>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
                 By automating monthly contributions, you benefit from Rupee Cost Averaging. During stock market dips, your fixed payment buys more mutual fund units; during market peaks, it buys fewer units. This eliminates the stressful need to predict market corrections.
@@ -132,7 +132,7 @@ export function HomeContent() {
                 2. Debt Management & Loan Interest Minimization (EMI Strategy)
               </h2>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Borrowing money can buy assets, but it comes at a cumulative cost. Utilizing an **EMI calculator** allows you to see the true cost of borrowing before signing a mortgage agreement or auto loan contract.
+                Borrowing money can buy assets, but it comes at a cumulative cost. Utilizing an <strong>EMI calculator</strong> allows you to see the true cost of borrowing before signing a mortgage agreement or auto loan contract.
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">The Amortization Reality</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
@@ -140,7 +140,7 @@ export function HomeContent() {
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">Unlocking Savings via Loan Prepayment</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                By making periodic prepayments (e.g. paying one extra EMI per year, or prepaying 5% of the outstanding principal balance annually), you reduce the outstanding principal directly. Run the numbers on our **loan prepayment calculator** to see how making early repayments saves lakhs in interest and shaves years off the loan tenure.
+                By making periodic prepayments (e.g. paying one extra EMI per year, or prepaying 5% of the outstanding principal balance annually), you reduce the outstanding principal directly. Run the numbers on our <strong>loan prepayment calculator</strong> to see how making early repayments saves lakhs in interest and shaves years off the loan tenure.
               </p>
             </article>
 
@@ -149,18 +149,18 @@ export function HomeContent() {
                 3. Tax Planning: Old vs. New Regime Slabs & Capital Gains
               </h2>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Tax planning is a core component of overall **wealth planning**. A **tax calculator** helps optimize your income declarations and capital gains liabilities.
+                Tax planning is a core component of overall <strong>wealth planning</strong>. A <strong>tax calculator</strong> helps optimize your income declarations and capital gains liabilities.
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">Old vs. New Tax Regimes</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
                 Taxpayers in India have the choice of two filing methods:
               </p>
               <ul className="list-disc pl-5 text-xs text-zinc-550 dark:text-zinc-400 space-y-1">
-                <li>**Old Tax Regime:** Features higher slab rates but permits tax-deductible exemptions such as Section 80C (PPF, ELSS, Insurance), Section 80D (Health Insurance), and Home Loan Interest under Section 24.</li>
-                <li>**New Tax Regime:** Features lower slab rates across the board but eliminates almost all tax deductions.</li>
+                <li><strong>Old Tax Regime:</strong> Features higher slab rates but permits tax-deductible exemptions such as Section 80C (PPF, ELSS, Insurance), Section 80D (Health Insurance), and Home Loan Interest under Section 24.</li>
+                <li><strong>New Tax Regime:</strong> Features lower slab rates across the board but eliminates almost all tax deductions.</li>
               </ul>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Our **income tax calculator** lets you compute both options side-by-side to identify which regime minimizes your annual tax liability.
+                Our <strong>income tax calculator</strong> lets you compute both options side-by-side to identify which regime minimizes your annual tax liability.
               </p>
             </article>
 
@@ -169,11 +169,11 @@ export function HomeContent() {
                 4. Long-Term Retirement Planning & The FIRE Movement
               </h2>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                Retirement is no longer an age—it is a financial state. With a **retirement calculator** or a **FIRE calculator** (Financial Independence, Retire Early), you can identify your ultimate wealth target.
+                Retirement is no longer an age—it is a financial state. With a <strong>retirement calculator</strong> or a <strong>FIRE calculator</strong> (Financial Independence, Retire Early), you can identify your ultimate wealth target.
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">The Multiplier & The 4% Rule</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                To achieve financial independence, you typically need a retirement pool equal to **25x to 30x of your annual living expenses**. According to the Trinity Study (the 4% rule), a diversified portfolio of stocks and debt assets can support a 4% inflation-adjusted withdrawal rate annually for 30+ years without depleting the core principal.
+                To achieve financial independence, you typically need a retirement pool equal to <strong>25x to 30x of your annual living expenses</strong>. According to the Trinity Study (the 4% rule), a diversified portfolio of stocks and debt assets can support a 4% inflation-adjusted withdrawal rate annually for 30+ years without depleting the core principal.
               </p>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
                 By entering your target monthly expenses, current savings rate, and expected inflation adjustments, our retirement planners show you exactly how many years remain until you reach your financial freedom milestone.
