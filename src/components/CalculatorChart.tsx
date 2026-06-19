@@ -41,9 +41,10 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    // Small RAF delay so the DOM has finished layout before Recharts measures
-    const raf = requestAnimationFrame(() => setMounted(true));
-    return () => cancelAnimationFrame(raf);
+    // A small timeout delay ensures the browser has completed layout calculations
+    // for grid/flex containers before Recharts measures their dimensions.
+    const timer = setTimeout(() => setMounted(true), 200);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!mounted || !chartData || chartData.length === 0) {
@@ -66,8 +67,8 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
 
   if (isPieChart) {
     return (
-      <div className="w-full h-80">
-        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0} debounce={50}>
+      <div className="w-full h-80 min-w-0 min-h-0">
+        <ResponsiveContainer width="100%" height={320} minWidth={0} debounce={50}>
           <PieChart>
             <Pie
               data={chartData}
@@ -92,8 +93,8 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
 
   if (isBarChart) {
     return (
-      <div className="w-full h-80">
-        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0} debounce={50}>
+      <div className="w-full h-80 min-w-0 min-h-0">
+        <ResponsiveContainer width="100%" height={320} minWidth={0} debounce={50}>
           <BarChart data={chartData} margin={{ top: 20, right: 30, left: 10, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
             <XAxis dataKey="name" stroke="#a1a1aa" fontSize={12} />
@@ -117,8 +118,8 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
       : [];
 
   return (
-    <div className="w-full h-80">
-      <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0} debounce={50}>
+    <div className="w-full h-80 min-w-0 min-h-0">
+      <ResponsiveContainer width="100%" height={320} minWidth={0} debounce={50}>
         <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 10, bottom: 0 }}>
           <defs>
             <linearGradient id="color1" x1="0" y1="0" x2="0" y2="1">
