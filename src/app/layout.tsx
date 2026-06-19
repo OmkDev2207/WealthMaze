@@ -12,6 +12,7 @@ import { HeaderNavigation } from "@/components/HeaderNavigation";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { CookieConsent } from "@/components/CookieConsent";
 import { siteConfig } from "@/config/site";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "WealthMaze - Calculate Your Financial Future",
@@ -160,6 +161,9 @@ export default function RootLayout({
 
           {/* Cookie Consent Banner */}
           <CookieConsent />
+
+          {/* Vercel Web Analytics */}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
