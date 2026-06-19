@@ -2,6 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { HelpCircle, Shield, Award, Landmark, TrendingUp, HelpCircle as HelpIcon, Sparkles } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { AdSlot } from "@/components/AdSlot";
 
 export function HomeContent() {
   const faqs = [
@@ -201,6 +202,9 @@ export function HomeContent() {
                 ))}
               </div>
             </div>
+
+            {/* Sidebar Ad Slot */}
+            <AdSlot position="sidebar" />
           </div>
 
         </div>

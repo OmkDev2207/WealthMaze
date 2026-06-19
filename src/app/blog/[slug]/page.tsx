@@ -11,6 +11,7 @@ import { Markdown } from "@/components/Markdown";
 import { RelatedContent } from "@/components/RelatedContent";
 import { Calendar, User, Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { AdSlot } from "@/components/AdSlot";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -249,6 +250,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 postHeading="Related Articles"
                 layout="sidebar"
               />
+              <AdSlot position="sidebar" />
             </aside>
           </div>
         </div>

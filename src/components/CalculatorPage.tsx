@@ -367,12 +367,13 @@ function CalculatorPageInner({
         </div>
 
         {/* Sidebar — powered by the internal link graph */}
-        <aside className="lg:col-span-4">
+        <aside className="lg:col-span-4 space-y-6">
           <RelatedContent
             calculators={relatedCalculators}
             posts={relatedArticles}
             layout="sidebar"
           />
+          <AdSlot position="sidebar" />
         </aside>
       </section>
 
