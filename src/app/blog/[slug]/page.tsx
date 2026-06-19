@@ -6,8 +6,10 @@ import fs from "fs";
 import path from "path";
 import { getPostBySlug, blogPosts } from "@/data/blog/posts";
 import { getCalculatorById } from "@/data/calculators";
+import { getRelatedPostsForBlog, getRelatedCalculatorsForBlog } from "@/data/internalLinks";
 import { Markdown } from "@/components/Markdown";
-import { Calendar, User, Clock, ArrowLeft, ChevronRight, Calculator } from "lucide-react";
+import { RelatedContent } from "@/components/RelatedContent";
+import { Calendar, User, Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 interface PageProps {
@@ -79,40 +81,64 @@ export default async function BlogPostPage({ params }: PageProps) {
     markdownContent = "Article content is currently unavailable. Please try again later.";
   }
 
-  // Related posts (same category, excluding current)
-  const relatedPosts = blogPosts
-    .filter((p) => p.category === post.category && p.slug !== post.slug)
-    .slice(0, 3);
+  // Related posts and calculators from the link graph
+  const relatedPostSlugs = getRelatedPostsForBlog(post.slug, 5);
+  const graphRelatedPosts = relatedPostSlugs
+    .map((s) => getPostBySlug(s))
+    .filter((p) => p !== undefined && p.slug !== post.slug) as typeof blogPosts;
 
-  // Related calculators
-  const relatedCalculators = post.relatedCalculators
+  const relatedCalcIds = getRelatedCalculatorsForBlog(post.slug, 3);
+  // Serialize to plain objects — removes calculate() function to avoid Client Component error
+  const graphRelatedCalcs = relatedCalcIds
     .map((id) => getCalculatorById(id))
-    .filter((c) => c !== undefined);
+    .filter(Boolean)
+    .map((c) => ({ id: c!.id, name: c!.name, category: c!.category, description: c!.description }));
 
   // Injected Article JSON-LD Schema
   const articleSchema = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": post.title,
-    "description": post.description,
-    "datePublished": new Date(post.publishedAt).toISOString(),
-    "author": {
-      "@type": "Organization",
-      "name": "WealthMaze",
-      "url": siteConfig.url,
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "WealthMaze",
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${siteConfig.url}/favicon.ico`,
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${siteConfig.url}/blog/${post.slug}#article`,
+        "headline": post.title,
+        "description": post.description,
+        "datePublished": new Date(post.publishedAt).toISOString(),
+        "dateModified": new Date(post.publishedAt).toISOString(),
+        "keywords": [post.category, ...post.tags, "personal finance", "financial calculator"].join(", "),
+        "author": {
+          "@type": "Person",
+          "name": post.author.name,
+          "url": siteConfig.url,
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "WealthMaze",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteConfig.url}/favicon.ico`,
+          },
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `${siteConfig.url}/blog/${post.slug}`,
+        },
+        "isPartOf": {
+          "@type": "Blog",
+          "@id": `${siteConfig.url}/blog`,
+          "name": "WealthMaze Blog",
+          "description": "Expert guides on financial calculators, investment planning, and personal finance for Indian investors.",
+        },
       },
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `${siteConfig.url}/blog/${post.slug}`,
-    },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteConfig.url}/blog` },
+          { "@type": "ListItem", "position": 3, "name": post.title, "item": `${siteConfig.url}/blog/${post.slug}` },
+        ],
+      },
+    ],
   });
 
   return (
@@ -202,74 +228,27 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <div className="pt-6 border-t border-zinc-100 dark:border-zinc-900 flex flex-wrap gap-1.5 items-center">
                   <span className="text-xs font-bold text-zinc-400 dark:text-zinc-500 mr-1.5 uppercase">Tags:</span>
                   {post.tags.map((tag) => (
-                    <span
+                    <Link
                       key={tag}
-                      className="px-2.5 py-1 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs text-zinc-600 dark:text-zinc-400"
+                      href={`/blog/tag/${tag.toLowerCase()}`}
+                      className="px-2.5 py-1 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs text-zinc-600 dark:text-zinc-400 hover:border-emerald-400/60 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                     >
                       #{tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               )}
             </main>
 
-            {/* Sidebar with Calculators & Related Posts */}
+            {/* Sidebar with Related Content via link graph */}
             <aside className="lg:col-span-4 space-y-6">
-              {/* Related Calculators (Internal Link Hub) */}
-              {relatedCalculators.length > 0 && (
-                <div className="bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-100 dark:border-zinc-800/80 p-5 rounded-2xl space-y-4">
-                  <div className="flex items-center space-x-2 border-b border-zinc-150 dark:border-zinc-800 pb-2">
-                    <Calculator className="h-4.5 w-4.5 text-emerald-500" />
-                    <h3 className="text-sm font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
-                      Interactive Planners
-                    </h3>
-                  </div>
-                  <div className="space-y-3">
-                    {relatedCalculators.map((c) => {
-                      if (!c) return null;
-                      return (
-                        <Link
-                          key={c.id}
-                          href={`/${c.id}`}
-                          className="block p-3.5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all group"
-                        >
-                          <div className="text-xs font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 transition-colors">
-                            {c.name}
-                          </div>
-                          <div className="text-[10px] text-zinc-400 dark:text-zinc-500 mt-1 line-clamp-2">
-                            {c.description}
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* Related Posts */}
-              {relatedPosts.length > 0 && (
-                <div className="bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-100 dark:border-zinc-800/80 p-5 rounded-2xl space-y-4">
-                  <h3 className="text-sm font-bold text-zinc-900 dark:text-white border-b border-zinc-150 dark:border-zinc-800 pb-2 uppercase tracking-wider">
-                    Recommended Reading
-                  </h3>
-                  <div className="space-y-3">
-                    {relatedPosts.map((rp) => (
-                      <Link
-                        key={rp.slug}
-                        href={`/blog/${rp.slug}`}
-                        className="block p-3.5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all group"
-                      >
-                        <div className="text-xs font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 transition-colors line-clamp-2">
-                          {rp.title}
-                        </div>
-                        <div className="text-[10px] text-zinc-400 dark:text-zinc-500 mt-1 flex justify-between items-center">
-                          <span>{rp.readTime}</span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <RelatedContent
+                calculators={graphRelatedCalcs}
+                posts={graphRelatedPosts.slice(0, 3)}
+                calculatorHeading="Try These Calculators"
+                postHeading="Related Articles"
+                layout="sidebar"
+              />
             </aside>
           </div>
         </div>

@@ -814,5 +814,178 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How does return rate affect the final corpus?", answer: "Because compounding is exponential, even a 1% or 2% difference in annual return rates (such as 12% vs 14%) can yield a difference of several lakhs or crores over 20-30 years." }
     ]
+  },
+  {
+    id: "step-up-sip-calculator",
+    name: "Step-Up SIP Calculator",
+    category: "Investing",
+    description: "Calculate the future value of your SIP with annual top-up increases.",
+    seoTitle: "Step-Up SIP Calculator - Top-Up Mutual Fund Planner | WealthMaze",
+    seoDescription: "Calculate the future value of your Systematic Investment Plan (SIP) with annual top-up increases. See how increasing your monthly SIP accelerates wealth growth.",
+    inputs: [
+      { id: "monthlyInvestment", label: "Starting Monthly SIP", type: "slider", min: 500, max: 1000000, step: 500, default: 10000, unit: "₹" },
+      { id: "annualStepUp", label: "Annual Step-Up Increment", type: "slider", min: 1, max: 30, step: 1, default: 10, unit: "%" },
+      { id: "expectedReturn", label: "Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
+      { id: "timePeriod", label: "Time Period", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "investedAmount", label: "Total Invested Amount", format: "currency" },
+      { id: "estReturns", label: "Est. Returns", format: "currency" },
+      { id: "totalValue", label: "Total Value", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const p = inputs.monthlyInvestment;
+      const stepUp = inputs.annualStepUp / 100;
+      const r = inputs.expectedReturn;
+      const t = inputs.timePeriod;
+
+      const monthlyRate = r / 12 / 100;
+      let totalValue = 0;
+      let investedAmount = 0;
+      let currentMonthlyInvestment = p;
+
+      const chartData = [];
+
+      for (let yr = 1; yr <= t; yr++) {
+        for (let month = 1; month <= 12; month++) {
+          totalValue = (totalValue + currentMonthlyInvestment) * (1 + monthlyRate);
+          investedAmount += currentMonthlyInvestment;
+        }
+        chartData.push({
+          name: `Yr ${yr}`,
+          "Invested Amount": Math.round(investedAmount),
+          "Total Wealth": Math.round(totalValue),
+        });
+        currentMonthlyInvestment = currentMonthlyInvestment * (1 + stepUp);
+      }
+
+      const estReturns = totalValue - investedAmount;
+
+      // Compare to Normal SIP
+      let normalTotalValue = 0;
+      let normalInvested = p * t * 12;
+      for (let m = 1; m <= t * 12; m++) {
+        normalTotalValue = (normalTotalValue + p) * (1 + monthlyRate);
+      }
+      const normalEstReturns = normalTotalValue - normalInvested;
+
+      return {
+        values: { investedAmount, estReturns, totalValue },
+        chartData,
+        comparison: {
+          title: "Step-Up SIP vs. Standard SIP Comparison",
+          headers: ["Strategy", "Invested Amount", "Est. Returns", "Final Value (Maturity)"],
+          rows: [
+            ["Step-Up SIP (with annual increments)", formatIndianCurrency(investedAmount), formatIndianCurrency(estReturns), formatIndianCurrency(totalValue)],
+            ["Normal SIP (flat contributions)", formatIndianCurrency(normalInvested), formatIndianCurrency(normalEstReturns), formatIndianCurrency(normalTotalValue)],
+            ["Net Difference", formatIndianCurrency(investedAmount - normalInvested), formatIndianCurrency(estReturns - normalEstReturns), formatIndianCurrency(totalValue - normalTotalValue)],
+          ],
+        },
+      };
+    },
+    educationalContent: [
+      {
+        title: "What is a Step-Up SIP?",
+        content: "A Step-Up SIP (or Top-Up SIP) is an investment practice where you automatically increase your monthly Systematic Investment Plan contribution by a fixed percentage or absolute amount every year. As your income rises over your career, stepping up your SIP ensures your savings grow in tandem with your earnings, helping you accumulate wealth exponentially faster."
+      },
+      {
+        title: "How a Step-Up SIP Beats a Normal SIP",
+        content: "A standard SIP keeps your monthly investment constant. Over long time horizons, inflation erodes the buying power of that fixed amount. A Step-Up SIP solves this by scaling your contributions. For example, a flat ₹10,000 monthly SIP compounding at 12% for 20 years yields around ₹1.0 Crore. In contrast, if you start with ₹10,000 but step it up by 10% each year, your final maturity corpus reaches ₹2.2 Crores—more than double the wealth accumulated, with only gradual, income-linked increases."
+      }
+    ],
+    faqs: [
+      { question: "Can I choose a fixed amount instead of a percentage for step-up?", answer: "Yes. Many mutual fund platforms let you increase your monthly contribution by either a flat amount (like ₹1,000 or ₹2,000) or a fixed percentage (like 5%, 10%, or 15%) annually." },
+      { question: "Is it possible to pause or cap a Step-Up SIP?", answer: "Yes. Most banks and mutual fund platforms allow you to set a maximum limit on your monthly top-up. Once your monthly contribution hits that cap, the step-up stops and it continues as a regular SIP at that level." }
+    ]
+  },
+  {
+    id: "coast-fire-calculator",
+    name: "Coast FIRE Calculator",
+    category: "Retirement",
+    description: "Calculate how much you need saved today to 'coast' to financial independence.",
+    seoTitle: "Coast FIRE Calculator - Early Retirement Savings Planner | WealthMaze",
+    seoDescription: "Calculate your Coast FIRE number. See how much retirement savings you need today so that compounding covers your retirement corpus without further additions.",
+    inputs: [
+      { id: "currentAge", label: "Current Age", type: "slider", min: 18, max: 60, step: 1, default: 30, unit: "Yr" },
+      { id: "targetAge", label: "Target Retirement Age", type: "slider", min: 35, max: 75, step: 1, default: 60, unit: "Yr" },
+      { id: "currentSavings", label: "Current Retirement Savings", type: "slider", min: 0, max: 50000000, step: 50000, default: 1000000, unit: "₹" },
+      { id: "annualExpenses", label: "Future Annual Expenses (in today's values)", type: "slider", min: 50000, max: 5000000, step: 10000, default: 600000, unit: "₹" },
+      { id: "expectedReturn", label: "Expected Return Rate (p.a.)", type: "slider", min: 1, max: 18, step: 0.5, default: 10, unit: "%" },
+      { id: "inflationRate", label: "Expected Inflation Rate (p.a.)", type: "slider", min: 1, max: 12, step: 0.5, default: 6, unit: "%" },
+    ],
+    outputs: [
+      { id: "targetFIRECorpus", label: "Target retirement Corpus", format: "currency" },
+      { id: "coastFIRENumber", label: "Required Coast FIRE Number Today", format: "currency" },
+      { id: "projectedSavings", label: "Projected Retirement Savings", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const currentAge = inputs.currentAge;
+      const targetAge = inputs.targetAge;
+      const currentSavings = inputs.currentSavings;
+      const annualExpenses = inputs.annualExpenses;
+      const expectedReturn = inputs.expectedReturn;
+      const inflationRate = inputs.inflationRate;
+
+      const yearsToRetire = Math.max(0, targetAge - currentAge);
+
+      // Future expenses adjusted for inflation
+      const inflationAdjustedExpenses = annualExpenses * Math.pow(1 + inflationRate / 100, yearsToRetire);
+
+      // Target FIRE Corpus: 25x annual expenses (safe withdrawal rate)
+      const targetFIRECorpus = inflationAdjustedExpenses * 25;
+
+      // Required Coast FIRE Number Today: targetFIRECorpus / (1 + expectedReturn/100)^yearsToRetire
+      const coastFIRENumber = targetFIRECorpus / Math.pow(1 + expectedReturn / 100, yearsToRetire);
+
+      // Projected Savings at retirement (compounded nominal expectedReturn, no future additions)
+      const projectedSavings = currentSavings * Math.pow(1 + expectedReturn / 100, yearsToRetire);
+
+      const chartData = [];
+      for (let yr = 0; yr <= yearsToRetire; yr++) {
+        const age = currentAge + yr;
+        const compoundedSavings = currentSavings * Math.pow(1 + expectedReturn / 100, yr);
+        const remainingYears = targetAge - age;
+        const neededAtAge = targetFIRECorpus / Math.pow(1 + expectedReturn / 100, remainingYears);
+        chartData.push({
+          name: `Age ${age}`,
+          "Your Savings": Math.round(compoundedSavings),
+          "Required Coast Balance": Math.round(neededAtAge),
+        });
+      }
+
+      const surplus = currentSavings - coastFIRENumber;
+      const status = currentSavings >= coastFIRENumber ? "Coast FIRE Achieved!" : "Contributions Needed";
+
+      return {
+        values: { targetFIRECorpus, coastFIRENumber, projectedSavings },
+        chartData,
+        comparison: {
+          title: "Coast FIRE Planning Status",
+          headers: ["Metric", "Amount", "Details"],
+          rows: [
+            ["Target Retirement Corpus (at Age " + targetAge + ")", formatIndianCurrency(targetFIRECorpus), "Based on inflation-adjusted expenses"],
+            ["Required Coast FIRE Savings Today", formatIndianCurrency(coastFIRENumber), "Amount needed today to grow to target corpus on its own"],
+            ["Your Actual Retirement Savings Today", formatIndianCurrency(currentSavings), "Your current investment base"],
+            ["Surplus / Shortfall Today", formatIndianCurrency(Math.abs(surplus)), surplus >= 0 ? "Surplus (Coast FIRE reached!)" : "Shortfall (Keep investing)"],
+            ["Current Coast Status", status, surplus >= 0 ? "You can 'coast' to retirement" : "Need to continue active retirement additions"],
+          ],
+        },
+      };
+    },
+    educationalContent: [
+      {
+        title: "What is Coast FIRE?",
+        content: "Coast FIRE is a sub-category of the Financial Independence, Retire Early (FIRE) movement. It refers to a state where you have already saved enough retirement assets today that, even if you never contribute another rupee, the portfolio will compound on its own to fund a comfortable retirement by your target age. Reaching Coast FIRE means you can quit a high-stress corporate job and take a lower-paying, part-time, or creative job just to cover your active monthly bills."
+      },
+      {
+        title: "How is Coast FIRE Calculated?",
+        content: "Coast FIRE calculation works in reverse: first, your current annual expenses are inflated to your retirement age using expected inflation. Next, we determine the target retirement corpus using the standard 25x rule (4% safe withdrawal rate). Finally, we discount this target corpus back to today using your expected investment return rate. If your actual savings today exceed this discounted amount, you have officially reached Coast FIRE!"
+      }
+    ],
+    faqs: [
+      { question: "Does Coast FIRE mean I can stop working entirely today?", answer: "No. Reaching Coast FIRE means you don't need to save *more* for retirement, but you still need to earn enough money to cover your day-to-day living expenses until you reach retirement age." },
+      { question: "What is the Safe Withdrawal Rate (SWR)?", answer: "The Safe Withdrawal Rate (usually set at 4%) is the percentage of your portfolio you can withdraw annually in retirement, adjusted for inflation, with a high probability of not running out of money for 30+ years." }
+    ]
   }
 ];
+

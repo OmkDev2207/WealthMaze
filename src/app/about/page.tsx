@@ -1,13 +1,37 @@
 import * as React from "react";
 import { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "About Us - WealthMaze",
-  description: "Learn more about the WealthMaze mission, team, and editorial policies that guide our financial calculators.",
+  title: "About WealthMaze - Free Financial Calculators for Indian Investors",
+  description: "Learn about WealthMaze's mission to make financial planning accessible. Free SIP, EMI, tax, and retirement calculators built for Indian investors.",
+  alternates: { canonical: `${siteConfig.url}/about` },
+  openGraph: {
+    title: "About WealthMaze - Free Financial Calculators",
+    description: "WealthMaze provides free, accurate financial calculators for SIP, EMI, tax, and retirement planning. 100% private, zero data collection.",
+    url: `${siteConfig.url}/about`,
+    type: "website",
+    siteName: "WealthMaze",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About WealthMaze - Free Financial Calculators",
+    description: "WealthMaze provides free, accurate financial calculators. 100% private, zero data collection.",
+  },
 };
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
+    { "@type": "ListItem", "position": 2, "name": "About WealthMaze", "item": `${siteConfig.url}/about` },
+  ],
+});
 
 export default function AboutPage() {
   return (
+    <>
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       <header className="border-b border-zinc-150 dark:border-zinc-800 pb-4">
         <h1 className="text-3xl font-extrabold text-zinc-900 dark:text-white">About WealthMaze</h1>
@@ -37,5 +61,7 @@ export default function AboutPage() {
         </p>
       </section>
     </article>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+    </>
   );
 }

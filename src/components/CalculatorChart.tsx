@@ -49,8 +49,7 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
   if (!mounted || !chartData || chartData.length === 0) {
     return (
       <div
-        className="w-full flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-xl animate-pulse"
-        style={{ height: 320 }}
+        className="w-full h-80 flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-xl animate-pulse"
       >
         <span className="text-sm text-zinc-400">
           {!mounted ? "Loading Chart..." : "No chart data available."}
@@ -67,7 +66,7 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
 
   if (isPieChart) {
     return (
-      <div style={{ width: "100%", height: 320 }}>
+      <div className="w-full h-80">
         <ResponsiveContainer width="100%" height="100%" debounce={50}>
           <PieChart>
             <Pie
@@ -93,7 +92,7 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
 
   if (isBarChart) {
     return (
-      <div style={{ width: "100%", height: 320 }}>
+      <div className="w-full h-80">
         <ResponsiveContainer width="100%" height="100%" debounce={50}>
           <BarChart data={chartData} margin={{ top: 20, right: 30, left: 10, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
@@ -118,7 +117,7 @@ export function CalculatorChart({ chartData, calculatorId }: CalculatorChartProp
       : [];
 
   return (
-    <div style={{ width: "100%", height: 320 }}>
+    <div className="w-full h-80">
       <ResponsiveContainer width="100%" height="100%" debounce={50}>
         <AreaChart data={chartData} margin={{ top: 10, right: 20, left: 10, bottom: 0 }}>
           <defs>

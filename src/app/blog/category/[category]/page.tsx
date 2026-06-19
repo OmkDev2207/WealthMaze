@@ -32,10 +32,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryName = matchingPost.category;
 
   return {
-    title: `${categoryName} Financial Guides - WealthMaze`,
-    description: `Read financial guides and expert advice on ${categoryName} calculators, wealth tips, and investment math.`,
+    title: `${categoryName} Financial Guides & Calculators | WealthMaze`,
+    description: `Expert articles and interactive calculators for ${categoryName}. Read WealthMaze guides on compound interest, tax slabs, EMI maths, and investment planning.`,
     alternates: {
       canonical: `${siteConfig.url}/blog/category/${categoryParam}`,
+    },
+    openGraph: {
+      title: `${categoryName} Financial Guides | WealthMaze`,
+      description: `Read expert ${categoryName} articles on WealthMaze. Interactive calculators and guides for smarter money decisions.`,
+      url: `${siteConfig.url}/blog/category/${categoryParam}`,
+      type: "website",
+      siteName: "WealthMaze",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${categoryName} Financial Guides | WealthMaze`,
+      description: `Expert ${categoryName} articles and interactive calculators on WealthMaze.`,
     },
   };
 }

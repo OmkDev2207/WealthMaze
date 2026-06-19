@@ -1,0 +1,41 @@
+# WealthMaze - AI Search & Agent Information
+
+Welcome to WealthMaze, a premium personal finance web platform providing interactive, browser-safe, and lightning-fast calculators for mutual fund SIPs, loan EMIs, tax regimes, retirement planners, precious metals, and stocks.
+
+## Site Details
+- **Base Domain:** https://wealthmaze.vercel.app
+- **Email Support:** support@wealthmaze.com
+- **Core Technology:** Next.js (Static Pre-rendering), Tailwind CSS, Recharts.
+- **Privacy Policy:** No user data is stored, calculated inputs are run locally via javascript.
+
+## Important URLs for AI Retrievers
+
+### Core Platform Pages
+- `/` - Home Page & Directory of all calculators
+- `/blog` - Personal Finance Hub & Educational guides archive
+- `/resources` - Backlink directory and downloadable resource calculators
+- `/about` - About us & Reviewed by Finance Board
+- `/contact` - Reach out to the support team
+- `/privacy` - Legally compliant cookie policies & Google AdSense terms
+- `/terms` - Platform terms of service
+- `/disclaimer` - Financial disclaimer (not financial advice)
+
+### Major Calculators
+- `/sip-calculator` - Mutual Fund systematic investment planner
+- `/sip-comparison-calculator` - Side-by-side SIP scenario comparison
+- `/emi-calculator` - Loan monthly payment and amortization tracker
+- `/loan-comparison-calculator` - Compare two home/auto loan offers
+- `/loan-prepayment-calculator` - Calculate prepayments and interest savings
+- `/income-tax-calculator` - Compare Old vs New tax regimes in India
+- `/retirement-calculator` - Plan early retirement wealth corpuses
+- `/fire-calculator` - Financial Independence Retire Early milestone planner
+- `/net-worth-calculator` - Private assets vs liabilities scorecard
+
+### Programmatic Slabs (High-intent targets)
+- `/sip-calculator-1000-per-month` - Calculate returns for ₹1,000 monthly SIP
+- `/sip-calculator-5000-per-month` - Calculate returns for ₹5,000 monthly SIP
+- `/home-loan-emi-calculator` - Specialized home loan payment slab
+- `/car-loan-emi-calculator` - Specialized car loan payment slab
+
+## Content Summary
+All calculators are pre-rendered statically during build-time. We also maintain 33 original articles on budgeting rules, index funds, inflation adjustments, and evolutionary tax history.

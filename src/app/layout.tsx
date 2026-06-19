@@ -9,10 +9,11 @@ import Link from "next/link";
 import { Wallet } from "lucide-react";
 
 import { HeaderNavigation } from "@/components/HeaderNavigation";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { CookieConsent } from "@/components/CookieConsent";
+import { LayoutClientWidgets } from "@/components/LayoutClientWidgets";
 import { siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+
 
 export const metadata: Metadata = {
   title: "WealthMaze - Calculate Your Financial Future",
@@ -45,12 +46,12 @@ export default function RootLayout({
       className="h-full antialiased"
       suppressHydrationWarning
     >
-      {/* Google AdSense — loads after page is interactive, never blocks render */}
+      {/* Google AdSense — loads in idle time to maximize page speed */}
       <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7662746918059885"
         crossOrigin="anonymous"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <body className="min-h-full flex flex-col bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-250">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
@@ -156,14 +157,14 @@ export default function RootLayout({
             }}
           />
 
-          {/* Mobile Bottom Tab Navigation */}
-          <MobileBottomNav />
-
-          {/* Cookie Consent Banner */}
-          <CookieConsent />
+          {/* Client-only layout widgets loaded dynamically */}
+          <LayoutClientWidgets />
 
           {/* Vercel Web Analytics */}
           <Analytics />
+
+          {/* Google Analytics 4 */}
+          <GoogleAnalytics />
         </ThemeProvider>
       </body>
     </html>

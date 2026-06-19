@@ -5,6 +5,7 @@ import { programmaticPages, getProgrammaticPageById } from "@/data/programmatic"
 import { CalculatorPage } from "@/components/CalculatorPage";
 import { notFound as nextNotFound } from "next/navigation";
 import { siteConfig } from "@/config/site";
+import { generateCalculatorSchema } from "@/lib/calculatorSchema";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -61,9 +62,36 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Calculator Not Found - WealthMaze" };
   }
 
+  let seoTitle = config.seoTitle;
+  let seoDescription = config.seoDescription;
+
+  // Map high-CTR overrides
+  if (slug === "sip-calculator") {
+    seoTitle = siteConfig.metadata.sip.title;
+    seoDescription = siteConfig.metadata.sip.description;
+  } else if (slug === "emi-calculator") {
+    seoTitle = siteConfig.metadata.emi.title;
+    seoDescription = siteConfig.metadata.emi.description;
+  } else if (slug === "income-tax-calculator") {
+    seoTitle = siteConfig.metadata.tax.title;
+    seoDescription = siteConfig.metadata.tax.description;
+  } else if (slug === "retirement-calculator") {
+    seoTitle = siteConfig.metadata.retirement.title;
+    seoDescription = siteConfig.metadata.retirement.description;
+  } else if (slug === "mutual-fund-return-calculator") {
+    seoTitle = siteConfig.metadata.mutualFund.title;
+    seoDescription = siteConfig.metadata.mutualFund.description;
+  } else if (slug === "cagr-calculator") {
+    seoTitle = siteConfig.metadata.cagr.title;
+    seoDescription = siteConfig.metadata.cagr.description;
+  } else if (slug === "goal-based-investment-calculator") {
+    seoTitle = siteConfig.metadata.goal.title;
+    seoDescription = siteConfig.metadata.goal.description;
+  }
+
   return {
-    title: config.seoTitle,
-    description: config.seoDescription,
+    title: seoTitle,
+    description: seoDescription,
     keywords: [
       config.name,
       config.category,
@@ -71,23 +99,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `${config.name} calculator`,
       "financial planner",
       "investment tool",
-      config.seoTitle,
+      seoTitle,
       ...config.name.split(" "),
     ],
     alternates: {
       canonical: `${siteConfig.url}/${config.id}`,
     },
     openGraph: {
-      title: config.seoTitle,
-      description: config.seoDescription,
+      title: seoTitle,
+      description: seoDescription,
       type: "website",
       url: `${siteConfig.url}/${config.id}`,
       siteName: "WealthMaze",
     },
     twitter: {
       card: "summary_large_image",
-      title: config.seoTitle,
-      description: config.seoDescription,
+      title: seoTitle,
+      description: seoDescription,
     },
   };
 }
@@ -104,49 +132,66 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
     nextNotFound();
   }
 
-  // Build JSON-LD schemas as strings for injection via dangerouslySetInnerHTML
-  const faqSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": config.faqs.map((faq: { question: string; answer: string }) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
-    })),
-  });
+  // Resolve SEO title/description (same logic as generateMetadata above)
+  let seoTitle = config.seoTitle;
+  let seoDescription = config.seoDescription;
 
-  const toolSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FinancialProduct",
-    "name": progConfig ? progConfig.name : config.name,
-    "description": progConfig ? progConfig.seoDescription : config.description,
-    "provider": {
-      "@type": "Organization",
-      "name": "WealthMaze",
-      "url": siteConfig.url,
-    },
-  });
+  if (progConfig) {
+    seoTitle = progConfig.seoTitle;
+    seoDescription = progConfig.seoDescription;
+  } else if (slug === "sip-calculator") {
+    seoTitle = siteConfig.metadata.sip.title;
+    seoDescription = siteConfig.metadata.sip.description;
+  } else if (slug === "emi-calculator") {
+    seoTitle = siteConfig.metadata.emi.title;
+    seoDescription = siteConfig.metadata.emi.description;
+  } else if (slug === "income-tax-calculator") {
+    seoTitle = siteConfig.metadata.tax.title;
+    seoDescription = siteConfig.metadata.tax.description;
+  } else if (slug === "retirement-calculator") {
+    seoTitle = siteConfig.metadata.retirement.title;
+    seoDescription = siteConfig.metadata.retirement.description;
+  } else if (slug === "mutual-fund-return-calculator") {
+    seoTitle = siteConfig.metadata.mutualFund.title;
+    seoDescription = siteConfig.metadata.mutualFund.description;
+  } else if (slug === "cagr-calculator") {
+    seoTitle = siteConfig.metadata.cagr.title;
+    seoDescription = siteConfig.metadata.cagr.description;
+  } else if (slug === "goal-based-investment-calculator") {
+    seoTitle = siteConfig.metadata.goal.title;
+    seoDescription = siteConfig.metadata.goal.description;
+  }
 
-  const breadcrumbSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": progConfig ? progConfig.name : config.name,
-        "item": `${siteConfig.url}/${progConfig ? progConfig.id : config.id}`,
-      },
-    ],
+  /**
+   * Generate the complete JSON-LD @graph for this calculator page.
+   *
+   * generateCalculatorSchema() automatically produces:
+   *   - WebPage          (name, description, url, dateModified, breadcrumb, mainEntity)
+   *   - SoftwareApplication (name, category, subcategory, featureList, audience, free offer, URL)
+   *   - BreadcrumbList   (Home → Category → Calculator)
+   *   - FAQPage          (every FAQ item from config.faqs)
+   *
+   * Future calculators: just add a CalculatorConfig to src/data/calculators/*.ts
+   * No changes needed in this file or the generator.
+   */
+  const schemaJson = generateCalculatorSchema({
+    config,
+    siteUrl: siteConfig.url,
+    slug,
+    seoTitle,
+    seoDescription,
+    customName: progConfig?.name,
+    customDescription: progConfig?.seoDescription,
   });
 
   return (
     <>
-      {/* Next.js App Router Server Components JSON-LD injection */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toolSchema }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+      {/*
+        Single <script> block containing the full @graph JSON-LD.
+        Includes: WebPage + SoftwareApplication + BreadcrumbList + FAQPage.
+        Validated by: https://validator.schema.org & Google Rich Results Test.
+      */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaJson }} />
 
       <CalculatorPage
         calculatorId={calculatorId}

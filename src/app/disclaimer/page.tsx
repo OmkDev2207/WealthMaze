@@ -1,15 +1,39 @@
 import * as React from "react";
 import { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Disclaimer - WealthMaze",
-  description: "Read the WealthMaze financial and investment disclaimer. Understand the limits of our financial estimation tools.",
+  title: "Financial Disclaimer - WealthMaze Calculators Are Not Financial Advice",
+  description: "Important legal disclaimer: WealthMaze calculators provide educational mathematical estimates only. Not professional investment, tax, or financial advice.",
+  alternates: { canonical: `${siteConfig.url}/disclaimer` },
+  openGraph: {
+    title: "Financial Disclaimer - WealthMaze",
+    description: "WealthMaze calculators are for educational purposes only. No calculations constitute financial, investment, legal, or tax advice.",
+    url: `${siteConfig.url}/disclaimer`,
+    type: "website",
+    siteName: "WealthMaze",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Financial Disclaimer - WealthMaze",
+    description: "WealthMaze calculators are for education only — not financial advice.",
+  },
 };
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
+    { "@type": "ListItem", "position": 2, "name": "Disclaimer", "item": `${siteConfig.url}/disclaimer` },
+  ],
+});
 
 export default function DisclaimerPage() {
   const lastUpdated = "June 18, 2026";
 
   return (
+    <>
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
       <header className="border-b border-zinc-150 dark:border-zinc-800 pb-4">
         <h1 className="text-3xl font-extrabold text-zinc-900 dark:text-white">Legal & Financial Disclaimer</h1>
@@ -46,5 +70,7 @@ export default function DisclaimerPage() {
         </p>
       </section>
     </article>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+    </>
   );
 }

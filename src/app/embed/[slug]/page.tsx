@@ -4,6 +4,7 @@ import { allCalculators, getCalculatorById } from "@/data/calculators";
 import { CalculatorPage } from "@/components/CalculatorPage";
 import { notFound as nextNotFound } from "next/navigation";
 import { EmbedClassTrigger } from "@/components/EmbedClassTrigger";
+import { siteConfig } from "@/config/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -29,7 +30,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `Embeddable version of the interactive ${config.name} by WealthMaze.`,
     robots: {
       index: false,
-      follow: true,
+      follow: false,
+    },
+    alternates: {
+      canonical: `${siteConfig.url}/${slug}`,
     },
   };
 }

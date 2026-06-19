@@ -9,18 +9,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // All static page routes
   const staticPages = [
-    "",
-    "/about",
-    "/contact",
-    "/privacy",
-    "/terms",
-    "/disclaimer",
-    "/blog",
-  ].map((route) => ({
+    { route: "", priority: 1.0, freq: "weekly" as const },
+    { route: "/about", priority: 0.7, freq: "monthly" as const },
+    { route: "/contact", priority: 0.5, freq: "monthly" as const },
+    { route: "/privacy", priority: 0.4, freq: "yearly" as const },
+    { route: "/terms", priority: 0.4, freq: "yearly" as const },
+    { route: "/disclaimer", priority: 0.4, freq: "yearly" as const },
+    { route: "/blog", priority: 0.9, freq: "daily" as const },
+    { route: "/resources", priority: 0.85, freq: "weekly" as const },
+    { route: "/guides", priority: 0.8, freq: "weekly" as const },
+    { route: "/free-tools", priority: 0.8, freq: "weekly" as const },
+  ].map(({ route, priority, freq }) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    changeFrequency: freq,
+    priority,
   }));
 
   // Standard calculator page routes

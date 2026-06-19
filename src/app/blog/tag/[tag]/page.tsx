@@ -34,13 +34,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const firstMatchPost = blogPosts.find((p) =>
     p.tags.some((t) => t.toLowerCase() === tagParam)
   );
-  const tagDisplay = firstMatchPost?.tags.find((t) => t.toLowerCase() === tagParam) || tagParam;
+  const tagName = firstMatchPost?.tags.find((t) => t.toLowerCase() === tagParam) || tagParam;
 
   return {
-    title: `Articles tagged with #${tagDisplay} - WealthMaze`,
-    description: `Browse all articles, calculators, and tutorials tagged with #${tagDisplay} on WealthMaze.`,
+    title: `#${tagName} Investment Articles & Guides | WealthMaze`,
+    description: `Browse all WealthMaze articles tagged "${tagName}". Expert guides on personal finance, investment calculators, and tax planning.`,
     alternates: {
       canonical: `${siteConfig.url}/blog/tag/${tagParam}`,
+    },
+    openGraph: {
+      title: `#${tagName} Articles | WealthMaze`,
+      description: `Browse expert finance guides and calculators tagged "${tagName}" on WealthMaze.`,
+      url: `${siteConfig.url}/blog/tag/${tagParam}`,
+      type: "website",
+      siteName: "WealthMaze",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `#${tagName} Articles | WealthMaze`,
+      description: `Expert finance guides and calculators tagged "${tagName}" on WealthMaze.`,
     },
   };
 }

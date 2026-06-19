@@ -1,13 +1,37 @@
 import * as React from "react";
 import { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Contact Us - WealthMaze",
-  description: "Get in touch with the WealthMaze support team for feedback, questions, or advertiser relations.",
+  title: "Contact WealthMaze - Support, Feedback & Advertiser Relations",
+  description: "Contact the WealthMaze team for feedback, bug reports, or calculator suggestions. We are happy to hear from our community of investors and savers.",
+  alternates: { canonical: `${siteConfig.url}/contact` },
+  openGraph: {
+    title: "Contact WealthMaze - Get in Touch",
+    description: "Have feedback on our calculators or spotted an issue? Contact the WealthMaze team. We value input from our financial planning community.",
+    url: `${siteConfig.url}/contact`,
+    type: "website",
+    siteName: "WealthMaze",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact WealthMaze - Get in Touch",
+    description: "Have feedback or suggestions? Contact the WealthMaze team.",
+  },
 };
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
+    { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": `${siteConfig.url}/contact` },
+  ],
+});
 
 export default function ContactPage() {
   return (
+    <>
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       <header className="border-b border-zinc-150 dark:border-zinc-800 pb-4">
         <h1 className="text-3xl font-extrabold text-zinc-900 dark:text-white">Contact Us</h1>
@@ -79,5 +103,7 @@ export default function ContactPage() {
         </form>
       </section>
     </article>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+    </>
   );
 }

@@ -1,15 +1,30 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { allCalculators, getCalculatorById } from "@/data/calculators";
-import { getPostsByCalculatorId } from "@/data/blog/posts";
+import { getPostBySlug } from "@/data/blog/posts";
+import { getRelatedCalculators, getRelatedPostsForCalculator } from "@/data/internalLinks";
 import { CalculatorForm } from "./CalculatorForm";
-import { CalculatorChart } from "./CalculatorChart";
 import { CalculatorResults } from "./CalculatorResults";
+import { RelatedContent, SerializableCalc } from "./RelatedContent";
 import { AdSlot } from "./AdSlot";
 import Link from "next/link";
 import { ChevronRight, ArrowLeft, Calendar, User, Eye, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { trackCalculatorUse } from "./GoogleAnalytics";
+
+const CalculatorChart = dynamic(
+  () => import("./CalculatorChart").then((mod) => mod.CalculatorChart),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-80 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-150 dark:border-zinc-800 rounded-xl animate-pulse flex items-center justify-center text-xs font-bold text-zinc-400">
+        Loading interactive chart data...
+      </div>
+    ),
+  }
+);
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -89,6 +104,10 @@ function CalculatorPageInner({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [calculatorId, overrides]);
 
+  React.useEffect(() => {
+    trackCalculatorUse(calculatorId, config.name);
+  }, [calculatorId, config.name]);
+
   // Run calculation dynamically
   const result = React.useMemo(() => {
     try {
@@ -109,16 +128,19 @@ function CalculatorPageInner({
     setValues((prev) => ({ ...prev, [id]: val }));
   }, []);
 
-  // Find related calculators in the same category
-  const relatedCalculators = React.useMemo(() => {
-    return allCalculators
-      .filter((c) => c.category === config.category && c.id !== config.id)
-      .slice(0, 4);
-  }, [config]);
+  // Related calculators using the internal link graph — serialized (no functions)
+  const relatedCalculators = React.useMemo((): SerializableCalc[] => {
+    const ids = getRelatedCalculators(calculatorId, allCalculators, 4);
+    return ids
+      .map((id) => allCalculators.find((c) => c.id === id))
+      .filter(Boolean)
+      .map((c) => ({ id: c!.id, name: c!.name, category: c!.category, description: c!.description }));
+  }, [calculatorId]);
 
-  // Find related blog posts
+  // Related blog posts using the internal link graph
   const relatedArticles = React.useMemo(() => {
-    return getPostsByCalculatorId(calculatorId).slice(0, 4);
+    const slugs = getRelatedPostsForCalculator(calculatorId, 4);
+    return slugs.map((slug) => getPostBySlug(slug)).filter(Boolean) as NonNullable<ReturnType<typeof getPostBySlug>>[];
   }, [calculatorId]);
 
   const lastUpdated = "June 18, 2026";
@@ -344,59 +366,13 @@ function CalculatorPageInner({
           )}
         </div>
 
-        {/* Sidebar */}
-        <aside className="lg:col-span-4 space-y-6">
-          {/* Related Articles */}
-          {relatedArticles.length > 0 && (
-            <div className="bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-100 dark:border-zinc-800/80 p-5 rounded-2xl space-y-4">
-              <h3 className="text-sm font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
-                Related Articles & Guides
-              </h3>
-              <div className="space-y-3">
-                {relatedArticles.map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}`}
-                    className="block p-3.5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all group"
-                  >
-                    <div className="text-xs font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 transition-colors line-clamp-2">
-                      {post.title}
-                    </div>
-                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 mt-1.5 flex items-center justify-between">
-                      <span>{post.category}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Related Calculators */}
-          <div className="bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-100 dark:border-zinc-800/80 p-5 rounded-2xl space-y-4">
-            <h3 className="text-sm font-bold text-zinc-900 dark:text-white uppercase tracking-wider">
-              Related Calculators
-            </h3>
-            <div className="space-y-3">
-              {relatedCalculators.map((c) => (
-                <Link
-                  key={c.id}
-                  href={`/${c.id}`}
-                  className="block p-3.5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all group"
-                >
-                  <div className="text-xs font-bold text-zinc-800 dark:text-zinc-200 group-hover:text-emerald-500 transition-colors">
-                    {c.name}
-                  </div>
-                  <div className="text-[10px] text-zinc-400 dark:text-zinc-500 mt-1 line-clamp-2">
-                    {c.description}
-                  </div>
-                </Link>
-              ))}
-              {relatedCalculators.length === 0 && (
-                <div className="text-xs text-zinc-400 py-2">No related calculators available.</div>
-              )}
-            </div>
-          </div>
+        {/* Sidebar — powered by the internal link graph */}
+        <aside className="lg:col-span-4">
+          <RelatedContent
+            calculators={relatedCalculators}
+            posts={relatedArticles}
+            layout="sidebar"
+          />
         </aside>
       </section>
 

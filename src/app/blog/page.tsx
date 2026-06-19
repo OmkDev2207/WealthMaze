@@ -5,27 +5,37 @@ import { BlogClient } from "@/components/BlogClient";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "WealthMaze Blog - Financial Guides, Calculators & Tips",
-  description: "Read expert articles on mutual fund SIPs, loan EMIs, tax saving strategies under the old vs new regimes, personal budgeting rules, and wealth creation.",
+  title: siteConfig.metadata.blog.title,
+  description: siteConfig.metadata.blog.description,
   alternates: {
     canonical: `${siteConfig.url}/blog`,
   },
   openGraph: {
-    title: "WealthMaze Blog - Financial Guides & Investment Tips",
-    description: "Read expert articles on mutual fund SIPs, loan EMIs, tax saving, personal budgeting rules, and wealth creation.",
+    title: siteConfig.metadata.blog.title,
+    description: siteConfig.metadata.blog.description,
     url: `${siteConfig.url}/blog`,
     type: "website",
     siteName: "WealthMaze",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WealthMaze Blog - Financial Guides & Investment Tips",
-    description: "Read expert articles on mutual fund SIPs, loan EMIs, tax saving, personal budgeting rules, and wealth creation.",
+    title: siteConfig.metadata.blog.title,
+    description: siteConfig.metadata.blog.description,
   },
 };
 
 export default function BlogIndexPage() {
+  const breadcrumbSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteConfig.url },
+      { "@type": "ListItem", "position": 2, "name": "Blog & Guides", "item": `${siteConfig.url}/blog` },
+    ],
+  });
+
   return (
+    <>
     <div className="relative min-h-screen bg-zinc-50/30 dark:bg-zinc-950/20">
       {/* Background Gradients */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[350px] overflow-hidden -z-10 pointer-events-none opacity-30 dark:opacity-10">
@@ -46,5 +56,7 @@ export default function BlogIndexPage() {
         <BlogClient posts={blogPosts} />
       </div>
     </div>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+    </>
   );
 }

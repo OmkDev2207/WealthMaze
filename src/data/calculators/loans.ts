@@ -255,5 +255,100 @@ export const loansCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Is a lower EMI always better?", answer: "Not necessarily. A lower EMI achieved by extending the loan tenure (e.g. 15 to 20 years) results in a much higher total interest burden. Always compare both the EMI and the total interest payable." }
     ]
+  },
+  {
+    id: "personal-loan-emi-calculator",
+    name: "Personal Loan EMI Calculator",
+    category: "Loans",
+    description: "Calculate your personal loan EMI, total interest, and repayment timeline.",
+    seoTitle: "Personal Loan EMI Calculator - Free Loan Planning Tool | WealthMaze",
+    seoDescription: "Calculate your Personal Loan EMI, total interest payable, and view the amortization split. Plan your monthly personal loan budget with WealthMaze.",
+    inputs: [
+      { id: "loanAmount", label: "Personal Loan Amount", type: "slider", min: 10000, max: 2500000, step: 5000, default: 500000, unit: "₹" },
+      { id: "interestRate", label: "Interest Rate (p.a.)", type: "slider", min: 5, max: 30, step: 0.1, default: 12, unit: "%" },
+      { id: "tenure", label: "Loan Tenure (in Years)", type: "slider", min: 1, max: 7, step: 1, default: 5, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "emi", label: "Monthly EMI", format: "currency" },
+      { id: "interestPayable", label: "Total Interest Payable", format: "currency" },
+      { id: "totalPayment", label: "Total Payment (Principal + Interest)", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const p = inputs.loanAmount;
+      const r = inputs.interestRate;
+      const t = inputs.tenure;
+
+      const monthlyRate = r / (12 * 100);
+      const totalMonths = t * 12;
+      const emi = p * monthlyRate * Math.pow(1 + monthlyRate, totalMonths) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      const totalPayment = emi * totalMonths;
+      const interestPayable = totalPayment - p;
+
+      const chartData = [
+        { name: "Principal Amount", Value: Math.round(p) },
+        { name: "Total Interest", Value: Math.round(interestPayable) },
+      ];
+
+      // Format currency helper
+      const formatCurrency = (val: number) => {
+        return new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+          maximumFractionDigits: 0,
+        }).format(val);
+      };
+
+      // Comparison for alternate tenures
+      const comparisonRows = [];
+      for (let yr = 2; yr <= 7; yr += 2) {
+        if (yr === t) continue;
+        const months = yr * 12;
+        const altEmi = p * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+        const altTotal = altEmi * months;
+        const altInterest = altTotal - p;
+        comparisonRows.push([
+          `${yr} Years`,
+          formatCurrency(altEmi),
+          formatCurrency(altInterest),
+          formatCurrency(altTotal),
+        ]);
+      }
+
+      // Add current chosen tenure for context
+      comparisonRows.unshift([
+        `${t} Years (Chosen)`,
+        formatCurrency(emi),
+        formatCurrency(interestPayable),
+        formatCurrency(totalPayment),
+      ]);
+
+      // Sort rows by tenure
+      comparisonRows.sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
+
+      return {
+        values: { emi, interestPayable, totalPayment },
+        chartData,
+        comparison: {
+          title: "EMI Comparison across Alternate Tenures",
+          headers: ["Tenure", "Monthly EMI", "Interest Payable", "Total Cumulative Cost"],
+          rows: comparisonRows,
+        },
+      };
+    },
+    educationalContent: [
+      {
+        title: "Understanding Personal Loan EMIs",
+        content: "A Personal Loan is an unsecured form of credit, which means you do not need to pledge any collateral (like property or gold) to secure the funding. Because of the higher risk for the lender, personal loan interest rates are typically higher (ranging from 10.5% to 24%+ depending on your credit score and salary) and tenures are shorter (generally 1 to 7 years)."
+      },
+      {
+        title: "How Tenure Affects Your Monthly and Lifetime Outflows",
+        content: "Choosing a longer loan tenure (e.g. 7 years instead of 3 years) lowers your Equated Monthly Installment (EMI), making it easier on your month-to-month budget. However, it also means interest compounds over a much longer period, significantly increasing the total lifetime cost of your loan. Using a personal loan calculator helps you find the sweet spot: the shortest tenure you can comfortably afford without straining your monthly savings."
+      }
+    ],
+    faqs: [
+      { question: "What factors determine my personal loan interest rate?", answer: "Lenders decide your interest rate based on your credit score (CIBIL score), monthly income, employment status, employer profile, and your existing debt-to-income ratio." },
+      { question: "Can I prepay or close my personal loan early?", answer: "Yes, most banks allow prepayment or foreclosure after a lock-in period (usually 6 to 12 EMIs). However, unlike home loans, personal loans may attract foreclosure fees of 2% to 4% of the outstanding principal balance." }
+    ]
   }
 ];
+
