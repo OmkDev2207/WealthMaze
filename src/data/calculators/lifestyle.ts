@@ -6,8 +6,8 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     name: "How Long Until ₹1 Crore?",
     category: "Lifestyle",
     description: "Determine the exact time required to build a net worth of ₹1 Crore.",
-    seoTitle: "How Long Until 1 Crore Calculator - Wealth Timer | WealthMaze",
-    seoDescription: "Calculate the time needed to reach a corpus of ₹1 Crore. Adjust monthly savings and growth rate assumptions with WealthMaze.",
+    seoTitle: "How Long Until 1 Crore Calculator – Target Wealth",
+    seoDescription: "Use our how long until 1 Crore calculator to determine the exact time required to build a net worth of ₹1 Crore with compounding interest.",
     inputs: [
       { id: "currentSavings", label: "Current Savings / Portfolio", type: "slider", min: 0, max: 5000000, step: 50000, default: 500000, unit: "₹" },
       { id: "monthlySavings", label: "Monthly Savings Contribution", type: "slider", min: 500, max: 500000, step: 500, default: 25000, unit: "₹" },
@@ -61,12 +61,13 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "The Milestones to Wealth Creation",
-        content: "Reaching the first ₹1 Crore (10 Million Rupees) is often the hardest milestone for retail savers. Because compounding depends on the size of the initial capital, growth starts slow. The first ₹1 Crore might take 12 years of savings, but the second ₹1 Crore might take only 4 more years, as the compounded interest earns interest on a much larger scale."
+        title: "Milestones of Wealth Accumulation Plan",
+        content: "Our How Long Until 1 Crore Calculator makes planning your financial milestones simple. Reaching the first ₹1 Crore (10 Million Rupees) is often the hardest milestone for retail savers. Because compounding depends on the size of the initial capital, growth starts slow. The first ₹1 Crore might take 12 years of savings, but the second ₹1 Crore might take only 4 more years, as the compounded interest earns interest on a much larger scale."
       }
     ],
     faqs: [
-      { question: "How can I reach ₹1 Crore faster?", answer: "Increasing your monthly savings rate by even 5% to 10% annually (Step-up SIP) can reduce the time required to hit your target by several years." }
+      { question: "How can I reach ₹1 Crore faster?", answer: "Increasing your monthly savings rate by even 5% to 10% annually (Step-up SIP) can reduce the time required to hit your target by several years." },
+      { question: "How do I use a wealth calculator to determine time to 1 Crore?", answer: "Enter your current savings, monthly savings budget, and expected returns rate into our wealth calculator to estimate the years required to reach ₹1 Crore." }
     ]
   },
   {
@@ -74,8 +75,8 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     name: "Inflation Impact Calculator",
     category: "Lifestyle",
     description: "Calculate how inflation erodes the value of your cash and increases the future cost of goods.",
-    seoTitle: "Inflation Impact Calculator - Purchasing Power Loss | WealthMaze",
-    seoDescription: "Calculate how inflation erodes the purchasing power of your money over time. Estimate future expenses using WealthMaze.",
+    seoTitle: "Inflation Impact Calculator – Calculate Purchasing Power",
+    seoDescription: "Use our free inflation impact calculator to calculate how inflation erodes the purchasing power of your money and increases your future expenses.",
     inputs: [
       { id: "currentCost", label: "Current Monthly Cost / Price of Item", type: "slider", min: 1000, max: 1000000, step: 5000, default: 50000, unit: "₹" },
       { id: "inflationRate", label: "Average Inflation Rate (p.a.)", type: "slider", min: 1, max: 15, step: 0.1, default: 6, unit: "%" },
@@ -111,12 +112,13 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Inflation: The Silent Tax",
-        content: "Inflation is the rate at which the general level of prices for goods and services rises, subsequently eroding currency purchasing power. If inflation is 6% per year, an item that costs ₹100 today will cost ₹106 next year. Over 15 years, a lifestyle that costs ₹50,000 monthly will cost ₹1.2 Lakhs monthly simply to buy the exact same goods."
+        title: "Understanding Inflation and Purchasing Power Loss",
+        content: "Use our Inflation Impact Calculator to see how price rises affect your budget. Inflation is the rate at which the general level of prices for goods and services rises, subsequently eroding currency purchasing power. If inflation is 6% per year, an item that costs ₹100 today will cost ₹106 next year. Over 15 years, a lifestyle that costs ₹50,000 monthly will cost ₹1.2 Lakhs monthly simply to buy the exact same goods."
       }
     ],
     faqs: [
-      { question: "How do I protect my wealth from inflation?", answer: "To prevent purchasing power loss, store savings in capital-appreciating assets like equities, equity mutual funds, or real estate rather than bank accounts, since cash drag underperforms inflation." }
+      { question: "How do I protect my wealth from inflation?", answer: "To prevent purchasing power loss, store savings in capital-appreciating assets like equities, equity mutual funds, or real estate rather than bank accounts, since cash drag underperforms inflation." },
+      { question: "How do I calculate future inflation impact on savings?", answer: "Use our inflation calculator by inputting your current monthly costs, average expected inflation rate, and years in the future to see your purchasing power decay." }
     ]
   },
   {
@@ -124,8 +126,8 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     name: "Financial Freedom Calculator",
     category: "Lifestyle",
     description: "Determine your financial freedom score based on assets and Safe Withdrawal Rates.",
-    seoTitle: "Financial Freedom Calculator - Safe Withdrawal Rate | WealthMaze",
-    seoDescription: "Calculate your financial freedom score. Find if your passive investment income can support your current lifestyle using WealthMaze.",
+    seoTitle: "Financial Freedom Calculator – Calculate SWR Score",
+    seoDescription: "Calculate your financial freedom score. Find if your passive investment income can support your current lifestyle and determine safe withdrawal rates.",
     inputs: [
       { id: "totalCorpus", label: "Total Financial Assets / Net Worth", type: "slider", min: 100000, max: 100000000, step: 100000, default: 12000000, unit: "₹" },
       { id: "monthlyExpenses", label: "Monthly Living Expenses", type: "slider", min: 5000, max: 500000, step: 5000, default: 50000, unit: "₹" },
@@ -157,12 +159,13 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is Financial Freedom?",
-        content: "Financial freedom means having enough passive income (from investments, real estate dividends, or retirement funds) to pay all your living expenses without being actively employed. A Financial Freedom Score of 100% indicates that your investment assets yield enough money under a Safe Withdrawal Rate (like 4%) to sustain your lifestyle indefinitely."
+        title: "Steps to Achieving Financial Freedom",
+        content: "Our Financial Freedom Calculator estimates when you can stop working. Financial freedom means having enough passive income (from investments, real estate dividends, or retirement funds) to pay all your living expenses without being actively employed. A Financial Freedom Score of 100% indicates that your investment assets yield enough money under a Safe Withdrawal Rate (like 4%) to sustain your lifestyle indefinitely."
       }
     ],
     faqs: [
-      { question: "Is the 4% Safe Withdrawal Rate applicable in India?", answer: "Yes, though India has higher inflation than western markets, it also offers higher nominal yields. Many financial planners suggest a SWR of 3% to 3.5% for Indian portfolios to build a safer buffer." }
+      { question: "Is the 4% Safe Withdrawal Rate applicable in India?", answer: "Yes, though India has higher inflation than western markets, it also offers higher nominal yields. Many financial planners suggest a SWR of 3% to 3.5% for Indian portfolios to build a safer buffer." },
+      { question: "How do I determine my financial freedom score?", answer: "Enter your total financial assets, monthly living expenses, and expected safe withdrawal rate into our calculator to check if your passive income covers expenses." }
     ]
   }
 ];

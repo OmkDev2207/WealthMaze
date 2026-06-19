@@ -43,32 +43,32 @@ export const siteConfig = {
       description: "Read expert articles on mutual fund SIPs, loan EMIs, tax saving, personal budgeting rules, and wealth creation.",
     },
     sip: {
-      title: "SIP Calculator - Calculate Mutual Fund SIP Returns | WealthMaze",
-      description: "Calculate the future value of your Systematic Investment Plan (SIP) investments. Plan your monthly mutual fund investments with our free SIP calculator.",
+      title: "SIP Calculator – Calculate Mutual Fund Returns Online",
+      description: "Use the WealthMaze SIP Calculator to calculate mutual fund returns, systematic investment plan growth, and future compounding wealth corpus instantly.",
     },
     emi: {
-      title: "EMI Calculator - Calculate Loan EMIs & Interest | WealthMaze",
-      description: "Calculate your loan Equated Monthly Installments (EMI). View loan amortization schedule, principal, and interest splits with WealthMaze.",
+      title: "EMI Calculator – Calculate Loan EMI and Interest Online",
+      description: "Use our free EMI calculator to calculate loan Equated Monthly Installments, view interest schedules, and plan home or personal loan prepayments.",
     },
     tax: {
-      title: "Income Tax Calculator - Compare Old vs New Slabs | WealthMaze",
-      description: "Calculate your income tax liability and compare the old vs new tax regimes. Easy tax slab calculations on WealthMaze.",
+      title: "Income Tax Calculator – Compare Global Slabs Instantly",
+      description: "Use our free income tax calculator to compare tax regimes, estimate annual salary tax liability, and calculate capital gains tax rates online.",
     },
     retirement: {
-      title: "Retirement Calculator - Plan Your Retirement Savings | WealthMaze",
-      description: "Estimate the corpus needed for your retirement. Calculate early retirement targets and FIRE numbers with our free retirement tool.",
+      title: "Retirement Calculator – Plan Savings and FIRE Target",
+      description: "Estimate your target retirement savings corpus. Calculate monthly investment targets and FIRE numbers with our free retirement planning tool.",
     },
     mutualFund: {
-      title: "Mutual Fund Return Calculator - Estimate Gains | WealthMaze",
-      description: "Calculate absolute, CAGR, and future returns on your mutual fund investments for lumpsum and SIP strategies.",
+      title: "Mutual Fund Return Calculator – Estimate Growth Online",
+      description: "Use our mutual fund return calculator to project compound growth, estimate lumpsum returns, and plan monthly systematic investments instantly.",
     },
     cagr: {
-      title: "CAGR Calculator - Calculate Annual Growth Rate | WealthMaze",
-      description: "Calculate the Compound Annual Growth Rate (CAGR) of your stocks, mutual funds, and mutual fund investments quickly.",
+      title: "CAGR Calculator – Calculate Annual Growth Rate Online",
+      description: "Calculate the Compound Annual Growth Rate of stocks, mutual funds, or portfolios. Find the annualized growth rate of investments on WealthMaze.",
     },
     goal: {
-      title: "Goal Calculator - Plan Savings for Life Goals | WealthMaze",
-      description: "Plan how much you need to save monthly to buy a house, buy a car, or build a wealth fund with our free goal planner.",
+      title: "Goal Calculator – Calculate Savings for Financial Goals",
+      description: "Calculate how much you need to save monthly to reach your financial goals. Plan house, car, or emergency fund investments with WealthMaze.",
     }
   }
 };

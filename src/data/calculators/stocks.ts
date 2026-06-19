@@ -1,4 +1,4 @@
-import { CalculatorConfig, CalculatorResult } from "./types";
+import { CalculatorConfig } from "./types";
 
 export const stocksCalculators: CalculatorConfig[] = [
   {
@@ -6,8 +6,8 @@ export const stocksCalculators: CalculatorConfig[] = [
     name: "Stock Return Calculator",
     category: "Stock Market",
     description: "Calculate capital gains and total returns from buying and selling stocks, including dividends.",
-    seoTitle: "Stock Return Calculator - Capital Gains & ROI | WealthMaze",
-    seoDescription: "Calculate gains, returns, and ROI on stocks you bought and sold. Account for brokerage fees, dividend payments, and taxes with WealthMaze.",
+    seoTitle: "Stock Return Calculator – Calculate Capital Gains",
+    seoDescription: "Calculate gains, returns, and ROI on stocks you bought and sold. Account for brokerage fees, dividend payments, and taxes with our stock return calculator.",
     inputs: [
       { id: "buyPrice", label: "Buy Price per Share", type: "number", default: 150, unit: "₹" },
       { id: "sellPrice", label: "Sell Price per Share", type: "number", default: 220, unit: "₹" },
@@ -50,12 +50,13 @@ export const stocksCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "How to Compute Stock Returns?",
-        content: "Calculating returns from stock trading is not limited to subtracting buy price from sell price. A comprehensive calculation accounts for:\n1. **Purchase Costs**: Buy price times number of shares, plus buy brokerage.\n2. **Capital Gains**: Sell price minus buy price, times quantity.\n3. **Dividends**: Dividends paid by the corporation during the holding duration.\n4. **Selling Costs**: Sell brokerage and taxes."
+        title: "How to Compute Stock Returns and Capital Gains",
+        content: "Our Stock Return Calculator estimates your total capital gains and profits. Calculating returns from stock trading is not limited to subtracting buy price from sell price. A comprehensive calculation accounts for:\n1. **Purchase Costs**: Buy price times number of shares, plus buy brokerage.\n2. **Capital Gains**: Sell price minus buy price, times quantity.\n3. **Dividends**: Dividends paid by the corporation during the holding duration.\n4. **Selling Costs**: Sell brokerage and taxes."
       }
     ],
     faqs: [
-      { question: "What is the difference between ROI and CAGR in stocks?", answer: "ROI is the absolute return on the stock trade regardless of how long it took. CAGR is the annualized return, which shows how fast your capital grew per year. A 50% ROI over 5 years is a ~8.4% CAGR." }
+      { question: "What is the difference between ROI and CAGR in stocks?", answer: "ROI is the absolute return on the stock trade regardless of how long it took. CAGR is the annualized return, which shows how fast your capital grew per year. A 50% ROI over 5 years is a ~8.4% CAGR." },
+      { question: "How do I calculate stock return ROI online?", answer: "Enter your share purchase price, sale price, number of shares, dividend payouts, and transaction fees into our stock return calculator to view net ROI." }
     ]
   },
   {
@@ -63,8 +64,8 @@ export const stocksCalculators: CalculatorConfig[] = [
     name: "Portfolio Return Calculator",
     category: "Stock Market",
     description: "Calculate the weighted average return of a stock and asset portfolio.",
-    seoTitle: "Portfolio Return Calculator - Weighted Average Returns | WealthMaze",
-    seoDescription: "Calculate your overall portfolio return. Enter weights and returns for multiple stocks or assets to find your aggregate returns with WealthMaze.",
+    seoTitle: "Portfolio Return Calculator – Calculate Weighted ROI",
+    seoDescription: "Calculate your overall portfolio return. Enter weights and returns for multiple stocks or assets to find your aggregate weighted returns online.",
     inputs: [
       { id: "asset1Weight", label: "Asset 1 Weight (%)", type: "slider", min: 0, max: 100, step: 5, default: 40, unit: "%" },
       { id: "asset1Return", label: "Asset 1 Expected Return", type: "slider", min: -20, max: 40, step: 0.5, default: 15, unit: "%" },
@@ -100,12 +101,13 @@ export const stocksCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Calculating Portfolio Returns",
-        content: "A portfolio is rarely comprised of a single asset. To calculate your aggregate portfolio return, you cannot take a simple average of the individual returns unless you hold equal values in each asset. Instead, you must calculate a weighted average, where each asset's return is multiplied by its proportion (weight) in the overall portfolio."
+        title: "How Portfolio Return Calculations Work",
+        content: "Our Portfolio Return Calculator determines your weighted average return. A portfolio is rarely comprised of a single asset. To calculate your aggregate portfolio return, you cannot take a simple average of the individual returns unless you hold equal values in each asset. Instead, you must calculate a weighted average, where each asset's return is multiplied by its proportion (weight) in the overall portfolio."
       }
     ],
     faqs: [
-      { question: "Why must weights sum to 100%?", answer: "Weights represent the percentage distribution of your capital. The calculator normalizes the inputs so that they represent proportions of whatever total capital is allocated." }
+      { question: "Why must weights sum to 100%?", answer: "Weights represent the percentage distribution of your capital. The calculator normalizes the inputs so that they represent proportions of whatever total capital is allocated." },
+      { question: "How do I calculate weighted portfolio return?", answer: "Input the capital weights and expected returns for each asset category in your portfolio to calculate the aggregate weighted portfolio return." }
     ]
   },
   {
@@ -113,8 +115,8 @@ export const stocksCalculators: CalculatorConfig[] = [
     name: "Dividend Yield Calculator",
     category: "Stock Market",
     description: "Determine the dividend yield percentage of a stock based on share price and annual payouts.",
-    seoTitle: "Dividend Yield Calculator - Calculate Dividend Income | WealthMaze",
-    seoDescription: "Calculate the dividend yield of any dividend-paying stock. Compare dividend income yields with stock prices using WealthMaze.",
+    seoTitle: "Dividend Yield Calculator – Calculate Dividend Yield",
+    seoDescription: "Calculate the dividend yield of any dividend-paying stock. Compare dividend income yields with current stock prices easily with our yield calculator.",
     inputs: [
       { id: "sharePrice", label: "Current Share Price", type: "number", default: 350, unit: "₹" },
       { id: "dividendPerShare", label: "Annual Dividend per Share", type: "number", default: 14, unit: "₹" },
@@ -140,12 +142,13 @@ export const stocksCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Understanding Dividend Yield",
-        content: "Dividend yield is a financial ratio that shows how much a company pays out in dividends each year relative to its stock price. It is expressed as a percentage and can be calculated by dividing the annual dividend per share by the current price per share. It represents the passive cash flow return on investment from holding a stock."
+        title: "Understanding Dividend Yield and Passive Income",
+        content: "Our Dividend Yield Calculator estimates your passive investment income. Dividend yield is a financial ratio that shows how much a company pays out in dividends each year relative to its stock price. It is expressed as a percentage and can be calculated by dividing the annual dividend per share by the current price per share. It represents the passive cash flow return on investment from holding a stock."
       }
     ],
     faqs: [
-      { question: "Is a high dividend yield always good?", answer: "Not necessarily. Sometimes a high dividend yield is a result of a falling stock price (a 'dividend trap'), which could signal that the company is in financial distress and might cut its dividend in the future." }
+      { question: "Is a high dividend yield always good?", answer: "Not necessarily. Sometimes a high dividend yield is a result of a falling stock price (a 'dividend trap'), which could signal that the company is in financial distress and might cut its dividend in the future." },
+      { question: "How do I calculate dividend yield online?", answer: "Enter the current share price and annual dividend per share into our dividend yield calculator to instantly check the percentage dividend return." }
     ]
   },
   {
@@ -153,8 +156,8 @@ export const stocksCalculators: CalculatorConfig[] = [
     name: "Position Size Calculator",
     category: "Stock Market",
     description: "Determine the ideal number of shares to purchase to manage trading risk.",
-    seoTitle: "Position Size Calculator - Manage Stock Trading Risk | WealthMaze",
-    seoDescription: "Calculate the exact number of shares to buy per trade. Manage risk by setting account stop loss percentages using WealthMaze.",
+    seoTitle: "Position Size Calculator – Calculate Trading Size",
+    seoDescription: "Calculate the exact number of shares to buy per trade. Manage trading risk by setting account size and stop loss levels with our size calculator.",
     inputs: [
       { id: "accountSize", label: "Total Account Capital", type: "number", default: 200000, unit: "₹" },
       { id: "riskPercent", label: "Account Risk Limit per Trade", type: "slider", min: 0.5, max: 10, step: 0.5, default: 2, unit: "%" },
@@ -190,12 +193,13 @@ export const stocksCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Introduction to Position Sizing",
-        content: "Position sizing is the most critical element of risk management in stock trading. It determines how many units/shares you should buy based on the size of your trading account and your stop-loss level. Following a strict position sizing model prevents a single bad trade from wiping out a significant portion of your capital."
+        title: "Benefits of Position Sizing and Risk Control",
+        content: "Our Position Size Calculator manages your capital risk per trade. Position sizing is the most critical element of risk management in stock trading. It determines how many units/shares you should buy based on the size of your trading account and your stop-loss level. Following a strict position sizing model prevents a single bad trade from wiping out a significant portion of your capital."
       }
     ],
     faqs: [
-      { question: "What is the 2% risk rule?", answer: "The 2% risk rule states that you should never risk more than 2% of your total trading capital on any single trade. If your stop loss is hit, you only lose 2% of your capital, preserving the rest to fight another day." }
+      { question: "What is the 2% risk rule?", answer: "The 2% risk rule states that you should never risk more than 2% of your total trading capital on any single trade. If your stop loss is hit, you only lose 2% of your capital, preserving the rest to fight another day." },
+      { question: "How does a position size calculator work?", answer: "The position size calculator uses your total account capital, risk percentage limit per trade, entry price, and stop loss level to determine the ideal share count to buy." }
     ]
   }
 ];

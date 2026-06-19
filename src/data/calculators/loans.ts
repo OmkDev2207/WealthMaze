@@ -6,8 +6,8 @@ export const loansCalculators: CalculatorConfig[] = [
     name: "EMI Calculator",
     category: "Loans",
     description: "Calculate Equated Monthly Installment (EMI) and total interest for home, car, or personal loans.",
-    seoTitle: "EMI Calculator - Calculate Loan EMIs & Interest | WealthMaze",
-    seoDescription: "Calculate your loan Equated Monthly Installments (EMI). View loan amortization schedule, principal, and interest splits with WealthMaze.",
+    seoTitle: "EMI Calculator – Calculate Loan EMI and Interest Online",
+    seoDescription: "Use our free EMI calculator to calculate loan Equated Monthly Installments, view interest schedules, and plan home or personal loan prepayments.",
     inputs: [
       { id: "loanAmount", label: "Loan Amount", type: "slider", min: 10000, max: 20000000, step: 10000, default: 2000000, unit: "₹" },
       { id: "interestRate", label: "Interest Rate (p.a.)", type: "slider", min: 5, max: 25, step: 0.1, default: 8.5, unit: "%" },
@@ -73,12 +73,13 @@ export const loansCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is an Equated Monthly Installment (EMI)?",
-        content: "An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are applied to both interest and principal each month, so that over a specified number of years, the loan is fully paid off. In the early stages, the interest component forms the bulk of the payment; over time, the principal share increases."
+        title: "How EMIs Are Calculated for Loans",
+        content: "Our EMI Calculator simplifies loan tracking and budgeting. An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are applied to both interest and principal each month, so that over a specified number of years, the loan is fully paid off. In the early stages, the interest component forms the bulk of the payment; over time, the principal share increases."
       }
     ],
     faqs: [
-      { question: "How does the interest rate affect my loan EMI?", answer: "A higher interest rate increases both your monthly EMI and the total interest payable. For example, a ₹20 Lakh loan at 8.5% for 15 years has an EMI of ~₹19,695, but at 10%, the EMI jumps to ~₹21,494." }
+      { question: "How does the interest rate affect my loan EMI?", answer: "A higher interest rate increases both your monthly EMI and the total interest payable. For example, a ₹20 Lakh loan at 8.5% for 15 years has an EMI of ~₹19,695, but at 10%, the EMI jumps to ~₹21,494." },
+      { question: "How do I calculate loan EMI online?", answer: "Enter your loan principal amount, annual interest rate, and tenure into our free online EMI calculator to instantly view your monthly payment." }
     ]
   },
   {
@@ -86,8 +87,8 @@ export const loansCalculators: CalculatorConfig[] = [
     name: "Loan Prepayment Calculator",
     category: "Loans",
     description: "Calculate how much interest you can save and how early you can close your loan by making prepayments.",
-    seoTitle: "Loan Prepayment Calculator - Save Loan Interest | WealthMaze",
-    seoDescription: "Calculate interest savings and tenure reduction by prepaying your home loan or personal loan. Easy-to-use loan prepayment tool by WealthMaze.",
+    seoTitle: "Loan Prepayment Calculator – Calculate Interest Savings",
+    seoDescription: "Calculate interest savings and tenure reduction by prepaying your home loan or personal loan. Optimize interest costs with our prepayment calculator.",
     inputs: [
       { id: "loanAmount", label: "Current Outstanding Loan", type: "slider", min: 100000, max: 20000000, step: 50000, default: 3000000, unit: "₹" },
       { id: "interestRate", label: "Interest Rate (p.a.)", type: "slider", min: 5, max: 25, step: 0.1, default: 8.5, unit: "%" },
@@ -160,12 +161,13 @@ export const loansCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "How Loan Prepayment Saves Money",
-        content: "When you make a prepayment towards a loan, the entire prepaid amount goes directly to reducing your outstanding **Principal Balance**. Since interest is calculated as a percentage of the outstanding principal, a lower principal means less interest accumulates monthly. Consequently, your loan can be closed much earlier, saving thousands in finance charges."
+        title: "Benefits of Loan Prepayment Planning",
+        content: "Use the Loan Prepayment Calculator to estimate your total savings. When you make a prepayment towards a loan, the entire prepaid amount goes directly to reducing your outstanding Principal Balance. Since interest is calculated as a percentage of the outstanding principal, a lower principal means less interest accumulates monthly. Consequently, your loan can be closed much earlier, saving thousands in finance charges."
       }
     ],
     faqs: [
-      { question: "Are there penalties for home loan prepayment?", answer: "Under RBI rules in India, banks are not allowed to charge prepayment penalties on floating-rate home loans. For fixed-rate loans or personal loans, lenders may charge a 2-4% prepayment fee." }
+      { question: "Are there penalties for home loan prepayment?", answer: "Under RBI rules in India, banks are not allowed to charge prepayment penalties on floating-rate home loans. For fixed-rate loans or personal loans, lenders may charge a 2-4% prepayment fee." },
+      { question: "How do I calculate home loan prepayment savings?", answer: "Input your outstanding loan principal, interest rate, remaining tenure, and the prepayment amount into our prepayment calculator to see your savings." }
     ]
   },
   {
@@ -173,8 +175,8 @@ export const loansCalculators: CalculatorConfig[] = [
     name: "Loan Comparison Calculator",
     category: "Loans",
     description: "Compare two loan scenarios side-by-side to analyze differences in interest rate, principal amount, or tenure.",
-    seoTitle: "Loan Comparison Calculator - Compare Loan EMIs Side-by-Side | WealthMaze",
-    seoDescription: "Compare two loan offers side-by-side. Calculate how differences in principal, interest rates, or tenure affect your monthly EMI and total interest payable.",
+    seoTitle: "Loan Comparison Calculator – Compare EMIs Side-by-Side",
+    seoDescription: "Compare two loan offers side-by-side. Calculate how differences in principal, interest rates, or tenure affect your monthly EMI and total interest.",
     inputs: [
       { id: "loanAmountA", label: "Scenario A: Loan Amount", type: "slider", min: 100000, max: 20000000, step: 50000, default: 3000000, unit: "₹" },
       { id: "interestRateA", label: "Scenario A: Interest Rate (p.a.)", type: "slider", min: 5, max: 25, step: 0.1, default: 8.5, unit: "%" },
@@ -248,12 +250,13 @@ export const loansCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Comparing Home Loan Offers",
-        content: "When banks compete for your home loan, even a tiny 0.1% or 0.25% variance in interest rates can save you thousands or lakhs in cumulative interest payments over a 20-year timeline. Comparing offers lets you negotiate effectively and evaluate the benefit of changing loan terms or prepaying."
+        title: "How to Compare Loan Offers Effectively",
+        content: "Our Loan Comparison Calculator lets you compare two different loan offers. When banks compete for your home loan, even a tiny 0.1% or 0.25% variance in interest rates can save you thousands or lakhs in cumulative interest payments over a 20-year timeline. Comparing offers lets you negotiate effectively and evaluate the benefit of changing loan terms or prepaying."
       }
     ],
     faqs: [
-      { question: "Is a lower EMI always better?", answer: "Not necessarily. A lower EMI achieved by extending the loan tenure (e.g. 15 to 20 years) results in a much higher total interest burden. Always compare both the EMI and the total interest payable." }
+      { question: "Is a lower EMI always better?", answer: "Not necessarily. A lower EMI achieved by extending the loan tenure (e.g. 15 to 20 years) results in a much higher total interest burden. Always compare both the EMI and the total interest payable." },
+      { question: "How do I compare two loans side-by-side?", answer: "Enter the principal, interest rates, and tenures for both loan offers into the comparison calculator to instantly see differences in EMIs and total interest." }
     ]
   },
   {
@@ -261,10 +264,10 @@ export const loansCalculators: CalculatorConfig[] = [
     name: "Personal Loan EMI Calculator",
     category: "Loans",
     description: "Calculate your personal loan EMI, total interest, and repayment timeline.",
-    seoTitle: "Personal Loan EMI Calculator - Free Loan Planning Tool | WealthMaze",
-    seoDescription: "Calculate your Personal Loan EMI, total interest payable, and view the amortization split. Plan your monthly personal loan budget with WealthMaze.",
+    seoTitle: "Personal Loan EMI Calculator – Calculate EMIs Instantly",
+    seoDescription: "Calculate your personal loan EMI and total interest payable. Plan your monthly personal loan budget and view the full amortization split instantly.",
     inputs: [
-      { id: "loanAmount", label: "Personal Loan Amount", type: "slider", min: 10000, max: 2500000, step: 5000, default: 500000, unit: "₹" },
+      { id: "loanAmount", label: "Personal Loan Amount", type: "slider", min: 10000, max: 2500005, step: 5000, default: 500000, unit: "₹" },
       { id: "interestRate", label: "Interest Rate (p.a.)", type: "slider", min: 5, max: 30, step: 0.1, default: 12, unit: "%" },
       { id: "tenure", label: "Loan Tenure (in Years)", type: "slider", min: 1, max: 7, step: 1, default: 5, unit: "Yr" },
     ],
@@ -337,8 +340,8 @@ export const loansCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Understanding Personal Loan EMIs",
-        content: "A Personal Loan is an unsecured form of credit, which means you do not need to pledge any collateral (like property or gold) to secure the funding. Because of the higher risk for the lender, personal loan interest rates are typically higher (ranging from 10.5% to 24%+ depending on your credit score and salary) and tenures are shorter (generally 1 to 7 years)."
+        title: "Benefits of Unsecured Personal Loans",
+        content: "Use our Personal Loan EMI Calculator to determine your monthly repayments. A Personal Loan is an unsecured form of credit, which means you do not need to pledge any collateral (like property or gold) to secure the funding. Because of the higher risk for the lender, personal loan interest rates are typically higher (ranging from 10.5% to 24%+ depending on your credit score and salary) and tenures are shorter (generally 1 to 7 years)."
       },
       {
         title: "How Tenure Affects Your Monthly and Lifetime Outflows",
@@ -347,8 +350,8 @@ export const loansCalculators: CalculatorConfig[] = [
     ],
     faqs: [
       { question: "What factors determine my personal loan interest rate?", answer: "Lenders decide your interest rate based on your credit score (CIBIL score), monthly income, employment status, employer profile, and your existing debt-to-income ratio." },
-      { question: "Can I prepay or close my personal loan early?", answer: "Yes, most banks allow prepayment or foreclosure after a lock-in period (usually 6 to 12 EMIs). However, unlike home loans, personal loans may attract foreclosure fees of 2% to 4% of the outstanding principal balance." }
+      { question: "Can I prepay or close my personal loan early?", answer: "Yes, most banks allow prepayment or foreclosure after a lock-in period (usually 6 to 12 EMIs). However, unlike home loans, personal loans may attract foreclosure fees of 2% to 4% of the outstanding principal balance." },
+      { question: "How does the personal loan EMI calculator work?", answer: "The personal loan EMI calculator uses your principal loan amount, interest rate, and tenure to calculate the exact monthly payment and total interest cost." }
     ]
   }
 ];
-

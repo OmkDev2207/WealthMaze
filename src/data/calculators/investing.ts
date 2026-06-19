@@ -15,8 +15,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "SIP Calculator",
     category: "Investing",
     description: "Calculate the future value of your Systematic Investment Plan (SIP) investments.",
-    seoTitle: "SIP Calculator - Calculate Mutual Fund SIP Returns | WealthMaze",
-    seoDescription: "Calculate the future value of your Systematic Investment Plan (SIP) investments. Plan your monthly mutual fund investments with WealthMaze's free SIP calculator.",
+    seoTitle: "SIP Calculator – Calculate Mutual Fund Returns Online",
+    seoDescription: "Use the WealthMaze SIP Calculator to calculate mutual fund returns, systematic investment plan growth, and future compounding wealth corpus instantly.",
     inputs: [
       { id: "monthlyInvestment", label: "Monthly Investment", type: "slider", min: 500, max: 1000000, step: 500, default: 25000, unit: "₹" },
       { id: "expectedReturn", label: "Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
@@ -35,7 +35,6 @@ export const investingCalculators: CalculatorConfig[] = [
       const i = r / (12 * 100);
       const n = t * 12;
 
-      // FV = P * [((1 + i)^n - 1) / i] * (1 + i)
       const totalValue = p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
       const investedAmount = p * n;
       const estReturns = totalValue - investedAmount;
@@ -56,10 +55,9 @@ export const investingCalculators: CalculatorConfig[] = [
         });
       }
 
-      // Dynamic comparison data: Standard SIP vs Lumpsum vs Savings Account
       const lumpsumEquivalent = investedAmount;
       const lumpsumValue = lumpsumEquivalent * Math.pow(1 + r / 100, t);
-      const savingsValue = investedAmount * Math.pow(1 + 4 / 100, t); // 4% savings rate
+      const savingsValue = investedAmount * Math.pow(1 + 4 / 100, t);
 
       return {
         values: { investedAmount, estReturns, totalValue },
@@ -77,26 +75,27 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Understanding Systematic Investment Plans (SIP)",
-        content: "A Systematic Investment Plan (SIP) is an investment vehicle offered by mutual funds, allowing investors to invest a fixed amount regularly (monthly, quarterly) rather than a lump sum. This builds discipline, automates savings, and reduces the hassle of timing the market. SIP leverages two major financial tenets: Rupee Cost Averaging and Compounding."
+        title: "Benefits of Systematic Investment Plans (SIP)",
+        content: "Use our Systematic Investment Plan (SIP) Calculator to estimate mutual fund growth. A Systematic Investment Plan (SIP) is an investment vehicle offered by mutual funds, allowing investors to invest a fixed amount regularly (monthly, quarterly) rather than a lump sum. This builds discipline, automates savings, and reduces market timing hassles."
       },
       {
-        title: "How Does a SIP Calculator Work?",
+        title: "How Does a SIP Calculator calculate returns?",
         content: "The SIP calculator uses the future value of an annuity formula to compute returns. The compound interest is calculated on a monthly frequency because investments occur monthly. The math is governed by the formula:\n\n**FV = P x [ ((1 + i)^n - 1) / i ] x (1 + i)**\n\nWhere:\n- **FV** = Future Value (the terminal maturity value)\n- **P** = Monthly Investment amount\n- **i** = Monthly interest rate (annual expected return / 12 / 100)\n- **n** = Number of monthly payments (duration in years * 12)\n\nThis calculator automates this calculation instantly, saving you from complex calculations and potential manual errors."
       },
       {
-        title: "The Power of Rupee Cost Averaging",
+        title: "The Power of Rupee Cost Averaging in Stock Market",
         content: "When markets are volatile, a fixed monthly investment buys fewer units when prices are high and more units when prices are low. Over the long term, this averages out the cost of acquisition per unit of mutual funds, reducing the risk of investing a large sum at a market peak. Consequently, investors don't need to try and time market bottoms and tops, which is notoriously difficult to execute consistently."
       },
       {
-        title: "Compounding: The Eighth Wonder of the World",
+        title: "How Compounding Accelerates Investment Plans",
         content: "Compound interest is the practice of earning interest on your accumulated interest. As your mutual fund investment earns dividends or capital gains, those gains are reinvested back into the fund to buy more units, which then earn further gains. In the early years of a SIP, the growth might appear slow. However, in years 10, 15, or 20, the compounding curve bends upwards steeply. A SIP of ₹10,000 monthly for 10 years at 12% results in ~₹23 Lakhs, but letting it compound for 20 years results in ~₹1 Crore! Time in the market is significantly more crucial than timing the market."
       }
     ],
     faqs: [
-      { question: "What is the minimum amount I can invest via SIP?", answer: "Many mutual funds allow SIPs to start with as low as ₹100 or ₹500 per month, making it accessible for beginners." },
-      { question: "Can I pause or stop a SIP at any time?", answer: "Yes, mutual fund SIPs are highly flexible. You can pause or stop your SIP without penalty, and the accumulated units remain invested." },
-      { question: "Is SIP return guaranteed?", answer: "No. Mutual fund returns depend on market performance. The expected return rate is for illustrative estimation; historical averages for equity SIPs over 10+ years typically range between 12% and 15%." }
+      { question: "What is a SIP calculator?", answer: "A SIP calculator is a free online financial tool that helps you calculate the future value of your regular monthly mutual fund investments based on expected annual return rates." },
+      { question: "How does a SIP calculator calculate returns?", answer: "It uses the future value of an annuity formula, compounding monthly returns on your periodic savings over the selected holding duration." },
+      { question: "Can I calculate SIP maturity amount online?", answer: "Yes, by entering your monthly savings budget, expected yield, and investment tenure, you can estimate your total maturity corpus instantly." },
+      { question: "What is the best SIP investment plan?", answer: "The best SIP investment plan depends on your financial goals, risk profile, and investment horizon. Diversified equity mutual funds are generally recommended for long-term horizons of 5 to 10+ years." }
     ]
   },
   {
@@ -104,8 +103,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "Lumpsum Calculator",
     category: "Investing",
     description: "Calculate the future value of a one-time lumpsum investment.",
-    seoTitle: "Lumpsum Calculator - Calculate Compound Interest Returns | WealthMaze",
-    seoDescription: "Calculate returns on your one-time lumpsum investments. Estimate the maturity value of mutual funds, equities, and fixed investments using WealthMaze.",
+    seoTitle: "Lumpsum Calculator – Calculate Compound Interest Returns",
+    seoDescription: "Calculate returns on your one-time lumpsum investments. Estimate maturity values of mutual funds, equities, and fixed investments using our calculator.",
     inputs: [
       { id: "lumpsumAmount", label: "Lumpsum Investment", type: "slider", min: 5000, max: 10000000, step: 5000, default: 100000, unit: "₹" },
       { id: "expectedReturn", label: "Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
@@ -121,7 +120,6 @@ export const investingCalculators: CalculatorConfig[] = [
       const r = inputs.expectedReturn;
       const t = inputs.timePeriod;
 
-      // FV = PV * (1 + r/100)^t
       const totalValue = pv * Math.pow(1 + r / 100, t);
       const investedAmount = pv;
       const estReturns = totalValue - investedAmount;
@@ -136,7 +134,6 @@ export const investingCalculators: CalculatorConfig[] = [
         });
       }
 
-      // Comparison: Lumpsum vs Fixed Deposit (6% p.a.) vs inflation adjusted purchasing power (6% inflation)
       const fdValue = pv * Math.pow(1 + 6 / 100, t);
       const inflationAdjusted = totalValue / Math.pow(1 + 6 / 100, t);
 
@@ -155,21 +152,21 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is a Lumpsum Investment?",
-        content: "A Lumpsum investment is a single, one-off transaction where a large sum of cash is committed to an investment instrument (such as mutual funds, stocks, real estate, or gold) all at once, rather than spreading it over time like a SIP. It is common for investors who receive a sudden windfall, inheritance, bonus, or proceeds from property sales."
+        title: "Understanding Lumpsum Investment Plans",
+        content: "Our Lumpsum Calculator projects the future value of one-time investments. A Lumpsum investment is a single, one-off transaction where a large sum of cash is committed to an investment instrument (such as mutual funds, stocks, real estate, or gold) all at once, rather than spreading it over time like a SIP. It is common for windfalls, bonuses, or property proceeds."
       },
       {
-        title: "How to Compute Lumpsum Returns?",
+        title: "How to calculate Lumpsum returns with compound interest?",
         content: "The Lumpsum Calculator uses the classic compound interest formula to estimate future value:\n\n**FV = PV x (1 + r)^t**\n\nWhere:\n- **FV** = Future Value of the investment\n- **PV** = Present Value (initial lumpsum amount)\n- **r** = Annual return rate (entered as decimal, e.g., 12% = 0.12)\n- **t** = Time period in years\n\nThis simple compounding logic shows the dramatic power of compounding over long durations when money is left untouched."
       },
       {
-        title: "SIP vs. Lumpsum: Which is Better?",
+        title: "SIP vs Lumpsum Investment Plan Comparison",
         content: "Neither is universally superior; the choice depends on market conditions and your cash availability. Lumpsum investing yields higher returns in a bull market because all your money compounds for the entire duration. However, it exposes you to high risk if you invest just before a market crash. SIP mitigates this risk by purchasing units throughout market fluctuations, making it ideal for regular earners, whereas Lumpsum is suited for experienced investors with a lump sum looking for long-term horizons."
       }
     ],
     faqs: [
       { question: "When is the best time to make a lumpsum investment?", answer: "Historically, the best time to invest is when you have the funds available. For equity mutual funds, buying during market corrections or bear runs can improve long-term returns, though market timing is secondary to long investment horizons." },
-      { question: "How does inflation affect my lumpsum returns?", answer: "Inflation reduces the purchasing power of your money over time. If your investment earns 12% but inflation is 6%, your real rate of return is approximately 6%. Hence, investing in assets that beat inflation is key." }
+      { question: "How do I calculate lumpsum compound returns?", answer: "Use our lumpsum calculator to project compounding returns by entering your initial deposit, expected return rate, and investment horizon." }
     ]
   },
   {
@@ -177,8 +174,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "Mutual Fund Return Calculator",
     category: "Investing",
     description: "Calculate expected returns on mutual funds for combined lumpsum and SIP investments.",
-    seoTitle: "Mutual Fund Return Calculator - Estimate MF Growth | WealthMaze",
-    seoDescription: "Estimate returns on your equity or debt mutual fund investments. Calculate compound growth for both one-time lumpsum and monthly SIPs.",
+    seoTitle: "Mutual Fund Return Calculator – Estimate Growth Online",
+    seoDescription: "Use our mutual fund return calculator to project compound growth, estimate lumpsum returns, and plan monthly systematic investments instantly.",
     inputs: [
       { id: "lumpsumAmount", label: "Initial Lumpsum Investment", type: "slider", min: 0, max: 10000000, step: 5000, default: 50000, unit: "₹" },
       { id: "monthlySIP", label: "Monthly SIP Contribution", type: "slider", min: 0, max: 500000, step: 500, default: 5000, unit: "₹" },
@@ -199,9 +196,7 @@ export const investingCalculators: CalculatorConfig[] = [
       const i = r / (12 * 100);
       const n = t * 12;
 
-      // Calculate Lumpsum portion: FV_l = PV * (1 + r/100)^t
       const lumpsumFV = lumpsum * Math.pow(1 + r / 100, t);
-      // Calculate SIP portion: FV_s = P * [((1 + i)^n - 1) / i] * (1 + i)
       const sipFV = sip > 0 ? sip * ((Math.pow(1 + i, n) - 1) / i) * (1 + i) : 0;
 
       const totalValue = lumpsumFV + sipFV;
@@ -227,12 +222,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Understanding Mutual Fund Returns",
-        content: "Mutual fund schemes pool money from multiple investors to buy diversified assets like stocks, bonds, or corporate debt. Returns are driven by capital appreciation of the underlying holdings and dividends. They are represented by Net Asset Value (NAV). Since mutual funds do not offer a fixed return, performance is evaluated using annualized measures like CAGR or XIRR."
+        title: "How Mutual Fund Return Calculators estimate growth?",
+        content: "Our Mutual Fund Return Calculator projects compound growth for your portfolio. Mutual fund schemes pool money from multiple investors to buy diversified assets like stocks, bonds, or corporate debt. Returns are driven by capital appreciation of holdings and dividends. NAV represents the unit value of the fund."
       }
     ],
     faqs: [
-      { question: "What is the difference between Direct and Regular plans?", answer: "Direct plans have lower expense ratios because they do not involve broker commissions, leading to slightly higher returns (typically 0.5% to 1.5% more per year) than Regular plans." }
+      { question: "What is the difference between Direct and Regular plans?", answer: "Direct plans have lower expense ratios because they do not involve broker commissions, leading to slightly higher returns (typically 0.5% to 1.5% more per year) than Regular plans." },
+      { question: "How do I calculate mutual fund compounding returns?", answer: "Enter your lumpsum investment, regular monthly SIP contributions, expected return rate, and time period to estimate the future growth of your mutual fund portfolio." }
     ]
   },
   {
@@ -240,8 +236,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "CAGR Calculator",
     category: "Investing",
     description: "Calculate the Compound Annual Growth Rate (CAGR) of your investments over time.",
-    seoTitle: "CAGR Calculator - Compound Annual Growth Rate Calculator | WealthMaze",
-    seoDescription: "Calculate the CAGR of your stocks, mutual funds, or portfolio. Find the annualized growth rate of your assets with WealthMaze's CAGR calculator.",
+    seoTitle: "CAGR Calculator – Calculate Annual Growth Rate Online",
+    seoDescription: "Calculate the Compound Annual Growth Rate of stocks, mutual funds, or portfolios. Find the annualized growth rate of investments on WealthMaze.",
     inputs: [
       { id: "initialValue", label: "Initial Value of Investment", type: "number", default: 100000, unit: "₹" },
       { id: "finalValue", label: "Final Value of Investment", type: "number", default: 250000, unit: "₹" },
@@ -256,11 +252,9 @@ export const investingCalculators: CalculatorConfig[] = [
       const final = inputs.finalValue;
       const years = inputs.duration;
 
-      // CAGR = ((Final / Initial) ^ (1 / years)) - 1
       const cagrRate = (Math.pow(final / init, 1 / years) - 1) * 100;
       const absoluteGain = ((final - init) / init) * 100;
 
-      // Chart data: growth path over time at this CAGR
       const chartData = [];
       const cagrDecimal = cagrRate / 100;
       for (let yr = 0; yr <= Math.ceil(years); yr++) {
@@ -279,16 +273,17 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is Compound Annual Growth Rate (CAGR)?",
-        content: "CAGR represents the smoothed annualized rate at which an asset grows if it grows at a steady rate over a specified time period, assuming all profits are reinvested. It does not reflect actual volatile year-on-year returns but provides a standardized metric to compare the performance of different asset classes over identical time frames."
+        title: "Benefits of Compound Annual Growth Rate (CAGR)",
+        content: "Our CAGR Calculator calculates the Compound Annual Growth Rate of your portfolio. CAGR represents the smoothed annualized rate at which an asset grows if it grows at a steady rate over a specified time period, assuming all profits are reinvested. It provides a standardized metric to compare different assets."
       },
       {
-        title: "The CAGR Formula",
+        title: "How to calculate CAGR with the formula?",
         content: "CAGR is calculated mathematically as:\n\n**CAGR = ( Final Value / Initial Value )^(1 / t) - 1**\n\nWhere:\n- **Final Value** = Value at the end of the period\n- **Initial Value** = Initial investment amount\n- **t** = Number of years (can be fractional)\n\nUnlike simple returns, CAGR accounts for compounding, preventing distortions caused by volatile swings."
       }
     ],
     faqs: [
-      { question: "Why is CAGR better than Absolute Return?", answer: "Absolute return ignores the time value of money. An absolute return of 100% sounds great, but if it takes 15 years to achieve, it corresponds to a modest CAGR of only ~4.7%. CAGR normalizes growth per year." }
+      { question: "Why is CAGR better than Absolute Return?", answer: "Absolute return ignores the time value of money. An absolute return of 100% sounds great, but if it takes 15 years to achieve, it corresponds to a modest CAGR of only ~4.7%. CAGR normalizes growth per year." },
+      { question: "How do I calculate CAGR online?", answer: "Enter your initial purchase value, final sale value, and holding tenure in years into the CAGR calculator to see your annualized returns." }
     ]
   },
   {
@@ -296,8 +291,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "XIRR Calculator",
     category: "Investing",
     description: "Calculate the Extended Internal Rate of Return (XIRR) for irregular cash flows and investments.",
-    seoTitle: "XIRR Calculator - Calculate SIP and Portfolio Mutual Fund Returns | WealthMaze",
-    seoDescription: "Calculate your mutual fund and stock portfolio XIRR. Get an accurate annualized return for irregular buy and sell transactions using WealthMaze.",
+    seoTitle: "XIRR Calculator – Calculate SIP and Portfolio ROI Online",
+    seoDescription: "Calculate mutual fund and stock portfolio XIRR. Get an accurate annualized return for irregular buy and sell transaction dates with our calculator.",
     inputs: [
       { id: "flow0", label: "Initial Investment (Year 0)", type: "number", default: -100000, unit: "₹" },
       { id: "flow1", label: "Year 1 Cash Flow (Invested: negative, Received: positive)", type: "number", default: -12000, unit: "₹" },
@@ -318,11 +313,8 @@ export const investingCalculators: CalculatorConfig[] = [
         { amount: inputs.flow4, days: 1460 },
       ];
 
-      // Net Gain
       const netGain = flows.reduce((sum, f) => sum + f.amount, 0);
 
-      // Solve for XIRR using Secant Method
-      // NPV(r) = Sum( CF_k / (1 + r)^(t_k) ) where t_k = days_k / 365
       const npv = (r: number) => {
         return flows.reduce((sum, f) => {
           const t = f.days / 365;
@@ -330,9 +322,8 @@ export const investingCalculators: CalculatorConfig[] = [
         }, 0);
       };
 
-      // Secant solver
-      let r0 = 0.1; // initial guess 1
-      let r1 = 0.2; // initial guess 2
+      let r0 = 0.1;
+      let r1 = 0.2;
       let xirrRate = 0;
       let iterations = 0;
 
@@ -354,11 +345,9 @@ export const investingCalculators: CalculatorConfig[] = [
       }
 
       if (iterations >= 100) {
-        // Fallback simple rate if solver fails to converge
         xirrRate = 0;
       }
 
-      // Chart data: Net cumulative cash flows over time
       let cumulative = 0;
       const chartData = flows.map((f, idx) => {
         cumulative += f.amount;
@@ -376,12 +365,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is XIRR (Extended Internal Rate of Return)?",
-        content: "XIRR stands for Extended Internal Rate of Return. It is the metric used to calculate the annualized rate of return for a series of irregular cash flows occurring at various dates. In personal finance, since investors deposit and withdraw money at random intervals (SIP dates, lump sums, partial profit bookings, dividends), standard CAGR fails. XIRR provides the exact annualized rate of growth for such portfolio transactions."
+        title: "Benefits of XIRR Calculations for Portfolio Returns",
+        content: "Our XIRR Calculator handles irregular cash flows and deposits. XIRR stands for Extended Internal Rate of Return. It is the metric used to calculate the annualized rate of return for a series of irregular cash flows occurring at various dates. Since investors deposit and withdraw money at random intervals, XIRR provides the exact annualized growth."
       }
     ],
     faqs: [
-      { question: "Why should I use XIRR instead of CAGR for SIP?", answer: "CAGR assumes a single initial investment and a single final payout. A SIP has multiple transactions at different points in time. XIRR calculates the exact returns by accounting for the specific number of days each installment has been invested." }
+      { question: "Why should I use XIRR instead of CAGR for SIP?", answer: "CAGR assumes a single initial investment and a single final payout. A SIP has multiple transactions at different points in time. XIRR calculates the exact returns by accounting for the specific number of days each installment has been invested." },
+      { question: "How do I calculate XIRR online?", answer: "Enter your cash flow values (investments as negative values, withdrawals/final value as positive values) and corresponding dates into the XIRR calculator to see your annualized yield." }
     ]
   },
   {
@@ -389,8 +379,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "SWP Calculator",
     category: "Investing",
     description: "Calculate the cash depletion and balance timeline of a Systematic Withdrawal Plan (SWP).",
-    seoTitle: "SWP Calculator - Systematic Withdrawal Plan Calculator | WealthMaze",
-    seoDescription: "Calculate your Systematic Withdrawal Plan (SWP) returns and remaining balance. Estimate how long your mutual fund corpus will last with WealthMaze.",
+    seoTitle: "SWP Calculator – Calculate Systematic Withdrawals Online",
+    seoDescription: "Calculate your Systematic Withdrawal Plan (SWP) returns and remaining balance. Estimate how long your mutual fund retirement corpus will last online.",
     inputs: [
       { id: "totalInvestment", label: "Total Investment Corpus", type: "slider", min: 100000, max: 50000000, step: 50000, default: 5000000, unit: "₹" },
       { id: "monthlyWithdrawal", label: "Monthly Withdrawal Amount", type: "slider", min: 1000, max: 500000, step: 1000, default: 40000, unit: "₹" },
@@ -420,7 +410,7 @@ export const investingCalculators: CalculatorConfig[] = [
           balance = balance + interest - withdrawal;
           totalWithdrawn += withdrawal;
           if (balance < 0) {
-            totalWithdrawn += balance; // Adjust if last withdrawal exceeded remaining balance
+            totalWithdrawn += balance;
             balance = 0;
           }
         } else {
@@ -443,12 +433,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is a Systematic Withdrawal Plan (SWP)?",
-        content: "A Systematic Withdrawal Plan (SWP) allows you to withdraw a fixed amount of money from your mutual fund scheme at regular intervals (usually monthly). It is commonly used by retirees to generate a steady monthly income from their accumulated retirement corpus. Unlike an annuity, the remaining balance continues to earn returns in the mutual fund, and you can change the withdrawal amount or stop the plan at any time."
+        title: "Benefits of Systematic Withdrawal Plans (SWP)",
+        content: "Our SWP Calculator maps out your retirement cash depletion schedule. A Systematic Withdrawal Plan (SWP) allows you to withdraw a fixed amount of money from your mutual fund scheme at regular intervals (usually monthly). It is commonly used by retirees to generate a steady monthly income from their retirement corpus."
       }
     ],
     faqs: [
-      { question: "Is SWP tax-free?", answer: "SWP withdrawals are treated as redemptions of units, so they are subject to Capital Gains Tax (LTCG or STCG) depending on the holding period and asset type, rather than being taxed entirely as income (unlike fixed deposit interest or annuity payouts)." }
+      { question: "Is SWP tax-free?", answer: "SWP withdrawals are treated as redemptions of units, so they are subject to Capital Gains Tax (LTCG or STCG) depending on the holding period and asset type, rather than being taxed entirely as income (unlike fixed deposit interest or annuity payouts)." },
+      { question: "How do I calculate SWP monthly withdrawals?", answer: "Enter your initial retirement corpus, monthly withdrawal amount, expected rate of return, and tenure into the SWP calculator to view your future balance timeline." }
     ]
   },
   {
@@ -456,8 +447,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "Goal Based Investment Calculator",
     category: "Investing",
     description: "Determine the monthly SIP or lumpsum investment needed to reach a specific financial goal.",
-    seoTitle: "Goal Based Investment Calculator - Plan Financial Goals | WealthMaze",
-    seoDescription: "Calculate the exact savings needed to reach your target financial goal. Estimate required SIP or lumpsum investments with WealthMaze.",
+    seoTitle: "Goal Calculator – Calculate Savings for Financial Goals",
+    seoDescription: "Calculate how much you need to save monthly to reach your financial goals. Plan house, car, or emergency fund investments with WealthMaze.",
     inputs: [
       { id: "targetGoal", label: "Target Financial Goal", type: "slider", min: 50000, max: 100000000, step: 50000, default: 5000000, unit: "₹" },
       { id: "expectedReturn", label: "Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
@@ -475,10 +466,7 @@ export const investingCalculators: CalculatorConfig[] = [
       const i = r / (12 * 100);
       const n = t * 12;
 
-      // Required SIP = Target * i / [((1 + i)^n - 1) * (1 + i)]
       const requiredSIP = target * i / ((Math.pow(1 + i, n) - 1) * (1 + i));
-
-      // Required Lumpsum = Target / (1 + r/100)^t
       const requiredLumpsum = target / Math.pow(1 + r / 100, t);
 
       const chartData = [];
@@ -501,12 +489,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Introduction to Goal-Based Investing",
-        content: "Goal-based investing shifts the focus from chasing arbitrary market returns to funding specific milestones in your life (e.g., buying a home, children's higher education, retirement, or an international vacation). By estimating how much money is required and when, you can invest the exact amount needed under a disciplined plan, avoiding over-saving or falling short of your target."
+        title: "Benefits of Goal-Based Investment Plans",
+        content: "Our Goal Based Investment Calculator helps you target life milestones. Goal-based investing shifts the focus from chasing arbitrary market returns to funding specific milestones in your life (e.g., buying a home, children's higher education, retirement, or an international vacation). By estimating how much money is required, you can plan properly."
       }
     ],
     faqs: [
-      { question: "Should I adjust my goal for inflation?", answer: "Yes, absolutely. A goal of ₹50 Lakhs in 10 years will require a larger nominal corpus because of inflation. If inflation averages 6%, you should set your target goal to ~₹89.5 Lakhs to preserve the purchasing power of your target amount." }
+      { question: "Should I adjust my goal for inflation?", answer: "Yes, absolutely. A goal of ₹50 Lakhs in 10 years will require a larger nominal corpus because of inflation. If inflation averages 6%, you should set your target goal to ~₹89.5 Lakhs to preserve the purchasing power of your target amount." },
+      { question: "How do I calculate monthly SIP for a goal?", answer: "Input your target financial goal amount, investment tenure, and expected return rate to calculate the exact monthly SIP required to reach your goal." }
     ]
   },
   {
@@ -514,8 +503,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "Retirement Calculator",
     category: "Retirement",
     description: "Determine the corpus you need to retire comfortably and the monthly savings required to build it.",
-    seoTitle: "Retirement Calculator - Estimate Retirement Corpus Needed | WealthMaze",
-    seoDescription: "Plan your retirement corpus. Estimate monthly savings required, accounting for inflation and post-retirement returns with WealthMaze.",
+    seoTitle: "Retirement Calculator – Plan Savings and FIRE Target",
+    seoDescription: "Estimate your target retirement savings corpus. Calculate monthly investment targets and FIRE numbers with our free retirement planning tool.",
     inputs: [
       { id: "currentAge", label: "Current Age", type: "slider", min: 18, max: 70, step: 1, default: 30, unit: "Yr" },
       { id: "retirementAge", label: "Desired Retirement Age", type: "slider", min: 40, max: 75, step: 1, default: 55, unit: "Yr" },
@@ -542,36 +531,29 @@ export const investingCalculators: CalculatorConfig[] = [
       const yearsToRetire = Math.max(1, retireAge - currentAge);
       const retirementYears = Math.max(1, lifeExp - retireAge);
 
-      // Inflation adjusted monthly expenses at the start of retirement
       const initialRetirementExpenses = expenses * Math.pow(1 + inflation / 100, yearsToRetire);
 
-      // Post retirement inflation-adjusted return rate (Real rate of return)
       const postRealRate = ((1 + postRetRate / 100) / (1 + inflation / 100) - 1) * 100;
       const postMonthlyRealRate = postRealRate / (12 * 100);
       const postMonths = retirementYears * 12;
 
-      // Corpus Needed (Present Value of Annuity Due at retirement)
-      // Corpus = Expenses * [(1 - (1 + i)^-n) / i] * (1 + i)
       let corpusNeeded = 0;
       if (postMonthlyRealRate > 0) {
         corpusNeeded = initialRetirementExpenses * ((1 - Math.pow(1 + postMonthlyRealRate, -postMonths)) / postMonthlyRealRate) * (1 + postMonthlyRealRate);
       } else {
-        // Fallback if real rate of return is <= 0
         corpusNeeded = initialRetirementExpenses * postMonths;
       }
 
-      // Required monthly savings to build the corpus
       const preMonthlyRate = preRetRate / (12 * 100);
       const preMonths = yearsToRetire * 12;
       const requiredMonthlySavings = corpusNeeded * preMonthlyRate / ((Math.pow(1 + preMonthlyRate, preMonths) - 1) * (1 + preMonthlyRate));
 
       const chartData = [];
       let balance = 0;
-      // Accumulation phase
       for (let yr = currentAge; yr <= retireAge; yr++) {
         const index = yr - currentAge;
         if (index > 0) {
-          balance = balance * (1 + preRetRate / 100) + (requiredMonthlySavings * 12 * (1 + preRetRate / (2 * 100))); // simple annual accrual
+          balance = balance * (1 + preRetRate / 100) + (requiredMonthlySavings * 12 * (1 + preRetRate / (2 * 100)));
         }
         chartData.push({
           name: `Age ${yr}`,
@@ -587,12 +569,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "How to Plan for Your Retirement?",
-        content: "Retirement planning involves establishing how much income you will need in your post-work years and determining how to build that sum during your employment. Inflation is the single biggest threat to retirees, as a monthly expense of ₹50,000 today will escalate to ₹2.1 Lakhs in 25 years at a 6% inflation rate. Therefore, your retirement corpus must grow even after retirement to prevent you from outliving your money."
+        title: "Benefits of Retirement Planning",
+        content: "Our Retirement Calculator determines your required post-work wealth corpus. Retirement planning involves establishing how much income you will need in your post-work years and determining how to build that sum during your employment. Inflation is the single biggest threat to retirees, eroding purchasing power over decades."
       }
     ],
     faqs: [
-      { question: "What is the 4% rule?", answer: "The 4% rule is a guideline stating that retirees can safely withdraw 4% of their initial retirement portfolio in the first year, and adjust that amount for inflation each subsequent year, with a high probability that the corpus will last at least 30 years." }
+      { question: "What is the 4% rule?", answer: "The 4% rule is a guideline stating that retirees can safely withdraw 4% of their initial retirement portfolio in the first year, and adjust that amount for inflation each subsequent year, with a high probability that the corpus will last at least 30 years." },
+      { question: "How do I calculate retirement corpus online?", answer: "Enter your current age, desired retirement age, life expectancy, monthly expenses, inflation, and investment returns to estimate your required retirement nest egg." }
     ]
   },
   {
@@ -600,8 +583,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "FIRE Calculator",
     category: "Retirement",
     description: "Determine when you can achieve Financial Independence, Retire Early (FIRE).",
-    seoTitle: "FIRE Calculator - Financial Independence Retire Early | WealthMaze",
-    seoDescription: "Calculate your FIRE number. Discover when you can retire early based on your current savings rate and target lifestyle expenses with WealthMaze.",
+    seoTitle: "FIRE Calculator – Calculate Financial Independence Early",
+    seoDescription: "Calculate your FIRE number. Discover when you can retire early based on your current savings rate and target lifestyle expenses with our calculator.",
     inputs: [
       { id: "currentAge", label: "Current Age", type: "slider", min: 18, max: 60, step: 1, default: 28, unit: "Yr" },
       { id: "annualIncome", label: "Net Annual Income", type: "slider", min: 100000, max: 5000000, step: 50000, default: 1200000, unit: "₹" },
@@ -621,17 +604,14 @@ export const investingCalculators: CalculatorConfig[] = [
       const sRate = inputs.savingsRate;
       const currentPortfolio = inputs.currentSavings;
       const r = inputs.investmentReturn;
-      const realReturn = inputs.postFireReturn; // e.g. 4% Safe Withdrawal Rate (SWR) implies 25x expenses
+      const realReturn = inputs.postFireReturn;
 
       const annualSavings = income * (sRate / 100);
       const annualExpenses = income - annualSavings;
 
-      // FIRE Number = Annual Expenses / (SWR / 100). (e.g. 4% SWR -> 25x expenses)
       const swr = realReturn;
       const fireNumber = annualExpenses / (swr / 100);
 
-      // Solve for years to reach FIRE:
-      // Portfolio_t = Current * (1+r)^t + Savings * (((1+r)^t - 1) / r) * (1+r) = FIRE_Number
       let portfolio = currentPortfolio;
       let years = 0;
       const chartData = [];
@@ -648,7 +628,6 @@ export const investingCalculators: CalculatorConfig[] = [
           portfolio = portfolio * (1 + r / 100) + annualSavings;
           years = t;
         } else {
-          // Keep compounding even after reaching goal in chart
           portfolio = portfolio * (1 + r / 100);
         }
         chartData.push({
@@ -669,12 +648,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "The Financial Independence, Retire Early (FIRE) Movement",
-        content: "FIRE is a lifestyle movement defined by extreme savings and investment, allowing proponents to retire far earlier than traditional retirement ages. The strategy is to save a high percentage of income (50-70%) during early working years to accumulate a portfolio large enough to cover living expenses indefinitely, using a Safe Withdrawal Rate (typically 3-4%)."
+        title: "The Financial Independence, Retire Early (FIRE) Movement Strategy",
+        content: "Our FIRE Calculator computes your early retirement nest egg. FIRE is a lifestyle movement defined by extreme savings and investment, allowing proponents to retire far earlier than traditional retirement ages. The strategy is to save a high percentage of income (50-70%) to accumulate a portfolio large enough to cover expenses."
       }
     ],
     faqs: [
-      { question: "What is Lean FIRE vs Fat FIRE?", answer: "Lean FIRE involves retiring early on a minimalist budget (expenses under ₹3-4 Lakhs/year), while Fat FIRE accommodates a luxurious, high-spending early retirement lifestyle (expenses exceeding ₹15-20 Lakhs/year)." }
+      { question: "What is Lean FIRE vs Fat FIRE?", answer: "Lean FIRE involves retiring early on a minimalist budget (expenses under ₹3-4 Lakhs/year), while Fat FIRE accommodates a luxurious, high-spending early retirement lifestyle (expenses exceeding ₹15-20 Lakhs/year)." },
+      { question: "How do I calculate my early retirement target?", answer: "Input your age, annual income, current savings, expected return rate, and target SWR percentage into our FIRE calculator to find the years required to reach financial freedom." }
     ]
   },
   {
@@ -682,8 +662,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "Net Worth Calculator",
     category: "Investing",
     description: "Calculate your net worth by tabulating all your assets and liabilities.",
-    seoTitle: "Net Worth Calculator - Calculate Your Net Worth | WealthMaze",
-    seoDescription: "Determine your net worth. Enter your cash, properties, equity investments, and subtract loans using WealthMaze's free net worth calculator.",
+    seoTitle: "Net Worth Calculator – Calculate Your Net Worth Online",
+    seoDescription: "Determine your net worth. Enter your cash, properties, equity investments, and subtract loans using our free net worth calculator instantly.",
     inputs: [
       { id: "cashBank", label: "Cash & Bank Balance", type: "number", default: 200000, unit: "₹" },
       { id: "mutualFunds", label: "Mutual Funds & ETFs", type: "number", default: 1200000, unit: "₹" },
@@ -718,12 +698,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is Net Worth?",
-        content: "Your net worth is the absolute measurement of your financial health. It is computed as the total value of everything you own (Assets) minus the total value of everything you owe (Liabilities). A positive, rising net worth indicates good financial progress, while a negative net worth suggests high-interest debt burdens that need immediate repayment."
+        title: "Understanding Assets and Liabilities",
+        content: "Our Net Worth Calculator tabulates your personal balance sheet. Your net worth is the absolute measurement of your financial health. It is computed as the total value of everything you own (Assets) minus the total value of everything you owe (Liabilities). A positive, rising net worth indicates good financial progress."
       }
     ],
     faqs: [
-      { question: "How often should I calculate my net worth?", answer: "Calculating your net worth once a quarter or once a year is standard. Regular tracking highlights whether your assets are growing faster than your debts over time." }
+      { question: "How often should I calculate my net worth?", answer: "Calculating your net worth once a quarter or once a year is standard. Regular tracking highlights whether your assets are growing faster than your debts over time." },
+      { question: "How do I calculate net worth online?", answer: "Enter your bank balances, stock portfolios, real estate properties, and gold assets, and subtract any outstanding loans or debts to compute your net worth." }
     ]
   },
   {
@@ -731,8 +712,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "SIP Comparison Calculator",
     category: "Investing",
     description: "Compare two Systematic Investment Plan (SIP) scenarios side-by-side to analyze the impact of different monthly investments, expected returns, or time periods.",
-    seoTitle: "SIP Comparison Calculator - Compare Mutual Fund SIPs Side-by-Side | WealthMaze",
-    seoDescription: "Compare two different mutual fund SIP investment scenarios side-by-side. Calculate how differences in monthly SIP amounts, returns, or tenure affect your long-term wealth corpus.",
+    seoTitle: "SIP Comparison Calculator – Compare Mutual Fund SIPs",
+    seoDescription: "Compare two different mutual fund SIP investment scenarios side-by-side. Calculate how differences in monthly SIP amounts affect your future returns.",
     inputs: [
       { id: "monthlyInvestmentA", label: "Scenario A: Monthly Investment", type: "slider", min: 500, max: 1000000, step: 500, default: 10000, unit: "₹" },
       { id: "expectedReturnA", label: "Scenario A: Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
@@ -755,14 +736,12 @@ export const investingCalculators: CalculatorConfig[] = [
       const rB = inputs.expectedReturnB;
       const tB = inputs.timePeriodB;
 
-      // Scenario A calculation
       const iA = rA / (12 * 100);
       const nA = tA * 12;
       const totalValueA = pA * ((Math.pow(1 + iA, nA) - 1) / iA) * (1 + iA);
       const investedA = pA * nA;
       const returnsA = totalValueA - investedA;
 
-      // Scenario B calculation
       const iB = rB / (12 * 100);
       const nB = tB * 12;
       const totalValueB = pB * ((Math.pow(1 + iB, nB) - 1) / iB) * (1 + iB);
@@ -771,7 +750,6 @@ export const investingCalculators: CalculatorConfig[] = [
 
       const difference = Math.abs(totalValueB - totalValueA);
 
-      // Chart Data
       const maxYears = Math.max(tA, tB);
       const chartData = [];
       for (let yr = 1; yr <= maxYears; yr++) {
@@ -803,16 +781,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "Why Compare SIP Scenarios?",
-        content: "Comparing two investment scenarios side-by-side helps visualize how minor adjustments to your savings rate or estimated portfolio returns can dramatically compound over time. This makes it easy to understand the value of increasing your monthly investments (step-up SIP) or searching for funds with slightly better historical yields."
-      },
-      {
-        title: "The Step-Up SIP Concept",
-        content: "A Step-Up SIP involves increasing your monthly contribution periodically (e.g., by 10% each year as your income grows). By comparing a flat ₹10,000 monthly SIP with a higher average monthly contribution, you can see how much faster you can achieve major financial targets like buying a car or funding retirement."
+        title: "Benefits of Comparing Mutual Fund SIPs",
+        content: "Our SIP Comparison Calculator lets you compare two plans side-by-side. Comparing two investment portfolio scenarios side-by-side helps visualize how minor adjustments to your savings rate or estimated portfolio returns can dramatically compound over time. This makes it easy to understand compounding differences."
       }
     ],
     faqs: [
-      { question: "How does return rate affect the final corpus?", answer: "Because compounding is exponential, even a 1% or 2% difference in annual return rates (such as 12% vs 14%) can yield a difference of several lakhs or crores over 20-30 years." }
+      { question: "How does return rate affect the final corpus?", answer: "Because compounding is exponential, even a 1% or 2% difference in annual return rates (such as 12% vs 14%) can yield a difference of several lakhs or crores over 20-30 years." },
+      { question: "How do I compare two mutual fund SIP plans?", answer: "Enter the monthly installment amounts, return rates, and tenures for both scenarios in the comparison calculator to instantly see differences in maturity value." }
     ]
   },
   {
@@ -820,8 +795,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "Step-Up SIP Calculator",
     category: "Investing",
     description: "Calculate the future value of your SIP with annual top-up increases.",
-    seoTitle: "Step-Up SIP Calculator - Top-Up Mutual Fund Planner | WealthMaze",
-    seoDescription: "Calculate the future value of your Systematic Investment Plan (SIP) with annual top-up increases. See how increasing your monthly SIP accelerates wealth growth.",
+    seoTitle: "Step-Up SIP Calculator – Estimate Annual Top-Up ROI",
+    seoDescription: "Calculate the future value of your Systematic Investment Plan (SIP) with annual top-up increases. See how increasing monthly SIP speeds wealth growth.",
     inputs: [
       { id: "monthlyInvestment", label: "Starting Monthly SIP", type: "slider", min: 500, max: 1000000, step: 500, default: 10000, unit: "₹" },
       { id: "annualStepUp", label: "Annual Step-Up Increment", type: "slider", min: 1, max: 30, step: 1, default: 10, unit: "%" },
@@ -861,7 +836,6 @@ export const investingCalculators: CalculatorConfig[] = [
 
       const estReturns = totalValue - investedAmount;
 
-      // Compare to Normal SIP
       let normalTotalValue = 0;
       let normalInvested = p * t * 12;
       for (let m = 1; m <= t * 12; m++) {
@@ -885,17 +859,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is a Step-Up SIP?",
-        content: "A Step-Up SIP (or Top-Up SIP) is an investment practice where you automatically increase your monthly Systematic Investment Plan contribution by a fixed percentage or absolute amount every year. As your income rises over your career, stepping up your SIP ensures your savings grow in tandem with your earnings, helping you accumulate wealth exponentially faster."
-      },
-      {
-        title: "How a Step-Up SIP Beats a Normal SIP",
-        content: "A standard SIP keeps your monthly investment constant. Over long time horizons, inflation erodes the buying power of that fixed amount. A Step-Up SIP solves this by scaling your contributions. For example, a flat ₹10,000 monthly SIP compounding at 12% for 20 years yields around ₹1.0 Crore. In contrast, if you start with ₹10,000 but step it up by 10% each year, your final maturity corpus reaches ₹2.2 Crores—more than double the wealth accumulated, with only gradual, income-linked increases."
+        title: "Benefits of Top-Up Mutual Fund SIPs",
+        content: "Our Step-Up SIP Calculator projects compounding top-up contributions. A Step-Up SIP (or Top-Up SIP) is an investment practice where you automatically increase your monthly Systematic Investment Plan contribution by a fixed percentage or absolute amount every year. As your income rises, stepping up your SIP speeds wealth."
       }
     ],
     faqs: [
       { question: "Can I choose a fixed amount instead of a percentage for step-up?", answer: "Yes. Many mutual fund platforms let you increase your monthly contribution by either a flat amount (like ₹1,000 or ₹2,000) or a fixed percentage (like 5%, 10%, or 15%) annually." },
-      { question: "Is it possible to pause or cap a Step-Up SIP?", answer: "Yes. Most banks and mutual fund platforms allow you to set a maximum limit on your monthly top-up. Once your monthly contribution hits that cap, the step-up stops and it continues as a regular SIP at that level." }
+      { question: "How do I calculate a top-up SIP maturity value?", answer: "Enter your starting monthly SIP investment, expected annual step-up percentage, anticipated return rate, and tenure into the step-up calculator to see your accelerated compounding growth." }
     ]
   },
   {
@@ -903,8 +873,8 @@ export const investingCalculators: CalculatorConfig[] = [
     name: "Coast FIRE Calculator",
     category: "Retirement",
     description: "Calculate how much you need saved today to 'coast' to financial independence.",
-    seoTitle: "Coast FIRE Calculator - Early Retirement Savings Planner | WealthMaze",
-    seoDescription: "Calculate your Coast FIRE number. See how much retirement savings you need today so that compounding covers your retirement corpus without further additions.",
+    seoTitle: "Coast FIRE Calculator – Plan Early Retirement Savings",
+    seoDescription: "Calculate your Coast FIRE number. See how much retirement savings you need today so compounding covers your retirement corpus without additions.",
     inputs: [
       { id: "currentAge", label: "Current Age", type: "slider", min: 18, max: 60, step: 1, default: 30, unit: "Yr" },
       { id: "targetAge", label: "Target Retirement Age", type: "slider", min: 35, max: 75, step: 1, default: 60, unit: "Yr" },
@@ -928,16 +898,9 @@ export const investingCalculators: CalculatorConfig[] = [
 
       const yearsToRetire = Math.max(0, targetAge - currentAge);
 
-      // Future expenses adjusted for inflation
       const inflationAdjustedExpenses = annualExpenses * Math.pow(1 + inflationRate / 100, yearsToRetire);
-
-      // Target FIRE Corpus: 25x annual expenses (safe withdrawal rate)
       const targetFIRECorpus = inflationAdjustedExpenses * 25;
-
-      // Required Coast FIRE Number Today: targetFIRECorpus / (1 + expectedReturn/100)^yearsToRetire
       const coastFIRENumber = targetFIRECorpus / Math.pow(1 + expectedReturn / 100, yearsToRetire);
-
-      // Projected Savings at retirement (compounded nominal expectedReturn, no future additions)
       const projectedSavings = currentSavings * Math.pow(1 + expectedReturn / 100, yearsToRetire);
 
       const chartData = [];
@@ -974,18 +937,13 @@ export const investingCalculators: CalculatorConfig[] = [
     },
     educationalContent: [
       {
-        title: "What is Coast FIRE?",
-        content: "Coast FIRE is a sub-category of the Financial Independence, Retire Early (FIRE) movement. It refers to a state where you have already saved enough retirement assets today that, even if you never contribute another rupee, the portfolio will compound on its own to fund a comfortable retirement by your target age. Reaching Coast FIRE means you can quit a high-stress corporate job and take a lower-paying, part-time, or creative job just to cover your active monthly bills."
-      },
-      {
-        title: "How is Coast FIRE Calculated?",
-        content: "Coast FIRE calculation works in reverse: first, your current annual expenses are inflated to your retirement age using expected inflation. Next, we determine the target retirement corpus using the standard 25x rule (4% safe withdrawal rate). Finally, we discount this target corpus back to today using your expected investment return rate. If your actual savings today exceed this discounted amount, you have officially reached Coast FIRE!"
+        title: "Understanding Coast FIRE and Early Retirement Savings",
+        content: "Our Coast FIRE Calculator estimates your target retirement milestones. Coast FIRE is a sub-category of the Financial Independence, Retire Early (FIRE) movement. It refers to a state where you have already saved enough retirement assets today that, even if you never contribute another rupee, the portfolio compounds."
       }
     ],
     faqs: [
       { question: "Does Coast FIRE mean I can stop working entirely today?", answer: "No. Reaching Coast FIRE means you don't need to save *more* for retirement, but you still need to earn enough money to cover your day-to-day living expenses until you reach retirement age." },
-      { question: "What is the Safe Withdrawal Rate (SWR)?", answer: "The Safe Withdrawal Rate (usually set at 4%) is the percentage of your portfolio you can withdraw annually in retirement, adjusted for inflation, with a high probability of not running out of money for 30+ years." }
+      { question: "How do I calculate my Coast FIRE target?", answer: "Enter your current age, target retirement age, current savings, annual expenses, expected returns, and inflation rate into our calculator to check if you have saved enough to coast." }
     ]
   }
 ];
-

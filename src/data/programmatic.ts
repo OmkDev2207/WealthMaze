@@ -53,7 +53,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "sip-calculator-10-years",
     parentCalculatorId: "sip-calculator",
     name: "10-Year SIP Return Calculator",
-    seoTitle: "10 Year SIP Calculator - Estimate 10-Year Mutual Fund Returns | WealthMaze",
+    seoTitle: "10-Year SIP Calculator – Estimate Mutual Fund Returns",
     seoDescription: "Plan your medium-term financial goals with our 10-year SIP return calculator. Estimate compounding growth for mutual fund investments over a decade.",
     defaultOverrides: {
       timePeriod: 10,
@@ -73,8 +73,8 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "sip-calculator-20-years",
     parentCalculatorId: "sip-calculator",
     name: "20-Year SIP Return Calculator",
-    seoTitle: "20 Year SIP Calculator - Long-Term Wealth Planning | WealthMaze",
-    seoDescription: "Calculate your long-term wealth growth with our 20-year SIP calculator. See how compound interest creates huge retirement or goal corpuses over two decades.",
+    seoTitle: "20-Year SIP Calculator – Estimate Compounding Returns",
+    seoDescription: "Calculate long-term wealth growth with our 20-year SIP calculator. See how compound interest creates retirement or goal corpuses over two decades.",
     defaultOverrides: {
       timePeriod: 20,
     },
@@ -93,7 +93,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "home-loan-emi-calculator",
     parentCalculatorId: "emi-calculator",
     name: "Home Loan EMI Calculator",
-    seoTitle: "Home Loan EMI Calculator - Calculate Housing Loan EMIs | WealthMaze",
+    seoTitle: "Home Loan EMI Calculator – Calculate Housing Loan EMIs",
     seoDescription: "Calculate your home loan Equated Monthly Installment (EMI), total interest payable, and view the complete amortization schedule for housing loans.",
     defaultOverrides: {
       interestRate: 8.5,
@@ -114,7 +114,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "car-loan-emi-calculator",
     parentCalculatorId: "emi-calculator",
     name: "Car Loan EMI Calculator",
-    seoTitle: "Car Loan EMI Calculator - Calculate Auto Loan EMIs | WealthMaze",
+    seoTitle: "Car Loan EMI Calculator – Calculate Auto Loan EMIs",
     seoDescription: "Calculate car loan EMIs, interest rates, and loan tenures. View your yearly principal and interest breakdown before purchasing your vehicle.",
     defaultOverrides: {
       interestRate: 9.5,
@@ -168,7 +168,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     parentCalculatorId: "sip-calculator",
     name: "SIP Calculator for ₹10,000/Month",
     seoTitle: "SIP Calculator for ₹10000 Per Month Mutual Fund | WealthMaze",
-    seoDescription: "Calculate the future value of a ₹10,000 monthly SIP. Analyze total returns, principal invested, and long-term compounding growth.",
+    seoDescription: "Calculate the future value of a ₹10,000 monthly SIP. Analyze total compound returns, principal invested, and long-term compounding growth online.",
     defaultOverrides: {
       monthlyInvestment: 10000,
     },
@@ -199,8 +199,8 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "sip-calculator-15-years",
     parentCalculatorId: "sip-calculator",
     name: "15-Year SIP Return Calculator",
-    seoTitle: "15 Year SIP Calculator - Long-Term Mutual Fund Planning | WealthMaze",
-    seoDescription: "Calculate the value of your mutual fund investments over a 15-year period. Estimate principal accumulation and compounded growth.",
+    seoTitle: "15-Year SIP Calculator – Estimate Compounding Returns",
+    seoDescription: "Calculate the value of mutual fund investments over a 15-year period. Estimate principal accumulation and compound growth for financial plans.",
     defaultOverrides: {
       timePeriod: 15,
     },
@@ -215,7 +215,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "sip-calculator-25-years",
     parentCalculatorId: "sip-calculator",
     name: "25-Year SIP Return Calculator",
-    seoTitle: "25 Year SIP Calculator - Target Long-Term Wealth | WealthMaze",
+    seoTitle: "25-Year SIP Calculator – Estimate Long-Term Returns",
     seoDescription: "See how much a monthly SIP grows over 25 years. Check how the hockey-stick compounding curve delivers huge wealth returns over two and a half decades.",
     defaultOverrides: {
       timePeriod: 25,
@@ -231,8 +231,8 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "sip-calculator-30-years",
     parentCalculatorId: "sip-calculator",
     name: "30-Year SIP Return Calculator",
-    seoTitle: "30 Year SIP Calculator - Ultimate Retirement planning | WealthMaze",
-    seoDescription: "Calculate mutual fund SIP growth over a 30-year career timeline. See how time creates substantial multi-crore retirement corpuses.",
+    seoTitle: "30-Year SIP Calculator – Plan Retirement Investments",
+    seoDescription: "Calculate mutual fund SIP growth over a 30-year career timeline. See how compounding time creates substantial multi-crore retirement corpuses.",
     defaultOverrides: {
       timePeriod: 30,
     },
@@ -248,7 +248,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     parentCalculatorId: "emi-calculator",
     name: "Home Loan EMI Calculator for ₹30 Lakhs",
     seoTitle: "EMI Calculator for ₹30 Lakhs Home Loan | WealthMaze",
-    seoDescription: "Calculate your monthly EMI, total interest, and outstanding schedule for a ₹30 Lakh housing loan.",
+    seoDescription: "Calculate monthly EMI, total interest, and outstanding payment schedule for a ₹30 Lakh housing loan with our free home loan EMI calculator.",
     defaultOverrides: {
       loanAmount: 3000000,
       interestRate: 8.5,
@@ -266,7 +266,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     parentCalculatorId: "emi-calculator",
     name: "Home Loan EMI Calculator for ₹50 Lakhs",
     seoTitle: "EMI Calculator for ₹50 Lakhs Home Loan | WealthMaze",
-    seoDescription: "Plan housing costs by calculating EMIs and total interest payable on a ₹50 Lakh home loan.",
+    seoDescription: "Calculate monthly EMI, interest payable, and view the full amortization chart for a ₹50 Lakh housing loan using our free loan calculator.",
     defaultOverrides: {
       loanAmount: 5000000,
       interestRate: 8.5,
@@ -284,7 +284,7 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     parentCalculatorId: "emi-calculator",
     name: "Home Loan EMI Calculator for ₹75 Lakhs",
     seoTitle: "EMI Calculator for ₹75 Lakhs Home Loan | WealthMaze",
-    seoDescription: "Check EMI costs, interest splits, and tenure timelines for a ₹75 Lakh mortgage.",
+    seoDescription: "Determine monthly EMIs, principal splits, and interest tenure timelines for a ₹75 Lakh home loan with our free mortgage planning calculator.",
     defaultOverrides: {
       loanAmount: 7500000,
       interestRate: 8.5,
@@ -301,8 +301,8 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "car-loan-emi-calculator-5-lakhs",
     parentCalculatorId: "emi-calculator",
     name: "Car Loan EMI Calculator for ₹5 Lakhs",
-    seoTitle: "EMI Calculator for ₹5 Lakhs Car Loan | WealthMaze",
-    seoDescription: "Calculate auto EMIs and interest payable on a ₹5 Lakh car loan. Plan your vehicle budget.",
+    seoTitle: "Car Loan EMI Calculator for ₹5 Lakhs Auto Loan",
+    seoDescription: "Calculate auto loan EMIs, interest rates, and loan tenures for a ₹5 Lakh vehicle purchase. View yearly principal and interest splits online.",
     defaultOverrides: {
       loanAmount: 500000,
       interestRate: 9.5,
@@ -319,8 +319,8 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
     id: "car-loan-emi-calculator-10-lakhs",
     parentCalculatorId: "emi-calculator",
     name: "Car Loan EMI Calculator for ₹10 Lakhs",
-    seoTitle: "EMI Calculator for ₹10 Lakhs Car Loan | WealthMaze",
-    seoDescription: "Determine monthly EMIs, principal, and interest splits for a ₹10 Lakh auto loan.",
+    seoTitle: "Car Loan EMI Calculator for ₹10 Lakhs Auto Loan",
+    seoDescription: "Determine monthly EMIs, principal, and interest splits for a ₹10 Lakh auto loan. Estimate car loan payments and interest costs instantly.",
     defaultOverrides: {
       loanAmount: 1000000,
       interestRate: 9.5,

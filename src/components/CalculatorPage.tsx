@@ -382,15 +382,12 @@ function CalculatorPageInner({
 
           {/* Explanation: Educational Guide */}
           <div className="prose prose-zinc dark:prose-invert max-w-none pt-6 border-t border-zinc-200 dark:border-zinc-800">
-            <h2 className="text-2xl font-extrabold text-zinc-900 dark:text-white tracking-tight mb-4">
-              Educational Guide
-            </h2>
-            <div className="space-y-6 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+            <div className="space-y-8 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
               {displayEducationalContent.map((sec, idx) => (
-                <div key={idx} className="space-y-2">
-                  <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-200">
+                <div key={idx} className="space-y-3">
+                  <h2 className="text-xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
                     {sec.title}
-                  </h3>
+                  </h2>
                   <p className="whitespace-pre-line">{sec.content}</p>
                 </div>
               ))}
@@ -412,9 +409,9 @@ function CalculatorPageInner({
                     key={idx}
                     className="p-4 bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-100 dark:border-zinc-800/80 rounded-xl"
                   >
-                    <h4 className="font-bold text-zinc-800 dark:text-zinc-200 text-sm">
+                    <h3 className="font-bold text-zinc-800 dark:text-zinc-200 text-sm">
                       {faq.question}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-zinc-550 dark:text-zinc-400 mt-1.5 leading-relaxed">
                       {faq.answer}
                     </p>
