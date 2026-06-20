@@ -1,4 +1,4 @@
-import { CalculatorConfig, CalculatorResult } from "./types";
+import { CalculatorConfig } from "./types";
 
 // Helper function to format currency in Indian style (Lakhs/Crores)
 export const formatIndianCurrency = (value: number): string => {
@@ -847,7 +847,7 @@ export const investingCalculators: CalculatorConfig[] = [
       const estReturns = totalValue - investedAmount;
 
       let normalTotalValue = 0;
-      let normalInvested = p * t * 12;
+      const normalInvested = p * t * 12;
       for (let m = 1; m <= t * 12; m++) {
         normalTotalValue = (normalTotalValue + p) * (1 + monthlyRate);
       }

@@ -71,17 +71,17 @@ export default function PrivacyPage() {
 
         <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">5. Our Advertising Partners</h2>
         <p>
-          WealthMaze displays advertisements served by <strong>Google AdSense</strong>. Google AdSense uses cookies and web beacons to measure advertising effectiveness. Their use of your data is governed by Google's Privacy Policy. We do not have access to or control over cookies placed by advertising partners.
+          WealthMaze displays advertisements served by <strong>Google AdSense</strong>. Google AdSense uses cookies and web beacons to measure advertising effectiveness. Their use of your data is governed by Google&apos;s Privacy Policy. We do not have access to or control over cookies placed by advertising partners.
         </p>
 
         <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">6. Third-Party Privacy Policies</h2>
         <p>
-          WealthMaze's Privacy Policy does not apply to third-party advertisers or external websites we may link to. We advise you to consult the respective Privacy Policies of these third-party services for more detailed information.
+          WealthMaze&apos;s Privacy Policy does not apply to third-party advertisers or external websites we may link to. We advise you to consult the respective Privacy Policies of these third-party services for more detailed information.
         </p>
 
-        <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">7. Children's Privacy</h2>
+        <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">7. Children&apos;s Privacy</h2>
         <p>
-          WealthMaze does not knowingly collect any personally identifiable information from children under the age of 13. We encourage parents and guardians to monitor and guide their children's online activity.
+          WealthMaze does not knowingly collect any personally identifiable information from children under the age of 13. We encourage parents and guardians to monitor and guide their children&apos;s online activity.
         </p>
 
         <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">8. Contact Us</h2>

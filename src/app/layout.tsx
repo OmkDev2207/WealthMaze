@@ -1,6 +1,5 @@
 import * as React from "react";
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -79,7 +78,7 @@ export default function RootLayout({
           </div>
 
           {/* Main Content */}
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow pb-16 md:pb-0">{children}</main>
 
           {/* Footer ad slot */}
           <div className="print:hidden">

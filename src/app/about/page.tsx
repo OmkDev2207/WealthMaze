@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
         <h2 className="text-xl font-bold text-zinc-800 dark:text-zinc-200">Our Mission</h2>
         <p>
-          At <strong>WealthMaze</strong>, our mission is to become the fastest, cleanest, and most useful financial calculator platform for investors and savers worldwide. We believe that navigating complex personal finance decisions shouldn't require complex spreadsheet templates or high-priced consultants. 
+          At <strong>WealthMaze</strong>, our mission is to become the fastest, cleanest, and most useful financial calculator platform for investors and savers worldwide. We believe that navigating complex personal finance decisions shouldn&apos;t require complex spreadsheet templates or high-priced consultants. 
         </p>
         <p>
           WealthMaze helps users navigate complex financial decisions through simple, accurate, and easy-to-use calculators. By offering high-UX slider controls, interactive charts, and clear breakdowns, we make planning for SIPs, home loans, retirement milestones, and income taxes accessible to everyone.

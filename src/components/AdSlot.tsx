@@ -9,7 +9,7 @@ interface AdSlotProps {
 
 export function AdSlot({ position, className = "" }: AdSlotProps) {
   let containerClasses = "";
-  let label = "Advertisement";
+  const label = "Advertisement";
   let sizeLabel = "";
   let minHeightClass = "";
 

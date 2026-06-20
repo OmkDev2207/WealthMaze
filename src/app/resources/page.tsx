@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, Calculator, Sparkles, Shield, BadgePercent, GraduationCap, ChevronRight } from "lucide-react";
+import { BookOpen, Calculator, Sparkles, Shield, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -102,10 +102,10 @@ export default function ResourcesPage() {
                 Are you a financial blogger, real estate agency, or advisor? You can embed any of our interactive tools on your website for free. 
               </p>
               <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed font-bold">
-                Simply click "Embed this Calculator" below any tool to copy your iframe code.
+                Simply click &quot;Embed this Calculator&quot; below any tool to copy your iframe code.
               </p>
               <div className="p-3 bg-zinc-50 dark:bg-zinc-900 border border-zinc-150 dark:border-zinc-800 rounded-xl text-[10px] text-zinc-400 font-mono leading-normal">
-                &lt;iframe src="{siteConfig.url}/embed/sip-calculator" width="100%" height="700" ...&gt;
+                {`<iframe src="${siteConfig.url}/embed/sip-calculator" width="100%" height="700" ...>`}
               </div>
             </div>
 

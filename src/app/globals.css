@@ -35,15 +35,80 @@ body {
 }
 
 /* Range input styling overrides */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 100%;
+}
+
+/* Chrome, Safari, Opera, Edge track */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #ededf0;
+  border-radius: 9999px;
+  border: none;
+}
+
+.dark input[type="range"]::-webkit-slider-runnable-track {
+  background: #27272a;
+}
+
+/* Firefox track */
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: #ededf0;
+  border-radius: 9999px;
+  border: none;
+}
+
+.dark input[type="range"]::-moz-range-track {
+  background: #27272a;
+}
+
+/* Chrome, Safari, Opera, Edge thumb */
 input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
   border-radius: 9999px;
   background: #10b981;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 10px rgba(16, 185, 129, 0.2);
+  margin-top: -6px;
+  cursor: pointer;
   transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.dark input[type="range"]::-webkit-slider-thumb {
+  border-color: #09090b;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.15);
+  background: #059669;
+}
+
+/* Firefox thumb */
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #10b981;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 10px rgba(16, 185, 129, 0.2);
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.dark input[type="range"]::-moz-range-thumb {
+  border-color: #09090b;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  background: #059669;
 }
 
 /* Custom PDF/Print Stylesheet */

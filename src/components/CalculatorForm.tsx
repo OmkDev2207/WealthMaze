@@ -10,8 +10,8 @@ interface CalculatorFormProps {
 }
 
 export function CalculatorForm({ inputs, values, onChange }: CalculatorFormProps) {
-  const handleInputChange = (id: string, rawVal: string, min = 0, max = Infinity) => {
-    let num = Number(rawVal.replace(/[^0-9.-]/g, ""));
+  const handleInputChange = (id: string, rawVal: string) => {
+    const num = Number(rawVal.replace(/[^0-9.-]/g, ""));
     if (isNaN(num)) return;
     onChange(id, num);
   };
@@ -66,7 +66,7 @@ export function CalculatorForm({ inputs, values, onChange }: CalculatorFormProps
                       ? new Intl.NumberFormat("en-IN").format(value)
                       : value
                   }
-                  onChange={(e) => handleInputChange(input.id, e.target.value, min, max)}
+                  onChange={(e) => handleInputChange(input.id, e.target.value)}
                   className={`w-36 h-11 text-right pr-4 font-bold text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all ${
                     input.unit === "₹" ? "pl-7" : "pl-4"
                   }`}

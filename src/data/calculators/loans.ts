@@ -39,8 +39,6 @@ export const loansCalculators: CalculatorConfig[] = [
       // Schedule (yearly amortization)
       const schedule = [];
       let balance = p;
-      let cumulativeInterest = 0;
-      let cumulativePrincipal = 0;
 
       for (let yr = 1; yr <= t; yr++) {
         let yearlyInterest = 0;
@@ -54,8 +52,7 @@ export const loansCalculators: CalculatorConfig[] = [
           yearlyPrincipal += principal;
         }
 
-        cumulativeInterest += yearlyInterest;
-        cumulativePrincipal += yearlyPrincipal;
+
 
         schedule.push({
           name: `Year ${yr}`,
@@ -125,7 +122,7 @@ export const loansCalculators: CalculatorConfig[] = [
       for (let m = 1; m <= totalMonths; m++) {
         if (balance > 0) {
           const interest = balance * monthlyRate;
-          let principal = emi - interest;
+          const principal = emi - interest;
 
           // Apply prepayment at specific month
           if (m === prepayMonth) {

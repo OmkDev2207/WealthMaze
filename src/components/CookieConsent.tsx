@@ -9,6 +9,7 @@ export function CookieConsent() {
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     // Check if consent has already been given
     const consent = localStorage.getItem("cookie-consent");
@@ -51,7 +52,7 @@ export function CookieConsent() {
       </div>
 
       <p className="text-[11px] leading-relaxed text-zinc-500 dark:text-zinc-400">
-        We use cookies to analyze site traffic and personalize your ad experience via Google AdSense. By clicking "Accept All", you agree to our cookie policies. Read our{" "}
+        We use cookies to analyze site traffic and personalize your ad experience via Google AdSense. By clicking &quot;Accept All&quot;, you agree to our cookie policies. Read our{" "}
         <Link href="/privacy" className="text-emerald-500 hover:underline font-semibold">
           Privacy Policy
         </Link>{" "}

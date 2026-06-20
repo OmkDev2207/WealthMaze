@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ChevronDown, BookOpen, TrendingUp, Calendar, ShieldCheck, Percent, FileText, BarChart3, Coins, Activity, Menu, X } from "lucide-react";
+import { ChevronDown, TrendingUp, Calendar, ShieldCheck, Percent, FileText, BarChart3, Coins, Activity, Menu, X } from "lucide-react";
 
 const categories = [
   {

@@ -1,7 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
-import { HelpCircle, Shield, Award, Landmark, TrendingUp, HelpCircle as HelpIcon, Sparkles } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import { Shield, Award, Landmark, HelpCircle as HelpIcon } from "lucide-react";
 import { AdSlot } from "@/components/AdSlot";
 
 export function HomeContent() {

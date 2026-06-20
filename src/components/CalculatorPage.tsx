@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import * as React from "react";
@@ -8,6 +9,7 @@ import { getRelatedCalculators, getRelatedPostsForCalculator } from "@/data/inte
 import { CalculatorForm } from "./CalculatorForm";
 import { CalculatorResults } from "./CalculatorResults";
 import { RelatedContent, SerializableCalc } from "./RelatedContent";
+import { InflationAdjusterCard } from "./InflationAdjusterCard";
 import { AdSlot } from "./AdSlot";
 import Link from "next/link";
 import { ChevronRight, ArrowLeft, Calendar, User, Eye, X } from "lucide-react";
@@ -32,6 +34,7 @@ function DeferredChart({ chartData, calculatorId }: { chartData: any[]; calculat
 
   React.useEffect(() => {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsVisible(true);
       return;
     }
@@ -132,6 +135,7 @@ function CalculatorPageInner({
     });
 
     if (hasUrlParams) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setValues((prev) => ({ ...prev, ...urlValues }));
     } else {
       setValues(
@@ -157,6 +161,54 @@ function CalculatorPageInner({
       return { values: {}, chartData: [] };
     }
   }, [config, values]);
+
+  // Dynamic calculations for the custom inflation adjuster
+  const tenureYears = React.useMemo(() => {
+    const tenureKeys = ["timePeriod", "years", "tenure", "duration", "holdingPeriod", "term", "period"];
+    for (const key of tenureKeys) {
+      if (values[key] !== undefined) {
+        return values[key];
+      }
+    }
+    if (result.chartData && result.chartData.length > 0) {
+      return result.chartData.length;
+    }
+    return 10;
+  }, [values, result.chartData]);
+
+  const futureValueInfo = (() => {
+    const futureValueKeys = ["totalValue", "maturityValue", "corpus", "netWorth", "totalAmount", "finalValue", "estimatedWorth"];
+    for (const key of futureValueKeys) {
+      if (result.values[key] !== undefined) {
+        return {
+          val: result.values[key],
+          label: config.outputs.find((o) => o.id === key)?.label || "Future Value",
+        };
+      }
+    }
+    const matchedOutput = config.outputs.find(
+      (out) =>
+        out.id.toLowerCase().includes("total") ||
+        out.id.toLowerCase().includes("maturity") ||
+        out.id.toLowerCase().includes("corpus") ||
+        out.id.toLowerCase().includes("worth")
+    );
+    if (matchedOutput && result.values[matchedOutput.id] !== undefined) {
+      return {
+        val: result.values[matchedOutput.id],
+        label: matchedOutput.label,
+      };
+    }
+    const currencyOutputs = config.outputs.filter((o) => o.format === "currency");
+    if (currencyOutputs.length > 0) {
+      const lastCurrency = currencyOutputs[currencyOutputs.length - 1];
+      return {
+        val: result.values[lastCurrency.id] ?? 0,
+        label: lastCurrency.label,
+      };
+    }
+    return null;
+  })();
 
   // Update URL search parameters and local state
   const handleValueChange = React.useCallback((id: string, val: number) => {
@@ -229,7 +281,7 @@ function CalculatorPageInner({
           {/* Right Side: Charts & Results */}
           <div className="lg:col-span-7 space-y-4">
             <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none space-y-4">
-              <CalculatorResults outputs={config.outputs} result={result} calculatorName={config.name} />
+              <CalculatorResults outputs={config.outputs} result={result} />
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-805">
                 <DeferredChart chartData={result.chartData} calculatorId={config.id} />
               </div>
@@ -333,7 +385,7 @@ function CalculatorPageInner({
                 <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
                   Calculation Output & Analysis
                 </h2>
-                <CalculatorResults outputs={config.outputs} result={result} calculatorName={config.name} />
+                <CalculatorResults outputs={config.outputs} result={result} />
 
                 <div className="hidden print:block text-[10px] text-zinc-400 mt-6 border-t pt-4">
                   Report generated via WealthMaze. Calculate your financial future at wealthmaze.com.
@@ -365,6 +417,15 @@ function CalculatorPageInner({
                   </div>
                 </div>
               </div>
+
+              {/* Real Value & Inflation Adjuster Card */}
+              {futureValueInfo && (
+                <InflationAdjusterCard
+                  futureValue={futureValueInfo.val}
+                  futureValueLabel={futureValueInfo.label}
+                  defaultTenure={tenureYears}
+                />
+              )}
             </div>
           </section>
 

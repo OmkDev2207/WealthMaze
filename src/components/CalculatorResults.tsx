@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import * as React from "react";
@@ -7,10 +8,9 @@ import { Download, Share2, Check } from "lucide-react";
 interface CalculatorResultsProps {
   outputs: CalculatorOutput[];
   result: CalculatorResult;
-  calculatorName: string;
 }
 
-export function CalculatorResults({ outputs, result, calculatorName }: CalculatorResultsProps) {
+export function CalculatorResults({ outputs, result }: CalculatorResultsProps) {
   const [copied, setCopied] = React.useState(false);
 
   const formatValue = (val: number, format?: string, unit?: string) => {
