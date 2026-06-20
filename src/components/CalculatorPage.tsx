@@ -9,7 +9,6 @@ import { getRelatedCalculators, getRelatedPostsForCalculator } from "@/data/inte
 import { CalculatorForm } from "./CalculatorForm";
 import { CalculatorResults } from "./CalculatorResults";
 import { RelatedContent, SerializableCalc } from "./RelatedContent";
-import { InflationAdjusterCard } from "./InflationAdjusterCard";
 import { AdSlot } from "./AdSlot";
 import Link from "next/link";
 import { ChevronRight, ArrowLeft, Calendar, User, Eye, X, Share2, Link2, Check } from "lucide-react";
@@ -246,54 +245,6 @@ function CalculatorPageInner({
     }
   }, [config, values]);
 
-  // Dynamic calculations for the custom inflation adjuster
-  const tenureYears = React.useMemo(() => {
-    const tenureKeys = ["timePeriod", "years", "tenure", "duration", "holdingPeriod", "term", "period"];
-    for (const key of tenureKeys) {
-      if (values[key] !== undefined) {
-        return values[key];
-      }
-    }
-    if (result.chartData && result.chartData.length > 0) {
-      return result.chartData.length;
-    }
-    return 10;
-  }, [values, result.chartData]);
-
-  const futureValueInfo = (() => {
-    const futureValueKeys = ["totalValue", "maturityValue", "corpus", "netWorth", "totalAmount", "finalValue", "estimatedWorth"];
-    for (const key of futureValueKeys) {
-      if (result.values[key] !== undefined) {
-        return {
-          val: result.values[key],
-          label: config.outputs.find((o) => o.id === key)?.label || "Future Value",
-        };
-      }
-    }
-    const matchedOutput = config.outputs.find(
-      (out) =>
-        out.id.toLowerCase().includes("total") ||
-        out.id.toLowerCase().includes("maturity") ||
-        out.id.toLowerCase().includes("corpus") ||
-        out.id.toLowerCase().includes("worth")
-    );
-    if (matchedOutput && result.values[matchedOutput.id] !== undefined) {
-      return {
-        val: result.values[matchedOutput.id],
-        label: matchedOutput.label,
-      };
-    }
-    const currencyOutputs = config.outputs.filter((o) => o.format === "currency");
-    if (currencyOutputs.length > 0) {
-      const lastCurrency = currencyOutputs[currencyOutputs.length - 1];
-      return {
-        val: result.values[lastCurrency.id] ?? 0,
-        label: lastCurrency.label,
-      };
-    }
-    return null;
-  })();
-
   // Update URL search parameters and local state
   const handleValueChange = React.useCallback((id: string, val: number) => {
     if (typeof window !== "undefined") {
@@ -506,14 +457,6 @@ function CalculatorPageInner({
                 </div>
               </div>
 
-              {/* Real Value & Inflation Adjuster Card */}
-              {futureValueInfo && (
-                <InflationAdjusterCard
-                  futureValue={futureValueInfo.val}
-                  futureValueLabel={futureValueInfo.label}
-                  defaultTenure={tenureYears}
-                />
-              )}
             </div>
           </section>
 
