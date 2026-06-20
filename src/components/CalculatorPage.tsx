@@ -19,18 +19,23 @@ import { trackCalculatorUse } from "./GoogleAnalytics";
 /** Inline social share bar — shown in calculator hero headers */
 function SocialShareBar({ title }: { title: string }) {
   const [copied, setCopied] = React.useState(false);
+  // Use state for the URL so that SSR and initial client render match.
+  // After mount, update to the real page URL (no hydration mismatch).
+  const [pageUrl, setPageUrl] = React.useState(siteConfig.url);
+
+  React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPageUrl(window.location.href);
+  }, []);
 
   const handleCopy = React.useCallback(() => {
-    if (typeof window === "undefined") return;
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
   }, []);
 
-  const shareUrl = typeof window !== "undefined" ? window.location.href : siteConfig.url;
-  const encodedUrl = encodeURIComponent(shareUrl);
+  const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(`${title} | WealthMaze`);
 
   return (

@@ -13,6 +13,7 @@ interface CalculatorResultsProps {
 export function CalculatorResults({ outputs, result }: CalculatorResultsProps) {
   const [copied, setCopied] = React.useState(false);
 
+  /** Full precision formatting – used for tooltips / accessibility */
   const formatValue = (val: number, format?: string, unit?: string) => {
     if (isNaN(val)) return "₹0";
     if (format === "currency") {
@@ -33,6 +34,37 @@ export function CalculatorResults({ outputs, result }: CalculatorResultsProps) {
     return `${val} ${unit || ""}`;
   };
 
+  /**
+   * Compact display formatting for result cards.
+   * Abbreviates large rupee values to avoid overflowing narrow cards:
+   *   ≥ 1 Cr  → ₹X.XX Cr
+   *   ≥ 1 L   → ₹X.XX L
+   *   < 1 L   → full Indian format
+   */
+  const formatCompact = (val: number, format?: string, unit?: string): string => {
+    if (isNaN(val)) return "₹0";
+    if (format === "currency") {
+      const abs = Math.abs(val);
+      const sign = val < 0 ? "-" : "";
+      if (abs >= 1_00_00_000) {          // ≥ 1 Crore
+        return `${sign}₹${(abs / 1_00_00_000).toFixed(2)} Cr`;
+      }
+      if (abs >= 1_00_000) {             // ≥ 1 Lakh
+        return `${sign}₹${(abs / 1_00_000).toFixed(2)} L`;
+      }
+      return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0,
+      }).format(val);
+    }
+    if (format === "percent") return `${val.toFixed(2)}%`;
+    if (format === "number") {
+      return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(val);
+    }
+    return `${val} ${unit || ""}`;
+  };
+
   const handleShare = () => {
     if (typeof window === "undefined") return;
     navigator.clipboard.writeText(window.location.href);
@@ -48,35 +80,41 @@ export function CalculatorResults({ outputs, result }: CalculatorResultsProps) {
 
   return (
     <div className="space-y-6">
-      {/* Output Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Output Cards — auto-fit grid adapts to available width whether sidebar is present or not */}
+      <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
         {outputs.map((out) => {
           const val = result.values[out.id] ?? 0;
-          const isTotal = out.id.toLowerCase().includes("total") || out.id.toLowerCase().includes("maturity") || out.id.toLowerCase().includes("corpus") || out.id.toLowerCase().includes("worth");
+          const isTotal =
+            out.id.toLowerCase().includes("total") ||
+            out.id.toLowerCase().includes("maturity") ||
+            out.id.toLowerCase().includes("corpus") ||
+            out.id.toLowerCase().includes("worth");
 
           return (
             <div
               key={out.id}
-              className={`p-5 rounded-xl border transition-all ${
+              title={formatValue(val, out.format, out.unit)} // full value on hover
+              className={`min-w-0 p-4 rounded-xl border transition-all ${
                 isTotal
                   ? "bg-gradient-to-br from-emerald-50 to-emerald-100/50 dark:from-emerald-950/20 dark:to-emerald-900/10 border-emerald-100 dark:border-emerald-900/30"
                   : "bg-white dark:bg-zinc-950 border-zinc-150 dark:border-zinc-800"
               }`}
             >
-              <span className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider">
+              <span className="block text-[11px] font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider leading-tight">
                 {out.label}
               </span>
               <div
-                className={`text-2xl font-bold mt-1 tracking-tight ${
+                className={`mt-1.5 font-bold tracking-tight break-words text-xl leading-tight ${
                   isTotal ? "text-emerald-600 dark:text-emerald-400" : "text-zinc-800 dark:text-zinc-100"
                 }`}
               >
-                {formatValue(val, out.format, out.unit)}
+                {formatCompact(val, out.format, out.unit)}
               </div>
             </div>
           );
         })}
       </div>
+
 
       {/* Share & Download Actions */}
       <div className="flex flex-wrap gap-3">
