@@ -16,11 +16,20 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     type: "website",
     siteName: "WealthMaze",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "WealthMaze – Free Financial Calculators for Indian Investors",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.metadata.home.title,
     description: siteConfig.metadata.home.description,
+    images: ["/og-image.png"],
   },
 };
 
