@@ -427,7 +427,7 @@ function CalculatorPageInner({
                 <CalculatorResults outputs={config.outputs} result={result} />
 
                 <div className="hidden print:block text-[10px] text-zinc-400 mt-6 border-t pt-4">
-                  Report generated via WealthMaze. Calculate your financial future at wealthmaze.com.
+                  Report generated via WealthMaze. Calculate your financial future at wealthmaze.in.
                 </div>
 
                 {/* Interactive Chart */}

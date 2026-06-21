@@ -95,7 +95,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Your site will be live at `https://your-project.vercel.app`.
 
-**Custom Domain:** Go to Project Settings → Domains → Add `wealthmaze.com`.
+**Custom Domain:** Go to Project Settings → Domains → Add `wealthmaze.in`.
 
 ### Option 2: Self-Hosted
 
@@ -183,7 +183,7 @@ WealthMaze provides educational financial tools only. Results are estimates and 
 
 ## 📬 Contact
 
-For questions, bug reports, or advertiser relations: **support@wealthmaze.com**
+For questions, bug reports, or advertiser relations: **support@wealthmaze.in**
 
 ---
 

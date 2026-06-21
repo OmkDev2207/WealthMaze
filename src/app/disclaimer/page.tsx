@@ -43,7 +43,7 @@ export default function DisclaimerPage() {
       <section className="space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
         <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200">1. Not Financial or Professional Advice</h2>
         <p>
-          The information, calculators, tools, and content provided on <strong>WealthMaze</strong> (wealthmaze.com) are for educational, informational, and illustrative purposes only. Nothing on this website constitutes financial, investment, legal, tax, accounting, or professional advice. 
+          The information, calculators, tools, and content provided on <strong>WealthMaze</strong> (wealthmaze.in) are for educational, informational, and illustrative purposes only. Nothing on this website constitutes financial, investment, legal, tax, accounting, or professional advice. 
         </p>
         <p>
           Calculators are mathematical simulation models. The estimates and projections generated are hypothetical, based solely on user inputs and standard financial formulas, and do not represent actual guaranteed future returns, savings, or outcomes.

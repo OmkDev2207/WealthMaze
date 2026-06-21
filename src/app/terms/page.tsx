@@ -42,7 +42,7 @@ export default function TermsPage() {
 
       <section className="space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
         <p>
-          Welcome to <strong>WealthMaze</strong> (accessible from wealthmaze.com). By accessing or using our website, tools, and calculators, you agree to be bound by these Terms of Service. If you do not agree, please do not use our website.
+          Welcome to <strong>WealthMaze</strong> (accessible from wealthmaze.in). By accessing or using our website, tools, and calculators, you agree to be bound by these Terms of Service. If you do not agree, please do not use our website.
         </p>
 
         <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-200 mt-6">1. Permitted Use of Tools</h2>

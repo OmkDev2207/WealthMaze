@@ -57,7 +57,7 @@ const CATEGORY_TO_AUDIENCE: Record<string, string> = {
 export interface CalculatorSchemaInput {
   /** Full CalculatorConfig from src/data/calculators */
   config: CalculatorConfig;
-  /** The canonical base URL (e.g. https://wealthmaze.vercel.app) */
+  /** The canonical base URL (e.g. https://wealthmaze.in) */
   siteUrl: string;
   /** The URL slug for this calculator (e.g. "sip-calculator") */
   slug: string;

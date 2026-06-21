@@ -3,8 +3,8 @@
 Welcome to WealthMaze, a premium personal finance web platform providing interactive, browser-safe, and lightning-fast calculators for mutual fund SIPs, loan EMIs, tax regimes, retirement planners, precious metals, and stocks.
 
 ## Site Details
-- **Base Domain:** https://wealthmaze.vercel.app
-- **Email Support:** support@wealthmaze.com
+- **Base Domain:** https://wealthmaze.in
+- **Email Support:** support@wealthmaze.in
 - **Core Technology:** Next.js (Static Pre-rendering), Tailwind CSS, Recharts.
 - **Privacy Policy:** No user data is stored, calculated inputs are run locally via javascript.
 
