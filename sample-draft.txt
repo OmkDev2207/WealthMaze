@@ -1,0 +1,62 @@
+---
+title: How to Build Wealth in Your 20s
+description: A practical and straightforward guide for young professionals starting their wealth accumulation journey.
+category: Investing
+tags: Investing, Youth, Wealth Building, Basics
+calculators: sip-calculator, compounding-calculator
+---
+## How to Build Wealth in Your 20s
+
+When you are in your 20s, personal finance is probably the last thing on your mind. You are just starting your career, earning your first paycheck, and wanting to enjoy your freedom.
+
+But here is the truth: your 20s are the most valuable decade of your financial life. Not because of how much money you earn, but because of how much **time** you have on your side.
+
+## Why Starting Early Matters
+
+In investing, time is leverage. When you start early, the compounding effect does the heavy lifting for you. If you wait until your 30s or 40s to start, you will have to invest significantly more money each month to achieve the same result.
+
+## A Quick Calculation
+
+Let's look at two college roommates, Rahul and Karan:
+
+- **Rahul** starts investing **₹5,000 every month** at age 22 in a mutual fund earning a 12% average annual growth rate (CAGR). He does this for 38 years until retirement at 60.
+- **Karan** waits until he is 32. He then invests **₹10,000 every month** (double Rahul's amount) for 28 years until he turns 60 in the exact same fund.
+
+### The Results at 60:
+- **Rahul's total invested**: ₹22.8 Lakhs. **Final Wealth**: **~₹4.8 Crores**.
+- **Karan's total invested**: ₹33.6 Lakhs. **Final Wealth**: **~₹3.1 Crores**.
+
+Even though Karan invested **double the monthly amount** and ₹10.8 Lakhs more in total capital, Rahul ended up with **₹1.7 Crores more wealth**. That is the cost of delaying.
+
+## Common Mistakes I See People Make
+
+1. **Thinking You Don't Have Enough Money**: Many people believe you need lakhs of rupees to start investing. In reality, you can start a mutual fund Systematic Investment Plan (SIP) with as low as ₹500.
+2. **Prioritizing Lifestyle Inflation**: As soon as salary hikes occur, spending rises to match it. Try to save at least 50% of any increment you receive.
+3. **Leaving Money Idle**: Leaving large cash buffers in savings accounts earning 3% interest is losing money to inflation.
+
+## Key Takeaways
+
+- **Automate Your Savings**: Set your monthly SIP date 2 days after your salary credit date.
+- **Pay Off High-Interest Debt**: Clear any credit card debt or personal loans before starting long-term equity investing.
+- **Stay Consistent**: Do not stop your investments when the stock market dips. Market volatility is how you acquire units at lower costs.
+
+## FAQs
+
+### What is the minimum amount to start investing?
+Most mutual funds allow you to start a SIP with ₹500 or ₹1,000 per month. Some specialized micro-savings apps start even lower.
+
+### Where should I park my emergency fund?
+Store 3 to 6 months of expenses in a liquid savings account or a sweep-in fixed deposit (FD) for instant access.
+
+### Is equity investing safe for beginners?
+Over the short term (under 3 years), equity markets fluctuate. Over the long term (7+ years), diversified equity mutual funds historical track records show high inflation-beating returns.
+
+### Should I choose dividend or growth option?
+Always choose the Growth Option. This automatically reinvestes your earnings to harness compounding.
+
+### Do I need a broker to buy mutual funds?
+No, you can invest directly with mutual fund companies (AMCs) online or use zero-commission direct mutual fund platforms.
+
+## Action Plan
+
+Start small. Set up a ₹1,000 monthly index fund SIP today. It builds the habit of investing, which is far more important than the initial amount itself.
