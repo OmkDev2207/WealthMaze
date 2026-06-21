@@ -93,7 +93,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 4. Vercel auto-detects Next.js — no configuration needed.
 5. Click **Deploy**.
 
-Your site will be live at `https://your-project.vercel.app`.
+Your site will be live at your configured domain.
 
 **Custom Domain:** Go to Project Settings → Domains → Add `wealthmaze.in`.
 

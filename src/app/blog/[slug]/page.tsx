@@ -188,10 +188,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                 {/* Article Info Bar */}
                 <div className="flex flex-wrap gap-4 text-xs font-semibold text-zinc-400 dark:text-zinc-500 pt-1">
-                  <span className="flex items-center">
+                  <Link href="/author/om-k" className="flex items-center hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
                     <User className="h-3.5 w-3.5 mr-1" />
                     {post.author.name}
-                  </span>
+                  </Link>
                   <span className="flex items-center">
                     <Calendar className="h-3.5 w-3.5 mr-1" />
                     {post.publishedAt}
@@ -203,10 +203,24 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
               </header>
 
-              {/* Render parsed Markdown body */}
               <article className="prose prose-zinc dark:prose-invert max-w-none">
                 <Markdown content={markdownContent} />
               </article>
+
+              {/* About the Author box */}
+              <div className="p-6 bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800 rounded-2xl flex flex-col sm:flex-row gap-5 items-start sm:items-center mt-8">
+                <div className="h-16 w-16 rounded-full bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/30 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-extrabold text-2xl shrink-0 select-none shadow-inner">
+                  OK
+                </div>
+                <div className="space-y-1.5">
+                  <h4 className="font-bold text-zinc-900 dark:text-white text-sm">
+                    Written by <Link href="/author/om-k" className="text-emerald-600 dark:text-emerald-400 hover:underline">Om K.</Link>
+                  </h4>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-450 leading-relaxed">
+                    {post.author.bio}
+                  </p>
+                </div>
+              </div>
 
               {/* Universal Protective Financial Disclaimer Box */}
               <div className="p-5 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-850 rounded-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400 space-y-2 mt-8">

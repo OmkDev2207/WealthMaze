@@ -18,11 +18,11 @@ export interface BlogPost {
 }
 
 export const authors: Record<string, Author> = {
-  wealthmaze: {
-    name: "WealthMaze Editorial Board",
-    avatar: "/authors/editorial.png",
-    role: "Financial Research & Policy Team",
-    bio: "Our team consists of seasoned financial analysts, chartered accountants, and product developers dedicated to making personal finance transparent and mathematical.",
+  omk: {
+    name: "Om K.",
+    avatar: "/authors/om-k.png",
+    role: "Founder, WealthMaze",
+    bio: "Om K. is the founder of WealthMaze and writes about personal finance, investing, SIPs, mutual funds, retirement planning, budgeting, and wealth building. His goal is to simplify financial concepts and help readers make better money decisions.",
   },
 };
 
@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["SIP", "Mutual Funds", "Beginners"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator"],
   },
   // 2. Compounding
@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["Compounding", "Investing", "Education"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["cagr-calculator", "sip-calculator"],
   },
   // 3. CAGR
@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Stock Market",
     tags: ["CAGR", "Stocks", "Investment Math"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["cagr-calculator", "stock-return-calculator"],
   },
   // 4. EMI Formula
@@ -72,7 +72,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Loans",
     tags: ["EMI", "Home Loan", "Personal Loan"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["emi-calculator"],
   },
   // 5. How to Save for a Car
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Savings",
     tags: ["How to Save for a Car", "Buy Car with Savings", "Car Budgeting", "Savings Plan"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["car-loan-emi-calculator", "rd-calculator", "fd-calculator"],
   },
   // 6. How to Save for a House
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Savings",
     tags: ["How to Save for a House", "Invest to Buy House", "Home Down Payment", "Real Estate Planning"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["home-loan-emi-calculator", "emi-calculator", "sip-calculator", "loan-prepayment-calculator"],
   },
   // 7. What is Taxation
@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tax",
     tags: ["Taxation", "Economics", "Education"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
   },
   // 8. Types of Taxes
@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tax",
     tags: ["Taxation", "GST", "Economics"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
   },
   // 9. Income Tax Basics
@@ -132,7 +132,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tax",
     tags: ["Income Tax", "Education", "Basics"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
   },
   // 10. Budget Rule (Target: Savings, Budgeting, Rules)
@@ -144,7 +144,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Savings",
     tags: ["Budgeting", "Savings", "Financial Habits"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["rd-calculator", "fd-calculator", "sip-calculator"],
   },
   // 11. Liquid vs Non-Liquid Assets (Target: Savings, Liquidity)
@@ -156,7 +156,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Savings",
     tags: ["Savings", "Liquidity", "Financial Planning"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["fd-calculator", "rd-calculator"],
   },
   // 12. Intro to Financial Markets
@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["Beginners", "Stocks", "Bonds", "Mutual Funds"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "stock-return-calculator", "mutual-fund-return-calculator"],
   },
   // 13. Index Funds
@@ -180,7 +180,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["Passive Investing", "SIP", "Index Funds"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator"],
   },
   // 14. Debt-to-Income Ratio
@@ -192,7 +192,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Loans",
     tags: ["EMI", "Banking Ratios", "Debt"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "car-loan-emi-calculator"],
   },
   // 15. Loan Prepayments
@@ -204,7 +204,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Loans",
     tags: ["EMI", "Interest Savings", "Loan Prepayment"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["loan-prepayment-calculator", "home-loan-emi-calculator"],
   },
   // 16. Market Volatility
@@ -216,7 +216,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Stock Market",
     tags: ["Market Volatility", "Stocks", "Market Cycles"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["stock-return-calculator", "cagr-calculator", "portfolio-return-calculator"],
   },
   // 17. Asset Allocation
@@ -228,7 +228,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["Asset Allocation", "Portfolio", "Diversification"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["portfolio-return-calculator", "net-worth-calculator", "gold-investment-calculator"],
   },
   // 18. Beginner Investing Guide
@@ -240,7 +240,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Investing",
     tags: ["Beginners", "Investing", "Education"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator", "goal-based-investment-calculator"],
   },
   // 19. Emergency Fund Guide
@@ -252,7 +252,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Savings",
     tags: ["Emergency Fund", "Savings", "Budgeting"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["fd-calculator", "rd-calculator"],
   },
   // 20. Gold Investment Guide
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Gold",
     tags: ["Gold", "Inflation", "Hedge"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator"],
   },
   // 21. Home Loan vs Personal Loan
@@ -276,7 +276,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Loans",
     tags: ["Home Loan", "Personal Loan", "EMI"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "loan-prepayment-calculator"],
   },
   // 22. Investing Psychology
@@ -288,7 +288,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["Psychology", "Stock Market", "Volatility"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "portfolio-return-calculator", "cagr-calculator"],
   },
   // 23. Loan Affordability Guide
@@ -300,7 +300,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Loans",
     tags: ["EMI", "Debt", "Budgeting"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "loan-prepayment-calculator"],
   },
   // 24. Passive Investing Basics
@@ -312,7 +312,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["Passive Investing", "Index Funds", "Investing"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator"],
   },
   // 25. Reducing EMI
@@ -324,7 +324,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Loans",
     tags: ["EMI", "Interest Savings", "Prepayment"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
   },
   // 26. Saving First 1 Lakh
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Savings",
     tags: ["Savings", "Financial Discipline", "Budgeting"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["rd-calculator", "fd-calculator"],
   },
   // 27. SGB vs Physical Gold
@@ -348,7 +348,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Gold",
     tags: ["SGB", "Gold", "Investing"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator"],
   },
   // 28. SIP for Retirement
@@ -360,7 +360,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Retirement",
     tags: ["Retirement", "SIP", "FIRE"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["retirement-calculator", "fire-calculator", "sip-calculator"],
   },
   // 29. SIP for Students
@@ -372,7 +372,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["SIP", "Students", "Beginners"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "goal-based-investment-calculator", "rd-calculator"],
   },
   // 30. SIP Mistakes
@@ -384,7 +384,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["SIP", "Common Mistakes", "Investing"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "sip-comparison-calculator"],
   },
   // 31. SIP vs FD
@@ -396,7 +396,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Investing",
     tags: ["SIP", "Fixed Deposit", "Comparison"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["sip-calculator", "fd-calculator"],
   },
   // 32. Tax Policy Basics
@@ -408,7 +408,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tax",
     tags: ["Tax Policy", "Economics", "Education"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
   },
   // 33. Where Do Taxes Go?
@@ -420,7 +420,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tax",
     tags: ["Taxation", "Public Spend", "Education"],
-    author: authors.wealthmaze,
+    author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
   },
 ];

@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/resources", priority: 0.85, freq: "weekly" as const },
     { route: "/guides", priority: 0.8, freq: "weekly" as const },
     { route: "/free-tools", priority: 0.8, freq: "weekly" as const },
+    { route: "/author/om-k", priority: 0.6, freq: "monthly" as const },
   ].map(({ route, priority, freq }) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
