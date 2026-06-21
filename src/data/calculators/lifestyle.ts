@@ -4,6 +4,7 @@ export const lifestyleCalculators: CalculatorConfig[] = [
   {
     id: "how-long-until-1-crore",
     name: "How Long Until ₹1 Crore?",
+    isIndiaSpecific: true,
     category: "Lifestyle",
     description: "Determine the exact time required to build a net worth of ₹1 Crore.",
     seoTitle: "How Long Until 1 Crore Calculator – Target Wealth",
@@ -164,8 +165,65 @@ export const lifestyleCalculators: CalculatorConfig[] = [
       }
     ],
     faqs: [
-      { question: "Is the 4% Safe Withdrawal Rate applicable in India?", answer: "Yes, though India has higher inflation than western markets, it also offers higher nominal yields. Many financial planners suggest a SWR of 3% to 3.5% for Indian portfolios to build a safer buffer." },
-      { question: "How do I determine my financial freedom score?", answer: "Enter your total financial assets, monthly living expenses, and expected safe withdrawal rate into our calculator to check if your passive income covers expenses." }
+      { question: "What is a Safe Withdrawal Rate (SWR)?", answer: "SWR is the conservative percentage of your total investment portfolio that you can withdraw annually without running out of money. The industry standard SWR is 3% to 4%, depending on your local inflation rate and asset allocation." },
+      { question: "How do I determine my financial freedom score?", answer: "Enter your total financial assets, monthly living expenses, and expected safe withdrawal rate to check if your passive income covers expenses. A score of 100% or more means you are financially free." }
+    ]
+  },
+  {
+    id: "inflation-calculator",
+    name: "Inflation Calculator",
+    category: "Lifestyle",
+    description: "Calculate how inflation affects the purchasing power of your money and increases the future cost of goods and services.",
+    seoTitle: "Inflation Calculator – Calculate Future Value and Purchasing Power",
+    seoDescription: "Estimate how inflation impacts your money. Calculate future cost of items and purchasing power decay over time with our free inflation calculator.",
+    inputs: [
+      { id: "amount", label: "Current Cost / Value of Money", type: "slider", min: 100, max: 10000000, step: 1000, default: 50000, unit: "₹" },
+      { id: "inflationRate", label: "Expected Annual Inflation Rate", type: "slider", min: 0.5, max: 20, step: 0.1, default: 4, unit: "%" },
+      { id: "years", label: "Time Horizon (Years)", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "futureCost", label: "Future Adjusted Value (Cost of Item)", format: "currency" },
+      { id: "purchasingPower", label: "Future Purchasing Power of Current Sum", format: "currency" },
+      { id: "totalLoss", label: "Total Value Lost to Inflation", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const p = inputs.amount;
+      const r = inputs.inflationRate;
+      const t = inputs.years;
+
+      const rate = r / 100;
+      const futureCost = p * Math.pow(1 + rate, t);
+      const purchasingPower = p / Math.pow(1 + rate, t);
+      const totalLoss = Math.max(0, p - purchasingPower);
+
+      const chartData = [];
+      for (let yr = 0; yr <= t; yr++) {
+        chartData.push({
+          name: `Yr ${yr}`,
+          "Future Cost": Math.round(p * Math.pow(1 + rate, yr)),
+          "Purchasing Power": Math.round(p / Math.pow(1 + rate, yr)),
+        });
+      }
+
+      return {
+        values: { futureCost, purchasingPower, totalLoss },
+        chartData,
+      };
+    },
+    educationalContent: [
+      {
+        title: "How Inflation Affects Your Personal Finances",
+        content: "Our Inflation Calculator helps you project how price increases erode purchasing power. Inflation is a measure of the rate at which prices for goods and services rise. When inflation occurs, every unit of currency buys a smaller percentage of a good or service. This means your cash loses value over time if it is not invested in assets that grow faster than the rate of inflation."
+      },
+      {
+        title: "Purchasing Power vs. Future Cost",
+        content: "This calculator provides two crucial metrics:\n1. **Future Adjusted Cost:** Shows how much money you will need in the future to purchase a product or service that costs a specific amount today.\n2. **Purchasing Power:** Shows what a specific amount of money today will actually be worth in terms of buying power in the future. For example, at a standard 4% inflation rate, $10,000 cash kept under a mattress will only buy $6,755 worth of goods in 10 years."
+      }
+    ],
+    faqs: [
+      { question: "What is the historical average inflation rate?", answer: "Historically, inflation in developed economies like the US, UK, and Canada has averaged around 2% to 3% annually, while developing economies can see averages of 5% to 8% or higher. Central banks often target a 2% inflation rate." },
+      { question: "How do I beat inflation?", answer: "To preserve your wealth, you must invest in assets that offer historical returns above the inflation rate. These include equities, stock index mutual funds/ETFs, and real estate. Cash and standard checking accounts are eroded by inflation." },
+      { question: "How do I calculate future value adjusted for inflation online?", answer: "Input your current sum, average expected inflation rate, and years into the future into our inflation calculator to estimate future costs and purchasing power." }
     ]
   }
 ];

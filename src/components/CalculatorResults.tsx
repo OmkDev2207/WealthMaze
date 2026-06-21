@@ -5,65 +5,85 @@ import * as React from "react";
 import { CalculatorOutput, CalculatorResult } from "@/data/calculators/types";
 import { Download, Share2, Check } from "lucide-react";
 
+import { useCurrency } from "@/lib/CurrencyContext";
+
 interface CalculatorResultsProps {
   outputs: CalculatorOutput[];
   result: CalculatorResult;
+  isIndiaSpecific?: boolean;
 }
 
-export function CalculatorResults({ outputs, result }: CalculatorResultsProps) {
+export function CalculatorResults({ outputs, result, isIndiaSpecific = false }: CalculatorResultsProps) {
   const [copied, setCopied] = React.useState(false);
+  const { formatCurrency: globalFormatCurrency, formatNumber: globalFormatNumber } = useCurrency();
 
-  /** Full precision formatting – used for tooltips / accessibility */
-  const formatValue = (val: number, format?: string, unit?: string) => {
-    if (isNaN(val)) return "₹0";
-    if (format === "currency") {
+  const formatCurrency = React.useCallback((val: number, compact = false) => {
+    if (isIndiaSpecific) {
+      if (isNaN(val)) return "₹0";
+      const abs = Math.abs(val);
+      const sign = val < 0 ? "-" : "";
+      if (compact) {
+        if (abs >= 1_00_00_000) {
+          return `${sign}₹${(abs / 1_00_00_000).toFixed(2)} Cr`;
+        }
+        if (abs >= 1_00_000) {
+          return `${sign}₹${(abs / 1_00_000).toFixed(2)} L`;
+        }
+      }
       return new Intl.NumberFormat("en-IN", {
         style: "currency",
         currency: "INR",
         maximumFractionDigits: 0,
       }).format(val);
+    }
+    return globalFormatCurrency(val, compact);
+  }, [isIndiaSpecific, globalFormatCurrency]);
+
+  const formatNumber = React.useCallback((val: number, fractionDigits = 2) => {
+    if (isIndiaSpecific) {
+      if (isNaN(val)) return "0";
+      return new Intl.NumberFormat("en-IN", {
+        maximumFractionDigits: fractionDigits,
+      }).format(val);
+    }
+    return globalFormatNumber(val, fractionDigits);
+  }, [isIndiaSpecific, globalFormatNumber]);
+
+  /** Full precision formatting – used for tooltips / accessibility */
+  const formatValue = React.useCallback((val: number, format?: string, unit?: string) => {
+    if (isNaN(val)) return "0";
+    if (format === "currency") {
+      return formatCurrency(val, false);
     }
     if (format === "percent") {
       return `${val.toFixed(2)}%`;
     }
     if (format === "number") {
-      return new Intl.NumberFormat("en-IN", {
-        maximumFractionDigits: 2,
-      }).format(val);
+      return formatNumber(val, 2);
     }
-    return `${val} ${unit || ""}`;
-  };
+    let displayUnit = unit || "";
+    if (displayUnit === "₹" && !isIndiaSpecific) {
+      displayUnit = "";
+    }
+    return `${val} ${displayUnit}`;
+  }, [formatCurrency, formatNumber, isIndiaSpecific]);
 
-  /**
-   * Compact display formatting for result cards.
-   * Abbreviates large rupee values to avoid overflowing narrow cards:
-   *   ≥ 1 Cr  → ₹X.XX Cr
-   *   ≥ 1 L   → ₹X.XX L
-   *   < 1 L   → full Indian format
-   */
-  const formatCompact = (val: number, format?: string, unit?: string): string => {
-    if (isNaN(val)) return "₹0";
+  /** Compact display formatting for result cards. */
+  const formatCompact = React.useCallback((val: number, format?: string, unit?: string): string => {
+    if (isNaN(val)) return "0";
     if (format === "currency") {
-      const abs = Math.abs(val);
-      const sign = val < 0 ? "-" : "";
-      if (abs >= 1_00_00_000) {          // ≥ 1 Crore
-        return `${sign}₹${(abs / 1_00_00_000).toFixed(2)} Cr`;
-      }
-      if (abs >= 1_00_000) {             // ≥ 1 Lakh
-        return `${sign}₹${(abs / 1_00_000).toFixed(2)} L`;
-      }
-      return new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        maximumFractionDigits: 0,
-      }).format(val);
+      return formatCurrency(val, true);
     }
     if (format === "percent") return `${val.toFixed(2)}%`;
     if (format === "number") {
-      return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(val);
+      return formatNumber(val, 2);
     }
-    return `${val} ${unit || ""}`;
-  };
+    let displayUnit = unit || "";
+    if (displayUnit === "₹" && !isIndiaSpecific) {
+      displayUnit = "";
+    }
+    return `${val} ${displayUnit}`;
+  }, [formatCurrency, formatNumber, isIndiaSpecific]);
 
   const handleShare = () => {
     if (typeof window === "undefined") return;

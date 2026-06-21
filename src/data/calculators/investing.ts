@@ -21,6 +21,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "monthlyInvestment", label: "Monthly Investment", type: "slider", min: 500, max: 1000000, step: 500, default: 25000, unit: "₹" },
       { id: "expectedReturn", label: "Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
       { id: "timePeriod", label: "Time Period", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: "Yr" },
+      { id: "stepUp", label: "Annual Step-up", type: "slider", min: 0, max: 50, step: 1, default: 0, unit: "%" },
     ],
     outputs: [
       { id: "investedAmount", label: "Invested Amount", format: "currency" },
@@ -32,29 +33,29 @@ export const investingCalculators: CalculatorConfig[] = [
       const p = inputs.monthlyInvestment;
       const r = inputs.expectedReturn;
       const t = inputs.timePeriod;
+      const stepUp = (inputs.stepUp || 0) / 100;
 
-      const i = r / (12 * 100);
-      const n = t * 12;
-
-      const totalValue = p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
-      const investedAmount = p * n;
-      const estReturns = totalValue - investedAmount;
+      const monthlyRate = r / 12 / 100;
+      let totalValue = 0;
+      let investedAmount = 0;
+      let currentMonthlyInvestment = p;
 
       const chartData = [];
-      let runningInvested = 0;
-      let runningValue = 0;
 
       for (let yr = 1; yr <= t; yr++) {
-        const months = yr * 12;
-        const valueAtYear = p * ((Math.pow(1 + i, months) - 1) / i) * (1 + i);
-        runningInvested = p * months;
-        runningValue = valueAtYear;
+        for (let month = 1; month <= 12; month++) {
+          totalValue = (totalValue + currentMonthlyInvestment) * (1 + monthlyRate);
+          investedAmount += currentMonthlyInvestment;
+        }
         chartData.push({
           name: `Yr ${yr}`,
-          "Invested Amount": Math.round(runningInvested),
-          "Total Wealth": Math.round(runningValue),
+          "Invested Amount": Math.round(investedAmount),
+          "Total Wealth": Math.round(totalValue),
         });
+        currentMonthlyInvestment = currentMonthlyInvestment * (1 + stepUp);
       }
+
+      const estReturns = totalValue - investedAmount;
 
       const lumpsumEquivalent = investedAmount;
       const lumpsumValue = lumpsumEquivalent * Math.pow(1 + r / 100, t);
@@ -67,7 +68,7 @@ export const investingCalculators: CalculatorConfig[] = [
         chartData,
         comparison: {
           title: "Alternative Investment Scenarios",
-          headers: ["Strategy", "Amount Invested", "Final Value (10 Yrs)", "Net Gain"],
+          headers: ["Strategy", "Amount Invested", `Final Value (${t} Yrs)`, "Net Gain"],
           rows: [
             ["Regular Monthly SIP", formatIndianCurrency(investedAmount), formatIndianCurrency(totalValue), formatIndianCurrency(estReturns)],
             ["One-time Lumpsum", formatIndianCurrency(lumpsumEquivalent), formatIndianCurrency(lumpsumValue), formatIndianCurrency(lumpsumValue - lumpsumEquivalent)],
@@ -956,6 +957,237 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Does Coast FIRE mean I can stop working entirely today?", answer: "No. Reaching Coast FIRE means you don't need to save *more* for retirement, but you still need to earn enough money to cover your day-to-day living expenses until you reach retirement age." },
       { question: "How do I calculate my Coast FIRE target?", answer: "Enter your current age, target retirement age, current savings, annual expenses, expected returns, and inflation rate into our calculator to check if you have saved enough to coast." }
+    ]
+  },
+  {
+    id: "compound-interest-calculator",
+    name: "Compound Interest Calculator",
+    category: "Investing",
+    description: "Calculate how compound interest builds your wealth over time. Compare different compounding frequencies (monthly, quarterly, half-yearly, yearly).",
+    seoTitle: "Compound Interest Calculator – Estimate Compounding Growth",
+    seoDescription: "Calculate the compounding return on your investments. Estimate future wealth with monthly or quarterly compounding and additional contributions online.",
+    inputs: [
+      { id: "principal", label: "Initial Principal Amount", type: "slider", min: 1000, max: 10000000, step: 5000, default: 100000, unit: "₹" },
+      { id: "monthlyContribution", label: "Additional Monthly Contribution", type: "slider", min: 0, max: 500000, step: 500, default: 5000, unit: "₹" },
+      { id: "interestRate", label: "Expected Interest Rate (p.a. %)", type: "slider", min: 1, max: 30, step: 0.5, default: 10, unit: "%" },
+      { id: "timePeriod", label: "Time Period (Years)", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: "Yr" },
+      { id: "frequency", label: "Compounding Frequency", type: "select", default: 12, options: [
+        { label: "Monthly", value: 12 },
+        { label: "Quarterly", value: 4 },
+        { label: "Half-Yearly", value: 2 },
+        { label: "Yearly", value: 1 }
+      ]}
+    ],
+    outputs: [
+      { id: "investedAmount", label: "Total Invested Amount", format: "currency" },
+      { id: "interestEarned", label: "Interest Earned", format: "currency" },
+      { id: "totalValue", label: "Total Accumulated Value", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const p = inputs.principal;
+      const pm = inputs.monthlyContribution;
+      const r = inputs.interestRate / 100;
+      const t = inputs.timePeriod;
+      const freq = inputs.frequency;
+
+      let balance = p;
+      let totalInvested = p;
+      const chartData = [];
+
+      for (let yr = 1; yr <= t; yr++) {
+        const n = freq;
+        const pFuture = balance * Math.pow(1 + r/n, n);
+        
+        let pmtFuture = 0;
+        if (pm > 0) {
+          if (n === 12) {
+            pmtFuture = pm * ((Math.pow(1 + r/12, 12) - 1) / (r/12)) * (1 + r/12);
+          } else {
+            const effectiveMonthlyRate = Math.pow(1 + r/n, n/12) - 1;
+            pmtFuture = pm * ((Math.pow(1 + effectiveMonthlyRate, 12) - 1) / effectiveMonthlyRate) * (1 + effectiveMonthlyRate);
+          }
+        }
+
+        balance = pFuture + pmtFuture;
+        totalInvested += pm * 12;
+
+        chartData.push({
+          name: `Yr ${yr}`,
+          "Invested Capital": totalInvested,
+          "Accumulated Value": Math.round(balance),
+        });
+      }
+
+      const interestEarned = Math.max(0, balance - totalInvested);
+
+      return {
+        values: { investedAmount: totalInvested, interestEarned, totalValue: balance },
+        chartData,
+      };
+    },
+    educationalContent: [
+      {
+        title: "The Mathematical Power of Compound Interest",
+        content: "Our Compound Interest Calculator models the acceleration of your wealth over time. Unlike simple interest, which only calculates returns on your initial principal, compound interest calculates interest on your principal plus all accumulated interest. Albert Einstein famously called compound interest the 'eighth wonder of the world' because of its exponential growth properties."
+      },
+      {
+        title: "How Compounding Frequencies Affect Returns",
+        content: "The compounding frequency is the number of times interest is calculated and added to the principal balance per year. Standard frequencies are yearly, half-yearly, quarterly, and monthly. The more frequently interest compounds, the more interest you earn because your gains begin generating their own returns sooner. While the nominal interest rate remains the same, the Annual Percentage Yield (APY) increases with higher compounding frequencies."
+      }
+    ],
+    faqs: [
+      { question: "What is the difference between simple and compound interest?", answer: "Simple interest is calculated only on the principal amount of a loan or deposit. Compound interest is calculated on the principal plus any accumulated interest from previous periods." },
+      { question: "How does the Rule of 72 work?", answer: "The Rule of 72 is a quick mental formula to estimate when an investment will double. Divide 72 by your expected annual interest rate. For example, an investment earning 8% p.a. will double in approximately 9 years (72 / 8 = 9)." },
+      { question: "How do I use a compound interest calculator with monthly payments?", answer: "Input your starting principal, additional monthly payments, expected annual interest rate, duration in years, and compounding frequency to calculate the future value of your portfolio." }
+    ]
+  },
+  {
+    id: "investment-growth-calculator",
+    name: "Investment Growth Calculator",
+    category: "Investing",
+    description: "Forecast the growth of your investments, portfolios, or mutual funds under various annual return scenarios.",
+    seoTitle: "Investment Growth Calculator – Predict Portfolio Value",
+    seoDescription: "Calculate the long-term future value of your portfolio. Enter initial investments, monthly contributions, and expected yields to estimate investment growth.",
+    inputs: [
+      { id: "initialInvestment", label: "Initial Investment", type: "slider", min: 1000, max: 10000000, step: 5000, default: 100000, unit: "₹" },
+      { id: "monthlyContribution", label: "Monthly Contribution", type: "slider", min: 0, max: 500000, step: 500, default: 5000, unit: "₹" },
+      { id: "expectedReturn", label: "Expected Annual Return Rate (%)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
+      { id: "timePeriod", label: "Investment Duration (Years)", type: "slider", min: 1, max: 40, step: 1, default: 15, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "investedAmount", label: "Total Capital Invested", format: "currency" },
+      { id: "estimatedReturns", label: "Estimated Return Value", format: "currency" },
+      { id: "maturityValue", label: "Future Portfolio Value", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const init = inputs.initialInvestment;
+      const monthly = inputs.monthlyContribution;
+      const r = inputs.expectedReturn / 100;
+      const t = inputs.timePeriod;
+
+      const monthlyRate = r / 12;
+      const months = t * 12;
+
+      let balance = init;
+      let investedAmount = init;
+      const chartData = [];
+
+      for (let m = 1; m <= months; m++) {
+        balance = (balance + monthly) * (1 + monthlyRate);
+        investedAmount += monthly;
+
+        if (m % 12 === 0) {
+          chartData.push({
+            name: `Yr ${m / 12}`,
+            "Invested Capital": investedAmount,
+            "Portfolio Value": Math.round(balance),
+          });
+        }
+      }
+
+      const estimatedReturns = Math.max(0, balance - investedAmount);
+
+      return {
+        values: { investedAmount, estimatedReturns, maturityValue: balance },
+        chartData,
+      };
+    },
+    educationalContent: [
+      {
+        title: "Forecasting Your Investment Portfolio Growth",
+        content: "Our Investment Growth Calculator helps you visualize the wealth accumulation of your stocks, mutual funds, or real estate assets. Long-term investing relies on the steady appreciation of asset values and the reinvestment of dividends or interest. Even standard index funds tracking indices like the S&P 500 or Nifty 50 have historically averaged returns between 8% to 12% p.a. over long horizons, riding out typical market cycles."
+      },
+      {
+        title: "The Impact of Starting Early on Investment Growth",
+        content: "Time is the most critical element in portfolio growth. Starting to invest five years earlier can result in a significantly larger retirement corpus, even if you invest less total money. This is because the compounding curve follows a hockey-stick shape, accelerating dramatically in the later years of your timeline."
+      }
+    ],
+    faqs: [
+      { question: "What return rate should I expect on a diversified portfolio?", answer: "A diversified equity index portfolio historically yields around 8% to 12% p.a. long-term, while fixed-income portfolios yield around 4% to 7% p.a. Note that returns fluctuate and past performance is no guarantee of future results." },
+      { question: "How do dividend reinvestments affect growth?", answer: "Reinvesting dividends back into the same stock or mutual fund compounds your returns significantly. Instead of cashing out, you buy more shares, accelerating the growth of your total holdings." },
+      { question: "How do I calculate future portfolio returns?", answer: "Enter your starting capital, recurring contributions, expected annual yield, and holding period in years into our calculator to forecast your total portfolio value." }
+    ]
+  },
+  {
+    id: "financial-independence-calculator",
+    name: "Financial Independence Calculator",
+    category: "Retirement",
+    description: "Determine when you can achieve Financial Independence (FI) and stop working based on your current savings and living expenses.",
+    seoTitle: "Financial Independence Calculator – Track Your FI Target",
+    seoDescription: "Calculate your Financial Independence number. Determine how many years are required to reach financial freedom based on SWR metrics.",
+    inputs: [
+      { id: "currentAge", label: "Current Age", type: "slider", min: 18, max: 70, step: 1, default: 30, unit: "Yr" },
+      { id: "annualIncome", label: "Net Annual Income", type: "slider", min: 10000, max: 1000000, step: 5000, default: 80000, unit: "₹" },
+      { id: "savingsRate", label: "Annual Savings Rate (%)", type: "slider", min: 5, max: 90, step: 5, default: 30, unit: "%" },
+      { id: "currentSavings", label: "Current Portfolio / Savings", type: "slider", min: 0, max: 10000000, step: 10000, default: 50000, unit: "₹" },
+      { id: "investmentReturn", label: "Expected Return Rate (p.a. %)", type: "slider", min: 1, max: 20, step: 0.5, default: 8, unit: "%" },
+      { id: "postFireReturn", label: "Safe Withdrawal Rate (SWR %)", type: "slider", min: 2, max: 8, step: 0.1, default: 4, unit: "%" }
+    ],
+    outputs: [
+      { id: "fireNumber", label: "Target Financial Independence Number", format: "currency" },
+      { id: "yearsToFire", label: "Years to Reach Financial Independence", format: "number" },
+      { id: "ageAtFire", label: "Age at Financial Independence", format: "number" },
+    ],
+    calculate: (inputs) => {
+      const age = inputs.currentAge;
+      const income = inputs.annualIncome;
+      const sRate = inputs.savingsRate;
+      const currentPortfolio = inputs.currentSavings;
+      const r = inputs.investmentReturn;
+      const swr = inputs.postFireReturn;
+
+      const annualSavings = income * (sRate / 100);
+      const annualExpenses = income - annualSavings;
+      const fireNumber = annualExpenses / (swr / 100);
+
+      let portfolio = currentPortfolio;
+      let years = 0;
+      const chartData = [];
+
+      chartData.push({
+        name: `Age ${age}`,
+        "Portfolio Value": Math.round(portfolio),
+        "FI Target": Math.round(fireNumber),
+      });
+
+      const maxSimYears = 60;
+      for (let t = 1; t <= maxSimYears; t++) {
+        if (portfolio < fireNumber) {
+          portfolio = portfolio * (1 + r / 100) + annualSavings;
+          years = t;
+        } else {
+          portfolio = portfolio * (1 + r / 100);
+        }
+        chartData.push({
+          name: `Age ${age + t}`,
+          "Portfolio Value": Math.round(portfolio),
+          "FI Target": Math.round(fireNumber),
+        });
+      }
+
+      if (currentPortfolio >= fireNumber) {
+        years = 0;
+      }
+
+      return {
+        values: { fireNumber, yearsToFire: years, ageAtFire: age + years },
+        chartData: chartData.slice(0, Math.min(years + 10, maxSimYears)),
+      };
+    },
+    educationalContent: [
+      {
+        title: "What is Financial Independence (FI)?",
+        content: "Our Financial Independence Calculator estimates when your investments can cover your daily expenses. Financial Independence (FI) is achieved when your accumulated portfolio generates enough passive income to pay for your living expenses indefinitely. It means you no longer need to work for money and are free to choose how to spend your time."
+      },
+      {
+        title: "The Math of SWR and Sentry FIRE targets",
+        content: "Your target FI number is determined by your annual living expenses and your Safe Withdrawal Rate (SWR). SWR is the percentage of your portfolio you can withdraw each year without running out of money. The industry standard is the 4% rule (derived from the Trinity Study), which states that withdrawing 4% of a diversified portfolio annually will likely sustain it for 30+ years. The math translates to needing a portfolio that is 25 times your annual living expenses."
+      }
+    ],
+    faqs: [
+      { question: "What is the 25x Rule?", answer: "The 25x Rule states that you are financially independent when you accumulate 25 times your annual living expenses in assets. For example, if you spend $40,000 per year, your target FI number is $1,000,000 ($40,000 * 25)." },
+      { question: "How does the savings rate affect the time to FI?", answer: "Your savings rate is the single most powerful factor. If you save 10% of your income, you must work 9 years to save for 1 year of expenses. If you save 50%, you save 1 year of expenses for every year worked, reducing the time to FI to under 17 years." },
+      { question: "How do I calculate my safe withdrawal rate target?", answer: "Enter your current age, income, savings rate, accumulated savings, investment returns, and expected safe withdrawal rate to calculate the exact years needed to achieve financial independence." }
     ]
   }
 ];

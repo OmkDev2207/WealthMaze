@@ -38,7 +38,7 @@ export function MobileBottomNav() {
       </Link>
 
       <Link
-        href="/sip-calculator"
+        href="/calculators"
         className={`flex flex-col items-center justify-center flex-grow py-1 transition-colors group ${
           isCalculatorActive
             ? "text-emerald-500 dark:text-emerald-400"

@@ -8,6 +8,10 @@ export function AdSenseLoader() {
 
     const loadAdSense = () => {
       if (scriptLoaded) return;
+
+      const consent = localStorage.getItem("cookie-consent");
+      if (consent !== "accepted") return;
+
       scriptLoaded = true;
 
       // Remove all event listeners immediately to prevent multiple loads
@@ -30,11 +34,24 @@ export function AdSenseLoader() {
     window.addEventListener("touchstart", loadAdSense, { passive: true });
     window.addEventListener("keydown", loadAdSense, { passive: true });
 
+    // Listen to custom consent accepted event
+    const handleConsentAccepted = () => {
+      loadAdSense();
+    };
+    window.addEventListener("cookie-consent-accepted", handleConsentAccepted);
+
+    // If consent is already accepted, try running it on interaction or load
+    const consent = localStorage.getItem("cookie-consent");
+    if (consent === "accepted") {
+      loadAdSense();
+    }
+
     return () => {
       window.removeEventListener("scroll", loadAdSense);
       window.removeEventListener("mousemove", loadAdSense);
       window.removeEventListener("touchstart", loadAdSense);
       window.removeEventListener("keydown", loadAdSense);
+      window.removeEventListener("cookie-consent-accepted", handleConsentAccepted);
     };
   }, []);
 

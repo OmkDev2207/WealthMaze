@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Metadata } from "next";
-import ResourcesPage from "../resources/page";
+import { CalculatorsExplorer } from "@/components/CalculatorsExplorer";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -12,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function FreeToolsPage() {
-  return <ResourcesPage />;
+  return <CalculatorsExplorer />;
 }

@@ -7,49 +7,49 @@ import { ChevronDown, TrendingUp, Calendar, ShieldCheck, Percent, FileText, BarC
 const categories = [
   {
     name: "Investing",
-    slug: "sip-calculator", // Dynamic redirect to category featured tool
+    slug: "investing",
     desc: "Mutual funds, compounding, and SIP planners.",
     icon: TrendingUp,
   },
   {
     name: "Retirement",
-    slug: "retirement-calculator",
+    slug: "retirement",
     desc: "Early retirement plans & FIRE targets.",
     icon: Calendar,
   },
   {
     name: "Savings",
-    slug: "fd-calculator",
+    slug: "savings",
     desc: "FD, RD, PPF, and savings growth.",
     icon: ShieldCheck,
   },
   {
     name: "Loans",
-    slug: "emi-calculator",
+    slug: "loans",
     desc: "Calculate EMIs and interest timelines.",
     icon: Percent,
   },
   {
     name: "Tax",
-    slug: "income-tax-calculator",
+    slug: "tax",
     desc: "Income tax slabs and capital gains.",
     icon: FileText,
   },
   {
     name: "Stock Market",
-    slug: "stock-return-calculator",
+    slug: "stock-market",
     desc: "Dividend yield and CAGR returns.",
     icon: BarChart3,
   },
   {
     name: "Gold",
-    slug: "gold-investment-calculator",
+    slug: "gold",
     desc: "Gold SIPs and Sovereign Gold Bonds.",
     icon: Coins,
   },
   {
     name: "Lifestyle",
-    slug: "inflation-impact-calculator",
+    slug: "lifestyle",
     desc: "Inflation timelines and financial freedom.",
     icon: Activity,
   },
@@ -75,17 +75,17 @@ export function HeaderNavigation() {
 
         {/* Dropdown Menu */}
         <div className="relative group">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
+          <Link
+            href="/calculators"
             onMouseEnter={() => setIsOpen(true)}
-            className="flex items-center space-x-1 hover:text-emerald-500 transition-colors focus:outline-none h-16"
+            className="flex items-center space-x-1 hover:text-emerald-500 transition-colors focus:outline-none h-16 font-bold"
             aria-expanded={isOpen}
             aria-haspopup="true"
             aria-controls="calculators-dropdown"
           >
             <span>Calculators</span>
             <ChevronDown className="h-3 w-3" />
-          </button>
+          </Link>
 
           {/* Mega Dropdown Panel */}
           {isOpen && (
@@ -101,7 +101,7 @@ export function HeaderNavigation() {
                 return (
                   <Link
                     key={cat.name}
-                    href={`/${cat.slug}`}
+                    href={`/calculators?category=${cat.slug}`}
                     onClick={closeAll}
                     className="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900/40 border border-transparent hover:border-zinc-100 dark:hover:border-zinc-800/50 transition-all group/item"
                   >
@@ -180,7 +180,7 @@ export function HeaderNavigation() {
                   return (
                     <Link
                       key={cat.name}
-                      href={`/${cat.slug}`}
+                      href={`/calculators?category=${cat.slug}`}
                       onClick={closeAll}
                       className="flex items-center space-x-3 p-3 bg-zinc-50/50 dark:bg-zinc-900/20 border border-zinc-100 dark:border-zinc-900 rounded-xl hover:border-emerald-500/30 transition-all"
                     >

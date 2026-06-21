@@ -21,11 +21,11 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 
 const trendingIds = [
   "sip-calculator",
+  "compound-interest-calculator",
+  "retirement-calculator",
   "emi-calculator",
-  "income-tax-calculator",
-  "gold-investment-calculator",
-  "ppf-calculator",
-  "cagr-calculator",
+  "investment-growth-calculator",
+  "net-worth-calculator",
 ];
 
 const semanticKeywordsMap: Record<string, string[]> = {
@@ -57,7 +57,12 @@ const semanticKeywordsMap: Record<string, string[]> = {
   "capital-gains-calculator": ["capital gains", "tax", "shares tax", "property tax", "house sale tax", "mutual fund tax", "money"],
   "gold-investment-calculator": ["gold", "physical gold", "sovereign gold bond", "sgb", "hedge", "inflation", "jewelry", "money"],
   "gold-sip-calculator": ["gold sip", "paper gold", "monthly gold savings", "gold ETF", "hedge", "inflation", "money"],
-  "silver-investment-calculator": ["silver", "precious metal", "silver rate", "commodity", "inflation", "money"]
+  "silver-investment-calculator": ["silver", "precious metal", "silver rate", "commodity", "inflation", "money"],
+  "compound-interest-calculator": ["compound interest", "interest", "compounding", "investment return", "savings", "grow wealth", "money"],
+  "investment-growth-calculator": ["investment growth", "portfolio", "growth", "interest", "wealth forecast", "mutual fund", "stocks"],
+  "financial-independence-calculator": ["financial independence", "fire", "retirement", "passive income", "savings", "early retirement", "swr"],
+  "savings-calculator": ["savings", "savings compounding", "apy", "interest rate", "deposits", "emergency fund", "money"],
+  "inflation-calculator": ["inflation", "inflation rate", "purchasing power", "future cost", "price rise", "loss to inflation"]
 };
 
 export function HomePageClient() {
@@ -87,6 +92,15 @@ export function HomePageClient() {
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchQuery]);
+
+  // Split into global and India-specific calculators
+  const globalCalculators = React.useMemo(() => {
+    return filteredCalculators.filter((calc) => !calc.isIndiaSpecific);
+  }, [filteredCalculators]);
+
+  const indiaCalculators = React.useMemo(() => {
+    return filteredCalculators.filter((calc) => calc.isIndiaSpecific);
+  }, [filteredCalculators]);
 
   // Find trending calculators objects
   const trendingCalculators = React.useMemo(() => {
@@ -276,44 +290,93 @@ export function HomePageClient() {
         )}
 
         {/* Calculator List Library */}
-        <section className="space-y-6">
-          <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-900 pb-3">
-            <h2 className="text-lg font-bold text-zinc-900 dark:text-white tracking-tight">
-              {searchQuery || selectedCategory
-                ? `Search Results (${filteredCalculators.length})`
-                : `Calculators Directory (${allCalculators.length})`}
-            </h2>
-          </div>
+        <div className="space-y-12">
+          {/* Global Financial Calculators */}
+          <section className="space-y-6">
+            <div className="flex items-center justify-between border-b border-zinc-150 dark:border-zinc-900 pb-3">
+              <h2 className="text-lg font-bold text-zinc-900 dark:text-white tracking-tight">
+                {searchQuery || selectedCategory
+                  ? `Global Financial Calculators (${globalCalculators.length})`
+                  : `Global Financial Calculators Directory (${globalCalculators.length})`}
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredCalculators.map((calc) => (
-              <Link
-                key={calc.id}
-                href={`/${calc.id}`}
-                className="group p-5 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800 rounded-2xl shadow-sm dark:shadow-none hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200"
-              >
-                <div className="flex justify-between items-start">
-                  <span className="inline-flex items-center px-2.5 h-5 bg-zinc-50 dark:bg-zinc-900 text-[9px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider rounded-md">
-                    {calc.category}
-                  </span>
-                  <ChevronRight className="h-4 w-4 text-zinc-300 dark:text-zinc-700 group-hover:translate-x-0.5 group-hover:text-emerald-500 transition-all" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {globalCalculators.map((calc) => (
+                <Link
+                  key={calc.id}
+                  href={`/${calc.id}`}
+                  className="group p-5 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800 rounded-2xl shadow-sm dark:shadow-none hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200"
+                >
+                  <div className="flex justify-between items-start">
+                    <span className="inline-flex items-center px-2.5 h-5 bg-zinc-50 dark:bg-zinc-900 text-[9px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider rounded-md">
+                      {calc.category}
+                    </span>
+                    <ChevronRight className="h-4 w-4 text-zinc-300 dark:text-zinc-700 group-hover:translate-x-0.5 group-hover:text-emerald-500 transition-all" />
+                  </div>
+                  <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-100 mt-3 group-hover:text-emerald-500 transition-colors">
+                    {calc.name}
+                  </h3>
+                  <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-1.5 leading-relaxed line-clamp-2">
+                    {calc.description}
+                  </p>
+                </Link>
+              ))}
+
+              {globalCalculators.length === 0 && (
+                <div className="col-span-full text-center py-8 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800 rounded-2xl text-sm text-zinc-400">
+                  No global calculators match your criteria.
                 </div>
-                <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-100 mt-3 group-hover:text-emerald-500 transition-colors">
-                  {calc.name}
-                </h3>
-                <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-1.5 leading-relaxed line-clamp-2">
-                  {calc.description}
-                </p>
-              </Link>
-            ))}
+              )}
+            </div>
+          </section>
 
-            {filteredCalculators.length === 0 && (
-              <div className="col-span-full text-center py-10 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800 rounded-2xl text-sm text-zinc-400">
-                No calculators matched your search query. Try searching for something else.
+          {/* India-Specific Financial Tools */}
+          <section className="space-y-6 pt-8 border-t border-zinc-200/50 dark:border-zinc-900">
+            <div className="flex flex-col space-y-1 pb-3 border-b border-zinc-150 dark:border-zinc-900">
+              <div className="flex items-center space-x-2">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white font-bold text-[10px] shrink-0">i</span>
+                <h2 className="text-lg font-bold text-zinc-900 dark:text-white tracking-tight">
+                  {searchQuery || selectedCategory
+                    ? `Indian Taxes & Savings Schemes Matches (${indiaCalculators.length})`
+                    : `Indian Taxes & Savings Schemes (${indiaCalculators.length})`}
+                </h2>
               </div>
-            )}
-          </div>
-        </section>
+              <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed font-medium">
+                These tools are tailored specifically to Indian tax structures (New/Old Slab regimes) and official savings schemes (PPF, EPF, NPS). They calculate strictly in Indian Rupees (INR/₹).
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {indiaCalculators.map((calc) => (
+                <Link
+                  key={calc.id}
+                  href={`/${calc.id}`}
+                  className="group p-5 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800 rounded-2xl shadow-sm dark:shadow-none hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200"
+                >
+                  <div className="flex justify-between items-start">
+                    <span className="inline-flex items-center px-2.5 h-5 bg-zinc-50 dark:bg-zinc-900 text-[9px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider rounded-md">
+                      {calc.category}
+                    </span>
+                    <ChevronRight className="h-4 w-4 text-zinc-300 dark:text-zinc-700 group-hover:translate-x-0.5 group-hover:text-emerald-500 transition-all" />
+                  </div>
+                  <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-100 mt-3 group-hover:text-emerald-500 transition-colors">
+                    {calc.name}
+                  </h3>
+                  <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-1.5 leading-relaxed line-clamp-2">
+                    {calc.description}
+                  </p>
+                </Link>
+              ))}
+
+              {indiaCalculators.length === 0 && (
+                <div className="col-span-full text-center py-8 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800 rounded-2xl text-sm text-zinc-400">
+                  No Indian calculators match your criteria.
+                </div>
+              )}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

@@ -108,16 +108,6 @@ export default function ResourcesPage() {
                 {`<iframe src="${siteConfig.url}/embed/sip-calculator" width="100%" height="700" ...>`}
               </div>
             </div>
-
-            <div className="p-5 bg-emerald-500/5 border border-emerald-500/10 rounded-2xl space-y-2">
-              <h4 className="text-xs font-bold text-emerald-600 dark:text-emerald-450 uppercase tracking-wider flex items-center gap-1.5">
-                <Shield className="h-4 w-4" />
-                Financial Board Approved
-              </h4>
-              <p className="text-[11px] leading-relaxed text-zinc-500 dark:text-zinc-400">
-                All resource calculations, compounding rates, and loan amortizations conform to standard accounting principles, reviewed regularly by our editorial finance panel.
-              </p>
-            </div>
           </div>
         </div>
       </div>

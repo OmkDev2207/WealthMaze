@@ -4,6 +4,7 @@ export const taxCalculators: CalculatorConfig[] = [
   {
     id: "income-tax-calculator",
     name: "Income Tax Calculator",
+    isIndiaSpecific: true,
     category: "Tax",
     description: "Estimate your income tax liability under the New vs Old tax regimes in India.",
     seoTitle: "Income Tax Calculator – Compare Slabs Instantly",
@@ -109,6 +110,7 @@ export const taxCalculators: CalculatorConfig[] = [
   {
     id: "capital-gains-calculator",
     name: "Capital Gains Tax Calculator",
+    isIndiaSpecific: true,
     category: "Tax",
     description: "Calculate capital gains tax on equity assets, mutual funds, and real estate.",
     seoTitle: "Capital Gains Tax Calculator – Calculate Gains Tax",

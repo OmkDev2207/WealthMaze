@@ -51,4 +51,5 @@ export interface CalculatorConfig {
   calculate: (inputs: Record<string, number>) => CalculatorResult;
   educationalContent: EducationalSection[];
   faqs: FAQItem[];
+  isIndiaSpecific?: boolean;
 }

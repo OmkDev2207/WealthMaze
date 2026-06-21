@@ -2,14 +2,20 @@
 
 import * as React from "react";
 import { CalculatorInput } from "@/data/calculators/types";
+import { useCurrency } from "@/lib/CurrencyContext";
 
 interface CalculatorFormProps {
   inputs: CalculatorInput[];
   values: Record<string, number>;
   onChange: (id: string, val: number) => void;
+  isIndiaSpecific?: boolean;
 }
 
-export function CalculatorForm({ inputs, values, onChange }: CalculatorFormProps) {
+export function CalculatorForm({ inputs, values, onChange, isIndiaSpecific = false }: CalculatorFormProps) {
+  const { currencyDetails } = useCurrency();
+  const symbol = isIndiaSpecific ? "₹" : currencyDetails.symbol;
+  const locale = isIndiaSpecific ? "en-IN" : currencyDetails.locale;
+
   const handleInputChange = (id: string, rawVal: string) => {
     const num = Number(rawVal.replace(/[^0-9.-]/g, ""));
     if (isNaN(num)) return;
@@ -56,19 +62,19 @@ export function CalculatorForm({ inputs, values, onChange }: CalculatorFormProps
               </label>
               <div className="relative flex items-center">
                 {input.unit === "₹" && (
-                  <span className="absolute left-3 text-sm font-medium text-zinc-400">₹</span>
+                  <span className="absolute left-3 text-sm font-medium text-zinc-400">{symbol}</span>
                 )}
                 <input
                   id={`input-num-${input.id}`}
                   type="text"
                   value={
                     input.unit === "₹"
-                      ? new Intl.NumberFormat("en-IN").format(value)
+                      ? new Intl.NumberFormat(locale).format(value)
                       : value
                   }
                   onChange={(e) => handleInputChange(input.id, e.target.value)}
                   className={`w-36 h-11 text-right pr-4 font-bold text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all ${
-                    input.unit === "₹" ? "pl-7" : "pl-4"
+                    input.unit === "₹" ? (symbol.length > 2 ? "pl-11" : symbol.length > 1 ? "pl-9" : "pl-7") : "pl-4"
                   }`}
                 />
                 {input.unit !== "₹" && input.unit && (

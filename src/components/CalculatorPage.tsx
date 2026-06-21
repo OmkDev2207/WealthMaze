@@ -14,6 +14,7 @@ import Link from "next/link";
 import { ChevronRight, ArrowLeft, Calendar, User, Eye, X, Share2, Link2, Check } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { trackCalculatorUse } from "./GoogleAnalytics";
+import { useCurrency } from "@/lib/CurrencyContext";
 
 /** Inline social share bar — shown in calculator hero headers */
 function SocialShareBar({ title }: { title: string }) {
@@ -111,7 +112,7 @@ const CalculatorChart = dynamic(
   }
 );
 
-function DeferredChart({ chartData, calculatorId }: { chartData: any[]; calculatorId: string }) {
+function DeferredChart({ chartData, calculatorId, isIndiaSpecific }: { chartData: any[]; calculatorId: string; isIndiaSpecific?: boolean }) {
   const [isVisible, setIsVisible] = React.useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -142,7 +143,7 @@ function DeferredChart({ chartData, calculatorId }: { chartData: any[]; calculat
   return (
     <div ref={containerRef} className="w-full min-h-[320px] flex flex-col justify-center">
       {isVisible ? (
-        <CalculatorChart chartData={chartData} calculatorId={calculatorId} />
+        <CalculatorChart chartData={chartData} calculatorId={calculatorId} isIndiaSpecific={isIndiaSpecific} />
       ) : (
         <div className="w-full h-80 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-150 dark:border-zinc-800 rounded-xl animate-pulse flex items-center justify-center text-xs font-bold text-zinc-400">
           Loading interactive chart data...
@@ -161,27 +162,6 @@ interface CalculatorPageProps {
   isEmbed?: boolean;
 }
 
-// Helper to format values on the mobile sticky summary bar
-const formatSummaryValue = (val: number, format?: string, unit?: string) => {
-  if (isNaN(val)) return "₹0";
-  if (format === "currency") {
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      maximumFractionDigits: 0,
-    }).format(val);
-  }
-  if (format === "percent") {
-    return `${val.toFixed(2)}%`;
-  }
-  if (format === "number") {
-    return new Intl.NumberFormat("en-IN", {
-      maximumFractionDigits: 2,
-    }).format(val);
-  }
-  return `${val} ${unit || ""}`;
-};
-
 function CalculatorPageInner({
   calculatorId,
   overrides,
@@ -191,6 +171,37 @@ function CalculatorPageInner({
   isEmbed = false,
 }: CalculatorPageProps) {
   const config = getCalculatorById(calculatorId)!;
+  const { formatCurrency, formatNumber } = useCurrency();
+
+  const formatSummaryValue = React.useCallback((val: number, format?: string, unit?: string) => {
+    if (isNaN(val)) return "0";
+    if (format === "currency") {
+      if (config.isIndiaSpecific) {
+        return new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+          maximumFractionDigits: 0,
+        }).format(val);
+      }
+      return formatCurrency(val, true);
+    }
+    if (format === "percent") {
+      return `${val.toFixed(2)}%`;
+    }
+    if (format === "number") {
+      if (config.isIndiaSpecific) {
+        return new Intl.NumberFormat("en-IN", {
+          maximumFractionDigits: 2,
+        }).format(val);
+      }
+      return formatNumber(val, 2);
+    }
+    let displayUnit = unit || "";
+    if (displayUnit === "₹" && !config.isIndiaSpecific) {
+      displayUnit = "";
+    }
+    return `${val} ${displayUnit}`;
+  }, [config.isIndiaSpecific, formatCurrency, formatNumber]);
 
   // Mobile sticky dismiss state
   const [isStickyDismissed, setIsStickyDismissed] = React.useState(false);
@@ -310,15 +321,15 @@ function CalculatorPageInner({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
           {/* Left Side: Inputs */}
           <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none">
-            <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} />
+            <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
           </div>
 
           {/* Right Side: Charts & Results */}
           <div className="lg:col-span-7 space-y-4">
             <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none space-y-4">
-              <CalculatorResults outputs={config.outputs} result={result} />
+              <CalculatorResults outputs={config.outputs} result={result} isIndiaSpecific={config.isIndiaSpecific} />
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-805">
-                <DeferredChart chartData={result.chartData} calculatorId={config.id} />
+                <DeferredChart chartData={result.chartData} calculatorId={config.id} isIndiaSpecific={config.isIndiaSpecific} />
               </div>
             </div>
           </div>
@@ -374,10 +385,6 @@ function CalculatorPageInner({
         <div className="flex flex-wrap items-center justify-between gap-4 pt-1 print:hidden">
           <div className="flex flex-wrap gap-4 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
             <div className="flex items-center">
-              <User className="h-3.5 w-3.5 mr-1" />
-              <span>Reviewed by WealthMaze Finance Board</span>
-            </div>
-            <div className="flex items-center">
               <Calendar className="h-3.5 w-3.5 mr-1" />
               <span>Updated on {lastUpdated}</span>
             </div>
@@ -386,6 +393,15 @@ function CalculatorPageInner({
           <SocialShareBar title={displayTitle} />
         </div>
       </header>
+
+      {config.isIndiaSpecific && (
+        <div className="p-4 bg-emerald-500/5 dark:bg-emerald-550/5 border border-emerald-500/10 dark:border-emerald-950/20 rounded-2xl text-xs leading-relaxed text-zinc-600 dark:text-zinc-400 flex items-start gap-2.5 print:hidden font-medium">
+          <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white font-bold shrink-0">i</span>
+          <p>
+            <strong>Indian Financial Tool:</strong> This calculator is tailored specifically to standard regulations, tax slabs, and savings schemes of India (e.g. PPF, EPF, NPS, or India Income Tax slabs) and computes outputs strictly in Indian Rupees (INR).
+          </p>
+        </div>
+      )}
 
       {/* Main Responsive Page Layout Grid */}
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
@@ -403,7 +419,7 @@ function CalculatorPageInner({
                 <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
                   Calculator Inputs
                 </h2>
-                <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} />
+                <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
 
                 {/* Disclaimer */}
                 <div className="p-4 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/80 rounded-xl text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500 print:hidden">
@@ -424,7 +440,7 @@ function CalculatorPageInner({
                 <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
                   Calculation Output & Analysis
                 </h2>
-                <CalculatorResults outputs={config.outputs} result={result} />
+                <CalculatorResults outputs={config.outputs} result={result} isIndiaSpecific={config.isIndiaSpecific} />
 
                 <div className="hidden print:block text-[10px] text-zinc-400 mt-6 border-t pt-4">
                   Report generated via WealthMaze. Calculate your financial future at wealthmaze.in.
@@ -435,7 +451,7 @@ function CalculatorPageInner({
                   <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 mb-4">
                     Visualizing Your Growth
                   </h3>
-                  <DeferredChart chartData={result.chartData} calculatorId={config.id} />
+                  <DeferredChart chartData={result.chartData} calculatorId={config.id} isIndiaSpecific={config.isIndiaSpecific} />
                 </div>
 
                 {/* Embed this Tool Section (Strategy B) */}

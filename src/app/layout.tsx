@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { CurrencySelector } from "@/components/CurrencySelector";
 import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
 import { Wallet } from "lucide-react";
@@ -12,6 +13,7 @@ import { LayoutClientWidgets } from "@/components/LayoutClientWidgets";
 import { siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { CurrencyProvider } from "@/lib/CurrencyContext";
 
 
 export const metadata: Metadata = {
@@ -67,8 +69,9 @@ export default function RootLayout({
           Skip to main content
         </a>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          {/* Header */}
-          <header className="sticky top-0 bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border-b border-zinc-150 dark:border-zinc-900 z-50 print:hidden">
+          <CurrencyProvider>
+            {/* Header */}
+            <header className="sticky top-0 bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border-b border-zinc-150 dark:border-zinc-900 z-50 print:hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
               <Link href="/" className="flex items-center space-x-2 group">
                 <div className="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
@@ -86,6 +89,7 @@ export default function RootLayout({
 
               <div className="flex items-center space-x-2 sm:space-x-4">
                 <HeaderNavigation />
+                <CurrencySelector />
                 <ThemeToggle />
               </div>
             </div>
@@ -177,6 +181,7 @@ export default function RootLayout({
 
           {/* Google Analytics 4 */}
           <GoogleAnalytics />
+          </CurrencyProvider>
         </ThemeProvider>
       </body>
     </html>

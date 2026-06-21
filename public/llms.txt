@@ -14,7 +14,7 @@ Welcome to WealthMaze, a premium personal finance web platform providing interac
 - `/` - Home Page & Directory of all calculators
 - `/blog` - Personal Finance Hub & Educational guides archive
 - `/resources` - Backlink directory and downloadable resource calculators
-- `/about` - About us & Reviewed by Finance Board
+- `/about` - About us
 - `/contact` - Reach out to the support team
 - `/privacy` - Legally compliant cookie policies & Google AdSense terms
 - `/terms` - Platform terms of service

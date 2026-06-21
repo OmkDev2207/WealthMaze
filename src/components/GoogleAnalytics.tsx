@@ -42,6 +42,10 @@ export function GoogleAnalytics() {
 
     const loadGA = () => {
       if (loaded) return;
+
+      const consent = localStorage.getItem("cookie-consent");
+      if (consent !== "accepted") return;
+
       loaded = true;
 
       // Remove event listeners immediately
@@ -77,11 +81,25 @@ export function GoogleAnalytics() {
     window.addEventListener("touchstart", loadGA, { passive: true });
     window.addEventListener("keydown", loadGA, { passive: true });
 
+    // Listen to custom consent accepted event
+    const handleConsentAccepted = () => {
+      loadGA();
+    };
+    window.addEventListener("cookie-consent-accepted", handleConsentAccepted);
+
+    // If consent is already accepted, try running it on interaction or load
+    const consent = localStorage.getItem("cookie-consent");
+    if (consent === "accepted") {
+      // In case user returns and page has already scrolled
+      loadGA();
+    }
+
     return () => {
       window.removeEventListener("scroll", loadGA);
       window.removeEventListener("mousemove", loadGA);
       window.removeEventListener("touchstart", loadGA);
       window.removeEventListener("keydown", loadGA);
+      window.removeEventListener("cookie-consent-accepted", handleConsentAccepted);
     };
   }, []);
 

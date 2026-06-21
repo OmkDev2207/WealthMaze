@@ -126,6 +126,7 @@ export const savingsCalculators: CalculatorConfig[] = [
   {
     id: "ppf-calculator",
     name: "PPF Calculator",
+    isIndiaSpecific: true,
     category: "Savings",
     description: "Calculate maturity returns of Public Provident Fund (PPF) investments with annual compounding.",
     seoTitle: "PPF Calculator – Calculate Public Provident Fund ROI",
@@ -183,6 +184,7 @@ export const savingsCalculators: CalculatorConfig[] = [
   {
     id: "epf-calculator",
     name: "EPF Calculator",
+    isIndiaSpecific: true,
     category: "Savings",
     description: "Calculate your Employee Provident Fund (EPF) accumulation at retirement, including salary increments.",
     seoTitle: "EPF Calculator – Calculate Employee Provident Fund",
@@ -254,6 +256,7 @@ export const savingsCalculators: CalculatorConfig[] = [
   {
     id: "nps-calculator",
     name: "NPS Calculator",
+    isIndiaSpecific: true,
     category: "Retirement",
     description: "Calculate your pension corpus and monthly pension from the National Pension System (NPS).",
     seoTitle: "NPS Calculator – Calculate National Pension System",
@@ -318,7 +321,76 @@ export const savingsCalculators: CalculatorConfig[] = [
     ],
     faqs: [
       { question: "What are the tax benefits of NPS?", answer: "NPS offers exclusive tax deductions up to ₹50,000 under Section 80CCD(1B), over and above the ₹1.5 Lakhs limit of Section 80C, making it highly attractive for tax saving." },
-      { question: "How does the NPS calculator calculate my pension?", answer: "The NPS calculator uses your monthly contribution, expected return rate, current age, annuity allocation percentage, and annuity return rate to compute your final maturity corpus and estimated monthly pension." }
+    ]
+  },
+  {
+    id: "savings-calculator",
+    name: "Savings Calculator",
+    category: "Savings",
+    description: "Calculate how your monthly savings and initial deposit grow over time with compound interest.",
+    seoTitle: "Savings Calculator – Track and Plan Your Savings Goals",
+    seoDescription: "Calculate the future value of your savings. Estimate interest earned and final balance on monthly savings accounts and High Yield Savings Accounts (HYSA).",
+    inputs: [
+      { id: "initialSavings", label: "Initial Deposit / Starting Balance", type: "slider", min: 0, max: 10000000, step: 5000, default: 50000, unit: "₹" },
+      { id: "monthlySavings", label: "Monthly Savings Contribution", type: "slider", min: 0, max: 500000, step: 1000, default: 5000, unit: "₹" },
+      { id: "interestRate", label: "Annual Interest Rate (APY %)", type: "slider", min: 0.5, max: 15, step: 0.1, default: 4.5, unit: "%" },
+      { id: "timePeriod", label: "Savings Duration", type: "slider", min: 1, max: 30, step: 1, default: 5, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "totalDeposits", label: "Total Deposits", format: "currency" },
+      { id: "interestEarned", label: "Interest Earned", format: "currency" },
+      { id: "maturityValue", label: "Total Savings Corpus", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (4% Inflation)", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const p = inputs.initialSavings;
+      const pm = inputs.monthlySavings;
+      const r = inputs.interestRate;
+      const t = inputs.timePeriod;
+
+      const monthlyRate = r / (12 * 100);
+      const totalMonths = t * 12;
+
+      let balance = p;
+      let totalDeposits = p;
+      const chartData = [];
+
+      for (let m = 1; m <= totalMonths; m++) {
+        balance = (balance + pm) * (1 + monthlyRate);
+        totalDeposits += pm;
+
+        if (m % 12 === 0) {
+          chartData.push({
+            name: `Yr ${m / 12}`,
+            "Total Deposits": totalDeposits,
+            "Interest Earned": Math.round(Math.max(0, balance - totalDeposits)),
+            "Savings Value": Math.round(balance),
+          });
+        }
+      }
+
+      const interestEarned = Math.max(0, balance - totalDeposits);
+      const purchasingPower = balance / Math.pow(1 + 0.04, t);
+
+      return {
+        values: { totalDeposits, interestEarned, maturityValue: balance, purchasingPower },
+        chartData,
+      };
+    },
+    educationalContent: [
+      {
+        title: "The Importance of Consistent Savings Plan",
+        content: "Our Savings Calculator estimates the compounding growth of your periodic contributions. Setting aside a fixed sum monthly builds strong financial discipline and leverages the power of compound interest. High Yield Savings Accounts (HYSA) or Certificate of Deposits (CDs) globally offer higher interest rates than traditional savings accounts, helping your money grow faster while remaining extremely low-risk."
+      },
+      {
+        title: "How Compounding Frequency Affects Savings",
+        content: "Most savings accounts compound interest monthly or daily, while standard fixed deposits might compound quarterly. The more frequently interest is compounded, the faster your savings grow, as you earn interest on interest sooner. Over long horizons, even a small difference in the annual yield (APY) can lead to a significantly larger final retirement or emergency fund."
+      }
+    ],
+    faqs: [
+      { question: "What is an APY (Annual Percentage Yield)?", answer: "APY is the real rate of return earned on a savings deposit, taking into account the effect of compounding interest over a year. It is slightly higher than the nominal interest rate when interest is compounded more than once a year." },
+      { question: "How does inflation affect my savings?", answer: "Inflation erodes the purchasing power of your cash over time. If your savings account interest rate is lower than the inflation rate, the real value (purchasing power) of your money decreases. It is important to compare returns adjusted for inflation." },
+      { question: "How do I calculate savings compounding online?", answer: "Input your starting deposit, monthly savings budget, annual interest rate (APY), and duration in years into our savings calculator to instantly view your accumulated savings." }
     ]
   }
 ];
