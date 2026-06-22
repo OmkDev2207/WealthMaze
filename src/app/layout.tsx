@@ -12,6 +12,7 @@ import { HeaderNavigation } from "@/components/HeaderNavigation";
 import { LayoutClientWidgets } from "@/components/LayoutClientWidgets";
 import { siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CurrencyProvider } from "@/lib/CurrencyContext";
 
@@ -178,6 +179,9 @@ export default function RootLayout({
 
           {/* Vercel Web Analytics */}
           <Analytics />
+
+          {/* Vercel Speed Insights */}
+          <SpeedInsights />
 
           {/* Google Analytics 4 */}
           <GoogleAnalytics />
