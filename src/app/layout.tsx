@@ -88,10 +88,16 @@ export default function RootLayout({
                 </div>
               </Link>
 
-              <div className="flex items-center space-x-2 sm:space-x-4">
-                <HeaderNavigation />
-                <CurrencySelector />
-                <ThemeToggle />
+              <div className="flex items-center gap-2 sm:gap-4">
+                <div className="order-3 lg:order-1">
+                  <HeaderNavigation />
+                </div>
+                <div className="order-1 lg:order-2">
+                  <CurrencySelector />
+                </div>
+                <div className="order-2 lg:order-3">
+                  <ThemeToggle />
+                </div>
               </div>
             </div>
           </header>
