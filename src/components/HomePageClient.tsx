@@ -183,52 +183,54 @@ export function HomePageClient() {
         )}
 
         {/* Featured Categories Grid */}
-        <section className="space-y-6">
-          <div className="flex justify-between items-end border-b border-zinc-100 dark:border-zinc-900 pb-3">
-            <h2 className="text-lg font-bold text-zinc-900 dark:text-white tracking-tight">
-              Browse by Financial Need
-            </h2>
-            {selectedCategory && (
-              <button
-                onClick={() => setSelectedCategory(null)}
-                className="text-xs font-semibold text-emerald-500 hover:text-emerald-600 focus:outline-none"
-              >
-                Clear Filter
-              </button>
-            )}
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-            {categories.map((cat) => {
-              const Icon = iconMap[cat.icon] || Activity;
-              const catSlug = cat.slug;
-              const isSelected = selectedCategory === catSlug;
-
-              return (
+        {!searchQuery && (
+          <section className="space-y-6">
+            <div className="flex justify-between items-end border-b border-zinc-100 dark:border-zinc-900 pb-3">
+              <h2 className="text-lg font-bold text-zinc-900 dark:text-white tracking-tight">
+                Browse by Financial Need
+              </h2>
+              {selectedCategory && (
                 <button
-                  key={cat.slug}
-                  onClick={() => setSelectedCategory(isSelected ? null : catSlug)}
-                  className={`flex flex-col items-center justify-center p-4 rounded-xl border text-center transition-all duration-200 group focus:outline-none ${
-                    isSelected
-                      ? "bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-500/20"
-                      : "bg-white dark:bg-zinc-950 border-zinc-150 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md hover:-translate-y-0.5"
-                  }`}
+                  onClick={() => setSelectedCategory(null)}
+                  className="text-xs font-semibold text-emerald-500 hover:text-emerald-600 focus:outline-none"
                 >
-                  <div
-                    className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2.5 transition-all ${
+                  Clear Filter
+                </button>
+              )}
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+              {categories.map((cat) => {
+                const Icon = iconMap[cat.icon] || Activity;
+                const catSlug = cat.slug;
+                const isSelected = selectedCategory === catSlug;
+
+                return (
+                  <button
+                    key={cat.slug}
+                    onClick={() => setSelectedCategory(isSelected ? null : catSlug)}
+                    className={`flex flex-col items-center justify-center p-4 rounded-xl border text-center transition-all duration-200 group focus:outline-none ${
                       isSelected
-                        ? "bg-white/20 text-white"
-                        : "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-500 dark:text-emerald-400"
+                        ? "bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-500/20"
+                        : "bg-white dark:bg-zinc-950 border-zinc-150 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md hover:-translate-y-0.5"
                     }`}
                   >
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <span className="text-xs font-bold tracking-tight">{cat.name}</span>
-                </button>
-              );
-            })}
-          </div>
-        </section>
+                    <div
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2.5 transition-all ${
+                        isSelected
+                          ? "bg-white/20 text-white"
+                          : "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-500 dark:text-emerald-400"
+                      }`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-bold tracking-tight">{cat.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Learn & Guides Section (Recents / Popular) */}
         {!searchQuery && !selectedCategory && (

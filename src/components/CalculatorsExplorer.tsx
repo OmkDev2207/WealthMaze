@@ -151,10 +151,6 @@ function CalculatorsExplorerInner() {
 
         {/* Hero Header */}
         <header className="space-y-4 max-w-3xl">
-          <div className="inline-flex items-center gap-1.5 px-3 h-7 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100/60 dark:border-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-bold">
-            <Sparkles className="h-3 w-3" />
-            <span>Interactive Financial Suites</span>
-          </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-950 dark:text-white leading-tight">
             Financial Calculators Directory
           </h1>
