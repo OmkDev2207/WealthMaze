@@ -34,7 +34,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "sip-calculator": {
     relatedCalculators: ["lumpsum-calculator", "mutual-fund-return-calculator", "sip-comparison-calculator", "goal-based-investment-calculator"],
-    relatedPosts: ["what-is-sip", "compounding-explained", "sip-vs-fd", "sip-mistakes", "sip-for-retirement", "sip-for-students", "beginner-investing-guide"],
+    relatedPosts: ["what-is-sip", "power-of-starting-early", "small-financial-decisions-compound", "compounding-explained", "sip-vs-fd", "sip-mistakes", "sip-for-retirement", "sip-for-students", "beginner-investing-guide"],
   },
 
   "lumpsum-calculator": {
@@ -85,7 +85,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "financial-freedom-calculator": {
     relatedCalculators: ["fire-calculator", "retirement-calculator", "how-long-until-1-crore"],
-    relatedPosts: ["sip-for-retirement", "saving-first-1-lakh", "passive-investing-basics"],
+    relatedPosts: ["financial-freedom-is-simpler", "wealth-vs-income", "sip-for-retirement", "saving-first-1-lakh", "passive-investing-basics"],
   },
 
   "how-long-until-1-crore": {
@@ -186,7 +186,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "net-worth-calculator": {
     relatedCalculators: ["portfolio-return-calculator", "financial-freedom-calculator", "retirement-calculator"],
-    relatedPosts: ["asset-allocation", "liquid-vs-non-liquid-assets", "saving-first-1-lakh"],
+    relatedPosts: ["why-most-people-never-build-wealth", "wealth-vs-income", "asset-allocation", "liquid-vs-non-liquid-assets", "saving-first-1-lakh"],
   },
 
   // ─── Car/Home Loan (programmatic variants also use these) ────────────────────
@@ -213,6 +213,21 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
   "personal-loan-emi-calculator": {
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "loan-prepayment-calculator", "home-loan-emi-calculator"],
     relatedPosts: ["home-loan-vs-personal-loan", "loan-affordability-guide", "emi-formula-explained", "debt-to-income-ratio"],
+  },
+
+  "compound-interest-calculator": {
+    relatedCalculators: ["savings-calculator", "investment-growth-calculator", "sip-calculator"],
+    relatedPosts: ["power-of-starting-early", "small-financial-decisions-compound", "compounding-explained"],
+  },
+
+  "investment-growth-calculator": {
+    relatedCalculators: ["compound-interest-calculator", "sip-calculator", "lumpsum-calculator"],
+    relatedPosts: ["power-of-starting-early", "beginner-investing-guide", "compounding-explained"],
+  },
+
+  "savings-calculator": {
+    relatedCalculators: ["compound-interest-calculator", "fd-calculator", "rd-calculator"],
+    relatedPosts: ["small-financial-decisions-compound", "why-most-people-never-build-wealth", "saving-first-1-lakh"],
   },
 };
 
@@ -384,6 +399,31 @@ export const blogLinks: Record<string, BlogLinkData> = {
   "where-do-taxes-go": {
     relatedPosts: ["what-is-taxation", "types-of-taxes", "tax-policy-basics"],
     relatedCalculators: ["income-tax-calculator"],
+  },
+
+  "why-most-people-never-build-wealth": {
+    relatedPosts: ["small-financial-decisions-compound", "wealth-vs-income", "financial-freedom-is-simpler", "saving-first-1-lakh"],
+    relatedCalculators: ["net-worth-calculator", "savings-calculator", "goal-based-investment-calculator"],
+  },
+
+  "power-of-starting-early": {
+    relatedPosts: ["compounding-explained", "small-financial-decisions-compound", "financial-freedom-is-simpler", "beginner-investing-guide"],
+    relatedCalculators: ["sip-calculator", "investment-growth-calculator", "compound-interest-calculator"],
+  },
+
+  "wealth-vs-income": {
+    relatedPosts: ["why-most-people-never-build-wealth", "financial-freedom-is-simpler", "liquid-vs-non-liquid-assets"],
+    relatedCalculators: ["net-worth-calculator", "financial-freedom-calculator"],
+  },
+
+  "small-financial-decisions-compound": {
+    relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "budget-rule-50-30-20"],
+    relatedCalculators: ["compound-interest-calculator", "savings-calculator", "sip-calculator"],
+  },
+
+  "financial-freedom-is-simpler": {
+    relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "wealth-vs-income", "sip-for-retirement"],
+    relatedCalculators: ["financial-freedom-calculator", "fire-calculator", "retirement-calculator"],
   },
 };
 

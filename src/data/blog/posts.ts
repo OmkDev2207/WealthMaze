@@ -27,6 +27,62 @@ export const authors: Record<string, Author> = {
 };
 
 export const blogPosts: BlogPost[] = [
+  // New Articles (June 22, 2026)
+  {
+    slug: "why-most-people-never-build-wealth",
+    title: "Why Most People Never Build Wealth (And How to Avoid It)",
+    description: "Understand the primary habits and traps that prevent people from building lasting wealth, and learn the practical steps to avoid them.",
+    publishedAt: "June 22, 2026",
+    readTime: "5 min read",
+    category: "Savings",
+    tags: ["Wealth Building", "Financial Habits", "Personal Finance", "Budgeting"],
+    author: authors.omk,
+    relatedCalculators: ["net-worth-calculator", "savings-calculator", "goal-based-investment-calculator"],
+  },
+  {
+    slug: "power-of-starting-early",
+    title: "The Power of Starting Early: Why Time Beats Higher Returns",
+    description: "Discover how the time horizon and early compounding outweigh higher investment returns. Compare starting early versus starting late with real-world scenarios.",
+    publishedAt: "June 22, 2026",
+    readTime: "5 min read",
+    category: "Investing",
+    tags: ["Compounding", "Early Investing", "SIP", "Time Horizon"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "investment-growth-calculator", "compound-interest-calculator"],
+  },
+  {
+    slug: "wealth-vs-income",
+    title: "Wealth vs Income: Why High Earners Are Not Always Wealthy",
+    description: "Learn the critical difference between a high income and true net worth. Find out why high earners often live paycheck-to-paycheck and how to build lasting assets.",
+    publishedAt: "June 22, 2026",
+    readTime: "5 min read",
+    category: "Investing",
+    tags: ["Wealth vs Income", "Net Worth", "Asset Building", "Financial Mindset"],
+    author: authors.omk,
+    relatedCalculators: ["net-worth-calculator", "financial-freedom-calculator"],
+  },
+  {
+    slug: "small-financial-decisions-compound",
+    title: "How Small Financial Decisions Compound Over Time",
+    description: "See how minor daily or monthly choices compound into massive financial outcomes over decades, and learn how to recognize opportunity costs.",
+    publishedAt: "June 22, 2026",
+    readTime: "5 min read",
+    category: "Savings",
+    tags: ["Compounding", "Financial Habits", "Micro Investing", "Savings"],
+    author: authors.omk,
+    relatedCalculators: ["compound-interest-calculator", "savings-calculator", "sip-calculator"],
+  },
+  {
+    slug: "financial-freedom-is-simpler",
+    title: "Financial Freedom Is Simpler Than Most People Think",
+    description: "Discover a realistic path to financial freedom. Learn how managing expenses, savings rate, and consistent investing can help you achieve independence without extreme sacrifice.",
+    publishedAt: "June 22, 2026",
+    readTime: "5 min read",
+    category: "Retirement",
+    tags: ["Financial Freedom", "Savings Rate", "Retirement Planning", "FIRE"],
+    author: authors.omk,
+    relatedCalculators: ["financial-freedom-calculator", "fire-calculator", "retirement-calculator"],
+  },
   // 1. SIP Calculator
   {
     slug: "what-is-sip",
