@@ -37,7 +37,7 @@ export function CurrencySelector() {
       {isOpen && (
         <ul
           role="listbox"
-          className="absolute right-0 mt-1.5 w-48 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-900 rounded-2xl shadow-xl py-2 z-55 animate-in fade-in slide-in-from-top-2 duration-150 focus:outline-none"
+          className="absolute right-0 mt-1.5 w-52 max-h-64 overflow-y-auto bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-900 rounded-2xl shadow-xl py-2 z-55 animate-in fade-in slide-in-from-top-2 duration-150 focus:outline-none"
         >
           {SUPPORTED_CURRENCIES.map((curr) => {
             const isSelected = curr.code === currency;
