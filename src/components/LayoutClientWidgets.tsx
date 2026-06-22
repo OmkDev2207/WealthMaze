@@ -14,12 +14,18 @@ const CookieConsent = dynamic(
   { ssr: false }
 );
 
+const SpotlightGlow = dynamic(
+  () => import("./SpotlightGlow").then((mod) => mod.SpotlightGlow),
+  { ssr: false }
+);
+
 export function LayoutClientWidgets() {
   return (
     <>
       <MobileBottomNav />
       <CookieConsent />
       <AdSenseLoader />
+      <SpotlightGlow />
     </>
   );
 }

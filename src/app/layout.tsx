@@ -72,14 +72,14 @@ export default function RootLayout({
           <CurrencyProvider>
             {/* Header */}
             <header className="sticky top-0 bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border-b border-zinc-150 dark:border-zinc-900 z-50 print:hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-              <Link href="/" className="flex items-center space-x-2.5 group">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+              <Link href="/" className="flex items-center space-x-2 group">
                 <img 
                   src="/logo.png" 
                   alt="WealthMaze Logo" 
                   className="w-9 h-9 rounded-xl object-cover shadow-md shadow-zinc-200/50 dark:shadow-none group-hover:scale-105 transition-transform" 
                 />
-                <span className="text-base font-extrabold tracking-tight bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent">
+                <span className="text-sm sm:text-base font-extrabold tracking-tight bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent">
                   WealthMaze
                 </span>
               </Link>

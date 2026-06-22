@@ -44,7 +44,7 @@ export function CurrencySelector() {
       >
         <Coins className="h-4 w-4 text-emerald-500" />
         <span className="uppercase">{currencyDetails.code}</span>
-        <span className="text-zinc-400 dark:text-zinc-500">({currencyDetails.symbol})</span>
+        <span className="text-zinc-400 dark:text-zinc-500 hidden sm:inline">({currencyDetails.symbol})</span>
         <ChevronDown className="h-3.5 w-3.5 text-zinc-400" />
       </button>
  
