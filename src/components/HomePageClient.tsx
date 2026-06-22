@@ -5,7 +5,7 @@ import * as React from "react";
 import Link from "next/link";
 import { allCalculators, categories } from "@/data/calculators";
 import { blogPosts } from "@/data/blog/posts";
-import { Search, ChevronRight, TrendingUp, Calendar, ShieldCheck, Percent, FileText, BarChart3, Coins, Activity, Sparkles, Flame, Clock, BookOpen } from "lucide-react";
+import { Search, ChevronRight, TrendingUp, Calendar, ShieldCheck, Percent, FileText, BarChart3, Coins, Activity, Flame, Clock, BookOpen } from "lucide-react";
 
 // Map category string to Lucide icon components dynamically
 const iconMap: Record<string, React.ComponentType<any>> = {
@@ -125,11 +125,6 @@ export function HomePageClient() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
         {/* Hero Section */}
         <section className="text-center max-w-3xl mx-auto space-y-6 pt-4">
-          <div className="inline-flex items-center gap-1.5 px-3 h-7 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-semibold">
-            <Sparkles className="h-3 w-3" />
-            <span>Introducing WealthMaze v1.1 — Blog Hub Integration</span>
-          </div>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-950 dark:text-white leading-tight">
             Every Financial Calculator <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">

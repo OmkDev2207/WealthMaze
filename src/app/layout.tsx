@@ -6,7 +6,6 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { CurrencySelector } from "@/components/CurrencySelector";
 import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
-import { Wallet } from "lucide-react";
 
 import { HeaderNavigation } from "@/components/HeaderNavigation";
 import { LayoutClientWidgets } from "@/components/LayoutClientWidgets";
@@ -74,18 +73,15 @@ export default function RootLayout({
             {/* Header */}
             <header className="sticky top-0 bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border-b border-zinc-150 dark:border-zinc-900 z-50 print:hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-              <Link href="/" className="flex items-center space-x-2 group">
-                <div className="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-                  <Wallet className="h-5 w-5 text-white" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-base font-extrabold tracking-tight bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent">
-                    WealthMaze
-                  </span>
-                  <span className="text-[9px] font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest leading-none">
-                    Financial Future
-                  </span>
-                </div>
+              <Link href="/" className="flex items-center space-x-2.5 group">
+                <img 
+                  src="/logo.png" 
+                  alt="WealthMaze Logo" 
+                  className="w-9 h-9 rounded-xl object-cover shadow-md shadow-zinc-200/50 dark:shadow-none group-hover:scale-105 transition-transform" 
+                />
+                <span className="text-base font-extrabold tracking-tight bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent">
+                  WealthMaze
+                </span>
               </Link>
 
               <div className="flex items-center gap-2 sm:gap-4">
