@@ -15,7 +15,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CurrencyProvider } from "@/lib/CurrencyContext";
 
-
 export const metadata: Metadata = {
   title: "WealthMaze - Calculate Your Financial Future",
   description: "WealthMaze helps you navigate complex financial decisions through simple, accurate, and easy-to-use calculators. Plan investments, calculate loan EMIs, and track wealth.",
@@ -68,7 +67,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <CurrencyProvider>
             {/* Header */}
             <header className="sticky top-0 bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border-b border-zinc-150 dark:border-zinc-900 z-50 print:hidden">

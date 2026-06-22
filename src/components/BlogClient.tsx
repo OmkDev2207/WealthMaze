@@ -12,15 +12,26 @@ interface BlogClientProps {
 export function BlogClient({ posts }: BlogClientProps) {
   const [searchQuery, setSearchQuery] = React.useState("");
   const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = React.useState(9);
 
-  // Get unique categories
-  const categories = React.useMemo(() => {
-    return Array.from(new Set(posts.map((p) => p.category)));
+  // Auto-sort all blog posts by publication date in descending order
+  const sortedPosts = React.useMemo(() => {
+    return [...posts].sort((a, b) => {
+      const dateA = new Date(a.publishedAt).getTime();
+      const dateB = new Date(b.publishedAt).getTime();
+      // Keep original order if parsing fails, otherwise sort descending
+      return (isNaN(dateB) ? 0 : dateB) - (isNaN(dateA) ? 0 : dateA);
+    });
   }, [posts]);
 
-  // Filter posts
+  // Get unique categories (derived from sorted posts)
+  const categories = React.useMemo(() => {
+    return Array.from(new Set(sortedPosts.map((p) => p.category)));
+  }, [sortedPosts]);
+
+  // Filter sorted posts based on search query and category
   const filteredPosts = React.useMemo(() => {
-    return posts.filter((post) => {
+    return sortedPosts.filter((post) => {
       const matchesSearch =
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -30,24 +41,39 @@ export function BlogClient({ posts }: BlogClientProps) {
 
       return matchesSearch && matchesCategory;
     });
-  }, [posts, searchQuery, selectedCategory]);
+  }, [sortedPosts, searchQuery, selectedCategory]);
 
-  // Decouple the first 3 posts into a featured "Recent" section when not searching or filtering
+  // Reset pagination limit when search query or category filter changes
+  React.useEffect(() => {
+    setVisibleCount(9);
+  }, [searchQuery, selectedCategory]);
+
+  // Extract the first 3 posts for the top featured section (when not searching or filtering)
+  const recentPosts = React.useMemo(() => {
+    return sortedPosts.slice(0, 3);
+  }, [sortedPosts]);
+
+  // Paginated display list for the main grid catalog
   const displayPosts = React.useMemo(() => {
     if (!searchQuery && !selectedCategory) {
-      return filteredPosts.slice(3);
+      // Exclude the first 3 featured posts from the main grid to avoid duplication
+      return filteredPosts.slice(3, 3 + visibleCount);
     }
-    return filteredPosts;
-  }, [filteredPosts, searchQuery, selectedCategory]);
+    return filteredPosts.slice(0, visibleCount);
+  }, [filteredPosts, searchQuery, selectedCategory, visibleCount]);
 
-  const recentPosts = React.useMemo(() => {
-    return posts.slice(0, 3);
-  }, [posts]);
+  // Check if there are more articles left to load
+  const hasMore = React.useMemo(() => {
+    if (!searchQuery && !selectedCategory) {
+      return filteredPosts.length - 3 > visibleCount;
+    }
+    return filteredPosts.length > visibleCount;
+  }, [filteredPosts, searchQuery, selectedCategory, visibleCount]);
 
   return (
     <div className="space-y-12">
       {/* Recently Published Articles */}
-      {!searchQuery && !selectedCategory && (
+      {!searchQuery && !selectedCategory && recentPosts.length > 0 && (
         <section className="space-y-6">
           <div className="flex items-center justify-between border-b border-zinc-150 dark:border-zinc-900 pb-3">
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -146,10 +172,10 @@ export function BlogClient({ posts }: BlogClientProps) {
           </div>
         </div>
 
-        {/* Section Heading for All Articles */}
-        {!searchQuery && !selectedCategory && displayPosts.length > 0 && (
+        {/* Section Heading for All Articles (Dynamic Total Articles Count) */}
+        {!searchQuery && !selectedCategory && filteredPosts.length > 0 && (
           <h3 className="text-base font-bold text-zinc-800 dark:text-zinc-200 tracking-tight">
-            Explore All Guides ({displayPosts.length})
+            Explore All Guides ({filteredPosts.length})
           </h3>
         )}
 
@@ -211,6 +237,18 @@ export function BlogClient({ posts }: BlogClientProps) {
             </div>
           )}
         </div>
+
+        {/* Load More Pagination Trigger */}
+        {hasMore && (
+          <div className="flex justify-center pt-8 print:hidden">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 9)}
+              className="px-6 py-3 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:border-emerald-500/40 dark:hover:border-emerald-500/40 active:scale-95 transition-all shadow-sm hover:shadow cursor-pointer"
+            >
+              See More Articles
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
