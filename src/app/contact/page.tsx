@@ -46,7 +46,7 @@ export default function ContactPage() {
           </p>
           <div className="space-y-2 pt-2 text-zinc-700 dark:text-zinc-300 font-medium">
             <p>
-              <strong>Email:</strong> support@wealthmaze.in
+              <strong>Email:</strong> {siteConfig.email}
             </p>
             <p>
               <strong>Business Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM (IST)

@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 export const siteConfig = {
   url: siteUrl,
   domain: siteUrl.replace(/^https?:\/\//, ""),
-  email: "support@wealthmaze.in",
+  email: "wealthmazeofficial@gmail.com",
   keywords: [
     "WealthMaze",
     "wealthmaze",
