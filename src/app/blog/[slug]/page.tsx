@@ -203,6 +203,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
               </header>
 
+              {/* YMYL Educational Notice */}
+              <div className="p-4 bg-emerald-500/5 dark:bg-emerald-550/5 border border-emerald-500/10 dark:border-emerald-950/20 rounded-xl text-xs leading-relaxed text-zinc-600 dark:text-zinc-400 flex items-start gap-2.5 font-medium print:hidden">
+                <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white font-bold shrink-0 text-[10px]">!</span>
+                <p>
+                  <strong>YMYL Advisory Notice:</strong> This article is part of WealthMaze&apos;s educational library. Information is compiled from official regulatory portals (such as RBI, SEBI, or the Income Tax Dept) but does not constitute personal financial, tax, or investment advice. Read our <Link href="/editorial-policy" className="text-emerald-550 dark:text-emerald-450 hover:underline font-semibold">Editorial Policy</Link> and <Link href="/methodology" className="text-emerald-550 dark:text-emerald-450 hover:underline font-semibold">Calculator Methodology</Link> to learn how our content and calculators are verified. <em>Mutual fund investments are subject to market risks; read all scheme related documents carefully.</em>
+                </p>
+              </div>
+
               <article className="prose prose-zinc dark:prose-invert max-w-none">
                 <Markdown content={markdownContent} />
               </article>

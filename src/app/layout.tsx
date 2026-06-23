@@ -137,6 +137,15 @@ export default function RootLayout({
                 <Link href="/disclaimer" className="hover:text-zinc-800 dark:hover:text-white transition-colors">
                   Disclaimer
                 </Link>
+                <Link href="/editorial-policy" className="hover:text-zinc-800 dark:hover:text-white transition-colors">
+                  Editorial Policy
+                </Link>
+                <Link href="/content-update-policy" className="hover:text-zinc-800 dark:hover:text-white transition-colors">
+                  Content Update Policy
+                </Link>
+                <Link href="/methodology" className="hover:text-zinc-800 dark:hover:text-white transition-colors">
+                  Calculator Methodology
+                </Link>
               </div>
 
               {/* Social Media Icons — decorative, no profile links yet */}
