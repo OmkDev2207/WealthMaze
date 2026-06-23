@@ -19,8 +19,6 @@ export const goldCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Amount Invested", format: "currency" },
       { id: "gainedWealth", label: "Estimated Wealth Gained", format: "currency" },
       { id: "maturityValue", label: "Estimated Maturity Value", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const amt = inputs.investment;
@@ -42,11 +40,8 @@ export const goldCalculators: CalculatorConfig[] = [
         });
       }
 
-      const investedPurchasingPower = amt / Math.pow(1 + 0.06, t);
-      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
-
       return {
-        values: { goldWeight, investedAmount: amt, gainedWealth, maturityValue, investedPurchasingPower, purchasingPower },
+        values: { goldWeight, investedAmount: amt, gainedWealth, maturityValue },
         chartData,
       };
     },
@@ -77,8 +72,6 @@ export const goldCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Accumulated Value", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyInvestment;
@@ -103,11 +96,8 @@ export const goldCalculators: CalculatorConfig[] = [
         });
       }
 
-      const investedPurchasingPower = investedAmount / Math.pow(1 + 0.06, t);
-      const purchasingPower = totalValue / Math.pow(1 + 0.06, t);
-
       return {
-        values: { investedAmount, estReturns, totalValue, investedPurchasingPower, purchasingPower },
+        values: { investedAmount, estReturns, totalValue },
         chartData,
       };
     },
@@ -140,8 +130,6 @@ export const goldCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Amount Invested", format: "currency" },
       { id: "gainedWealth", label: "Estimated Wealth Gained", format: "currency" },
       { id: "maturityValue", label: "Estimated Maturity Value", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const amt = inputs.investment;
@@ -163,11 +151,8 @@ export const goldCalculators: CalculatorConfig[] = [
         });
       }
 
-      const investedPurchasingPower = amt / Math.pow(1 + 0.06, t);
-      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
-
       return {
-        values: { silverWeight, investedAmount: amt, gainedWealth, maturityValue, investedPurchasingPower, purchasingPower },
+        values: { silverWeight, investedAmount: amt, gainedWealth, maturityValue },
         chartData,
       };
     },

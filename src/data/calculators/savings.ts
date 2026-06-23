@@ -23,8 +23,6 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Invested Amount", format: "currency" },
       { id: "interestEarned", label: "Interest Earned", format: "currency" },
       { id: "maturityValue", label: "Maturity Value", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.principal;
@@ -46,11 +44,8 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
-      const investedPurchasingPower = p / Math.pow(1 + 0.06, t);
-      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
-
       return {
-        values: { investedAmount: p, interestEarned, maturityValue, investedPurchasingPower, purchasingPower },
+        values: { investedAmount: p, interestEarned, maturityValue },
         chartData,
       };
     },
@@ -81,8 +76,6 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "interestEarned", label: "Interest Earned", format: "currency" },
       { id: "maturityValue", label: "Maturity Value", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyDeposit;
@@ -108,11 +101,8 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
-      const investedPurchasingPower = investedAmount / Math.pow(1 + 0.06, t);
-      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
-
       return {
-        values: { investedAmount, interestEarned, maturityValue, investedPurchasingPower, purchasingPower },
+        values: { investedAmount, interestEarned, maturityValue },
         chartData,
       };
     },
@@ -144,8 +134,6 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "interestEarned", label: "Interest Earned", format: "currency" },
       { id: "maturityValue", label: "Maturity Value", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.yearlyInvestment;
@@ -168,11 +156,8 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
-      const investedPurchasingPower = investedAmount / Math.pow(1 + 0.06, t);
-      const purchasingPower = maturityValue / Math.pow(1 + 0.06, t);
-
       return {
-        values: { investedAmount, interestEarned, maturityValue, investedPurchasingPower, purchasingPower },
+        values: { investedAmount, interestEarned, maturityValue },
         chartData,
       };
     },
@@ -205,8 +190,6 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "totalEmployeeContribution", label: "Employee Contribution", format: "currency" },
       { id: "totalEmployerContribution", label: "Employer Contribution", format: "currency" },
       { id: "totalCorpus", label: "Total Accumulated EPF", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       let salary = inputs.basicSalary;
@@ -242,12 +225,8 @@ export const savingsCalculators: CalculatorConfig[] = [
         salary = salary * (1 + inc);
       }
 
-      const investedAmount = totalEmpCont + totalEmprCont;
-      const investedPurchasingPower = investedAmount / Math.pow(1 + 0.06, t);
-      const purchasingPower = epfBalance / Math.pow(1 + 0.06, t);
-
       return {
-        values: { totalEmployeeContribution: totalEmpCont, totalEmployerContribution: totalEmprCont, totalCorpus: epfBalance, investedPurchasingPower, purchasingPower },
+        values: { totalEmployeeContribution: totalEmpCont, totalEmployerContribution: totalEmprCont, totalCorpus: epfBalance },
         chartData,
       };
     },
@@ -282,8 +261,6 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "totalCorpus", label: "Maturity NPS Corpus", format: "currency" },
       { id: "lumpsumWithdrawn", label: "Lumpsum Tax-Free Withdrawal (60%)", format: "currency" },
       { id: "monthlyPension", label: "Estimated Monthly Pension", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (6% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyContribution;
@@ -316,11 +293,8 @@ export const savingsCalculators: CalculatorConfig[] = [
         });
       }
 
-      const investedPurchasingPower = totalInvested / Math.pow(1 + 0.06, yearsToInvest);
-      const purchasingPower = totalCorpus / Math.pow(1 + 0.06, yearsToInvest);
-
       return {
-        values: { totalInvested, totalCorpus, lumpsumWithdrawn, monthlyPension, investedPurchasingPower, purchasingPower },
+        values: { totalInvested, totalCorpus, lumpsumWithdrawn, monthlyPension },
         chartData,
       };
     },
@@ -351,8 +325,6 @@ export const savingsCalculators: CalculatorConfig[] = [
       { id: "totalDeposits", label: "Total Deposits", format: "currency" },
       { id: "interestEarned", label: "Interest Earned", format: "currency" },
       { id: "maturityValue", label: "Total Savings Corpus", format: "currency" },
-      { id: "investedPurchasingPower", label: "Total Investment in Today's Value (4% Inflation)", format: "currency" },
-      { id: "purchasingPower", label: "Est. Corpus in Today's Value (4% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.initialSavings;
@@ -382,11 +354,8 @@ export const savingsCalculators: CalculatorConfig[] = [
       }
 
       const interestEarned = Math.max(0, balance - totalDeposits);
-      const investedPurchasingPower = totalDeposits / Math.pow(1 + 0.04, t);
-      const purchasingPower = balance / Math.pow(1 + 0.04, t);
-
       return {
-        values: { totalDeposits, interestEarned, maturityValue: balance, investedPurchasingPower, purchasingPower },
+        values: { totalDeposits, interestEarned, maturityValue: balance },
         chartData,
       };
     },
