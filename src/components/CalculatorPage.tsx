@@ -181,6 +181,35 @@ function getCounterpartSlug(slug: string): { label: string; url: string } | null
   return null;
 }
 
+function DisclaimerBox({ isMutualFund, amcName }: { isMutualFund: boolean; amcName: string }) {
+  return (
+    <div className="p-4 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/80 rounded-xl text-[11px] leading-relaxed text-zinc-450 dark:text-zinc-500 space-y-3 print:hidden">
+      <div>
+        <h3 className="font-bold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">
+          Financial Disclaimer
+        </h3>
+        Information provided on WealthMaze is for educational purposes only. All return calculations are estimates based on user inputs. Not financial advice.
+      </div>
+      {isMutualFund && (
+        <div className="pt-2.5 border-t border-zinc-200/50 dark:border-zinc-800/50">
+          <h3 className="font-bold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">
+            Mutual Fund Disclaimer
+          </h3>
+          Mutual fund investments are subject to market risks. Read all scheme related documents carefully before investing. Past performance is not indicative of future returns.
+        </div>
+      )}
+      {amcName && (
+        <div className="pt-2.5 border-t border-zinc-200/50 dark:border-zinc-800/50">
+          <h3 className="font-bold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">
+            Non-Affiliation Disclaimer
+          </h3>
+          This calculator is an independent educational tool and is not affiliated with, sponsored by, or endorsed by {amcName}. All trademarks and brand names belong to their respective owners.
+        </div>
+      )}
+    </div>
+  );
+}
+
 function CalculatorPageInner({
   calculatorId,
   overrides,
@@ -194,6 +223,34 @@ function CalculatorPageInner({
   const { formatCurrency, formatNumber } = useCurrency();
   const counterpart = slug ? getCounterpartSlug(slug) : null;
   const isSIPActive = slug ? (slug === "sip-calculator" || slug.endsWith("-sip-calculator")) : true;
+
+  const isMutualFund =
+    calculatorId === "sip-calculator" ||
+    calculatorId === "lumpsum-calculator" ||
+    calculatorId === "mutual-fund-return-calculator" ||
+    calculatorId === "step-up-sip-calculator";
+
+  let amcName = "";
+  if (slug) {
+    const amcNames: Record<string, string> = {
+      sbi: "SBI Mutual Fund (State Bank of India)",
+      hdfc: "HDFC Mutual Fund (HDFC Asset Management Company)",
+      icici: "ICICI Prudential Mutual Fund",
+      "nippon-india": "Nippon India Mutual Fund",
+      axis: "Axis Mutual Fund",
+      kotak: "Kotak Mahindra Mutual Fund",
+      uti: "UTI Mutual Fund",
+      "aditya-birla": "Aditya Birla Sun Life Mutual Fund",
+      tata: "Tata Mutual Fund",
+      "mirae-asset": "Mirae Asset Mutual Fund",
+    };
+    const matchKey = Object.keys(amcNames).find(
+      (key) => slug.startsWith(`${key}-`)
+    );
+    if (matchKey) {
+      amcName = amcNames[matchKey];
+    }
+  }
 
   const formatSummaryValue = React.useCallback((val: number, format?: string, unit?: string) => {
     if (isNaN(val)) return "0";
@@ -378,6 +435,9 @@ function CalculatorPageInner({
               </div>
             )}
             <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
+            <div className="mt-4">
+              <DisclaimerBox isMutualFund={isMutualFund} amcName={amcName} />
+            </div>
           </div>
 
           {/* Right Side: Charts & Results */}
@@ -511,13 +571,7 @@ function CalculatorPageInner({
                 )}
                 <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
 
-                {/* Disclaimer */}
-                <div className="p-4 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/80 rounded-xl text-[11px] leading-relaxed text-zinc-400 dark:text-zinc-500 print:hidden">
-                  <h3 className="font-bold text-zinc-500 dark:text-zinc-400 mb-1 uppercase tracking-wider">
-                    Financial Disclaimer
-                  </h3>
-                  Information provided on WealthMaze is for educational purposes only. All return calculations are estimates based on user inputs. Not financial advice.
-                </div>
+                <DisclaimerBox isMutualFund={isMutualFund} amcName={amcName} />
               </div>
 
               {/* Desktop-only AD box below inputs to fill layout gaps next to the chart */}
