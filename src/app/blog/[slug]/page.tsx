@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="relative min-h-screen bg-zinc-50/30 dark:bg-zinc-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
           {/* Breadcrumbs */}
-          <nav className="flex items-center space-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+          <nav className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
             <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-300">
               Home
             </Link>

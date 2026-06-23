@@ -56,11 +56,11 @@ export function CalculatorForm({ inputs, values, onChange, isIndiaSpecific = fal
 
         return (
           <div key={input.id} className="space-y-3">
-            <div className="flex justify-between items-center">
-              <label htmlFor={`input-num-${input.id}`} className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+            <div className="flex justify-between items-center gap-4">
+              <label htmlFor={`input-num-${input.id}`} className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 flex-1 min-w-0 py-1">
                 {input.label}
               </label>
-              <div className="relative flex items-center">
+              <div className="relative flex items-center shrink-0">
                 {input.unit === "₹" && (
                   <span className="absolute left-3 text-sm font-medium text-zinc-400">{symbol}</span>
                 )}

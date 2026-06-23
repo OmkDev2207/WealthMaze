@@ -133,7 +133,7 @@ function CalculatorsExplorerInner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
         {/* Navigation Breadcrumbs & Back */}
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <nav className="flex items-center space-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+          <nav className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
             <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
               Home
             </Link>

@@ -112,7 +112,7 @@ const CalculatorChart = dynamic(
   }
 );
 
-function DeferredChart({ chartData, calculatorId, isIndiaSpecific }: { chartData: any[]; calculatorId: string; isIndiaSpecific?: boolean }) {
+function DeferredChart({ chartData, calculatorId, isIndiaSpecific, resultValues }: { chartData: any[]; calculatorId: string; isIndiaSpecific?: boolean; resultValues?: Record<string, number> }) {
   const [isVisible, setIsVisible] = React.useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -143,7 +143,7 @@ function DeferredChart({ chartData, calculatorId, isIndiaSpecific }: { chartData
   return (
     <div ref={containerRef} className="w-full min-h-[320px] flex flex-col justify-center">
       {isVisible ? (
-        <CalculatorChart chartData={chartData} calculatorId={calculatorId} isIndiaSpecific={isIndiaSpecific} />
+        <CalculatorChart chartData={chartData} calculatorId={calculatorId} isIndiaSpecific={isIndiaSpecific} resultValues={resultValues} />
       ) : (
         <div className="w-full h-80 bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-150 dark:border-zinc-800 rounded-xl animate-pulse flex items-center justify-center text-xs font-bold text-zinc-400">
           Loading interactive chart data...
@@ -445,7 +445,7 @@ function CalculatorPageInner({
             <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none space-y-4">
               <CalculatorResults outputs={config.outputs} result={result} isIndiaSpecific={config.isIndiaSpecific} />
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-805">
-                <DeferredChart chartData={result.chartData} calculatorId={config.id} isIndiaSpecific={config.isIndiaSpecific} />
+                <DeferredChart chartData={result.chartData} calculatorId={config.id} isIndiaSpecific={config.isIndiaSpecific} resultValues={result.values} />
               </div>
             </div>
           </div>
@@ -469,7 +469,7 @@ function CalculatorPageInner({
   return (
     <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8 print:p-0 pb-20 md:pb-8">
       {/* Breadcrumbs */}
-      <nav className="flex items-center space-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500 print:hidden">
+      <nav className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500 print:hidden">
         <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-300">
           Home
         </Link>
@@ -591,11 +591,11 @@ function CalculatorPageInner({
                 </div>
 
                 {/* Interactive Chart */}
-                <div className="print:hidden pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                 <div className="print:hidden pt-4 border-t border-zinc-100 dark:border-zinc-800">
                   <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 mb-4">
                     Visualizing Your Growth
                   </h3>
-                  <DeferredChart chartData={result.chartData} calculatorId={config.id} isIndiaSpecific={config.isIndiaSpecific} />
+                  <DeferredChart chartData={result.chartData} calculatorId={config.id} isIndiaSpecific={config.isIndiaSpecific} resultValues={result.values} />
                 </div>
 
                 {/* Embed this Tool Section (Strategy B) */}

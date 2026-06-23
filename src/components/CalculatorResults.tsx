@@ -205,7 +205,7 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false }: 
           <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-200 mb-3">
             Amortization / Yearly Growth Timeline
           </h3>
-          <div className="max-h-60 overflow-y-auto rounded-lg border border-zinc-100 dark:border-zinc-800">
+          <div className="max-h-60 overflow-auto rounded-lg border border-zinc-100 dark:border-zinc-800">
             <table className="w-full text-left border-collapse text-xs">
               <thead className="sticky top-0 bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-100 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 font-semibold z-10">
                 <tr className="border-b border-zinc-100 dark:border-zinc-800">
