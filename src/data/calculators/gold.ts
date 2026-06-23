@@ -19,7 +19,7 @@ export const goldCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Amount Invested", format: "currency" },
       { id: "gainedWealth", label: "Estimated Wealth Gained", format: "currency" },
       { id: "maturityValue", label: "Estimated Maturity Value", format: "currency" },
-      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const amt = inputs.investment;
@@ -75,7 +75,7 @@ export const goldCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Accumulated Value", format: "currency" },
-      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyInvestment;
@@ -136,7 +136,7 @@ export const goldCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Amount Invested", format: "currency" },
       { id: "gainedWealth", label: "Estimated Wealth Gained", format: "currency" },
       { id: "maturityValue", label: "Estimated Maturity Value", format: "currency" },
-      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const amt = inputs.investment;

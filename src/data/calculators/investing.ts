@@ -27,7 +27,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Invested Amount", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
-      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyInvestment;
@@ -118,7 +118,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Invested Amount", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
-      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const pv = inputs.lumpsumAmount;
@@ -193,7 +193,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
-      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const lumpsum = inputs.lumpsumAmount;
@@ -817,7 +817,7 @@ export const investingCalculators: CalculatorConfig[] = [
       { id: "investedAmount", label: "Total Invested Amount", format: "currency" },
       { id: "estReturns", label: "Est. Returns", format: "currency" },
       { id: "totalValue", label: "Total Value", format: "currency" },
-      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+      { id: "purchasingPower", label: "Est. Corpus in Today's Value (6% Inflation)", format: "currency" },
     ],
     calculate: (inputs) => {
       const p = inputs.monthlyInvestment;
