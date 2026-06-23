@@ -333,6 +333,286 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
       },
     ],
   },
+  {
+    id: "sbi-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "SBI SIP Calculator",
+    seoTitle: "SBI SIP Calculator – Estimate SBI Mutual Fund Returns",
+    seoDescription: "Estimate returns on your SBI Mutual Fund SIP online. Check wealth gained, maturity value, and compound growth over 5, 10, or 20 years.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "SBI Systematic Investment Plan (SIP)",
+        content: "SBI Mutual Fund is one of India's largest and most trusted asset management companies. Starting an SBI SIP allows you to invest a fixed amount regularly in their mutual fund schemes (like SBI Bluechip, SBI Small Cap, or SBI Contra). This tool projects the compound growth of your investments based on expected return rates.",
+      },
+    ],
+  },
+  {
+    id: "sbi-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "SBI Lumpsum Calculator",
+    seoTitle: "SBI Lumpsum Calculator – Estimate SBI Mutual Fund Lumpsum Returns",
+    seoDescription: "Calculate the future value of your one-time lumpsum investment in SBI Mutual Fund. Project maturity value and wealth growth over time.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "SBI Lumpsum Investment Strategy",
+        content: "Investing a lumpsum in SBI Mutual Fund schemes is suitable when you have surplus funds and a long-term investment horizon. This lumpsum calculator helps you see how compound returns grow your one-time investment over your preferred holding period.",
+      },
+    ],
+  },
+  {
+    id: "hdfc-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "HDFC SIP Calculator",
+    seoTitle: "HDFC SIP Calculator – Estimate HDFC Mutual Fund Returns",
+    seoDescription: "Calculate estimated returns on your HDFC Mutual Fund SIP online. Check compounding wealth growth and projected maturity values easily.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "HDFC Systematic Investment Plan (SIP)",
+        content: "HDFC Mutual Fund offers a wide array of investment options. With an HDFC SIP, you invest fixed sums periodically, leveraging rupee cost averaging and compound interest to build wealth steadily over time.",
+      },
+    ],
+  },
+  {
+    id: "hdfc-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "HDFC Lumpsum Calculator",
+    seoTitle: "HDFC Lumpsum Calculator – Estimate HDFC Mutual Fund Lumpsum Returns",
+    seoDescription: "Calculate the future value of your one-time lumpsum investment in HDFC Mutual Fund. Plan your long-term wealth goals online.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "HDFC Lumpsum Investment Strategy",
+        content: "HDFC Mutual Fund schemes are suitable for long-term lumpsum investments. Projections show how simple, disciplined one-time investments compound over your selected tenure.",
+      },
+    ],
+  },
+  {
+    id: "icici-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "ICICI SIP Calculator",
+    seoTitle: "ICICI SIP Calculator – Estimate ICICI Mutual Fund Returns",
+    seoDescription: "Estimate returns on your ICICI Prudential Mutual Fund SIP online. Compute future value and total gains on periodic investments.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "ICICI Prudential Systematic Investment Plan (SIP)",
+        content: "ICICI Prudential Mutual Fund provides diverse equity and hybrid schemes. An ICICI SIP helps you accumulate wealth by investing a fixed sum monthly or quarterly.",
+      },
+    ],
+  },
+  {
+    id: "icici-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "ICICI Lumpsum Calculator",
+    seoTitle: "ICICI Lumpsum Calculator – Estimate ICICI Mutual Fund Lumpsum Returns",
+    seoDescription: "Calculate compound returns on one-time lumpsum investments in ICICI Prudential Mutual Fund schemes.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "ICICI Lumpsum Investment Strategy",
+        content: "Evaluate the growth potential of a one-time investment in ICICI Prudential Mutual Fund schemes using this tool, which applies standard compound growth models.",
+      },
+    ],
+  },
+  {
+    id: "nippon-india-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "Nippon India SIP Calculator",
+    seoTitle: "Nippon India SIP Calculator – Estimate Nippon Mutual Fund Returns",
+    seoDescription: "Estimate compounding returns on Nippon India Mutual Fund SIPs. Find maturity corpus, total investment, and expected returns instantly.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Nippon India Systematic Investment Plan (SIP)",
+        content: "Nippon India Mutual Fund is one of India's leading fund houses. Setting up a Nippon India SIP is a disciplined approach to investing in growth-focused equity schemes.",
+      },
+    ],
+  },
+  {
+    id: "nippon-india-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Nippon India Lumpsum Calculator",
+    seoTitle: "Nippon India Lumpsum Calculator – Estimate Nippon Mutual Fund Lumpsum Returns",
+    seoDescription: "Estimate returns on one-time lumpsum investments in Nippon India Mutual Fund. Project maturity values over multiple years.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Nippon India Lumpsum Investment Strategy",
+        content: "Calculate the future worth of a lumpsum investment in Nippon India Mutual Fund schemes using standard compound annual interest rates.",
+      },
+    ],
+  },
+  {
+    id: "axis-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "Axis SIP Calculator",
+    seoTitle: "Axis SIP Calculator – Estimate Axis Mutual Fund Returns",
+    seoDescription: "Project compound growth on your Axis Mutual Fund SIP. Check final maturity values and total returns over 5, 10, or 20 years.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Axis Systematic Investment Plan (SIP)",
+        content: "Axis Mutual Fund is known for its growth-oriented and risk-controlled investment strategies. An Axis SIP simplifies regular investing.",
+      },
+    ],
+  },
+  {
+    id: "axis-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Axis Lumpsum Calculator",
+    seoTitle: "Axis Lumpsum Calculator – Estimate Axis Mutual Fund Lumpsum Returns",
+    seoDescription: "Estimate returns on one-time lumpsum investments in Axis Mutual Fund schemes online.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Axis Lumpsum Investment Strategy",
+        content: "Project the potential compound growth of your one-time lumpsum investment in Axis Mutual Fund schemes over your preferred investment tenure.",
+      },
+    ],
+  },
+  {
+    id: "kotak-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "Kotak SIP Calculator",
+    seoTitle: "Kotak SIP Calculator – Estimate Kotak Mutual Fund Returns",
+    seoDescription: "Estimate returns on your Kotak Mutual Fund SIP online. Check compound growth projections over your chosen tenure.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Kotak Systematic Investment Plan (SIP)",
+        content: "Kotak Mutual Fund schemes offer diverse asset options. A Kotak SIP allows you to invest systematically, taking advantage of compounding and market cycles.",
+      },
+    ],
+  },
+  {
+    id: "kotak-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Kotak Lumpsum Calculator",
+    seoTitle: "Kotak Lumpsum Calculator – Estimate Kotak Mutual Fund Lumpsum Returns",
+    seoDescription: "Calculate the future value of one-time lumpsum investments in Kotak Mutual Fund schemes.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Kotak Lumpsum Investment Strategy",
+        content: "Understand the long-term wealth potential of your one-time investments in Kotak Mutual Fund schemes through compound interest estimates.",
+      },
+    ],
+  },
+  {
+    id: "uti-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "UTI SIP Calculator",
+    seoTitle: "UTI SIP Calculator – Estimate UTI Mutual Fund Returns",
+    seoDescription: "Calculate returns on your UTI Mutual Fund SIP online. See expected maturity value and wealth gains over time.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "UTI Systematic Investment Plan (SIP)",
+        content: "UTI Mutual Fund is India's pioneer fund house. A UTI SIP helps you invest in equity schemes systematically, building a structured savings habit.",
+      },
+    ],
+  },
+  {
+    id: "uti-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "UTI Lumpsum Calculator",
+    seoTitle: "UTI Lumpsum Calculator – Estimate UTI Mutual Fund Lumpsum Returns",
+    seoDescription: "Estimate compound growth on one-time lumpsum investments in UTI Mutual Fund schemes.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "UTI Lumpsum Investment Strategy",
+        content: "Find the future value of your one-time lumpsum investments in UTI Mutual Fund schemes with this interactive calculator.",
+      },
+    ],
+  },
+  {
+    id: "aditya-birla-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "Aditya Birla SIP Calculator",
+    seoTitle: "Aditya Birla SIP Calculator – Estimate Aditya Birla Mutual Fund Returns",
+    seoDescription: "Estimate compounding returns on Aditya Birla Sun Life Mutual Fund SIPs online.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Aditya Birla Sun Life Systematic Investment Plan (SIP)",
+        content: "Aditya Birla Sun Life Mutual Fund offers a robust selection of fund products. Use this calculator to estimate the compound growth of your systematic investments.",
+      },
+    ],
+  },
+  {
+    id: "aditya-birla-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Aditya Birla Lumpsum Calculator",
+    seoTitle: "Aditya Birla Lumpsum Calculator – Estimate Aditya Birla Mutual Fund Lumpsum Returns",
+    seoDescription: "Estimate returns on one-time lumpsum investments in Aditya Birla Sun Life Mutual Fund.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Aditya Birla Lumpsum Investment Strategy",
+        content: "Project the future value of a one-time lumpsum investment in Aditya Birla Sun Life Mutual Fund schemes.",
+      },
+    ],
+  },
+  {
+    id: "tata-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "Tata SIP Calculator",
+    seoTitle: "Tata SIP Calculator – Estimate Tata Mutual Fund Returns",
+    seoDescription: "Estimate compounding returns on Tata Mutual Fund SIPs online. View total invested capital and estimated maturity wealth.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Tata Systematic Investment Plan (SIP)",
+        content: "Tata Mutual Fund schemes emphasize long-term capital appreciation. A Tata SIP helps automate your monthly investments in these funds.",
+      },
+    ],
+  },
+  {
+    id: "tata-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Tata Lumpsum Calculator",
+    seoTitle: "Tata Lumpsum Calculator – Estimate Tata Mutual Fund Lumpsum Returns",
+    seoDescription: "Estimate returns on one-time lumpsum investments in Tata Mutual Fund.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Tata Lumpsum Investment Strategy",
+        content: "Evaluate the compound growth of one-time lumpsum investments in Tata Mutual Fund schemes.",
+      },
+    ],
+  },
+  {
+    id: "mirae-asset-sip-calculator",
+    parentCalculatorId: "sip-calculator",
+    name: "Mirae Asset SIP Calculator",
+    seoTitle: "Mirae Asset SIP Calculator – Estimate Mirae Asset Mutual Fund Returns",
+    seoDescription: "Estimate returns on your Mirae Asset Mutual Fund SIP online. Check expected maturity values and compound growth.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Mirae Asset Systematic Investment Plan (SIP)",
+        content: "Mirae Asset Mutual Fund is highly regarded for its performance-driven equity funds. A Mirae Asset SIP builds compound wealth over the long term.",
+      },
+    ],
+  },
+  {
+    id: "mirae-asset-lumpsum-calculator",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Mirae Asset Lumpsum Calculator",
+    seoTitle: "Mirae Asset Lumpsum Calculator – Estimate Mirae Asset Mutual Fund Lumpsum Returns",
+    seoDescription: "Estimate returns on one-time lumpsum investments in Mirae Asset Mutual Fund.",
+    defaultOverrides: {},
+    educationalContent: [
+      {
+        title: "Mirae Asset Lumpsum Investment Strategy",
+        content: "Evaluate the compound growth of one-time lumpsum investments in Mirae Asset Mutual Fund schemes.",
+      },
+    ],
+  },
 ];
 
 export const getProgrammaticPageById = (id: string): ProgrammaticPageConfig | undefined => {

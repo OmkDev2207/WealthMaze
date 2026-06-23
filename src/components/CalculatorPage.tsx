@@ -160,6 +160,25 @@ interface CalculatorPageProps {
   customDescription?: string;
   customEducationalContent?: { title: string; content: string }[];
   isEmbed?: boolean;
+  slug?: string;
+}
+
+function getCounterpartSlug(slug: string): { label: string; url: string } | null {
+  if (slug === "sip-calculator") {
+    return { label: "Lump sum", url: "/lumpsum-calculator" };
+  }
+  if (slug === "lumpsum-calculator") {
+    return { label: "SIP", url: "/sip-calculator" };
+  }
+  if (slug.endsWith("-sip-calculator")) {
+    const base = slug.replace("-sip-calculator", "");
+    return { label: "Lump sum", url: `/${base}-lumpsum-calculator` };
+  }
+  if (slug.endsWith("-lumpsum-calculator")) {
+    const base = slug.replace("-lumpsum-calculator", "");
+    return { label: "SIP", url: `/${base}-sip-calculator` };
+  }
+  return null;
 }
 
 function CalculatorPageInner({
@@ -169,9 +188,12 @@ function CalculatorPageInner({
   customDescription,
   customEducationalContent,
   isEmbed = false,
+  slug,
 }: CalculatorPageProps) {
   const config = getCalculatorById(calculatorId)!;
   const { formatCurrency, formatNumber } = useCurrency();
+  const counterpart = slug ? getCounterpartSlug(slug) : null;
+  const isSIPActive = slug ? (slug === "sip-calculator" || slug.endsWith("-sip-calculator")) : true;
 
   const formatSummaryValue = React.useCallback((val: number, format?: string, unit?: string) => {
     if (isNaN(val)) return "0";
@@ -320,7 +342,41 @@ function CalculatorPageInner({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
           {/* Left Side: Inputs */}
-          <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none">
+          <div className="lg:col-span-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none space-y-4">
+            {counterpart && (
+              <div className="flex p-1 bg-zinc-100 dark:bg-zinc-900 rounded-xl relative print:hidden">
+                <Link
+                  href={isSIPActive ? "#" : counterpart.url}
+                  onClick={(e) => {
+                    if (isSIPActive) {
+                      e.preventDefault();
+                    }
+                  }}
+                  className={`flex-1 text-center py-2 text-xs font-bold rounded-lg transition-all ${
+                    isSIPActive
+                      ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-sm"
+                      : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+                  }`}
+                >
+                  SIP
+                </Link>
+                <Link
+                  href={!isSIPActive ? "#" : counterpart.url}
+                  onClick={(e) => {
+                    if (!isSIPActive) {
+                      e.preventDefault();
+                    }
+                  }}
+                  className={`flex-1 text-center py-2 text-xs font-bold rounded-lg transition-all ${
+                    !isSIPActive
+                      ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-sm"
+                      : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+                  }`}
+                >
+                  Lumpsum
+                </Link>
+              </div>
+            )}
             <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
           </div>
 
@@ -419,6 +475,40 @@ function CalculatorPageInner({
                 <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
                   Calculator Inputs
                 </h2>
+                {counterpart && (
+                  <div className="flex p-1 bg-zinc-100 dark:bg-zinc-900 rounded-xl relative mb-6 print:hidden">
+                    <Link
+                      href={isSIPActive ? "#" : counterpart.url}
+                      onClick={(e) => {
+                        if (isSIPActive) {
+                          e.preventDefault();
+                        }
+                      }}
+                      className={`flex-1 text-center py-2 text-xs font-bold rounded-lg transition-all ${
+                        isSIPActive
+                          ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-sm"
+                          : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+                      }`}
+                    >
+                      SIP
+                    </Link>
+                    <Link
+                      href={!isSIPActive ? "#" : counterpart.url}
+                      onClick={(e) => {
+                        if (!isSIPActive) {
+                          e.preventDefault();
+                        }
+                      }}
+                      className={`flex-1 text-center py-2 text-xs font-bold rounded-lg transition-all ${
+                        !isSIPActive
+                          ? "bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white shadow-sm"
+                          : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+                      }`}
+                    >
+                      Lumpsum
+                    </Link>
+                  </div>
+                )}
                 <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
 
                 {/* Disclaimer */}
@@ -587,6 +677,7 @@ export function CalculatorPage({
   customDescription,
   customEducationalContent,
   isEmbed = false,
+  slug,
 }: CalculatorPageProps) {
   const config = getCalculatorById(calculatorId);
   if (!config) {
@@ -600,6 +691,7 @@ export function CalculatorPage({
       customDescription={customDescription}
       customEducationalContent={customEducationalContent}
       isEmbed={isEmbed}
+      slug={slug}
     />
   );
 }

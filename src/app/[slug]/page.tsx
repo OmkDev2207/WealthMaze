@@ -199,6 +199,7 @@ export default async function CalculatorSlugPage({ params }: PageProps) {
         customTitle={progConfig?.name}
         customDescription={progConfig?.seoDescription}
         customEducationalContent={progConfig?.educationalContent}
+        slug={slug}
       />
     </>
   );

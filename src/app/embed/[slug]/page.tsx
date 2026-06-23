@@ -51,7 +51,7 @@ export default async function EmbedPage({ params }: PageProps) {
     <div className="min-h-screen bg-transparent p-0">
       <EmbedClassTrigger />
       <main className="w-full max-w-full">
-        <CalculatorPage calculatorId={slug} isEmbed={true} />
+        <CalculatorPage calculatorId={slug} isEmbed={true} slug={slug} />
       </main>
     </div>
   );
