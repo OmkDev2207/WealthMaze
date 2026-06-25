@@ -27,6 +27,64 @@ export const authors: Record<string, Author> = {
 };
 
 export const blogPosts: BlogPost[] = [
+  // 1. SIP vs FD
+  {
+    slug: "sip-vs-fd",
+    title: "Mutual Fund SIP vs Fixed Deposit: The Real Comparison Nobody Wants to Have",
+    description: "Compare risk, returns, tax treatment, and inflation impact of Systematic Investment Plans vs standard bank Fixed Deposits.",
+    publishedAt: "June 25, 2026",
+    readTime: "12 min read",
+    category: "Investing",
+    tags: ["SIP", "Fixed Deposit", "Comparison"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "fd-calculator", "inflation-impact-calculator", "cagr-calculator"],
+  },
+  // 2. SIP Mistakes
+  {
+    slug: "sip-mistakes",
+    title: "The Real Reason Your SIP Isn't Building Wealth — And It's Not the Market",
+    description: "Understand the psychological and behavioral mistakes that derail SIP returns, and learn how to avoid them with structured discipline.",
+    publishedAt: "June 25, 2026",
+    readTime: "11 min read",
+    category: "Investing",
+    tags: ["SIP", "Common Mistakes", "Investing"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "sip-comparison-calculator"],
+  },
+  // 3. SIP Calculator
+  {
+    slug: "what-is-sip",
+    title: "What is SIP? The Investment Method That Turns Market Crashes Into Your Biggest Advantage",
+    description: "Learn how Systematic Investment Plans (SIP) work, the magic of compounding, and how rupee cost averaging builds wealth.",
+    publishedAt: "June 25, 2026",
+    readTime: "10 min read",
+    category: "Investing",
+    tags: ["SIP", "Mutual Funds", "Beginners"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator"],
+  },
+  {
+    slug: "wealth-vs-income",
+    title: "Wealth vs Income: Why the Highest Earners Are Often the Least Wealthy",
+    description: "Understand the critical difference between high income and true net worth. Learn why high earners often fall into spending traps and how to build lasting assets.",
+    publishedAt: "June 25, 2026",
+    readTime: "12 min read",
+    category: "Investing",
+    tags: ["Wealth vs Income", "Net Worth", "Asset Building", "Financial Mindset"],
+    author: authors.omk,
+    relatedCalculators: ["net-worth-calculator", "financial-freedom-calculator", "sip-calculator"],
+  },
+  {
+    slug: "most-people-think-about-growing-wealth-wrong-at-an-early-age",
+    title: "Most People Think About Growing Wealth Wrong at an Early Age",
+    description: "At an early age, obsessing over savings is one of the most expensive financial mistakes you can make. Learn why income growth beats savings rate.",
+    publishedAt: "June 25, 2026",
+    readTime: "8 min read",
+    category: "Investing",
+    tags: ["Income Growth", "Compounding", "Personal Finance", "Savings"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "savings-calculator", "financial-freedom-calculator"],
+  },
   // New Articles (June 22, 2026)
   {
     slug: "why-most-people-never-build-wealth",
@@ -51,17 +109,6 @@ export const blogPosts: BlogPost[] = [
     relatedCalculators: ["sip-calculator", "investment-growth-calculator", "compound-interest-calculator"],
   },
   {
-    slug: "wealth-vs-income",
-    title: "Wealth vs Income: Why the Highest Earners Are Often the Least Wealthy",
-    description: "Understand the critical difference between high income and true net worth. Learn why high earners often fall into spending traps and how to build lasting assets.",
-    publishedAt: "June 25, 2026",
-    readTime: "12 min read",
-    category: "Investing",
-    tags: ["Wealth vs Income", "Net Worth", "Asset Building", "Financial Mindset"],
-    author: authors.omk,
-    relatedCalculators: ["net-worth-calculator", "financial-freedom-calculator", "sip-calculator"],
-  },
-  {
     slug: "small-financial-decisions-compound",
     title: "How Small Financial Decisions Compound Over Time",
     description: "See how minor daily or monthly choices compound into massive financial outcomes over decades, and learn how to recognize opportunity costs.",
@@ -82,18 +129,6 @@ export const blogPosts: BlogPost[] = [
     tags: ["Financial Freedom", "Savings Rate", "Retirement Planning", "FIRE"],
     author: authors.omk,
     relatedCalculators: ["financial-freedom-calculator", "fire-calculator", "retirement-calculator"],
-  },
-  // 1. SIP Calculator
-  {
-    slug: "what-is-sip",
-    title: "What is SIP? The Investment Method That Turns Market Crashes Into Your Biggest Advantage",
-    description: "Learn how Systematic Investment Plans (SIP) work, the magic of compounding, and how rupee cost averaging builds wealth.",
-    publishedAt: "June 25, 2026",
-    readTime: "10 min read",
-    category: "Investing",
-    tags: ["SIP", "Mutual Funds", "Beginners"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator"],
   },
   // 2. Compounding
   {
@@ -431,30 +466,7 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-calculator", "goal-based-investment-calculator", "rd-calculator"],
   },
-  // 30. SIP Mistakes
-  {
-    slug: "sip-mistakes",
-    title: "The Real Reason Your SIP Isn't Building Wealth — And It's Not the Market",
-    description: "Understand the psychological and behavioral mistakes that derail SIP returns, and learn how to avoid them with structured discipline.",
-    publishedAt: "June 25, 2026",
-    readTime: "11 min read",
-    category: "Investing",
-    tags: ["SIP", "Common Mistakes", "Investing"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "sip-comparison-calculator"],
-  },
-  // 31. SIP vs FD
-  {
-    slug: "sip-vs-fd",
-    title: "Mutual Fund SIP vs Fixed Deposit: The Real Comparison Nobody Wants to Have",
-    description: "Compare risk, returns, tax treatment, and inflation impact of Systematic Investment Plans vs standard bank Fixed Deposits.",
-    publishedAt: "June 25, 2026",
-    readTime: "12 min read",
-    category: "Investing",
-    tags: ["SIP", "Fixed Deposit", "Comparison"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "fd-calculator", "inflation-impact-calculator", "cagr-calculator"],
-  },
+
   // 32. Tax Policy Basics
   {
     slug: "tax-policy-basics",
@@ -478,17 +490,6 @@ export const blogPosts: BlogPost[] = [
     tags: ["Taxation", "Public Spend", "Education"],
     author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-  {
-    slug: "most-people-think-about-growing-wealth-wrong-at-an-early-age",
-    title: "Most People Think About Growing Wealth Wrong at an Early Age",
-    description: "At an early age, obsessing over savings is one of the most expensive financial mistakes you can make. Learn why income growth beats savings rate.",
-    publishedAt: "June 25, 2026",
-    readTime: "8 min read",
-    category: "Investing",
-    tags: ["Income Growth", "Compounding", "Personal Finance", "Savings"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "savings-calculator", "financial-freedom-calculator"],
   },
 ];
 

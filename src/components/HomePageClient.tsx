@@ -111,7 +111,13 @@ export function HomePageClient() {
 
   // Get recent 3 blog posts
   const recentPosts = React.useMemo(() => {
-    return blogPosts.slice(0, 3);
+    return [...blogPosts]
+      .sort((a, b) => {
+        const dateA = new Date(a.publishedAt).getTime();
+        const dateB = new Date(b.publishedAt).getTime();
+        return (isNaN(dateB) ? 0 : dateB) - (isNaN(dateA) ? 0 : dateA);
+      })
+      .slice(0, 3);
   }, []);
 
   return (
