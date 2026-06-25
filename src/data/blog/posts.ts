@@ -446,14 +446,14 @@ export const blogPosts: BlogPost[] = [
   // 31. SIP vs FD
   {
     slug: "sip-vs-fd",
-    title: "Mutual Fund SIP vs Fixed Deposits (FD): The Ultimate Comparison",
-    description: "Compare risk, returns, tax treatment, and liquidity of Systematic Investment Plans vs standard bank Fixed Deposits.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
+    title: "Mutual Fund SIP vs Fixed Deposit: The Real Comparison Nobody Wants to Have",
+    description: "Compare risk, returns, tax treatment, and inflation impact of Systematic Investment Plans vs standard bank Fixed Deposits.",
+    publishedAt: "June 25, 2026",
+    readTime: "12 min read",
     category: "Investing",
     tags: ["SIP", "Fixed Deposit", "Comparison"],
     author: authors.omk,
-    relatedCalculators: ["sip-calculator", "fd-calculator"],
+    relatedCalculators: ["sip-calculator", "fd-calculator", "inflation-impact-calculator", "cagr-calculator"],
   },
   // 32. Tax Policy Basics
   {
