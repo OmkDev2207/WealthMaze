@@ -434,14 +434,14 @@ export const blogPosts: BlogPost[] = [
   // 30. SIP Mistakes
   {
     slug: "sip-mistakes",
-    title: "5 Common SIP Mistakes to Avoid for Maximum Returns",
-    description: "Avoid standard mistakes like stopping SIPs during corrections, underestimating compounding, or choosing wrong mutual funds.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
+    title: "The Real Reason Your SIP Isn't Building Wealth — And It's Not the Market",
+    description: "Understand the psychological and behavioral mistakes that derail SIP returns, and learn how to avoid them with structured discipline.",
+    publishedAt: "June 25, 2026",
+    readTime: "11 min read",
     category: "Investing",
     tags: ["SIP", "Common Mistakes", "Investing"],
     author: authors.omk,
-    relatedCalculators: ["sip-calculator", "sip-comparison-calculator"],
+    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "sip-comparison-calculator"],
   },
   // 31. SIP vs FD
   {
