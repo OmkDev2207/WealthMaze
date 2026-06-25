@@ -20,9 +20,9 @@ export interface BlogPost {
 export const authors: Record<string, Author> = {
   omk: {
     name: "Om K.",
-    avatar: "/authors/om-k.png",
+    avatar: "https://wealthmaze.in/logo.png",
     role: "Founder, WealthMaze",
-    bio: "Om K. is the founder of WealthMaze and writes about personal finance, investing, SIPs, mutual funds, retirement planning, budgeting, and wealth building. His goal is to simplify financial concepts and help readers make better money decisions.",
+    bio: "Om K. is the founder of WealthMaze and an active equity investor with a background in finance management. He studies markets not just through numbers, but through the lens of behavioral finance — understanding why people make the financial decisions they do, and how those decisions shape long-term wealth outcomes. Om built WealthMaze to bridge the gap between complex financial tools and everyday investors who deserve clear, unbiased answers. His writing focuses on the ideas most finance content gets wrong — the psychology, the math, and the real-world decisions that actually determine financial outcomes.",
   },
 };
 

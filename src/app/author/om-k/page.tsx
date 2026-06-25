@@ -58,8 +58,12 @@ export default function AuthorProfilePage() {
 
           {/* Author Header Card */}
           <header className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-6 sm:p-8 rounded-2xl shadow-sm dark:shadow-none flex flex-col md:flex-row gap-6 items-start md:items-center">
-            <div className="h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/30 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-extrabold text-3xl sm:text-4xl shrink-0 select-none shadow-inner">
-              OK
+            <div className="h-20 w-20 sm:h-24 sm:w-24 rounded-[12px] bg-[#F5F5F5] border border-zinc-200 dark:border-zinc-800 flex items-center justify-center p-3 sm:p-4 shrink-0 select-none shadow-inner">
+              <img
+                src="https://wealthmaze.in/logo.png"
+                alt="WealthMaze Logo"
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
 
             <div className="space-y-3 flex-1">
@@ -73,7 +77,7 @@ export default function AuthorProfilePage() {
               </div>
 
               <p className="text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-zinc-300 max-w-3xl">
-                Om K. is the founder of WealthMaze and writes about personal finance, investing, SIPs, mutual funds, retirement planning, budgeting, and wealth building. His goal is to simplify financial concepts and help readers make better money decisions.
+                Om K. is the founder of WealthMaze and an active equity investor with a background in finance management. He studies markets not just through numbers, but through the lens of behavioral finance — understanding why people make the financial decisions they do, and how those decisions shape long-term wealth outcomes. Om built WealthMaze to bridge the gap between complex financial tools and everyday investors who deserve clear, unbiased answers. His writing focuses on the ideas most finance content gets wrong — the psychology, the math, and the real-world decisions that actually determine financial outcomes.
               </p>
 
               <div className="flex gap-4 text-xs font-semibold text-zinc-400 dark:text-zinc-500 pt-1">

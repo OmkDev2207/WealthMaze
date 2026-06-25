@@ -217,8 +217,12 @@ export default async function BlogPostPage({ params }: PageProps) {
 
               {/* About the Author box */}
               <div className="p-6 bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800 rounded-2xl flex flex-col sm:flex-row gap-5 items-start sm:items-center mt-8">
-                <div className="h-16 w-16 rounded-full bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/30 flex items-center justify-center text-emerald-700 dark:text-emerald-400 font-extrabold text-2xl shrink-0 select-none shadow-inner">
-                  OK
+                <div className="h-16 w-16 rounded-[12px] bg-[#F5F5F5] border border-zinc-200 dark:border-zinc-800 flex items-center justify-center p-2.5 shrink-0 select-none shadow-inner">
+                  <img
+                    src="https://wealthmaze.in/logo.png"
+                    alt="WealthMaze Logo"
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
                 <div className="space-y-1.5">
                   <h4 className="font-bold text-zinc-900 dark:text-white text-sm">
