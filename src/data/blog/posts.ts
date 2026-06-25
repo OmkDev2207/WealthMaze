@@ -86,10 +86,10 @@ export const blogPosts: BlogPost[] = [
   // 1. SIP Calculator
   {
     slug: "what-is-sip",
-    title: "What is SIP (Systematic Investment Plan)?",
+    title: "What is SIP? The Investment Method That Turns Market Crashes Into Your Biggest Advantage",
     description: "Learn how Systematic Investment Plans (SIP) work, the magic of compounding, and how rupee cost averaging builds wealth.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
+    publishedAt: "June 25, 2026",
+    readTime: "10 min read",
     category: "Investing",
     tags: ["SIP", "Mutual Funds", "Beginners"],
     author: authors.omk,
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Magic of Compound Interest: The Eighth Wonder of the World",
     description: "Learn how money grows exponentially over time. Understand the difference between simple and compound growth with real examples.",
     publishedAt: "June 18, 2026",
-    readTime: "5 min read",
+    readTime: "10 min read",
     category: "Investing",
     tags: ["Compounding", "Investing", "Education"],
     author: authors.omk,
