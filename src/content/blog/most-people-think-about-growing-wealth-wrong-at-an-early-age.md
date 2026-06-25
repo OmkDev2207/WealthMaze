@@ -1,9 +1,3 @@
-# Most People Think About Growing Wealth Wrong at an Early Age
-
-*By WealthMaze Research Desk | Personal Finance | 8 min read*
-
----
-
 There's a piece of financial advice that gets repeated so often it has become gospel: **save more, spend less, and compound interest will do the rest.**
 
 It sounds right. It feels responsible. And for a large portion of your life, it will quietly hold you back.
@@ -11,8 +5,6 @@ It sounds right. It feels responsible. And for a large portion of your life, it 
 Here's the uncomfortable truth that most personal finance content refuses to say out loud — **at an early age, obsessing over savings is one of the most expensive financial mistakes you can make.** Not because saving is bad. But because the energy, time, and mental bandwidth you're pouring into optimizing your savings rate should be going somewhere far more powerful: **making more money.**
 
 Let's break this down properly.
-
----
 
 ## The Savings Trap Nobody Talks About
 
@@ -27,8 +19,6 @@ Think about what savings optimization actually does. If you earn ₹50,000 a mon
 Income has no such ceiling.
 
 The same ₹50,000 income, if doubled to ₹1,00,000 through a skill upgrade or a career move, gives you more investable surplus than five years of aggressive expense-cutting ever could — and it compounds forward for the rest of your career.
-
----
 
 ## The Math That Should Change How You Think
 
@@ -54,8 +44,6 @@ That's a ₹20 lakh gap. And it widens with every passing year because Priya's i
 
 This isn't a cherry-picked example. This is arithmetic. **The variable that matters most in the wealth equation is your income trajectory, not your savings ratio.**
 
----
-
 ## Why Smart People Still Get This Wrong
 
 If the math is this clear, why do so many intelligent, financially literate people focus almost entirely on savings?
@@ -70,8 +58,6 @@ There's also the **illusion of optimization.** Comparing FD rates, hunting for t
 
 Consider: the difference between a 7% and 7.5% FD return on ₹5 lakhs is ₹2,500 a year. A single additional client, a promotion, or a freelance project can generate that in a day.
 
----
-
 ## The FD Fallacy — Optimizing the Wrong Asset
 
 Let's talk specifically about Fixed Deposits, because this is where the savings mindset becomes most visibly limiting in India.
@@ -80,13 +66,11 @@ The FD is not a bad instrument. For capital preservation, emergency funds, and r
 
 Your human capital — your ability to earn — is returning far, far more than that. But we don't think of skill investment as an investment at all.
 
-If you spend ₹30,000 on an online course, a certification, or a mentorship program that helps you earn ₹15,000 more per month, you've made a 600% annual return on that investment. No FD, no mutual fund, no index fund in the world comes close to that number.
+If you spend ₹30,000 on an online course, a certification, or a mentorship program that helps you earn ₹15,050 more per month, you've made a 600% annual return on that investment. No FD, no mutual fund, no index fund in the world comes close to that number.
 
 The problem is that a learning expense hits your savings rate. It looks like a cost on paper. And when you're optimizing for savings, costs are the enemy.
 
 This is the trap.
-
----
 
 ## The Side Hustle Rabbit Hole
 
@@ -100,8 +84,6 @@ The difference between a side hustle and a career investment is compounding. Sid
 
 Warren Buffett said the best investment you can make is in yourself. It sounds like a cliché because it gets quoted without context. The context is this: **your earning power is your most valuable financial asset in your 20s and 30s, and it deserves the same strategic attention you give your investment portfolio.**
 
----
-
 ## When Does the Equation Flip?
 
 This is important to get right, because the argument here isn't that savings don't matter. They absolutely do.
@@ -111,8 +93,6 @@ The equation shifts as you age. By your late 30s and 40s, your income trajectory
 But in your 20s and early 30s — when your income is low, your responsibilities are limited, and your ability to take risk is at its highest — **the highest-yield investment you can make is in making yourself more valuable.**
 
 Globally, the research supports this. Economists call it **human capital theory** — the idea that the present value of future earnings constitutes the largest single asset on your personal balance sheet when you're young. No SIP beats a career that grows 20% year over year.
-
----
 
 ## What "Invest in Yourself" Actually Looks Like
 
@@ -125,8 +105,6 @@ The phrase gets used so loosely it has lost meaning. Let's be specific about wha
 **Network as an asset:** This sounds soft, but it isn't. The research on career earnings consistently shows that the majority of significant income jumps come through referrals, introductions, and relationships — not job boards. Time spent building genuine professional relationships is a direct income investment.
 
 **Geographic and sectoral arbitrage:** Working for a US or European company in a remote capacity from India — even at 50% of the local market rate — can double or triple your income overnight. This isn't a hustle. It's a strategic move that requires investment in skills, communication, and portfolio building.
-
----
 
 ## The Framework: Income First, Optimize Later
 
@@ -146,8 +124,6 @@ The corpus is large enough that returns on it matter significantly. Now the trad
 
 Most personal finance content teaches Phase 3 thinking to people in Phase 1. That's the root of the problem.
 
----
-
 ## The Takeaway
 
 This is not an argument against saving. Save. Invest early. The power of compounding is real and the math is on its side — but only once your income is large enough that the corpus being compounded is significant.
@@ -162,10 +138,6 @@ The wealthiest version of your future self will not be the one who found the bes
 
 **Earn more. Then optimize how you save it.**
 
----
-
 *Use WealthMaze's [SIP Calculator](/sip-calculator) to model what your wealth trajectory looks like at different income levels — and see for yourself how much faster things compound when the income variable changes.*
-
----
 
 *Disclaimer: This article is for educational and informational purposes only. It does not constitute financial advice. Please consult a SEBI-registered financial advisor before making investment decisions.*
