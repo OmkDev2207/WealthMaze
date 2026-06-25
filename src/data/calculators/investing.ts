@@ -107,7 +107,7 @@ export const investingCalculators: CalculatorConfig[] = [
     seoTitle: "Lumpsum Calculator – Calculate Compound Interest Returns",
     seoDescription: "Calculate returns on your one-time lumpsum investments. Estimate maturity values of mutual funds, equities, and fixed investments using our calculator.",
     inputs: [
-      { id: "lumpsumAmount", label: "Lumpsum Investment", type: "slider", min: 5000, max: 10000000, step: 5000, default: 100000, unit: "₹" },
+      { id: "lumpsumAmount", label: "Lumpsum Investment", type: "slider", min: 5000, max: 100000000, step: 25000, default: 100000, unit: "₹" },
       { id: "expectedReturn", label: "Expected Return Rate (p.a.)", type: "slider", min: 1, max: 30, step: 0.5, default: 12, unit: "%" },
       { id: "timePeriod", label: "Time Period", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: "Yr" },
     ],

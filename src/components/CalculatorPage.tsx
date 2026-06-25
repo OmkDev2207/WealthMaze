@@ -467,7 +467,7 @@ function CalculatorPageInner({
   }
 
   return (
-    <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8 print:p-0 pb-20 md:pb-8">
+    <article className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 space-y-8 print:p-0 pb-20 md:pb-8">
       {/* Breadcrumbs */}
       <nav className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs font-semibold text-zinc-400 dark:text-zinc-500 print:hidden">
         <Link href="/" className="hover:text-zinc-600 dark:hover:text-zinc-300">
@@ -531,7 +531,7 @@ function CalculatorPageInner({
           <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Side: Inputs Container */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
+              <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-3.5 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
                 <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
                   Calculator Inputs
                 </h2>
@@ -580,7 +580,7 @@ function CalculatorPageInner({
 
             {/* Right Side: Charts & Results */}
             <div className="lg:col-span-7 space-y-6 print:w-full" id="calc-results-section">
-              <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
+              <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-3.5 sm:p-6 rounded-2xl shadow-sm dark:shadow-none space-y-6 print:border-none print:shadow-none print:p-0">
                 <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
                   Calculation Output & Analysis
                 </h2>
@@ -686,7 +686,7 @@ function CalculatorPageInner({
 
       {/* Mobile Sticky Results Summary (UX booster) */}
       {primaryOutput && !isStickyDismissed && (
-        <div className="fixed bottom-14 left-0 right-0 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-900 pl-4 pr-10 py-3 shadow-lg z-40 flex items-center justify-between md:hidden animate-in slide-in-from-bottom duration-300">
+        <div className="fixed bottom-[calc(3.5rem+env(safe-area-inset-bottom))] left-0 right-0 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-900 pl-4 pr-10 py-3 shadow-lg z-40 flex items-center justify-between md:hidden animate-in slide-in-from-bottom duration-300">
           <div className="flex flex-col pr-2">
             <span className="text-[9px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider leading-none">
               Live {primaryOutput.label}

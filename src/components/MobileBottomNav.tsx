@@ -22,7 +22,10 @@ export function MobileBottomNav() {
   const isCalculatorActive = !isHomeActive && !isBlogActive && !isAboutActive;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 h-14 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-150 dark:border-zinc-900 flex items-center justify-around z-45 md:hidden print:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.03)] pb-safe">
+    <nav
+      className="fixed bottom-0 left-0 right-0 h-[calc(3.5rem+env(safe-area-inset-bottom))] pb-[env(safe-area-inset-bottom)] bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-t border-zinc-150 dark:border-zinc-900 flex items-center justify-around z-50 md:hidden print:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.03)] will-change-transform"
+      style={{ transform: "translate3d(0, 0, 0)" }}
+    >
       <Link
         href="/"
         className={`flex flex-col items-center justify-center flex-grow py-1 transition-colors group ${

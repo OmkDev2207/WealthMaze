@@ -32,7 +32,7 @@ export function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-16 left-4 right-4 md:left-auto md:right-8 md:w-[380px] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-5 rounded-2xl shadow-xl z-48 flex flex-col space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-300 print:hidden"
+      className="fixed bottom-[calc(4rem+env(safe-area-inset-bottom))] left-4 right-4 md:left-auto md:right-8 md:w-[380px] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4 sm:p-5 rounded-2xl shadow-xl z-48 flex flex-col space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-300 print:hidden"
       aria-live="polite"
       id="cookie-consent-banner"
     >

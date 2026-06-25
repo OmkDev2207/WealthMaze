@@ -16,13 +16,19 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { CurrencyProvider } from "@/lib/CurrencyContext";
 
 export const metadata: Metadata = {
-  title: "WealthMaze - Calculate Your Financial Future",
-  description: "WealthMaze helps you navigate complex financial decisions through simple, accurate, and easy-to-use calculators. Plan investments, calculate loan EMIs, and track wealth.",
+  title: {
+    default: "WealthMaze – Financial Calculators, Investment Planning & Wealth Building",
+    template: "%s | WealthMaze",
+  },
+  description: "Free SIP, retirement, financial freedom, net worth, inflation, EMI, and investment calculators. Plan your financial future with WealthMaze's financial planning tools and educational guides.",
   keywords: siteConfig.keywords,
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: siteConfig.url,
+  },
   openGraph: {
-    title: "WealthMaze - Calculate Your Financial Future",
-    description: "Navigate complex financial decisions through simple, accurate, and easy-to-use calculators.",
+    title: "WealthMaze – Financial Calculators & Wealth Planning",
+    description: "Plan investments, retirement and financial freedom using free calculators from WealthMaze.",
     type: "website",
     locale: "en_IN",
     url: siteConfig.url,
@@ -38,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WealthMaze - Calculate Your Financial Future",
-    description: "Navigate complex financial decisions through simple, accurate, and easy-to-use calculators.",
+    title: "WealthMaze – Financial Calculators & Wealth Planning",
+    description: "Free financial calculators and planning tools from WealthMaze.",
     images: ["/og-image.png"],
   }
 };
@@ -103,7 +109,7 @@ export default function RootLayout({
           </div>
 
           {/* Main Content */}
-          <main id="main-content" className="flex-grow pb-16 md:pb-0">{children}</main>
+          <main id="main-content" className="flex-grow pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">{children}</main>
 
           {/* Footer ad slot */}
           <div className="print:hidden">
@@ -116,7 +122,7 @@ export default function RootLayout({
               {/* Footer disclaimer */}
               <div className="text-center text-xs leading-relaxed text-zinc-400 dark:text-zinc-500 border-b border-zinc-200/50 dark:border-zinc-900 pb-6 max-w-4xl mx-auto">
                 <p>
-                  <strong>WealthMaze</strong> provides educational financial tools and calculators. Results are estimates and should not be considered professional financial advice. Information provided is for informational purposes only. WealthMaze does not provide investment, tax, or legal counsel.
+                  WealthMaze provides free financial calculators, investment planning tools, retirement calculators, SIP calculators, and educational resources designed to help people build long-term wealth.
                 </p>
               </div>
 

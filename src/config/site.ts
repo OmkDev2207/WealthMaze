@@ -33,8 +33,8 @@ export const siteConfig = {
   ],
   metadata: {
     home: {
-      title: "Financial Calculators & Investment Planning Tools | WealthMaze",
-      description: "Plan investments, calculate loan EMIs, and compare retirement scenarios with WealthMaze's free financial calculators. 100% private and fast.",
+      title: "WealthMaze – Financial Calculators, Investment Planning & Wealth Building",
+      description: "Free SIP, retirement, financial freedom, net worth, inflation, EMI, and investment calculators. Plan your financial future with WealthMaze's financial planning tools and educational guides.",
     },
     blog: {
       title: "WealthMaze Blog - Financial Guides & Investment Tips",

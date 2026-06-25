@@ -56,7 +56,7 @@ export function CalculatorForm({ inputs, values, onChange, isIndiaSpecific = fal
 
         return (
           <div key={input.id} className="space-y-3">
-            <div className="flex justify-between items-center gap-4">
+            <div className="flex justify-between items-center gap-2 sm:gap-4">
               <label htmlFor={`input-num-${input.id}`} className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 flex-1 min-w-0 py-1">
                 {input.label}
               </label>
@@ -73,7 +73,7 @@ export function CalculatorForm({ inputs, values, onChange, isIndiaSpecific = fal
                       : value
                   }
                   onChange={(e) => handleInputChange(input.id, e.target.value)}
-                  className={`w-36 h-11 text-right pr-4 font-bold text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all ${
+                  className={`w-32 sm:w-36 h-11 text-right pr-4 font-bold text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all ${
                     input.unit === "₹" ? (symbol.length > 2 ? "pl-11" : symbol.length > 1 ? "pl-9" : "pl-7") : "pl-4"
                   }`}
                 />

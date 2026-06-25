@@ -74,13 +74,15 @@ function CalculatorsExplorerInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialCategory = searchParams.get("category");
+  const initialSearch = searchParams.get("search");
 
-  const [searchQuery, setSearchQuery] = React.useState("");
+  const [searchQuery, setSearchQuery] = React.useState(initialSearch || "");
   const [selectedCategory, setSelectedCategory] = React.useState<string | null>(initialCategory);
 
-  // Sync category state with query parameter
+  // Sync category and search state with query parameter
   React.useEffect(() => {
     setSelectedCategory(searchParams.get("category"));
+    setSearchQuery(searchParams.get("search") || "");
   }, [searchParams]);
 
   const handleCategorySelect = (slug: string | null) => {

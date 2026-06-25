@@ -389,7 +389,7 @@ export function MazeAssist() {
   return (
     <>
       {/* Floating Action Button (FAB) */}
-      <div className="fixed bottom-20 right-6 z-45 print:hidden">
+      <div className="fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] right-6 z-45 print:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close MazeAssist" : "Open MazeAssist"}
@@ -416,7 +416,7 @@ export function MazeAssist() {
         <div
           role="dialog"
           aria-labelledby="assist-title"
-          className="fixed bottom-36 right-6 z-45 w-[330px] sm:w-[380px] h-[480px] sm:h-[520px] rounded-2xl border border-zinc-150 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-200 print:hidden"
+          className="fixed bottom-[calc(9rem+env(safe-area-inset-bottom))] right-6 z-45 w-[330px] sm:w-[380px] h-[480px] sm:h-[520px] rounded-2xl border border-zinc-150 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 fade-in duration-200 print:hidden"
         >
           {/* Header */}
           <header className="px-4 py-3 bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-150 dark:border-zinc-800 flex items-center justify-between">
