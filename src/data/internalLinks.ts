@@ -34,7 +34,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "sip-calculator": {
     relatedCalculators: ["lumpsum-calculator", "mutual-fund-return-calculator", "sip-comparison-calculator", "goal-based-investment-calculator"],
-    relatedPosts: ["what-is-sip", "power-of-starting-early", "small-financial-decisions-compound", "compounding-explained", "sip-vs-fd", "sip-mistakes", "sip-for-retirement", "sip-for-students", "beginner-investing-guide"],
+    relatedPosts: ["what-is-sip", "power-of-starting-early", "small-financial-decisions-compound", "compounding-explained", "sip-vs-fd", "sip-mistakes", "sip-for-retirement", "sip-for-students", "beginner-investing-guide", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
   },
 
   "lumpsum-calculator": {
@@ -85,7 +85,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "financial-freedom-calculator": {
     relatedCalculators: ["fire-calculator", "retirement-calculator", "how-long-until-1-crore"],
-    relatedPosts: ["financial-freedom-is-simpler", "wealth-vs-income", "sip-for-retirement", "saving-first-1-lakh", "passive-investing-basics"],
+    relatedPosts: ["financial-freedom-is-simpler", "wealth-vs-income", "sip-for-retirement", "saving-first-1-lakh", "passive-investing-basics", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
   },
 
   "how-long-until-1-crore": {
@@ -227,7 +227,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "savings-calculator": {
     relatedCalculators: ["compound-interest-calculator", "fd-calculator", "rd-calculator"],
-    relatedPosts: ["small-financial-decisions-compound", "why-most-people-never-build-wealth", "saving-first-1-lakh"],
+    relatedPosts: ["small-financial-decisions-compound", "why-most-people-never-build-wealth", "saving-first-1-lakh", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
   },
 };
 
@@ -402,17 +402,17 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "why-most-people-never-build-wealth": {
-    relatedPosts: ["small-financial-decisions-compound", "wealth-vs-income", "financial-freedom-is-simpler", "saving-first-1-lakh"],
+    relatedPosts: ["small-financial-decisions-compound", "wealth-vs-income", "financial-freedom-is-simpler", "saving-first-1-lakh", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
     relatedCalculators: ["net-worth-calculator", "savings-calculator", "goal-based-investment-calculator"],
   },
 
   "power-of-starting-early": {
-    relatedPosts: ["compounding-explained", "small-financial-decisions-compound", "financial-freedom-is-simpler", "beginner-investing-guide"],
+    relatedPosts: ["compounding-explained", "small-financial-decisions-compound", "financial-freedom-is-simpler", "beginner-investing-guide", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
     relatedCalculators: ["sip-calculator", "investment-growth-calculator", "compound-interest-calculator"],
   },
 
   "wealth-vs-income": {
-    relatedPosts: ["why-most-people-never-build-wealth", "financial-freedom-is-simpler", "liquid-vs-non-liquid-assets"],
+    relatedPosts: ["why-most-people-never-build-wealth", "financial-freedom-is-simpler", "liquid-vs-non-liquid-assets", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
     relatedCalculators: ["net-worth-calculator", "financial-freedom-calculator"],
   },
 
@@ -422,8 +422,13 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "financial-freedom-is-simpler": {
-    relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "wealth-vs-income", "sip-for-retirement"],
+    relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "wealth-vs-income", "sip-for-retirement", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
     relatedCalculators: ["financial-freedom-calculator", "fire-calculator", "retirement-calculator"],
+  },
+
+  "most-people-think-about-growing-wealth-wrong-at-an-early-age": {
+    relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "wealth-vs-income", "saving-first-1-lakh"],
+    relatedCalculators: ["sip-calculator", "savings-calculator", "financial-freedom-calculator"],
   },
 };
 
