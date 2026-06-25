@@ -479,6 +479,17 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
   },
+  {
+    slug: "most-people-think-about-growing-wealth-wrong-at-an-early-age",
+    title: "Most People Think About Growing Wealth Wrong at an Early Age",
+    description: "At an early age, obsessing over savings is one of the most expensive financial mistakes you can make. Learn why income growth beats savings rate.",
+    publishedAt: "June 25, 2026",
+    readTime: "8 min read",
+    category: "Investing",
+    tags: ["Income Growth", "Compounding", "Personal Finance", "Savings"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "savings-calculator", "financial-freedom-calculator"],
+  },
 ];
 
 export const getPostsByCalculatorId = (calculatorId: string): BlogPost[] => {
