@@ -27,6 +27,17 @@ export const authors: Record<string, Author> = {
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "how-to-use-sip-calculator",
+    title: "How to Use the WealthMaze SIP Calculator: A Complete Guide with Real Examples",
+    description: "Learn how to use the WealthMaze SIP calculator standard, lumpsum, and step-up modes to project and plan your mutual fund investments with real-world scenarios.",
+    publishedAt: "June 26, 2026",
+    readTime: "9 min read",
+    category: "Investing",
+    tags: ["SIP", "Calculators", "Guide", "Personal Finance"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "mutual-fund-return-calculator", "compound-interest-calculator"],
+  },
   // 1. SIP vs FD
   {
     slug: "sip-vs-fd",
