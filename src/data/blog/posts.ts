@@ -28,6 +28,17 @@ export const authors: Record<string, Author> = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "what-nobody-tells-you-about-your-first-salary",
+    title: "What Nobody Tells You About Your First Salary",
+    description: "Most people celebrate their first salary by spending it. The smarter move is completely different — and it determines your financial life for the next 30 years.",
+    publishedAt: "June 26, 2026",
+    readTime: "10 min read",
+    category: "Investing",
+    tags: ["Wealth Building", "First Salary", "Personal Finance", "SIP", "Savings"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "emergency-fund-calculator"],
+  },
+  {
     slug: "salary-is-not-your-wealth",
     title: "Your Salary is Not Your Wealth — Here's What Is",
     description: "You can't get rich by renting your time forever. Real wealth comes from owning assets that earn while you sleep — stocks, SIPs, MFs, and more. Here's why.",
