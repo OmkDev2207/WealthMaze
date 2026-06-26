@@ -30,7 +30,7 @@ The first salary arrives. There is celebration — justified and human. Then com
 
 None of these individual decisions is catastrophic. Together, they create something economists call **lifestyle inflation** — the automatic expansion of expenses to match income. It happens so gradually and so naturally that most people don't notice it until years later, when a salary that once seemed enormous somehow leaves nothing at the end of the month.
 
-Alex is a good example of how this plays out. First salary: ₹60,000 per month. Rent, food, transport, subscriptions, social spending — by month three, expenses have settled at ₹55,000. Savings: ₹5,000, maybe. Then comes the first increment — salary rises to ₹72,000. Expenses rise to ₹65,000 within six months. Savings: still ₹5,000, maybe.
+Alex is a good example of how this plays out. First salary: $750 per month. Rent, food, transport, subscriptions, social spending — by month three, expenses have settled at $690. Savings: $60, maybe. Then comes the first increment — salary rises to $900. Expenses rise to $810 within six months. Savings: still $60, maybe.
 
 The increment was 20%. The savings rate didn't change. The lifestyle absorbed the entire raise. This continues, increment after increment, for years. The salary grows. The savings don't.
 
@@ -60,9 +60,9 @@ Here is the insight that almost no first salary advice includes: **the highest-r
 
 Think about the mathematics of this clearly.
 
-If you take ₹15,000 of your first salary and invest it in an equity index fund at 12% annual returns, it becomes approximately ₹1,44,000 in 20 years. A solid return on a meaningful sum.
+If you take $200 of your first salary and invest it in an equity index fund at 12% annual returns, it becomes approximately $1,800 in 20 years. A solid return on a meaningful sum.
 
-If you take that same ₹15,000 and spend it on a certification, a course, a skill, or a mentorship that increases your monthly salary by ₹8,000 — that ₹8,000 monthly increment, invested from age 23 onwards for 20 years at 12%, becomes approximately ₹77 lakhs.
+If you take that same $200 and spend it on a certification, a course, a skill, or a mentorship that increases your monthly salary by $100 — that $100 monthly increment, invested from age 23 onwards for 20 years at 12%, becomes approximately $95,000.
 
 The return on skill investment, when that skill translates into a permanent income increase, dwarfs the return on almost any financial instrument — especially in the early years of a career when the income is low and the compounding runway is long.
 
@@ -70,7 +70,7 @@ This is the argument most personal finance content ignores because it is harder 
 
 What does investing in your earning capacity actually look like?
 
-It looks like spending ₹8,000 on a course that teaches a skill your industry pays significantly more for. It looks like buying books written by people whose careers you want to emulate — and actually reading them. It looks like paying for a workshop, a certification, a coach, or access to a community of people operating at the level you want to reach.
+It looks like spending $100 on a course that teaches a skill your industry pays significantly more for. It looks like buying books written by people whose careers you want to emulate — and actually reading them. It looks like paying for a workshop, a certification, a coach, or access to a community of people operating at the level you want to reach.
 
 It does not look like the cheapest option. The cheapest option is doing nothing, which has a 0% return and a guaranteed cost of the income you never earned.
 
@@ -86,14 +86,14 @@ The correct sequence is the reverse. On the day your salary arrives — or the d
 
 This is not discipline. Discipline fails. This is automation — a system that removes the decision entirely. You cannot spend money that has already moved.
 
-For a first salary of ₹60,000, a reasonable starting allocation might look like this:
+For a first salary of $750, a reasonable starting allocation might look like this:
 
 | Allocation | Amount | Purpose |
 |---|---|---|
-| Skill investment | ₹5,000–8,000 | Courses, books, certifications |
-| SIP / Index fund | ₹8,000–10,000 | Long-term wealth building |
-| Emergency fund | ₹3,000–5,000 | Until 3 months expenses saved |
-| Fixed expenses | ₹25,000–30,000 | Rent, food, transport, bills |
+| Skill investment | $60–100 | Courses, books, certifications |
+| SIP / Index fund | $100–125 | Long-term wealth building |
+| Emergency fund | $40–60 | Until 3 months expenses saved |
+| Fixed expenses | $300–375 | Rent, food, transport, bills |
 | Free spending | Whatever remains | Guilt-free, no tracking needed |
 
 The exact numbers matter less than the structure. The structure ensures that growth and savings happen first, automatically, before the month has a chance to absorb them. The free spending category — and this is important — is genuinely free. No guilt, no tracking, no optimisation. It is the reward for having handled the important allocations first.
@@ -128,11 +128,11 @@ That discovery is worth more than the money itself.
 
 The final argument for treating the first salary with intention rather than celebration is purely mathematical — and it is the most compelling one.
 
-A person who invests ₹8,000 per month from age 22, at 12% annual returns, has a corpus of approximately ₹5.2 crore at age 60.
+A person who invests $100 per month from age 22, at 12% annual returns, has a corpus of approximately $650,000 at age 60.
 
-A person who starts the same investment at age 27 — just five years later — has a corpus of approximately ₹2.9 crore at age 60.
+A person who starts the same investment at age 27 — just five years later — has a corpus of approximately $360,000 at age 60.
 
-Same amount. Same return. Same endpoint. A five-year delay costs ₹2.3 crore.
+Same amount. Same return. Same endpoint. A five-year delay costs $290,000.
 
 Those five years are not abstract. They are the years most commonly spent adjusting to a first salary, inflating a lifestyle, and telling yourself that serious investing can start once things settle down. Things do not settle down. The lifestyle expands to match the income. And the five years pass.
 
