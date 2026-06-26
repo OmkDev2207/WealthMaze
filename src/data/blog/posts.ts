@@ -28,6 +28,17 @@ export const authors: Record<string, Author> = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "salary-is-not-your-wealth",
+    title: "Your Salary is Not Your Wealth — Here's What Is",
+    description: "You can't get rich by renting your time forever. Real wealth comes from owning assets that earn while you sleep — stocks, SIPs, MFs, and more. Here's why.",
+    publishedAt: "June 26, 2026",
+    readTime: "10 min read",
+    category: "Investing",
+    tags: ["Wealth Building", "Assets", "Personal Finance", "SIP"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "financial-freedom-calculator", "compound-interest-calculator"],
+  },
+  {
     slug: "how-to-use-sip-calculator",
     title: "How to Use the WealthMaze SIP Calculator: A Complete Guide with Real Examples",
     description: "Learn how to use the WealthMaze SIP calculator standard, lumpsum, and step-up modes to project and plan your mutual fund investments with real-world scenarios.",
