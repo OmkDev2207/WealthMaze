@@ -25,12 +25,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: siteConfig.url,
+    languages: {
+      "en": siteConfig.url,
+    },
   },
   openGraph: {
     title: "WealthMaze – Financial Calculators & Wealth Planning",
     description: "Plan investments, retirement and financial freedom using free calculators from WealthMaze.",
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
     url: siteConfig.url,
     siteName: "WealthMaze",
     images: [
@@ -64,6 +67,8 @@ export default function RootLayout({
       <head>
         {/* AI Discoverability: llms.txt */}
         <link rel="llms-txt" href="/llms.txt" />
+        {/* hreflang: targets all global English speakers */}
+        <link rel="alternate" hrefLang="en" href="https://wealthmaze.in/" />
       </head>
       <body className="min-h-full flex flex-col bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-250">
         {/* Skip Navigation – accessibility and SEO */}
