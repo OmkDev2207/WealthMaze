@@ -295,11 +295,11 @@ export const investingCalculators: CalculatorConfig[] = [
     seoTitle: "XIRR Calculator – Calculate SIP and Portfolio ROI Online",
     seoDescription: "Calculate mutual fund and stock portfolio XIRR. Get an accurate annualized return for irregular buy and sell transaction dates with our calculator.",
     inputs: [
-      { id: "flow0", label: "Initial Investment (Year 0)", type: "number", default: -100000, unit: "₹" },
-      { id: "flow1", label: "Year 1 Cash Flow (Invested: negative, Received: positive)", type: "number", default: -12000, unit: "₹" },
-      { id: "flow2", label: "Year 2 Cash Flow", type: "number", default: -12000, unit: "₹" },
-      { id: "flow3", label: "Year 3 Cash Flow", type: "number", default: -12000, unit: "₹" },
-      { id: "flow4", label: "Final Portfolio Value (Year 4)", type: "number", default: 175000, unit: "₹" },
+      { id: "flow0", label: "Initial Investment (Year 0)", type: "number", default: -100000, min: -1000000, max: 0, step: 5000, unit: "₹" },
+      { id: "flow1", label: "Year 1 Cash Flow (- for invested, + for received)", type: "number", default: -12000, min: -200000, max: 200000, step: 1000, unit: "₹" },
+      { id: "flow2", label: "Year 2 Cash Flow (- for invested, + for received)", type: "number", default: -12000, min: -200000, max: 200000, step: 1000, unit: "₹" },
+      { id: "flow3", label: "Year 3 Cash Flow (- for invested, + for received)", type: "number", default: -12000, min: -200000, max: 200000, step: 1000, unit: "₹" },
+      { id: "flow4", label: "Final Portfolio Value (Year 4)", type: "number", default: 175000, min: 0, max: 2000000, step: 5000, unit: "₹" },
     ],
     outputs: [
       { id: "xirrRate", label: "Annualized XIRR", format: "percent" },
@@ -345,7 +345,7 @@ export const investingCalculators: CalculatorConfig[] = [
         iterations++;
       }
 
-      if (iterations >= 100) {
+      if (iterations >= 100 || isNaN(xirrRate) || !isFinite(xirrRate)) {
         xirrRate = 0;
       }
 
