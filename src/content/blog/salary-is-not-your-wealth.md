@@ -40,11 +40,11 @@ When people hear "own a business," they picture the complexity of entrepreneursh
 
 But owning a piece of a business requires none of that.
 
-When you buy shares of Reliance, HDFC Bank, or Infosys — or when you invest in a mutual fund that holds these companies — you become a part-owner of those businesses. A fractional owner, yes. But an owner nonetheless. You are entitled to a proportional share of their profits, their growth, and their future earnings — without managing a single employee, attending a single board meeting, or making a single operational decision.
+When you buy shares of Apple, Microsoft, or Johnson & Johnson — or when you invest in a mutual fund that holds these companies — you become a part-owner of those businesses. A fractional owner, yes. But an owner nonetheless. You are entitled to a proportional share of their profits, their growth, and their future earnings — without managing a single employee, attending a single board meeting, or making a single operational decision.
 
 This is what equity investing actually is. Not speculation. Not gambling. Ownership — of businesses that employ thousands of people, sell products and services to millions of customers, and generate profits year after year, independently of anything you personally do.
 
-When Asian Paints sells paint to someone renovating their home, a small fraction of that revenue flows to the company's bottom line, which flows into the stock price, which flows into your mutual fund's NAV. You were not in that transaction. You did not sell the paint. You were sleeping — and your asset was earning.
+When a consumer goods company sells its products to someone renovating their home, a small fraction of that revenue flows to the company's bottom line, which flows into the stock price, which flows into your mutual fund's NAV. You were not in that transaction. You did not make the sale. You were sleeping — and your asset was earning.
 
 This is the fundamental difference between a salary and an investment. Your salary requires your presence. Your equity portfolio does not.
 

@@ -1,6 +1,6 @@
 ## How is Loan EMI Calculated? The Formula and Math Explained
 
-When you walk into a bank to take a loan, the agent will quickly print out a sheet showing you a fixed monthly number. "Sir, your EMI will be exactly ₹25,450," they will say. If you ask them how they got that number, they will point to a computer screen and say it is automated. But understanding the math behind your Equated Monthly Installment (EMI) is not just an academic exercise. It is the key to understanding how banks make money off you—and how you can save lakhs of rupees by outsmarting them.
+When you walk into a bank to take a loan, the agent will quickly print out a sheet showing you a fixed monthly number. "Sir, your EMI will be exactly $320," they will say. If you ask them how they got that number, they will point to a computer screen and say it is automated. But understanding the math behind your Equated Monthly Installment (EMI) is not just an academic exercise. It is the key to understanding how banks make money off you—and how you can save thousands of dollars by outsmarting them.
 
 ## Why This Matters
 
@@ -25,28 +25,28 @@ At the start of the loan, the outstanding principal is huge, so the interest com
 
 ## Real-World Example
 
-Let's look at a concrete example. Meet Sameer. He takes a personal loan of ₹10,00,000 (₹10 Lakhs) at an annual interest rate of 8.4% for a tenure of 10 years (120 months).
+Let's look at a concrete example. Meet Alex. He takes a personal loan of $12,500 at an annual interest rate of 8.4% for a tenure of 10 years (120 months).
 
 First, let's convert the variables:
-- **P** = 10,00,000
+- **P** = 12,500
 - **R** = 8.4 / 12 / 100 = 0.007 (monthly interest rate)
 - **N** = 10 * 12 = 120 months
 
 Now, let's plug these into the EMI formula:
-EMI = [ 10,00,000 * 0.007 * (1 + 0.007)^120 ] / [ (1 + 0.007)^120 - 1 ]
-EMI = [ 7,000 * 2.3089 ] / [ 2.3089 - 1 ]
-EMI = 16,162.3 / 1.3089 = **₹12,345 per month**
+EMI = [ 12,500 * 0.007 * (1 + 0.007)^120 ] / [ (1 + 0.007)^120 - 1 ]
+EMI = [ 87.5 * 2.3089 ] / [ 2.3089 - 1 ]
+EMI = 202.03 / 1.3089 = **$155 per month**
 
-Sameer will pay ₹12,345 every month for 120 months.
-- **Total amount paid back:** ₹12,345 * 120 = ₹14,81,400
-- **Total interest paid to the bank:** ₹4,81,400
+Alex will pay $155 every month for 120 months.
+- **Total amount paid back:** $155 * 120 = $18,600
+- **Total interest paid to the bank:** $6,100
 
-Now, let's look at Sameer's very first month's EMI split:
-- **Interest component:** 8.4% annual (0.7% monthly) on ₹10,00,000 = **₹7,000**
-- **Principal component:** ₹12,345 (EMI) - ₹7,000 (Interest) = **₹5,345**
-- **Outstanding loan balance for Month 2:** ₹10,00,000 - ₹5,345 = **₹9,94,655**
+Now, let's look at Alex's very first month's EMI split:
+- **Interest component:** 8.4% annual (0.7% monthly) on $12,500 = **$88**
+- **Principal component:** $155 (EMI) - $88 (Interest) = **$67**
+- **Outstanding loan balance for Month 2:** $12,500 - $67 = **$12,433**
 
-By Month 2, the interest is calculated on ₹9,94,655, which is ₹6,962.58. The principal paid increases to ₹5,382.42. Over time, the balance tilts in Sameer's favor.
+By Month 2, the interest is calculated on $12,433, which is $87. The principal paid increases to $68. Over time, the balance tilts in Alex's favor.
 
 ## Common Mistakes I See People Make
 
@@ -79,7 +79,7 @@ It is always better to make a higher down payment because it reduces the initial
 A flat rate calculates interest on the full loan amount for the entire tenure, ignoring that you are paying it back monthly. A reducing rate calculates interest only on the unpaid balance. Flat rates are much more expensive than they appear.
 
 ### 6. How does prepaying one extra EMI every year help?
-Paying just one extra EMI every year on a 20-year home loan can reduce your loan tenure by roughly 3 to 4 years and save you lakhs in interest, because that extra payment goes directly toward reducing the principal.
+Paying just one extra EMI every year on a 20-year home loan can reduce your loan tenure by roughly 3 to 4 years and save you thousands in interest, because that extra payment goes directly toward reducing the principal.
 
 ## Conclusion
 
