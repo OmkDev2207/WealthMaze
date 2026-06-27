@@ -4,7 +4,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 
-const GA_MEASUREMENT_ID = "G-X4F6Z5E8L9";
+const GA_MEASUREMENT_ID = "G-4LVW5230JP";
 
 // Custom event tracker utilities
 export const trackCalculatorUse = (id: string, name: string) => {
