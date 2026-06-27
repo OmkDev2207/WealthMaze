@@ -28,6 +28,17 @@ export const authors: Record<string, Author> = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "what-is-xirr-calculator-guide",
+    title: "What is XIRR? The Only Return Metric That Tells You the Truth About Your Investments",
+    description: "XIRR calculates your real annualized return on investments with irregular cash flows. Learn what it is, how it differs from CAGR, and how to use the WealthMaze XIRR Calculator.",
+    publishedAt: "June 27, 2026",
+    readTime: "10 min read",
+    category: "Investing",
+    tags: ["XIRR", "Investing", "Returns", "CAGR", "Personal Finance", "Mutual Funds"],
+    author: authors.omk,
+    relatedCalculators: ["xirr-calculator", "cagr-calculator", "compound-interest-calculator"],
+  },
+  {
     slug: "why-most-people-retire-poor",
     title: "Why Most People Retire Poor Despite Working Their Entire Lives",
     description: "Most people work 40 years and retire with almost nothing — not because they earned too little, but because of four financial mistakes made every single month.",
