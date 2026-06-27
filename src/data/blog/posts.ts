@@ -28,6 +28,17 @@ export const authors: Record<string, Author> = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-calculate-net-worth",
+    title: "How to Calculate Your Net Worth — And Why It's the Only Financial Number That Actually Matters",
+    description: "Your salary measures what flows through your hands. Your net worth measures what stays. Learn how to calculate it accurately, what the benchmarks mean, and how to grow it.",
+    publishedAt: "June 27, 2026",
+    readTime: "10 min read",
+    category: "Wealth Building",
+    tags: ["Net Worth", "Wealth Building", "Personal Finance", "Investing", "Debt"],
+    author: authors.omk,
+    relatedCalculators: ["net-worth-calculator", "sip-calculator", "financial-freedom-calculator"],
+  },
+  {
     slug: "what-is-xirr-calculator-guide",
     title: "What is XIRR? The Only Return Metric That Tells You the Truth About Your Investments",
     description: "XIRR calculates your real annualized return on investments with irregular cash flows. Learn what it is, how it differs from CAGR, and how to use the WealthMaze XIRR Calculator.",
