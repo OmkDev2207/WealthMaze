@@ -14,11 +14,11 @@ That shift — from time-renter to asset-owner — is what separates the people 
 
 A salary has a hard ceiling. It is bounded by hours in a day, by your employer's willingness to pay, by your industry's compensation structure, and by the physical limits of human energy.
 
-Think about what a salary increase actually looks like. You perform well, you negotiate hard, you get a 15% increment. Your ₹80,000 becomes ₹92,000. That is a meaningful improvement — and it required a full year of work, a performance cycle, and a negotiation conversation to achieve it.
+Think about what a salary increase actually looks like. You perform well, you negotiate hard, you get a 15% increment. Your $1,000 becomes $1,150. That is a meaningful improvement — and it required a full year of work, a performance cycle, and a negotiation conversation to achieve it.
 
-Now think about what happens to ₹10,00,000 invested in a diversified equity fund at 12% annual returns. In one year, it becomes ₹11,20,000. That ₹1,20,000 gain required no negotiation, no performance review, no extra hours. It happened because you owned something that grew independent of your time.
+Now think about what happens to $12,500 invested in a diversified equity fund at 12% annual returns. In one year, it becomes $14,000. That $1,500 gain required no negotiation, no performance review, no extra hours. It happened because you owned something that grew independent of your time.
 
-Scale that up. ₹50,00,000 in assets at 12% generates ₹6,00,000 a year — passively, automatically, without a single conversation with a manager. That is ₹50,000 a month arriving without a single hour of your time sold.
+Scale that up. $62,500 in assets at 12% generates $7,500 a year — passively, automatically, without a single conversation with a manager. That is $625 a month arriving without a single hour of your time sold.
 
 This is not magic. This is what asset ownership does at scale. And the only way to get there is to start — early, systematically, and with the clear understanding that your salary is the raw material, not the destination.
 
@@ -26,11 +26,11 @@ This is not magic. This is what asset ownership does at scale. And the only way 
 
 Here is the thing about selling your time for money that most people never examine: it does not compound.
 
-If you work 100 hours this month and earn ₹1,00,000, next month you need to work another 100 hours to earn another ₹1,00,000. The previous month's effort does not carry forward. Each month resets to zero. You are on a treadmill — moving continuously, covering no net distance.
+If you work 100 hours this month and earn $1,250, next month you need to work another 100 hours to earn another $1,250. The previous month's effort does not carry forward. Each month resets to zero. You are on a treadmill — moving continuously, covering no net distance.
 
-Assets compound. The ₹1,00,000 you invest this month earns returns. Those returns are reinvested. Next month, the returns are calculated on a larger base. The month after, larger still. Unlike your salary, which resets every month, invested capital builds on itself. Each year's growth becomes the foundation for the next year's growth.
+Assets compound. The $1,250 you invest this month earns returns. Those returns are reinvested. Next month, the returns are calculated on a larger base. The month after, larger still. Unlike your salary, which resets every month, invested capital builds on itself. Each year's growth becomes the foundation for the next year's growth.
 
-This is not a small difference. Over 25 years, the compounding effect transforms modest monthly investments into numbers that feel almost implausible until you actually run them. ₹10,000 per month invested at 12% annual returns for 25 years becomes approximately ₹1.9 crore. Your total contribution: ₹30 lakhs. Compounding created the remaining ₹1.6 crore — without a single additional hour of your time.
+This is not a small difference. Over 25 years, the compounding effect transforms modest monthly investments into numbers that feel almost implausible until you actually run them. $125 per month invested at 12% annual returns for 25 years becomes approximately $238,000. Your total contribution: $37,500. Compounding created the remaining $200,000 — without a single additional hour of your time.
 
 Your salary cannot do this. No matter how hard you work, the hours you worked in 2020 are not generating returns in 2025. But the money you invested in 2020 absolutely is.
 
@@ -44,7 +44,7 @@ When you buy shares of Reliance, HDFC Bank, or Infosys — or when you invest in
 
 This is what equity investing actually is. Not speculation. Not gambling. Ownership — of businesses that employ thousands of people, sell products and services to millions of customers, and generate profits year after year, independently of anything you personally do.
 
-When Asian Paints sells paint to someone renovating their home in Pune, a small fraction of that revenue flows to the company's bottom line, which flows into the stock price, which flows into your mutual fund's NAV. You were not in that transaction. You did not sell the paint. You were sleeping — and your asset was earning.
+When Asian Paints sells paint to someone renovating their home, a small fraction of that revenue flows to the company's bottom line, which flows into the stock price, which flows into your mutual fund's NAV. You were not in that transaction. You did not sell the paint. You were sleeping — and your asset was earning.
 
 This is the fundamental difference between a salary and an investment. Your salary requires your presence. Your equity portfolio does not.
 
@@ -52,7 +52,7 @@ This is the fundamental difference between a salary and an investment. Your sala
 
 Owning assets that earn while you sleep is not limited to the stock market. The principle applies across a spectrum of instruments, each with its own risk-return profile.
 
-**Fixed Deposits** sit at the conservative end. Park ₹5,00,000 in an FD at 7.5% and it generates ₹37,500 per year in interest — while you do nothing. The return is low and barely beats inflation after tax, but the principle holds: your money is working independent of your time.
+**Fixed Deposits** sit at the conservative end. Park $6,250 in an FD at 7.5% and it generates $470 per year in interest — while you do nothing. The return is low and barely beats inflation after tax, but the principle holds: your money is working independent of your time.
 
 **Debt Mutual Funds and Bonds** offer slightly better post-tax returns than FDs for investors in higher tax brackets, with reasonable liquidity. They generate income without requiring your active involvement.
 
@@ -70,13 +70,13 @@ If the logic of asset ownership is this clear, why do most people spend their en
 
 Because the shift requires something deeply uncomfortable: **delaying consumption today in exchange for freedom tomorrow.**
 
-Every rupee invested in an asset is a rupee not spent on something immediately enjoyable. The new phone, the better apartment, the restaurant meals, the upgraded car — these are all available right now, in exchange for the salary that arrives every month. The compounding portfolio is invisible, abstract, and decades away from delivering its most dramatic results.
+Every dollar invested in an asset is a dollar not spent on something immediately enjoyable. The new phone, the better apartment, the restaurant meals, the upgraded car — these are all available right now, in exchange for the salary that arrives every month. The compounding portfolio is invisible, abstract, and decades away from delivering its most dramatic results.
 
 Human psychology is wired for the immediate. We feel the cost of investing today sharply and viscerally. We feel the benefit — financial freedom, passive income, time independence — only dimly and distantly. This asymmetry in how we experience costs and benefits explains why most people, despite knowing the math, choose present consumption over future ownership.
 
 There is also the cultural weight of the salary as a measure of success. "What do you earn?" is the question we ask about financial standing — not "what do you own?" or "how much does your portfolio generate monthly?" The salary is visible, socially communicable, and immediately validating. The investment portfolio is private, slow-growing, and unsexy for the first decade of its existence.
 
-Alex — a software engineer earning ₹1,20,000 a month — will get more social recognition than someone earning ₹60,000 a month but owning assets generating ₹40,000 a month in passive returns. And yet the second person is objectively in a stronger financial position. Their income does not stop when they stop working. Alex's does.
+Alex — a software engineer earning $1,500 a month — will get more social recognition than someone earning $750 a month but owning assets generating $500 a month in passive returns. And yet the second person is objectively in a stronger financial position. Their income does not stop when they stop working. Alex's does.
 
 ## The Salary's Proper Role
 
@@ -96,11 +96,11 @@ There is a moment in every serious investor's life that is worth visualising cle
 
 It is the month when your portfolio generates more income than your salary.
 
-For most investors, this happens gradually. First the portfolio generates ₹5,000 a month — a small supplement. Then ₹15,000. Then ₹40,000. Then one month, you look at the returns and realise the number has crossed your employment income. At that point, the equation has permanently inverted. Your assets are now your primary economic engine. Your salary — if you continue working — is supplementary.
+For most investors, this happens gradually. First the portfolio generates $60 a month — a small supplement. Then $190. Then $500. Then one month, you look at the returns and realise the number has crossed your employment income. At that point, the equation has permanently inverted. Your assets are now your primary economic engine. Your salary — if you continue working — is supplementary.
 
 This crossover does not happen by accident. It happens through a specific sequence: earn a salary, deploy a significant portion into assets consistently, let compounding work undisturbed for long enough that the asset income becomes substantial.
 
-The timeline depends on two variables — your savings rate and your investment returns. A person saving 30% of a ₹1,00,000 monthly salary and investing at 12% will reach the crossover point in approximately 18-20 years. A person saving 50% reaches it in roughly 12-14 years. The math is not complicated. The discipline is.
+The timeline depends on two variables — your savings rate and your investment returns. A person saving 30% of a $1,250 monthly salary and investing at 12% will reach the crossover point in approximately 18-20 years. A person saving 50% reaches it in roughly 12-14 years. The math is not complicated. The discipline is.
 
 ## Start With What You Have
 

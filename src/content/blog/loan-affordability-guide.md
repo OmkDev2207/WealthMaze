@@ -1,6 +1,6 @@
 ## How Much Loan Can You Actually Afford? The 35/40 Debt Rule
 
-I recently sat down with a young couple who were beaming with excitement. They had just been pre-approved for a home loan of ₹80 Lakhs. Their combined monthly take-home salary was ₹1.5 Lakhs, and the monthly EMI for this loan was ₹67,000. They asked me, "Om, should we go ahead and book the flat?"
+I recently sat down with a young couple who were beaming with excitement. They had just been pre-approved for a home loan of $100,000. Their combined monthly take-home salary was $1,875, and the monthly EMI for this loan was $840. They asked me, "Om, should we go ahead and book the flat?"
 
 I had to play the party pooper. I told them that if they took this loan, they would become "house poor." They would own a beautiful flat, but they wouldn't have enough money left to travel, go out for dinner, invest for retirement, or handle a minor emergency without panic. They were looking at their *approval limit*, not their *affordability limit*.
 
@@ -23,46 +23,46 @@ The 35/40 Debt Rule Guardrails
 ```
 
 ### 1. The 35% Home Loan Rule
-Your monthly home loan EMI should never exceed **35% of your gross monthly income** (your total income before taxes and EPF deductions are taken out). 
-- If your gross income is ₹1,00,000 per month, your home loan EMI should be capped at ₹35,000.
+Your monthly home loan EMI should never exceed **35% of your gross monthly income** (your total income before taxes and deductions are taken out). 
+- If your gross income is $1,250 per month, your home loan EMI should be capped at $440.
 
 ### 2. The 40% Total Debt Rule
 Your total monthly debt obligations—including your home loan, car loan, personal loans, and credit card minimum payments—should never exceed **40% of your net monthly take-home salary** (the actual cash that lands in your bank account).
-- If your net salary is ₹80,000, your total monthly EMIs should not exceed ₹32,000.
+- If your net salary is $1,000, your total monthly EMIs should not exceed $400.
 
 If your monthly debt payments exceed these limits, you are over-leveraged. A minor event like a delayed salary, medical emergency, or job transition can throw your entire life out of balance.
 
 ---
 
-## Real-World Example: Vicky and Sneha's Budget
+## Real-World Example: Alex and Jordan's Budget
 
-Let's look at Vicky and Sneha, a married couple who want to buy their first home.
-- **Combined Gross Monthly Income:** ₹1,50,000
-- **Combined Net Take-Home Salary:** ₹1,20,000
-- **Existing Car Loan EMI:** ₹12,000
+Let's look at Alex and Jordan, a married couple who want to buy their first home.
+- **Combined Gross Monthly Income:** $1,875
+- **Combined Net Take-Home Salary:** $1,500
+- **Existing Car Loan EMI:** $150
 
 Let's calculate their safe home loan EMI capacity using the 35/40 rule.
 
 ### Step 1: Calculate the Maximum Total EMI Limit (40% of Net Salary)
-- Net Salary = ₹1,20,000
-- Max Total EMI Allowed = ₹1,20,000 × 40% = **₹48,000**
+- Net Salary = $1,500
+- Max Total EMI Allowed = $1,500 × 40% = **$600**
 
 ### Step 2: Subtract Existing Debt
-- Max Total EMI Allowed = ₹48,000
-- Less: Car Loan EMI = ₹12,000
-- **Remaining Safe Home Loan EMI Capacity = ₹36,000**
+- Max Total EMI Allowed = $600
+- Less: Car Loan EMI = $150
+- **Remaining Safe Home Loan EMI Capacity = $450**
 
 ### Step 3: Check against the 35% Gross Income Rule
-- Gross Income = ₹1,50,000
-- Max Home Loan EMI Allowed = ₹1,50,000 × 35% = **₹52,500**
+- Gross Income = $1,875
+- Max Home Loan EMI Allowed = $1,875 × 35% = **$660**
 
-Since the net income rule limits their remaining home loan EMI capacity to ₹36,000, they must stick to ₹36,000.
+Since the net income rule limits their remaining home loan EMI capacity to $450, they must stick to $450.
 
 ### The Affordability Calculation:
 At an interest rate of 9% and a tenure of 20 years:
-- An EMI of ₹36,000 translates to a comfortable home loan principal of approximately **₹40 Lakhs**.
-- If they had gone to the bank, the bank might have evaluated their gross income and offered them a loan of **₹60 Lakhs** (requiring an EMI of ₹54,000). 
-- If they had accepted the bank's offer, their total monthly EMI would be ₹66,000 (₹54,000 home loan + ₹12,000 car loan). That is **55% of their net take-home salary**, leaving them in a high-risk financial position.
+- An EMI of $450 translates to a comfortable home loan principal of approximately **$50,000**.
+- If they had gone to the bank, the bank might have evaluated their gross income and offered them a loan of **$75,000** (requiring an EMI of $675). 
+- If they had accepted the bank's offer, their total monthly EMI would be $825 ($675 home loan + $150 car loan). That is **55% of their net take-home salary**, leaving them in a high-risk financial position.
 
 ---
 
@@ -96,10 +96,10 @@ Banks evaluate loan eligibility based on gross income and credit score. They ass
 The best way to increase your loan affordability is to increase your down payment. Saving for a few extra years and paying 30% or 40% of the property value upfront reduces the loan amount you need, bringing your monthly EMI down to a safe level.
 
 ### 3. Should I choose a 30-year tenure to lower my monthly EMI?
-While a 30-year tenure reduces your monthly EMI, making the loan look affordable, it drastically increases your total interest. For example, on a ₹50 Lakh loan at 9% interest, a 30-year tenure results in paying ₹94 Lakhs in interest alone. A 20-year tenure reduces the interest to ₹57 Lakhs, saving you ₹37 Lakhs. Use a longer tenure only if you plan to prepay the loan aggressively.
+While a 30-year tenure reduces your monthly EMI, making the loan look affordable, it drastically increases your total interest. For example, on a $62,500 loan at 9% interest, a 30-year tenure results in paying $117,500 in interest alone. A 20-year tenure reduces the interest to $71,250, saving you $46,250. Use a longer tenure only if you plan to prepay the loan aggressively.
 
 ### 4. What is the difference between gross monthly income and net take-home salary?
-Gross monthly income is your total earnings before any deductions. This includes your basic salary, allowances, bonuses, and tax deductions. Net take-home salary is the actual amount credited to your bank account after income tax (TDS), Employee Provident Fund (EPF), and professional tax deductions.
+Gross monthly income is your total earnings before any deductions. This includes your basic salary, allowances, bonuses, and tax deductions. Net take-home salary is the actual amount credited to your bank account after income tax, retirement contributions, and other standard deductions.
 
 ### 5. How does a high debt-to-income ratio affect my credit score?
 A high debt-to-income ratio indicates that you are spending a large portion of your income on debt repayments. While it doesn't directly lower your credit score, it makes you look risky to lenders, which can lead to higher interest rates or rejection of future loan applications.

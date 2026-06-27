@@ -28,6 +28,17 @@ export const authors: Record<string, Author> = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "why-most-people-retire-poor",
+    title: "Why Most People Retire Poor Despite Working Their Entire Lives",
+    description: "Most people work 40 years and retire with almost nothing — not because they earned too little, but because of four financial mistakes made every single month.",
+    publishedAt: "June 27, 2026",
+    readTime: "11 min read",
+    category: "Investing",
+    tags: ["Retirement", "Wealth Building", "Personal Finance", "Savings", "Investing"],
+    author: authors.omk,
+    relatedCalculators: ["sip-calculator", "inflation-impact-calculator", "financial-freedom-calculator"],
+  },
+  {
     slug: "what-nobody-tells-you-about-your-first-salary",
     title: "What Nobody Tells You About Your First Salary",
     description: "Most people celebrate their first salary by spending it. The smarter move is completely different — and it determines your financial life for the next 30 years.",

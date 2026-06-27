@@ -18,17 +18,17 @@ For beginners, the best approach is to combine these assets based on when you ne
 
 ## Real-World Example
 
-Let's look at Priya, a 23-year-old software tester who just got her first job. She earns ₹40,000 a month and has managed to save ₹10,000.
+Let's look at Alex, a 23-year-old who just got her first job. She earns $500 a month and has managed to save $125.
 
-If Priya leaves that ₹10,000 in her savings account earning 3% interest for 10 years, it will grow to about ₹13,439. But if inflation is 6%, that ₹13,439 will only buy what ₹7,500 buys today.
+If Alex leaves that $125 in her savings account earning 3% interest for 10 years, it will grow to about $168. But if inflation is 6%, that $168 will only buy what $95 buys today.
 
-Instead, Priya starts a monthly Systematic Investment Plan (SIP) of ₹5,000 in a Nifty 50 Index Fund. Assuming a conservative 12% average annual return on equities over the long run:
-- In 10 years, her total investment of ₹6,00,000 grows to approximately ₹11,61,695.
+Instead, Alex starts a monthly Systematic Investment Plan (SIP) of $60 in a Nifty 50 Index Fund. Assuming a conservative 12% average annual return on equities over the long run:
+- In 10 years, her total investment of $7,500 grows to approximately $14,500.
 - Even after adjusting for inflation, she has built real wealth and her money's purchasing power has grown, not shrunk.
 
 ## Common Mistakes I See People Make
 
-- **Waiting for "enough money" to start:** Many people think you need lakhs of rupees to invest. You can start a SIP with as little as ₹500. The earlier you start, the more time compounding has to work.
+- **Waiting for "enough money" to start:** Many people think you need thousands of dollars to invest. You can start a SIP with as little as $6. The earlier you start, the more time compounding has to work.
 - **Trying to time the market:** Beginners often try to buy when the market is low and sell when it is high. Professional traders struggle to do this consistently. It is time in the market, not timing the market, that matters.
 - **Investing before clearing debt:** Unsecured debt, like credit card debt, usually charges 30% to 40% interest. No investment will give you a guaranteed return that high. Pay off high-interest debt first.
 
@@ -36,16 +36,16 @@ Instead, Priya starts a monthly Systematic Investment Plan (SIP) of ₹5,000 in 
 
 - Pay off high-interest debt and build a 6-month emergency fund before you invest in the market.
 - Keep it simple: start with low-cost index funds rather than trying to pick individual stocks.
-- Start early, even if it is just ₹500 or ₹1,000 a month.
+- Start early, even if it is just $6 or $12 a month.
 - Automate your investments so you do not have to think about it every month.
 
 ## FAQ
 
 ### 1. How much money do I need to start investing?
-You do not need a fortune. Most mutual funds and index funds allow you to start a monthly investment (SIP) with just ₹500 or ₹1,000.
+You do not need a fortune. Most mutual funds and index funds allow you to start a monthly investment (SIP) with just $6 or $12.
 
 ### 2. What is the safest investment for a beginner?
-Simple bank Fixed Deposits (FDs) and Public Provident Fund (PPF) are very safe, but their returns are low. For stocks, a diversified index fund tracking the top 50 companies is the safest way to invest in equities.
+Simple bank Fixed Deposits (FDs) and government bonds are very safe, but their returns are low. For stocks, a diversified index fund tracking the top 50 companies is the safest way to invest in equities.
 
 ### 3. Should I invest in individual stocks?
 As a beginner, I highly recommend staying away from individual stocks. It requires deep research and exposes you to high risk. Index funds are much safer because they spread your risk across dozens of top companies.

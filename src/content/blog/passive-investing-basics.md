@@ -28,34 +28,34 @@ Instead of hiring a manager to guess which stocks will go up, an index fund simp
 - Because there is no active research team to pay, these funds have extremely low fees (called **expense ratios**).
 
 ### 2. Systematic Investment Plans (SIP)
-An SIP is the automation engine. You set up your bank account to automatically invest a fixed amount (say, ₹5,000 or ₹10,000) on a specific day every month into your chosen index fund. This removes human emotion, helping you buy more units when the market is cheap and fewer units when the market is expensive.
+An SIP is the automation engine. You set up your bank account to automatically invest a fixed amount (say, $60 or $125) on a specific day every month into your chosen index fund. This removes human emotion, helping you buy more units when the market is cheap and fewer units when the market is expensive.
 
 ### 3. Reinvesting Dividends (The Growth Option)
 When you choose a mutual fund, always select the **Growth** option rather than the dividend-payout option. Under the Growth option, any dividends paid by the underlying companies are automatically reinvested into the fund to buy more units, accelerating the compounding process.
 
 ---
 
-## Real-World Example: Kunal vs. Shalini
+## Real-World Example: Alex vs. Jordan
 
-Let's look at Kunal and Shalini. Both are 25 years old and decide to invest ₹10,000 per month for the next 25 years. Let's assume the underlying stock market index returns an average of 12% per year.
+Let's look at Alex and Jordan. Both are 25 years old and decide to invest $125 per month for the next 25 years. Let's assume the underlying stock market index returns an average of 12% per year.
 
 ```
-25-Year Investment Comparison (₹10,000/month)
- ├── Kunal (Active Mutual Fund) ── 1.5% Expense Ratio ── Net Return: 10.5% ── Portfolio: ₹1.44 Crores
- └── Shalini (Passive Index Fund) ── 0.15% Expense Ratio ── Net Return: 11.85% ── Portfolio: ₹1.83 Crores
+25-Year Investment Comparison ($125/month)
+ ├── Alex (Active Mutual Fund) ── 1.5% Expense Ratio ── Net Return: 10.5% ── Portfolio: $180,000
+ └── Jordan (Passive Index Fund) ── 0.15% Expense Ratio ── Net Return: 11.85% ── Portfolio: $229,000
 ```
 
-- **Kunal's Choice (Active Fund):**
-  Kunal chooses an actively managed mutual fund. The fund manager matches the index return of 12%, but charges an **expense ratio of 1.5%** to cover active trading costs and management fees.
-  *Kunal's Net Annual Return:* 10.5%
-  *Portfolio Value after 25 years:* **₹1,44,05,000**
+- **Alex's Choice (Active Fund):**
+  Alex chooses an actively managed mutual fund. The fund manager matches the index return of 12%, but charges an **expense ratio of 1.5%** to cover active trading costs and management fees.
+  *Alex's Net Annual Return:* 10.5%
+  *Portfolio Value after 25 years:* **$180,000**
 
-- **Shalini's Choice (Passive Index Fund):**
-  Shalini chooses a passive Nifty 50 index fund. Since the fund simply mirrors the index, the **expense ratio is only 0.15%**.
-  *Shalini's Net Annual Return:* 11.85%
-  *Portfolio Value after 25 years:* **₹1,83,16,000**
+- **Jordan's Choice (Passive Index Fund):**
+  Jordan chooses a passive Nifty 50 index fund. Since the fund simply mirrors the index, the **expense ratio is only 0.15%**.
+  *Jordan's Net Annual Return:* 11.85%
+  *Portfolio Value after 25 years:* **$229,000**
 
-**The Result:** Even though both funds had the same underlying performance, Shalini ends up with **₹39,11,000 more** than Kunal. Shalini did zero research and paid no attention to market news, while Kunal paid a premium to a manager who did not add any extra value.
+**The Result:** Even though both funds had the same underlying performance, Jordan ends up with **$49,000 more** than Alex. Jordan did zero research and paid no attention to market news, while Alex paid a premium to a manager who did not add any extra value.
 
 ---
 

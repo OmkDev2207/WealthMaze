@@ -1,6 +1,6 @@
 ## How to Save for a House: Your Financial Roadmap to Homeownership
 
-A few years ago, a colleague came to my office looking stressed. He had just booked a flat in a trendy suburb. He told me, "Om, I had the 20% down payment ready, but the developer just asked for another ₹6 Lakhs for stamp duty, registration, and utility connection charges. I do not have that kind of cash. I might have to take a personal loan." This is a classic home-buying trap. People save for the down payment and forget about the hidden costs. Buying a home is a beautiful milestone, but if you do not plan the finances right, it can quickly turn into a financial nightmare.
+A few years ago, a colleague came to my office looking stressed. He had just booked a home. He told me, "I had the 20% down payment ready, but the developer just asked for another $7,500 for closing costs and taxes, and utility connection charges. I do not have that kind of cash. I might have to take a personal loan." This is a classic home-buying trap. People save for the down payment and forget about the hidden costs. Buying a home is a beautiful milestone, but if you do not plan the finances right, it can quickly turn into a financial nightmare.
 
 ## Why This Matters
 
@@ -11,7 +11,7 @@ Your home is likely the most expensive purchase you will ever make. It is not ju
 Before you look at listings, you need to understand the true cost of buying a house:
 
 - **The Down Payment:** Banks will finance up to 75% to 80% of the property value. You must pay the remaining 20% upfront.
-- **Stamp Duty and Registration:** Government taxes that you must pay to register the property in your name. This is usually 5% to 8% of the property value, depending on your state.
+- **Closing Costs and Taxes:** Government taxes that you must pay to register the property in your name. This is usually 5% to 8% of the property value, depending on your location.
 - **Hidden Fees:** Society maintenance deposits, electric meter charges, property tax advance, and brokerage. This can add another 2% to 3%.
 - **Interior Design and Furnishing:** Making the raw brick-and-mortar livable. This often costs 10% to 15% of the property cost.
 
@@ -20,39 +20,39 @@ Your monthly home loan EMI should never exceed **35% of your net (after-tax) mon
 
 ## Real-World Example
 
-Let's look at Rohan and Sneha, a couple planning to buy a flat in Pune worth ₹70,00,000 (₹70 Lakhs).
+Let's look at Alex and Jordan, a couple planning to buy a home worth $87,500.
 
-The builder tells them the cost is ₹70 Lakhs. But Rohan and Sneha do the full math:
+The builder tells them the cost is $87,500. But Alex and Jordan do the full math:
 - **Actual Cost Breakdown:**
-  - Property cost: ₹70,00,000
-  - Stamp duty & registration (7%): ₹4,90,000
-  - Brokerage & legal fees: ₹1,00,000
-  - Basic furnishing & interiors: ₹7,00,000
-  - **Total Target:** ₹82,90,000
+  - Property cost: $87,500
+  - Closing costs & taxes (7%): $6,100
+  - Brokerage & legal fees: $1,250
+  - Basic furnishing & interiors: $8,750
+  - **Total Target:** $104,000
 
-If they only saved a 20% down payment on the base price (₹14 Lakhs), they would be ₹12.9 Lakhs short when closing.
+If they only saved a 20% down payment on the base price ($17,500), they would be $16,000 short when closing.
 
-Instead, they plan 4 years in advance. They decide to save ₹1,00,000 a month. Since their goal is 4 years away, they invest ₹60,000 a month in conservative equity-savings mutual funds and keep ₹40,000 in safe recurring deposits (RDs).
+Instead, they plan 4 years in advance. They decide to save $1,250 a month. Since their goal is 4 years away, they invest $750 a month in conservative equity-savings mutual funds and keep $500 in safe savings accounts.
 
-After 4 years, their savings grow to over ₹54 Lakhs. They put down a massive ₹50 Lakhs down payment, leaving them with a loan of only ₹32.9 Lakhs. At an 8.5% interest rate for 15 years, their EMI is about ₹32,000, which is well under 35% of their combined ₹1.5 Lakh take-home salary. They sleep peacefully in their new home.
+After 4 years, their savings grow to over $67,500. They put down a massive $62,500 down payment, leaving them with a loan of only $41,000. At an 8.5% interest rate for 15 years, their EMI is about $400, which is well under 35% of their combined $1,900/month take-home salary. They sleep peacefully in their new home.
 
 ## Common Mistakes I See People Make
 
 - **Assuming the agreement value is the final cost:** Always add 15% to 20% to the builder's quote to cover registration, tax, society deposits, and furnishing.
-- **Maxing out your loan eligibility:** Just because a bank is willing to lend you ₹1 Crore does not mean you should take it. Banks look at your ability to pay today, not your job security or other life goals tomorrow.
+- **Maxing out your loan eligibility:** Just because a bank is willing to lend you $125,000 does not mean you should take it. Banks look at your ability to pay today, not your job security or other life goals tomorrow.
 - **Taking short-term market risks with down payments:** If you plan to buy in 1 or 2 years, do not put your down payment money into high-risk small-cap stocks or crypto. A market dip will force you to delay your home purchase.
 
 ## Key Takeaways
 
 - Save at least 30% to 40% of the property value in cash before buying to cover the down payment, taxes, and interiors.
 - Keep your monthly EMI under 35% of your net take-home salary.
-- For goals 5+ years away, use equity SIPs to grow your savings. For goals under 3 years, stick to Fixed Deposits and RDs.
+- For goals 5+ years away, use equity SIPs to grow your savings. For goals under 3 years, stick to Fixed Deposits and savings accounts.
 - Factor in the ongoing costs of owning a home, like society maintenance fees and property tax.
 
 ## FAQ
 
 ### 1. How much should I save before buying a house?
-You should aim to save at least 30% to 35% of the total property value. This includes the 20% down payment required by banks, plus 7% to 10% for stamp duty, registration, brokerage, and basic furnishing.
+You should aim to save at least 30% to 35% of the total property value. This includes the 20% down payment required by banks, plus 7% to 10% for closing costs, taxes, brokerage, and basic furnishing.
 
 ### 2. Is it better to buy or rent?
 If you plan to stay in a city for less than 5 years, renting is usually better because transaction fees for buying and selling property are high. If you want stability, have a secure job, and find a property where renting is significantly more expensive than the interest cost of a loan, buying makes sense.
@@ -61,7 +61,7 @@ If you plan to stay in a city for less than 5 years, renting is usually better b
 This rule states that your monthly home loan EMI should not exceed 35% of your net take-home monthly income. This ensures you have enough cash left for daily living, health insurance, and retirement savings.
 
 ### 4. Where should I keep my house savings if I plan to buy in 2 years?
-If your purchase timeline is less than 3 years, keep your money in bank Fixed Deposits (FDs) or Recurring Deposits (RDs). The stock market is too volatile for short-term goals.
+If your purchase timeline is less than 3 years, keep your money in bank Fixed Deposits (FDs) or savings accounts. The stock market is too volatile for short-term goals.
 
 ### 5. Can I use my EPF (Employee Provident Fund) to buy a house?
 Yes, the government allows you to withdraw a portion of your EPF balance for home purchase or construction after 5 years of service. However, do this only as a last resort, as it reduces your retirement nest egg.

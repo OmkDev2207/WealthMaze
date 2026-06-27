@@ -21,31 +21,31 @@ If you must take a loan, I recommend using the **20/4/10 Rule** to make sure you
 
 ## Real-World Example
 
-Let's look at Amit, who wants to buy a hatchback with an on-road price of ₹8,00,000.
+Let's look at Alex, who wants to buy a hatchback with an on-road price of $10,000.
 
-If Amit goes to a dealership without a plan, they might offer him a 7-year loan at 10% interest with zero down payment.
-- His monthly EMI would be about ₹13,300.
-- Over 7 years, he would pay ₹3,17,000 in interest alone! That means his ₹8 Lakh car actually cost him ₹11.17 Lakhs.
-- By the time he pays off the loan, the car is worth less than ₹3 Lakhs.
+If Alex goes to a dealership without a plan, they might offer him a 7-year loan at 10% interest with zero down payment.
+- His monthly EMI would be about $165.
+- Over 7 years, he would pay $4,000 in interest alone! That means his $10,000 car actually cost him $14,000.
+- By the time he pays off the loan, the car is worth less than $3,750.
 
-Instead, Amit decides to wait and save. He sets up a dedicated recurring deposit (RD) and saves ₹20,000 a month for 2 years.
-- In 2 years, his savings grow to ₹5,00,000 (including interest).
-- He pays ₹5,00,000 as a down payment and takes a loan for the remaining ₹3,00,000 for 3 years at 9.5%.
-- His EMI drops to just ₹9,600.
-- He pays only ₹46,000 in total interest over the 3 years.
-- Amit saves more than ₹2.7 Lakhs in interest and owns his car much faster.
+Instead, Alex decides to wait and save. He sets up a dedicated savings account and saves $250 a month for 2 years.
+- In 2 years, his savings grow to $6,250 (including interest).
+- He pays $6,250 as a down payment and takes a loan for the remaining $3,750 for 3 years at 9.5%.
+- His EMI drops to just $120.
+- He pays only $575 in total interest over the 3 years.
+- Alex saves more than $3,400 in interest and owns his car much faster.
 
 ## Common Mistakes I See People Make
 
 - **Focusing only on the EMI:** Car salesmen love to ask, "What monthly EMI can you afford?" They adjust the loan tenure to 7 years to make the EMI look small, but you end up paying double the car's value in interest.
-- **Ignoring the running costs:** People buy a luxury car because they can afford the monthly EMI, but they get shocked when the first servicing bill comes in at ₹25,000 or a single tire replacement costs ₹8,000.
+- **Ignoring the running costs:** People buy a luxury car because they can afford the monthly EMI, but they get shocked when the first servicing bill comes in at $310 or a single tire replacement costs $100.
 - **Skipping the test drive and research:** Buying a car based purely on looks or social status without looking at fuel efficiency, safety ratings, and resale value is a recipe for buyer's remorse.
 
 ## Key Takeaways
 
 - Always budget based on the on-road price, not the ex-showroom price.
 - Use the 20/4/10 rule if you are financing the car.
-- Start saving at least 1-2 years in advance using safe options like FDs or Recurring Deposits.
+- Start saving at least 1-2 years in advance using safe options like FDs or dedicated savings accounts.
 - Remember that a car is a tool for utility, not a status symbol to impress neighbors.
 
 ## FAQ
@@ -57,7 +57,7 @@ Yes. Buying in cash means you pay zero interest, avoid loan processing fees, and
 It is a budgeting rule for car buyers: make a minimum 20% down payment, limit the loan term to 4 years, and ensure total car costs (EMI, fuel, insurance) do not exceed 10% of your monthly take-home salary.
 
 ### 3. Where should I save money for a car purchase in 2 years?
-For a timeline under 3 years, keep your savings in safe instruments like bank Fixed Deposits (FDs) or Recurring Deposits (RDs). Avoid stock market mutual funds for short-term goals because a market dip could force you to delay your purchase.
+For a timeline under 3 years, keep your savings in safe instruments like bank Fixed Deposits (FDs) or dedicated savings accounts. Avoid stock market mutual funds for short-term goals because a market dip could force you to delay your purchase.
 
 ### 4. Should I buy a used car instead of a new one?
 Absolutely. A 2 to 3-year-old used car has already gone through the steepest part of its depreciation curve. You can often get a higher-segment car for the price of a new basic hatchback. Just make sure to get it thoroughly inspected by a trusted mechanic.

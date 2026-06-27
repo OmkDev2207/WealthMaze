@@ -33,26 +33,26 @@ For most beginners, buying individual stocks or bonds is too time-consuming and 
 
 ---
 
-## Real-World Example: Priya's ₹15,000 Experiment
+## Real-World Example: Alex's $200 Experiment
 
-Let's look at Priya, a 22-year-old college graduate who wants to start investing. She decides to split ₹15,000 equally into three different assets to see how they behave over a year.
+Let's look at Alex, a 22-year-old college graduate who wants to start investing. Alex decides to split $200 equally into three different assets to see how they behave over a year.
 
 ```
-Priya's ₹15,000 Investment
- ├── ₹5,000 ── Equities (Individual Stock)
- ├── ₹5,000 ── Debt (Fixed-Income Bond)
- └── ₹5,000 ── Mutual Fund (Diversified Index)
+Alex's $200 Investment
+ ├── $65 ── Equities (Individual Stock)
+ ├── $65 ── Debt (Fixed-Income Bond)
+ └── $65 ── Mutual Fund (Diversified Index)
 ```
 
-- **Asset 1: Equities (₹5,000)**
-  Priya buys shares of a single electric vehicle company. Over the year, the company launches a successful new car model. The stock price jumps 20%. Her ₹5,000 is now worth **₹6,000**.
-  *But note:* If the car launch had failed or had recall issues, her investment could have dropped to ₹3,000.
+- **Asset 1: Equities ($65)**
+  Alex buys shares of a single electric vehicle company. Over the year, the company launches a successful new car model. The stock price jumps 20%. The $65 investment is now worth **$80**.
+  *But note:* If the car launch had failed or had recall issues, the investment could have dropped to $40.
 
-- **Asset 2: Debt (₹5,000)**
-  Priya buys a corporate bond offering a fixed interest rate of 7.5% per annum. At the end of the year, she receives ₹375 in interest, and her principal is safe. Her investment is worth **₹5,375**. It is a predictable, steady return.
+- **Asset 2: Debt ($65)**
+  Alex buys a corporate bond offering a fixed interest rate of 7.5% per annum. At the end of the year, Alex receives $5 in interest, and the principal is safe. The investment is worth **$70**. It is a predictable, steady return.
 
-- **Asset 3: Mutual Fund (₹5,000)**
-  Priya invests in an index fund tracking the top 50 companies in the country. Since the overall economy grew steadily, the fund grew by 12%. Her ₹5,000 is now worth **₹5,600**. She did not have to worry about a single company failing because the fund spread her risk across 50 different businesses.
+- **Asset 3: Mutual Fund ($65)**
+  Alex invests in an index fund tracking the top 50 companies in the country. Since the overall economy grew steadily, the fund grew by 12%. The $65 is now worth **$73**. No need to worry about a single company failing because the fund spread the risk across 50 different businesses.
 
 ---
 
@@ -95,7 +95,7 @@ A mutual fund is bought and sold directly from the fund house at the end-of-day 
 Dividends are a portion of a company's profits that its board of directors decides to distribute directly to its shareholders in cash. Large, mature companies that don't need to reinvest all their earnings into growth often pay regular dividends.
 
 ### 6. Do I need a lot of money to start investing in financial markets?
-No. Today, you can start investing in mutual funds with as little as ₹100 or ₹500 per month through a Systematic Investment Plan (SIP). You do not need to be wealthy to start; you need to start to become wealthy.
+No. Today, you can start investing in mutual funds with as little as $1 or $6 per month through a Systematic Investment Plan (SIP). You do not need to be wealthy to start; you need to start to become wealthy.
 
 ---
 

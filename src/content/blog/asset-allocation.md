@@ -11,30 +11,30 @@ If you put all your money into stocks, you are one bad market cycle away from a 
 Think of asset allocation as building a house. You do not build the entire house out of glass just because it looks nice. You use concrete, steel, and glass. In personal finance, your building materials are:
 
 - **Equities (Stocks & Mutual Funds):** This is your growth engine. It helps you beat inflation over the long run, but it can be highly volatile.
-- **Debt (Bonds, FDs, PPF):** This is your anchor. It does not grow fast, but it provides safety, stability, and liquidity when you need cash.
+- **Debt (Bonds, FDs, Government Bonds):** This is your anchor. It does not grow fast, but it provides safety, stability, and liquidity when you need cash.
 - **Gold:** This is your insurance policy. When stock markets panic and paper currencies lose value, gold usually shines.
 
 To make this work, you decide what percentage of your total wealth goes into each of these buckets based on your age, goals, and risk tolerance.
 
 ## Real-World Example
 
-Let's look at how this works in real life. Meet Rahul, a 28-year-old software engineer in Bengaluru with ₹10,00,000 to invest.
+Let's look at how this works in real life. Meet Alex, a 28-year-old software engineer with $12,500 to invest.
 
-Instead of dumping all of it into the latest hot mutual fund, Rahul uses a classic 60/30/10 strategic split:
-- **Equities (60%):** ₹6,00,000 in low-cost index funds.
-- **Debt (30%):** ₹3,00,000 in Fixed Deposits and Public Provident Fund (PPF).
-- **Gold (10%):** ₹1,00,000 in Sovereign Gold Bonds (SGBs).
+Instead of dumping all of it into the latest hot mutual fund, Alex uses a classic 60/30/10 strategic split:
+- **Equities (60%):** $7,500 in low-cost index funds.
+- **Debt (30%):** $3,750 in Fixed Deposits and Government Bonds.
+- **Gold (10%):** $1,250 in Gold ETFs.
 
-Now, let's see what happens after a year. Suppose the stock market goes through a correction, and Rahul's equity portfolio drops by 15%, reducing it to ₹5,10,000. Meanwhile, his debt earns 7% (now worth ₹3,21,000) and gold shoots up by 20% due to market uncertainty (now worth ₹1,20,000).
+Now, let's see what happens after a year. Suppose the stock market goes through a correction, and Alex's equity portfolio drops by 15%, reducing it to $6,375. Meanwhile, his debt earns 7% (now worth $4,000) and gold shoots up by 20% due to market uncertainty (now worth $1,500).
 
-His total portfolio value is now ₹9,51,000. While he lost money overall, his loss was limited to less than 5%, whereas a pure equity investor would have lost 15%.
+His total portfolio value is now $11,900. While he lost money overall, his loss was limited to less than 5%, whereas a pure equity investor would have lost 15%.
 
 More importantly, his allocation is now skewed:
 - Equities: 53.6%
 - Debt: 33.8%
 - Gold: 12.6%
 
-Rahul rebalances. He sells ₹60,600 worth of debt and gold and buys equities to restore his 60/30/10 target. By doing this, he automatically buys equities at a discount when the market is down. When stocks recover, his portfolio will rebound much faster.
+Alex rebalances. He sells $760 worth of debt and gold and buys equities to restore his 60/30/10 target. By doing this, he automatically buys equities at a discount when the market is down. When stocks recover, his portfolio will rebound much faster.
 
 ## Common Mistakes I See People Make
 
@@ -52,7 +52,7 @@ Rahul rebalances. He sells ₹60,600 worth of debt and gold and buys equities to
 ## FAQ
 
 ### 1. What is the simplest asset allocation strategy for beginners?
-A great starting point is the 60/30/10 rule: 60% in equities (index funds), 30% in debt (FDs, PPF, or debt funds), and 10% in gold. It is easy to track and highly effective.
+A great starting point is the 60/30/10 rule: 60% in equities (index funds), 30% in debt (FDs, government bonds, or debt funds), and 10% in gold. It is easy to track and highly effective.
 
 ### 2. Does asset allocation guarantee I won't lose money?
 No, it does not guarantee profits or completely eliminate losses. However, it significantly reduces your downside and prevents your portfolio from experiencing catastrophic drops during market crashes.
@@ -67,7 +67,7 @@ Yes, it is a decent rule of thumb. If you are 30, you keep 70% in equity and 30%
 Yes. Gold has a low correlation with stocks. When stocks crash, gold often stays stable or goes up, acting as a buffer that protects your portfolio's total value.
 
 ### 6. What is the best way to invest in debt?
-For long-term goals, PPF and EPF are excellent tax-free options. For short-term needs or liquidity, high-quality corporate debt funds or simple bank fixed deposits work best.
+For long-term goals, index funds and government bonds are excellent options. For short-term needs or liquidity, high-quality corporate debt funds or simple bank fixed deposits work best.
 
 ## Conclusion
 

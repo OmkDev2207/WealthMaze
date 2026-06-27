@@ -1,6 +1,6 @@
 ## The 50/30/20 Budgeting Rule: How to Manage Your Salary Without Stress
 
-Every month on salary day, I see the same pattern. People feel rich for the first five days, spend money on fancy dinners and shopping, and then spend the remaining twenty-five days stressing about how they will pay their rent. When I ask them if they have a budget, they tell me that tracking every single rupee in a complex spreadsheet is too exhausting. I get it. That is why I love the 50/30/20 budgeting rule. It is simple, requires zero spreadsheet management, and it actually works.
+Every month on salary day, I see the same pattern. People feel rich for the first five days, spend money on fancy dinners and shopping, and then spend the remaining twenty-five days stressing about how they will pay their rent. When I ask them if they have a budget, they tell me that tracking every single dollar in a complex spreadsheet is too exhausting. I get it. That is why I love the 50/30/20 budgeting rule. It is simple, requires zero spreadsheet management, and it actually works.
 
 ## Why This Matters
 
@@ -12,20 +12,20 @@ The rule is straightforward. You take your post-tax monthly income and divide it
 
 - **50% for Needs:** These are your absolute essentials. The bills you must pay to survive. Think rent or home loan EMIs, groceries, utility bills (electricity, water, basic internet), health insurance, and minimum loan payments. If you lost your job tomorrow, you would still have to pay these.
 - **30% for Wants:** This is your lifestyle bucket. The fun stuff. Dining out, weekend trips, movie tickets, gadgets, streaming subscriptions, and hobby shopping. This is the money you can cut instantly if times get tough.
-- **20% for Savings and Investments:** This is your future fund. You use this to build an emergency fund, invest in mutual funds, put money into PPF/EPF, or make prepayments on high-interest loans.
+- **20% for Savings and Investments:** This is your future fund. You use this to build an emergency fund, invest in mutual funds, put money into index funds/EPF, or make prepayments on high-interest loans.
 
 The key to making this work is consistency and automation.
 
 ## Real-World Example
 
-Let's look at Kartik, a 26-year-old software engineer earning ₹60,000 per month after taxes.
+Let's look at Alex, a 26-year-old software engineer earning $750 per month after taxes.
 
-Under the 50/30/20 rule, Kartik's salary is divided like this:
-- **Needs (50%):** ₹30,000. He spends ₹15,000 on rent, ₹8,000 on groceries and utilities, ₹3,000 on transport, and ₹4,000 on his student loan EMI.
-- **Wants (30%):** ₹18,000. This is his guilt-free spending money. He uses it for eating out with friends, Netflix, buying clothes, and weekend outings.
-- **Savings (20%):** ₹12,000. The day after his salary is credited, ₹12,000 is automatically routed: ₹4,000 into a liquid bank account (for his emergency fund) and ₹8,000 into equity mutual funds via a SIP.
+Under the 50/30/20 rule, Alex's salary is divided like this:
+- **Needs (50%):** $375. He spends $185 on rent, $100 on groceries and utilities, $40 on transport, and $50 on his student loan EMI.
+- **Wants (30%):** $225. This is his guilt-free spending money. He uses it for eating out with friends, Netflix, buying clothes, and weekend outings.
+- **Savings (20%):** $150. The day after his salary is credited, $150 is automatically routed: $50 into a liquid bank account (for his emergency fund) and $100 into equity mutual funds via a SIP.
 
-By automating this, Kartik knows exactly what he can spend. If he wants a new ₹30,000 phone, he does not touch his Needs or Savings. He saves up from his monthly ₹18,000 Wants bucket for two months. No credit card debt, no stress.
+By automating this, Alex knows exactly what he can spend. If he wants a new $375 phone, he does not touch his Needs or Savings. He saves up from his monthly $225 Wants bucket for two months. No credit card debt, no stress.
 
 ## Common Mistakes I See People Make
 
@@ -55,7 +55,7 @@ Minimum payments on debt (like minimum credit card payments or regular home loan
 If you have high-interest credit card debt or personal loans, you should aggressively redirect your 30% Wants and 20% Savings buckets toward clearing that debt. A budget rule should be flexible during emergencies.
 
 ### 5. Where should the 20% savings go?
-Start by building an emergency fund containing 6 months of expenses. Once that is ready, direct the money to long-term goals through SIPs in index funds, mutual funds, or debt options like PPF.
+Start by building an emergency fund containing 6 months of expenses. Once that is ready, direct the money to long-term goals through SIPs in index funds, mutual funds, or debt options like government bonds.
 
 ### 6. Can I save more than 20%?
 Absolutely. If you can live frugally and keep your Needs and Wants low, saving 30% or 40% will help you achieve financial freedom much faster. The 50/30/20 rule is a minimum starting guideline, not a limit.

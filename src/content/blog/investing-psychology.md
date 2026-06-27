@@ -18,7 +18,7 @@ Our brains are wired for survival, not for investing. Here are the psychological
 
 ### 1. Loss Aversion
 Psychologists Daniel Kahneman and Amos Tversky discovered that the pain of losing money is twice as intense as the pleasure of gaining the same amount. 
-- Seeing your portfolio drop by ₹1,00,000 hurts far more than the joy of seeing it rise by ₹1,00,000.
+- Seeing your portfolio drop by $1,250 hurts far more than the joy of seeing it rise by $1,250.
 - This bias triggers our "fight or flight" response. When the market falls, our brain treats it as a physical threat and screams at us to run away—which means selling our investments to stop the pain.
 
 ### 2. Action Bias
@@ -29,25 +29,25 @@ We feel safe in crowds. When everyone is buying stocks and talking about overnig
 
 ---
 
-## Real-World Example: Vivek vs. Rohan
+## Real-World Example: Alex vs. Jordan
 
-Let's look at two investors, Vivek and Rohan. In January 2020, both had a diversified equity portfolio worth ₹5,00,000.
+Let's look at two investors, Alex and Jordan. In January 2020, both had a diversified equity portfolio worth $6,250.
 
-Then, the March 2020 crash hit. The market dropped by 30%, and both their portfolios fell to ₹3,50,000.
+Then, the March 2020 crash hit. The market dropped by 30%, and both their portfolios fell to $4,400.
 
 ```
 March 2020 Market Crash (-30%)
- ├── Vivek ── Panics & Sells ── Realizes Loss ── Portfolio Stuck at ₹3,50,000
- └── Rohan ── Stays Calm ── Continues SIPs ── Portfolio Rebounds to ₹7,50,000 (by Dec 2021)
+ ├── Alex   ── Panics & Sells ── Realizes Loss ── Portfolio Stuck at $4,400
+ └── Jordan ── Stays Calm ── Continues SIPs ── Portfolio Rebounds to $9,400 (by Dec 2021)
 ```
 
-- **Vivek's Reaction:**
-  Vivek couldn't sleep. He checked his brokerage app ten times a day. Fearing the market would go to zero, he sold all his holdings at ₹3,50,000 and moved the cash to a savings account. He locked in a **loss of ₹1,50,000**. When the market recovered, he was too scared to buy back in, missing the entire recovery.
+- **Alex's Reaction:**
+  Alex couldn't sleep. Alex checked the brokerage app ten times a day. Fearing the market would go to zero, Alex sold all holdings at $4,400 and moved the cash to a savings account. Alex locked in a **loss of $1,875**. When the market recovered, Alex was too scared to buy back in, missing the entire recovery.
 
-- **Rohan's Reaction:**
-  Rohan understood that market crashes are normal. He stopped checking his app, turned off news notifications, and continued his monthly ₹10,000 SIP (Systematic Investment Plan). His monthly investments actually bought more mutual fund units because the prices were low. By December 2021, his portfolio had rebounded and grown to **₹7,50,000**.
+- **Jordan's Reaction:**
+  Jordan understood that market crashes are normal. Jordan stopped checking the app, turned off news notifications, and continued a monthly $125 SIP (Systematic Investment Plan). The monthly investments actually bought more mutual fund units because the prices were low. By December 2021, Jordan's portfolio had rebounded and grown to **$9,400**.
 
-By mastering his emotions, Rohan ended up with more than double Vivek's wealth, even though they started with the exact same amount.
+By mastering emotions, Jordan ended up with more than double Alex's wealth, even though they started with the exact same amount.
 
 ---
 

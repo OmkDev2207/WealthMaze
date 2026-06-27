@@ -1,6 +1,6 @@
-## How to Reduce Your Loan EMI: Practical Strategies to Save Lakhs
+## How to Reduce Your Loan EMI: Practical Strategies to Save Thousands
 
-A few years ago, a colleague came to my desk looking stressed. He had recently taken a home loan of ₹50 Lakhs for 20 years at a 9.5% interest rate. His monthly EMI was ₹46,607. He had just run the numbers and realized that over 20 years, he would end up paying back a total of ₹1.12 Crore—meaning he was paying the bank ₹62 Lakhs in interest alone! 
+A few years ago, a colleague came to my desk looking stressed. He had recently taken a home loan of $62,500 for 20 years at a 9.5% interest rate. His monthly EMI was $580. He had just run the numbers and realized that over 20 years, he would end up paying back a total of $140,000—meaning he was paying the bank $77,500 in interest alone! 
 
 "Om," he asked, "am I really stuck paying this massive interest for the next two decades?"
 
@@ -29,7 +29,7 @@ When you prepay, the bank will ask you to choose between two options:
 
 ### 2. Reset Your Interest Rate (Internal or External)
 Interest rates fluctuate. If market rates have dropped since you took your loan, or if your credit score has improved, you might be paying more than necessary.
-- **Internal Reset:** Call your current bank and ask for an interest rate reset. Banks will often match their lowest rate for new customers if you pay a small reset fee (usually ₹1,000 to ₹5,000).
+- **Internal Reset:** Call your current bank and ask for an interest rate reset. Banks will often match their lowest rate for new customers if you pay a small reset fee (usually $12 to $60).
 - **Home Loan Balance Transfer:** If your bank refuses to cooperate, you can transfer your outstanding loan to a different lender offering a lower rate.
 
 ### 3. Implement the Step-Up Prepayment Strategy
@@ -37,40 +37,40 @@ You don't need a massive lump sum to pay off your loan early. As your salary gro
 
 ---
 
-## Real-World Example: Rohit's ₹50 Lakh Loan
+## Real-World Example: Alex's $62,500 Loan
 
-Let's look at Rohit, who has a home loan of ₹50 Lakhs at a 9% interest rate for a 20-year tenure. His monthly EMI is ₹44,986. Let's compare three scenarios.
+Let's look at Alex, who has a home loan of $62,500 at a 9% interest rate for a 20-year tenure. His monthly EMI is $560. Let's compare three scenarios.
 
 ```
-Rohit's ₹50 Lakh Home Loan (20 Years at 9%)
- ├── Scenario A: No Prepayments ── Total Interest: ₹57.97 Lakhs ── Debt Free: 20 Years
- ├── Scenario B: 1 Extra EMI/Year ── Total Interest: ₹41.22 Lakhs ── Debt Free: 15.5 Years (Saves ₹16.7 Lakhs)
- └── Scenario C: 5% Annual Step-up ── Total Interest: ₹31.64 Lakhs ── Debt Free: 12 Years (Saves ₹26.3 Lakhs)
+Alex's $62,500 Home Loan (20 Years at 9%)
+ ├── Scenario A: No Prepayments ── Total Interest: $72,500 ── Debt Free: 20 Years
+ ├── Scenario B: 1 Extra EMI/Year ── Total Interest: $51,500 ── Debt Free: 15.5 Years (Saves $21,000)
+ └── Scenario C: 5% Annual Step-up ── Total Interest: $39,500 ── Debt Free: 12 Years (Saves $33,000)
 ```
 
 - **Scenario A: The Default Route**
-  Rohit makes no prepayments and pays the EMI for 20 years.
-  *Total Interest Paid:* **₹57,96,640**
+  Alex makes no prepayments and pays the EMI for 20 years.
+  *Total Interest Paid:* **$72,500**
   *Time to Debt-Free:* 20 years
 
 - **Scenario B: The "One Extra EMI" Route**
-  Rohit pays just one extra EMI of ₹45,000 at the end of every year.
-  *Total Interest Paid:* **₹41,21,640**
+  Alex pays just one extra EMI of $560 at the end of every year.
+  *Total Interest Paid:* **$51,500**
   *Time to Debt-Free:* Roughly 15.5 years
-  *Savings:* **₹16,75,000 in interest** and 4.5 years of freedom.
+  *Savings:* **$21,000 in interest** and 4.5 years of freedom.
 
 - **Scenario C: The "5% Annual Step-up" Route**
-  Rohit increases his monthly EMI by 5% every year (e.g., in year 2 he pays ₹47,235, in year 3 he pays ₹49,597, etc.), aligning with his salary hikes.
-  *Total Interest Paid:* **₹31,64,000**
+  Alex increases his monthly EMI by 5% every year (e.g., in year 2 he pays $590, in year 3 he pays $620, etc.), aligning with his salary hikes.
+  *Total Interest Paid:* **$39,500**
   *Time to Debt-Free:* Roughly 12 years
-  *Savings:* **₹26,32,640 in interest** and 8 years of freedom.
+  *Savings:* **$33,000 in interest** and 8 years of freedom.
 
 ---
 
 ## Common Mistakes I See People Make
 
 ### 1. Waiting for Large Lump Sums
-Many borrowers think, "I'll make a prepayment only when I have ₹5 Lakhs." This is a mistake. Prepaying even ₹10,000 or ₹20,000 early in your loan tenure is highly effective because it immediately stops the interest compounding on that amount. Prepay whatever you can, as early as you can.
+Many borrowers think, "I'll make a prepayment only when I have $6,250." This is a mistake. Prepaying even $125 or $250 early in your loan tenure is highly effective because it immediately stops the interest compounding on that amount. Prepay whatever you can, as early as you can.
 
 ### 2. Choosing EMI Reduction When Cash Flow is Fine
 If you receive a lump sum and choose to reduce your EMI while keeping the tenure the same, you are missing out on major interest savings. Unless you are facing a job loss or cash flow crisis, always choose tenure reduction.
@@ -82,7 +82,7 @@ When transferring a loan to a new bank, check the hidden fees. You will have to 
 
 ## Key Takeaways
 
-- **Prepay early in the tenure:** A rupee prepaid in year 1 of a loan saves far more interest than a rupee prepaid in year 15.
+- **Prepay early in the tenure:** A dollar prepaid in year 1 of a loan saves far more interest than a dollar prepaid in year 15.
 - **Automate your raises:** Every time you get a salary hike, call your bank and request to increase your monthly EMI. 
 - **Check interest rates annually:** Don't set and forget your loan. Compare your rate against market rates once a year to ensure you aren't overpaying.
 

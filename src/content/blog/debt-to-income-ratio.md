@@ -21,25 +21,25 @@ Banks usually split DTI into two types:
 
 ## Real-World Example
 
-Let's look at Pooja, a 30-year-old marketing manager who earns ₹1,00,000 per month (gross income).
+Let's look at Alex, a 30-year-old who earns $1,250 per month (gross income).
 
-Currently, Pooja has the following monthly debt payments:
-- Car Loan EMI: ₹12,000
-- Education Loan EMI: ₹8,000
-- Minimum Credit Card Payment: ₹5,000
-- **Total Monthly Debt:** ₹25,000
+Currently, Alex has the following monthly debt payments:
+- Car Loan EMI: $150
+- Education Loan EMI: $100
+- Minimum Credit Card Payment: $60
+- **Total Monthly Debt:** $310
 
-Pooja's current DTI ratio is:
-(₹25,000 / ₹1,00,000) * 100 = **25%**
+Alex's current DTI ratio is:
+($310 / $1,250) * 100 = **25%**
 This is a healthy, low-risk DTI.
 
-Now, Pooja wants to buy an apartment and applies for a home loan that would have an EMI of ₹25,000. If the bank approves the loan, her new total monthly debt will be:
-₹25,000 (existing) + ₹25,000 (home loan) = ₹50,000.
+Now, Alex wants to buy an apartment and applies for a home loan that would have an EMI of $310. If the bank approves the loan, the new total monthly debt will be:
+$310 (existing) + $310 (home loan) = $620.
 
-Her new DTI ratio would be:
-(₹50,000 / ₹1,00,000) * 100 = **50%**
+The new DTI ratio would be:
+($620 / $1,250) * 100 = **50%**
 
-At 50%, most conservative banks will reject her loan or charge a higher interest rate because half her income is gone before she even buys groceries or pays taxes. She will have to either pay off her car loan early or choose a cheaper apartment to get approved.
+At 50%, most conservative banks will reject the loan or charge a higher interest rate because half the income is gone before buying groceries or paying taxes. Alex will have to either pay off the car loan early or choose a cheaper apartment to get approved.
 
 ## Common Mistakes I See People Make
 

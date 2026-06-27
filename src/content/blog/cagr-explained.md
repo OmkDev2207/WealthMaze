@@ -24,21 +24,21 @@ Where:
 
 Let's look at how absolute return can deceive you, and how CAGR brings truth.
 
-Meet Vikram. He is looking at two mutual funds to invest his savings:
-- **Fund A:** Turned ₹1,00,000 into ₹2,50,000 over 10 years.
-- **Fund B:** Turned ₹1,00,000 into ₹1,80,000 over 4 years.
+Meet Alex. He is looking at two mutual funds to invest his savings:
+- **Fund A:** Turned $1,250 into $3,100 over 10 years.
+- **Fund B:** Turned $1,250 into $2,250 over 4 years.
 
-If Vikram only looks at absolute returns (total growth):
-- **Fund A** has an absolute return of 150% (₹1,50,000 gain).
-- **Fund B** has an absolute return of 80% (₹80,000 gain).
+If Alex only looks at absolute returns (total growth):
+- **Fund A** has an absolute return of 150% ($1,875 gain).
+- **Fund B** has an absolute return of 80% ($1,000 gain).
 
 Fund A looks much better, right? It more than doubled his money!
 
 But let's look at the CAGR (annual speed):
-- **Fund A CAGR:** (₹2,50,000 / ₹1,00,000) ^ (1 / 10) - 1 = **9.6% per year**
-- **Fund B CAGR:** (₹1,80,000 / ₹1,00,000) ^ (1 / 4) - 1 = **15.8% per year**
+- **Fund A CAGR:** ($3,100 / $1,250) ^ (1 / 10) - 1 = **9.6% per year**
+- **Fund B CAGR:** ($2,250 / $1,250) ^ (1 / 4) - 1 = **15.8% per year**
 
-Even though Fund A generated more total profit because it ran for a decade, Fund B was actually growing Vikram's money much faster. If Fund B continues growing at 15.8% for 10 years, Vikram's initial ₹1,00,000 would grow to over ₹4,30,000. CAGR makes the comparison clear.
+Even though Fund A generated more total profit because it ran for a decade, Fund B was actually growing Alex's money much faster. If Fund B continues growing at 15.8% for 10 years, Alex's initial $1,250 would grow to over $5,400. CAGR makes the comparison clear.
 
 ## Common Mistakes I See People Make
 

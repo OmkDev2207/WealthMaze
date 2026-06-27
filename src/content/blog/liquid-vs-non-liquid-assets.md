@@ -1,6 +1,6 @@
 ## Liquid vs. Non-Liquid Assets: Why Balance is Everything
 
-A few years ago, a close friend of mine bought a beautiful plot of land on the outskirts of our city. He put almost all of his savings into it, proud of his new asset. Six months later, his father suffered a medical emergency, and the hospital bill came to ₹5 Lakhs. 
+A few years ago, a close friend of mine bought a beautiful plot of land on the outskirts of the city. He put almost all of his savings into it, proud of his new asset. Six months later, his father suffered a medical emergency, and the hospital bill came to $6,250. 
 
 My friend was "wealthy" on paper, but he had no cash. He tried to sell the land quickly, but buyers knew he was desperate and offered him 30% below market value. Ultimately, he had to take a high-interest personal loan and borrow from friends to pay the bills. 
 
@@ -21,7 +21,7 @@ Liquidity refers to how quickly and easily you can convert an asset into cash wi
 ### 1. Highly Liquid Assets (Cash-Like)
 These assets can be converted to cash almost instantly with zero loss in value.
 - **Cash and Bank Balances:** Available immediately via ATMs or online transfers.
-- **Sweep-in Fixed Deposits:** Bank deposits that earn FD interest but automatically transfer back to your savings account when you write a check or use your debit card.
+- **High-Yield Savings Accounts:** Bank deposits that earn higher interest but automatically transfer back to your savings account when you write a check or use your debit card.
 - **Liquid Mutual Funds:** Low-risk debt funds that credit cash back to your bank account within 24 hours.
 
 ### 2. Moderately Liquid Assets (Can be sold, but prices fluctuate)
@@ -32,49 +32,49 @@ These assets can be converted to cash in 2 to 3 days, but you might have to sell
 ### 3. Non-Liquid/Illiquid Assets (Slow to convert)
 These assets take weeks, months, or even years to convert into cash, or carry heavy penalties for early withdrawal.
 - **Real Estate:** Selling land or a house takes months of finding buyers, negotiating, checking titles, and registering deeds.
-- **Lock-in Investments:** Products like the Public Provident Fund (PPF) with a 15-year lock-in, or Equity Linked Savings Schemes (ELSS) with a 3-year lock-in.
+- **Lock-in Investments:** Products like retirement accounts or index funds with lock-in periods, or Equity Linked Savings Schemes (ELSS) with a 3-year lock-in.
 - **Physical Gold Jewelry:** Involves significant deductions for making charges, stone weights, and purity tests, reducing its cash value.
 
 ---
 
-## Real-World Example: Sharma vs. Verma
+## Real-World Example: Alex's Family vs. Jordan's Family
 
-Let's look at two families, both with a net worth of ₹50 Lakhs.
+Let's look at two families, both with a net worth of $62,500.
 
 ```
-Net Worth: ₹50 Lakhs Comparison
- ├── Sharma (Illiquid Portfolio)
- │    ├── Real Estate: ₹45,00,000
- │    ├── Gold Jewelry: ₹4,00,000
- │    └── Cash in Bank: ₹1,00,000
+Net Worth: $62,500 Comparison
+ ├── Alex's Family (Illiquid Portfolio)
+ │    ├── Real Estate:    $56,250
+ │    ├── Gold Jewelry:    $5,000
+ │    └── Cash in Bank:    $1,250
  │
- └── Verma (Balanced Portfolio)
-      ├── Real Estate: ₹30,00,000
-      ├── Mutual Funds: ₹12,00,000
-      ├── Sweep-in FD:  ₹6,00,000
-      └── Cash in Bank: ₹2,00,000
+ └── Jordan's Family (Balanced Portfolio)
+      ├── Real Estate:    $37,500
+      ├── Mutual Funds:   $15,000
+      ├── High-Yield Savings: $7,500
+      └── Cash in Bank:    $2,500
 ```
 
-Both families experience a sudden leak in their house roof, costing ₹3 Lakhs to repair.
+Both families experience a sudden leak in their house roof, costing $3,750 to repair.
 
-- **The Sharma Family:**
-  Almost all their wealth is tied up in their house and jewelry. With only ₹1 Lakh in cash, they cannot cover the repair. They don't want to sell their jewelry at a loss, and selling a piece of land for ₹3 Lakhs is impossible. They are forced to take a personal loan at 14% interest, creating a new monthly EMI burden.
+- **Alex's Family:**
+  Almost all their wealth is tied up in their house and jewelry. With only $1,250 in cash, they cannot cover the repair. They don't want to sell their jewelry at a loss, and selling a piece of land for $3,750 is impossible. They are forced to take a personal loan at 14% interest, creating a new monthly EMI burden.
 
-- **The Verma Family:**
-  They have ₹2 Lakhs in their savings account and ₹6 Lakhs in a sweep-in FD. They pay for the repair instantly by drawing from their sweep-in FD. They pay zero interest, face zero stress, and their long-term mutual fund investments remain untouched.
+- **Jordan's Family:**
+  They have $2,500 in their savings account and $7,500 in a High-Yield Savings account. They pay for the repair instantly by drawing from their High-Yield Savings. They pay zero interest, face zero stress, and their long-term mutual fund investments remain untouched.
 
 ---
 
 ## Common Mistakes I See People Make
 
 ### 1. Treating Gold Jewelry as a Liquid Investment
-Gold jewelry is a sentimental asset, not a liquid financial tool. When you sell jewelry, the jeweler deducts 10% to 20% of the value for making charges and melting losses. If you want gold as an investment, stick to Sovereign Gold Bonds (SGBs) or Gold Mutual Funds/ETFs.
+Gold jewelry is a sentimental asset, not a liquid financial tool. When you sell jewelry, the jeweler deducts 10% to 20% of the value for making charges and melting losses. If you want gold as an investment, stick to Gold ETFs or Gold Mutual Funds.
 
 ### 2. Over-Investing in Real Estate Early in Your Career
 I see many young professionals in their late 20s buying a house and locking up 80% of their savings in down payments and EMIs. This leaves them with zero liquidity. If they lose their job or face a medical emergency, they have no cash buffer to fall back on.
 
 ### 3. Putting Emergency Funds in Regular FDs
-Regular Fixed Deposits are great, but if you break them prematurely, banks charge a penalty (usually 0.5% to 1% of the interest rate). Use sweep-in FDs or liquid funds for your emergency stash instead.
+Regular Fixed Deposits are great, but if you break them prematurely, banks charge a penalty (usually 0.5% to 1% of the interest rate). Use High-Yield Savings accounts or liquid funds for your emergency stash instead.
 
 ---
 
@@ -82,7 +82,7 @@ Regular Fixed Deposits are great, but if you break them prematurely, banks charg
 
 - **Build your liquidity buffer first:** Before you buy real estate or lock money into long-term retirement accounts, ensure you have 6 months of expenses in highly liquid options.
 - **Diversify across the spectrum:** A perfect portfolio has cash for the short term, mutual funds/stocks for the medium term, and real estate/retirement funds for the long term.
-- **Know the exit rules:** Before you invest a single rupee, always read the terms regarding lock-in periods, exit loads, and tax penalties on early withdrawals.
+- **Know the exit rules:** Before you invest a single dollar, always read the terms regarding lock-in periods, exit loads, and tax penalties on early withdrawals.
 
 ---
 
@@ -103,8 +103,8 @@ Real estate transactions involve finding a buyer willing to pay your price, comp
 ### 5. What are liquid mutual funds?
 Liquid funds are debt mutual funds that invest in short-term government securities and certificate deposits that mature in less than 91 days. They are very stable, have no lock-in periods, and allow you to withdraw your money within 24 hours, often offering higher interest rates than regular savings accounts.
 
-### 6. Is PPF a liquid asset?
-No, the Public Provident Fund (PPF) is an illiquid asset. It has a mandatory lock-in period of 15 years. While you can make partial withdrawals starting from the 7th year, or take a loan against your balance under specific conditions, the funds are largely inaccessible for short-term needs.
+### 6. Is a retirement account a liquid asset?
+No, a retirement account or index fund with a lock-in period is an illiquid asset. While you may be able to make partial withdrawals under specific conditions, the funds are largely inaccessible for short-term needs.
 
 ---
 

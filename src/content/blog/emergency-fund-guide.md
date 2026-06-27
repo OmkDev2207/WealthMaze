@@ -1,6 +1,6 @@
 ## How to Build a Bulletproof Emergency Fund: A Step-by-Step Guide
 
-In early 2020, when the pandemic hit and businesses began shutting down, I got a message from a friend. He was in tears. His company had just laid off half its staff, and he was one of them. He had a home loan, a car loan, and a baby on the way, but only had ₹15,000 in his bank account. He was forced to sell his stock portfolio at a 30% loss just to pay his bills. That conversation cemented a truth I always tell people: before you try to grow your money, you must protect your downside. You need an emergency fund.
+In early 2020, when the pandemic hit and businesses began shutting down, I got a message from a friend. He was in tears. His company had just laid off half its staff, and he was one of them. He had a home loan, a car loan, and a baby on the way, but only had $185 in his bank account. He was forced to sell his stock portfolio at a 30% loss just to pay his bills. That conversation cemented a truth I always tell people: before you try to grow your money, you must protect your downside. You need an emergency fund.
 
 ## Why This Matters
 
@@ -27,27 +27,27 @@ To calculate your target size, add up only your "must-have" monthly costs: rent,
 
 ## Real-World Example
 
-Let's look at Rohit, a 27-year-old designer earning ₹50,000 a month after tax.
+Let's look at Alex, a 27-year-old designer earning $625 a month after tax.
 
 His monthly expenses are:
-- Rent: ₹15,000
-- Groceries & Utilities: ₹10,000
-- Insurance & Loan EMIs: ₹5,000
-- Dining out & Subscriptions (wants): ₹10,000
-- Savings: ₹10,000
+- Rent: $185
+- Groceries & Utilities: $125
+- Insurance & Loan EMIs: $60
+- Dining out & Subscriptions (wants): $125
+- Savings: $125
 
-His essential expenses (needs) are ₹30,000 (rent, food, utilities, EMIs). Since Rohit is a freelancer with fluctuating income, he decides a 6-month buffer is safest.
+His essential expenses (needs) are $375 (rent, food, utilities, EMIs). Since Alex is a freelancer with fluctuating income, he decides a 6-month buffer is safest.
 
 His target emergency fund size is:
-₹30,000 * 6 = **₹1,80,000**
+$375 * 6 = **$2,250**
 
-Instead of trying to save this all at once, he decides to redirect his monthly ₹10,000 savings.
-- In 18 months, he builds his ₹1,80,000 cushion.
+Instead of trying to save this all at once, he decides to redirect his monthly $125 savings.
+- In 18 months, Alex builds the $2,250 cushion.
 - He splits it for safety and access:
-  - ₹30,000 in his regular savings account (instant access via UPI or ATM).
-  - ₹1,50,000 in a Sweep-in Fixed Deposit (which earns 6.5% interest but can be broken instantly online without penalty).
+  - $375 in his regular savings account (instant access via ATM or bank transfer).
+  - $1,875 in a high-yield savings account (which earns 6.5% interest but can be accessed instantly online without penalty).
 
-Now, if a client pays late or he loses a contract, Rohit does not panic. He has a 6-month runway.
+Now, if a client pays late or he loses a contract, Alex does not panic. He has a 6-month runway.
 
 ## Common Mistakes I See People Make
 
@@ -68,7 +68,7 @@ Now, if a client pays late or he loses a contract, Rohit does not panic. He has 
 Regular savings are for planned goals (buying a car, vacation, down payment). An emergency fund is only for unplanned, urgent crises (job loss, medical emergency).
 
 ### 2. Should I build an emergency fund if I have debt?
-If you have high-interest debt (like credit cards), build a basic emergency fund of ₹25,000 to ₹50,000 first. This prevents you from running back to the credit card when a minor emergency hits. Once that is done, aggressively pay off the debt before building the full 6-month buffer.
+If you have high-interest debt (like credit cards), build a basic emergency fund of $310 to $625 first. This prevents you from running back to the credit card when a minor emergency hits. Once that is done, aggressively pay off the debt before building the full 6-month buffer.
 
 ### 3. Where is the best place to keep an emergency fund?
 Keep 10% to 20% in your savings account for instant access. Keep the rest in a Sweep-in Fixed Deposit (FD) or a high-quality liquid mutual fund. These offer safety, decent returns, and quick withdrawals.
@@ -77,11 +77,11 @@ Keep 10% to 20% in your savings account for instant access. Keep the rest in a S
 No. Credit cards are a form of high-interest debt, not cash. If you lose your job, you will still have to pay the credit card bill next month. Additionally, banks can lower your credit limit during economic crises when you need it most.
 
 ### 5. Should I buy insurance if I have an emergency fund?
-Yes. An emergency fund is not a replacement for health or term insurance. A major medical issue can easily wipe out a ₹3 Lakh emergency fund in days, but health insurance will cover it, leaving your emergency fund intact for other needs.
+Yes. An emergency fund is not a replacement for health or term insurance. A major medical issue can easily wipe out a $3,750 emergency fund in days, but health insurance will cover it, leaving your emergency fund intact for other needs.
 
 ### 6. What should I do after I use my emergency fund?
 If you withdraw money from your fund, stop all other investing goals (like equity SIPs) and redirect your savings to rebuild your emergency fund back to its target size as quickly as possible.
 
 ## Conclusion
 
-An emergency fund is the cheapest insurance policy you will ever buy. It does not make you look wealthy, and it won't make you rich, but it gives you something far more valuable: the peace of mind to live your life and make financial decisions without fear. Start building yours today, even if it is just ₹1,000 a month.
+An emergency fund is the cheapest insurance policy you will ever buy. It does not make you look wealthy, and it won't make you rich, but it gives you something far more valuable: the peace of mind to live your life and make financial decisions without fear. Start building yours today, even if it is just $12 a month.
