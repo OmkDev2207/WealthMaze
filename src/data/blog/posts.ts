@@ -568,6 +568,18 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
   },
+  // 47. CAGR in the Stock Market
+  {
+    slug: "cagr-in-share-market",
+    title: "CAGR in the Stock Market: What It Really Means and Why Most Investors Use It Wrong",
+    description: "CAGR is the most useful number in stock market investing — and the most abused. Learn what honest CAGR benchmarks look like and how fund managers manipulate it.",
+    publishedAt: "June 28, 2026",
+    readTime: "11 min read",
+    category: "Investing",
+    tags: ["CAGR", "Stock Market", "Investing", "Returns", "Mutual Funds"],
+    author: authors.omk,
+    relatedCalculators: ["cagr-calculator", "xirr-calculator", "investment-growth-calculator"],
+  },
 ];
 
 export const getPostsByCalculatorId = (calculatorId: string): BlogPost[] => {
