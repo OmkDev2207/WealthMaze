@@ -142,10 +142,10 @@ export default function RootLayout({
                   <ul className="space-y-2.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
                     <li><Link href="/sip-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">SIP Calculator</Link></li>
                     <li><Link href="/lumpsum-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Lumpsum Calculator</Link></li>
+                    <li><Link href="/xirr-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">XIRR Calculator</Link></li>
                     <li><Link href="/emi-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Loan EMI Calculator</Link></li>
                     <li><Link href="/retirement-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Retirement Calculator</Link></li>
                     <li><Link href="/cagr-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">CAGR Calculator</Link></li>
-                    <li><Link href="/income-tax-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Income Tax Calculator</Link></li>
                   </ul>
                 </div>
                 <div>
