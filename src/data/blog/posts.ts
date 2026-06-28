@@ -28,6 +28,17 @@ export const authors: Record<string, Author> = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "is-gold-a-good-investment",
+    title: "Is Gold a Good Investment? The Honest Answer Nobody Wants to Give",
+    description: "Gold underperforms equities long-term but does something more valuable — it protects investor behaviour during crashes. Here's the honest case for and against gold.",
+    publishedAt: "June 28, 2026",
+    readTime: "11 min read",
+    category: "Investing",
+    tags: ["Gold", "Investing", "Portfolio Diversification", "SGB", "ETFs", "Wealth Building"],
+    author: authors.omk,
+    relatedCalculators: ["cagr-calculator", "net-worth-calculator", "compound-interest-calculator"],
+  },
+  {
     slug: "how-to-calculate-net-worth",
     title: "How to Calculate Your Net Worth — And Why It's the Only Financial Number That Actually Matters",
     description: "Your salary measures what flows through your hands. Your net worth measures what stays. Learn how to calculate it accurately, what the benchmarks mean, and how to grow it.",
