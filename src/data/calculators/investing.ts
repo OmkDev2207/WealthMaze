@@ -1248,5 +1248,125 @@ export const investingCalculators: CalculatorConfig[] = [
       { question: "How does the savings rate affect the time to FI?", answer: "Your savings rate is the single most powerful factor. If you save 10% of your income, you must work 9 years to save for 1 year of expenses. If you save 50%, you save 1 year of expenses for every year worked, reducing the time to FI to under 17 years." },
       { question: "How do I calculate my safe withdrawal rate target?", answer: "Enter your current age, income, savings rate, accumulated savings, investment returns, and expected safe withdrawal rate to calculate the exact years needed to achieve financial independence." }
     ]
+  },
+  {
+    id: "sip-goal-planner",
+    name: "SIP Goal Planner",
+    category: "Investing",
+    description: "Calculate the exact monthly SIP needed to reach your target financial goal within your chosen timeline.",
+    seoTitle: "SIP Goal Planner — How Much to Invest to Reach Your Goal | WealthMaze",
+    seoDescription: "Enter your financial goal, timeline and return rate. Get the exact monthly investment needed to reach it. Free SIP Goal Planner with delay cost analysis.",
+    inputs: [
+      { id: "targetAmount", label: "Target Amount", type: "number", default: 500000, unit: "$", placeholder: "500,000" },
+      { id: "currentAge", label: "Your Current Age", type: "number", min: 18, max: 65, default: 30 },
+      { id: "targetAge", label: "Target Age (when you want to reach this goal)", type: "number", min: 19, max: 80, default: 48, helperText: (vals) => `You have ${Math.max(1, (vals.targetAge || 48) - (vals.currentAge || 30))} years to invest` },
+      { id: "expectedReturn", label: "Expected Annual Return (%)", type: "slider", min: 6, max: 18, step: 0.5, default: 12, unit: "%", helperText: (vals) => { const r = vals.expectedReturn || 12; if (r <= 8) return "6–8% → Conservative"; if (r <= 11) return "9–11% → Moderate"; if (r <= 14) return "12–14% → Growth"; return "15–18% → Aggressive"; } },
+      { id: "existingSavings", label: "Existing Savings Toward This Goal", type: "number", default: 0, unit: "$" },
+      { id: "annualStepUp", label: "Annual SIP Increase (%)", type: "slider", min: 0, max: 20, step: 1, default: 0, unit: "%", helperText: "Increase your monthly investment by this % every year" },
+    ],
+    outputs: [
+      { id: "totalRequiredMonthlySip", label: "Required Monthly Investment", format: "currency" },
+      { id: "targetAmountOut", label: "Target Amount", format: "currency" },
+      { id: "totalInvested", label: "Total You Will Invest", format: "currency" },
+      { id: "returnsGenerated", label: "Returns Generated", format: "currency" },
+      { id: "investmentPeriod", label: "Investment Period", unit: "years" },
+    ],
+    calculate: (inputs) => {
+      const targetAmount = Number(inputs.targetAmount) || 0;
+      const currentAge = Number(inputs.currentAge) || 30;
+      const targetAge = Number(inputs.targetAge) || 48;
+      const annualRate = Number(inputs.expectedReturn) || 12;
+      const existingSavings = Number(inputs.existingSavings) || 0;
+      const stepUpRate = (Number(inputs.annualStepUp) || 0) / 100;
+
+      const years = Math.max(1, targetAge - currentAge);
+      const monthlyRate = annualRate / 12 / 100;
+
+      // Future value of existing savings
+      const fvSavings = existingSavings * Math.pow(1 + annualRate / 100, years);
+      const adjustedGoal = Math.max(0, targetAmount - fvSavings);
+
+      // Solve for required starting monthly SIP using simulation factor
+      const solveForSip = (tenureYears: number) => {
+        if (tenureYears <= 0 || adjustedGoal <= 0) return 0;
+        let factor = 0;
+        let currentP = 1;
+        for (let yr = 1; yr <= tenureYears; yr++) {
+          for (let m = 1; m <= 12; m++) {
+            factor = (factor + currentP) * (1 + monthlyRate);
+          }
+          currentP = currentP * (1 + stepUpRate);
+        }
+        return factor > 0 ? adjustedGoal / factor : 0;
+      };
+
+      const requiredSip = solveForSip(years);
+
+      // Simulate exact portfolio growth over tenure for chartData & totals
+      let totalValue = fvSavings;
+      let totalInvested = existingSavings;
+      let currentMonthlySip = requiredSip;
+      const chartData = [];
+
+      for (let yr = 1; yr <= years; yr++) {
+        for (let m = 1; m <= 12; m++) {
+          totalValue = (totalValue + currentMonthlySip) * (1 + monthlyRate);
+          totalInvested += currentMonthlySip;
+        }
+        chartData.push({
+          name: `Yr ${yr}`,
+          "Total Invested": Math.round(totalInvested),
+          "Portfolio Value": Math.round(totalValue),
+        });
+        currentMonthlySip = currentMonthlySip * (1 + stepUpRate);
+      }
+
+      const returnsGenerated = Math.max(0, totalValue - totalInvested);
+
+      // Cost of Delay Table
+      const sipToday = Math.round(requiredSip);
+      const sip1Yr = years > 1 ? Math.round(solveForSip(years - 1)) : sipToday;
+      const sip2Yr = years > 2 ? Math.round(solveForSip(years - 2)) : sipToday;
+      const sip5Yr = years > 5 ? Math.round(solveForSip(years - 5)) : sipToday;
+
+      const formatCurr = (val: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(val);
+
+      const comparison = {
+        title: "Cost of Delay Table (Impact of Postponing Your Goal)",
+        headers: ["If You Start", "Monthly SIP Needed", "Extra Per Month"],
+        rows: [
+          ["Today", formatCurr(sipToday), "—"],
+          ["In 1 Year", formatCurr(sip1Yr), sip1Yr > sipToday ? `+${formatCurr(sip1Yr - sipToday)}` : "—"],
+          ["In 2 Years", formatCurr(sip2Yr), sip2Yr > sipToday ? `+${formatCurr(sip2Yr - sipToday)}` : "—"],
+          ["In 5 Years", formatCurr(sip5Yr), sip5Yr > sipToday ? `+${formatCurr(sip5Yr - sipToday)}` : "—"],
+        ],
+      };
+
+      return {
+        values: {
+          totalRequiredMonthlySip: Math.round(requiredSip),
+          targetAmountOut: Math.round(targetAmount),
+          totalInvested: Math.round(totalInvested),
+          returnsGenerated: Math.round(returnsGenerated),
+          investmentPeriod: years,
+        },
+        chartData,
+        comparison,
+      };
+    },
+    educationalContent: [
+      {
+        title: "How to Plan Your SIP Target Goal",
+        content: "A reverse SIP goal planner works backwards from your future financial target to determine the exact monthly contribution required today. Whether saving for early retirement, purchasing a home, or funding higher education, factoring in time horizon and expected compounding rate is essential to avoid under-saving."
+      },
+      {
+        title: "The Power of Step-Up SIP",
+        content: "Stepping up your SIP by even 5% or 10% annually allows you to start with a much smaller monthly commitment today. As your career progresses and income rises, increasing your SIP automatically accelerates your timeline to reaching financial freedom."
+      }
+    ],
+    faqs: [
+      { question: "Why does delaying by just 1 or 2 years increase my required SIP so drastically?", answer: "Compound interest relies heavily on time. When you delay starting, you lose the most explosive compounding years at the end of your investment horizon. To make up for lost compounding returns, your out-of-pocket contributions must increase exponentially." },
+      { question: "Should I include existing savings in the goal planner?", answer: "Yes! Entering existing savings reduces the fresh capital you need to contribute monthly, as your existing wealth continues compounding alongside your new SIP installments." }
+    ]
   }
 ];

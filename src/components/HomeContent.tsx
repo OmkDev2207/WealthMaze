@@ -116,10 +116,10 @@ export function HomeContent() {
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">The Power of Systematic Investment Plans (SIP)</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                A <strong>SIP calculator</strong> helps visualize how small monthly savings build massive long-term wealth. Investing ₹5,000 monthly for 20 years at an expected 12% annual return compounds to approximately ₹50 Lakhs. Crucially, the principal you contribute is only ₹12 Lakhs—the remaining ₹38 Lakhs is the result of compounding interest.
+                A <strong>SIP calculator</strong> helps visualize how small monthly savings build massive long-term wealth. Investing $500 monthly for 20 years at an expected 12% annual return compounds to approximately $500,000. Crucially, the principal you contribute is only $120,000—the remaining $380,000 is the result of compounding interest.
               </p>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                By automating monthly contributions, you benefit from Rupee Cost Averaging. During stock market dips, your fixed payment buys more mutual fund units; during market peaks, it buys fewer units. This eliminates the stressful need to predict market corrections.
+                By automating monthly contributions, you benefit from Dollar Cost Averaging. During stock market dips, your fixed payment buys more mutual fund units; during market peaks, it buys fewer units. This eliminates the stressful need to predict market corrections.
               </p>
               <div className="p-4 bg-zinc-50 dark:bg-zinc-900/60 rounded-xl border border-zinc-150 dark:border-zinc-800 text-[11px] text-zinc-500 dark:text-zinc-400 font-mono">
                 Formula: Future Value = P × [ ((1 + i)^n - 1) / i ] × (1 + i)
@@ -135,11 +135,11 @@ export function HomeContent() {
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">The Amortization Reality</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                In the early years of a 20-year home loan, your monthly EMI goes almost entirely toward paying off accumulated interest, not the principal. For a ₹50 Lakh home loan at 8.5% interest, you pay approximately ₹54 Lakhs in interest alone over 20 years—more than doubling the cost of the property.
+                In the early years of a 20-year home loan, your monthly EMI goes almost entirely toward paying off accumulated interest, not the principal. For a $250,000 home loan at 8.5% interest, you pay approximately $270,000 in interest alone over 20 years—more than doubling the cost of the property.
               </p>
               <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-500 pt-2">Unlocking Savings via Loan Prepayment</h3>
               <p className="text-xs text-zinc-550 dark:text-zinc-400 leading-relaxed">
-                By making periodic prepayments (e.g. paying one extra EMI per year, or prepaying 5% of the outstanding principal balance annually), you reduce the outstanding principal directly. Run the numbers on our <strong>loan prepayment calculator</strong> to see how making early repayments saves lakhs in interest and shaves years off the loan tenure.
+                By making periodic prepayments (e.g. paying one extra EMI per year, or prepaying 5% of the outstanding principal balance annually), you reduce the outstanding principal directly. Run the numbers on our <strong>loan prepayment calculator</strong> to see how making early repayments saves thousands in interest and shaves years off the loan tenure.
               </p>
             </article>
 

@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "About WealthMaze - Free Financial Calculators for Indian Investors",
-  description: "Learn about WealthMaze's mission to make financial planning accessible. Free SIP, EMI, tax, and retirement calculators built for Indian investors.",
+  title: "About WealthMaze - Free Financial Calculators for Global Investors",
+  description: "Learn about WealthMaze's mission to make financial planning accessible. Free SIP, EMI, tax, and retirement calculators built for global investors.",
   alternates: { canonical: `${siteConfig.url}/about` },
   openGraph: {
     title: "About WealthMaze - Free Financial Calculators",

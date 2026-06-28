@@ -8,6 +8,8 @@ export interface CalculatorInput {
   step?: number;
   default: number;
   unit?: string;
+  placeholder?: string;
+  helperText?: string | ((values: Record<string, any>) => string);
   options?: { label: string; value: number }[];
 }
 

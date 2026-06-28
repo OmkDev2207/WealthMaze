@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "WealthMaze – Free Financial Calculators for Indian Investors",
+        alt: "WealthMaze – Free Financial Calculators for Global Investors",
       },
     ],
   },

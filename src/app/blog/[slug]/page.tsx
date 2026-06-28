@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           "@type": "Blog",
           "@id": `${siteConfig.url}/blog`,
           "name": "WealthMaze Blog",
-          "description": "Expert guides on financial calculators, investment planning, and personal finance for Indian investors.",
+          "description": "Expert guides on financial calculators, investment planning, and personal finance for global investors.",
         },
       },
       {

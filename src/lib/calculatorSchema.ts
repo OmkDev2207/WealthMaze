@@ -81,13 +81,13 @@ export function generateCalculatorSchema(input: CalculatorSchemaInput): string {
   const description = customDescription ?? config.seoDescription;
   const pageUrl     = `${siteUrl}/${slug}`;
   const subcategory = CATEGORY_TO_SUBCATEGORY[config.category] ?? "Financial Calculator";
-  const audience    = CATEGORY_TO_AUDIENCE[config.category] ?? "Indian investors and financial planners";
+  const audience    = CATEGORY_TO_AUDIENCE[config.category] ?? "Global investors and financial planners";
   const today       = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
   // Derive keywords from name + category + common finance terms
   const keywords = [
     name,
-    `${name} India`,
+    config.isIndiaSpecific ? `${name} India` : `${name} online`,
     config.category,
     subcategory,
     "free online calculator",

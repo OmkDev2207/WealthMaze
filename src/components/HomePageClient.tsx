@@ -36,6 +36,7 @@ const semanticKeywordsMap: Record<string, string[]> = {
   "xirr-calculator": ["xirr", "irr", "internal rate of return", "sip returns", "mutual fund returns", "cash flow", "money"],
   "swp-calculator": ["swp", "systematic withdrawal plan", "pension", "monthly income", "retirement", "mutual fund", "money"],
   "goal-based-investment-calculator": ["goal", "target wealth", "plan savings", "future cost", "house", "car", "education", "money"],
+  "sip-goal-planner": ["sip goal", "goal planner", "target amount", "reverse sip", "cost of delay", "monthly investment needed", "money", "investing"],
   "retirement-calculator": ["retirement", "pension", "old age savings", "fire", "retirement corpus", "money", "savings"],
   "fire-calculator": ["fire", "financial independence retire early", "financial freedom", "retirement", "passive income", "money"],
   "net-worth-calculator": ["net worth", "assets", "liabilities", "wealth", "debt", "balance sheet", "money", "property", "house"],

@@ -288,7 +288,7 @@ export function MazeAssist() {
 
       // Keyword matchers for calculators mapping
       const keywordMap: Record<string, string[]> = {
-        sip: ["sip-calculator", "mutual-fund-return-calculator", "gold-sip-calculator"],
+        sip: ["sip-calculator", "sip-goal-planner", "mutual-fund-return-calculator", "gold-sip-calculator"],
         lump: ["lumpsum-calculator", "investment-growth-calculator"],
         cagr: ["cagr-calculator"],
         xirr: ["xirr-calculator"],
@@ -305,7 +305,8 @@ export function MazeAssist() {
         retire: ["retirement-calculator", "fire-calculator", "financial-freedom-calculator"],
         fire: ["fire-calculator", "financial-independence-calculator"],
         gold: ["gold-investment-calculator", "gold-sip-calculator"],
-        saving: ["savings-calculator", "goal-based-investment-calculator"],
+        saving: ["savings-calculator", "sip-goal-planner", "goal-based-investment-calculator"],
+        goal: ["sip-goal-planner", "goal-based-investment-calculator"],
         inflation: ["inflation-calculator", "inflation-impact-calculator"]
       };
 

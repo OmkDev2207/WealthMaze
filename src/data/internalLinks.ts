@@ -67,6 +67,11 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
     relatedPosts: ["sip-for-retirement", "compounding-explained", "beginner-investing-guide", "saving-first-1-lakh"],
   },
 
+  "sip-goal-planner": {
+    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "compound-interest-calculator", "financial-freedom-calculator"],
+    relatedPosts: ["what-nobody-tells-you-about-your-first-salary", "salary-is-not-your-wealth", "why-most-people-retire-poor"],
+  },
+
   "portfolio-return-calculator": {
     relatedCalculators: ["xirr-calculator", "cagr-calculator", "stock-return-calculator", "net-worth-calculator"],
     relatedPosts: ["asset-allocation", "investing-psychology", "cagr-explained", "understanding-market-volatility"],

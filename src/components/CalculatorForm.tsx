@@ -49,35 +49,79 @@ export function CalculatorForm({ inputs, values, onChange, isIndiaSpecific = fal
           );
         }
 
+        const isCurrencyUnit = input.unit === "$" || input.unit === "₹" || input.unit === "currency";
+        const helperTextStr = typeof input.helperText === "function" ? input.helperText(values) : input.helperText;
+
+        if (input.type === "number") {
+          return (
+            <div key={input.id} className="space-y-1.5">
+              <div className="flex justify-between items-center gap-2 sm:gap-4">
+                <label htmlFor={`input-num-${input.id}`} className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 flex-1 min-w-0 py-1">
+                  {input.label}
+                </label>
+                <div className="relative flex items-center shrink-0">
+                  {isCurrencyUnit && (
+                    <span className="absolute left-3 text-sm font-medium text-zinc-400">{symbol}</span>
+                  )}
+                  <input
+                    id={`input-num-${input.id}`}
+                    type="text"
+                    placeholder={input.placeholder}
+                    value={
+                      isCurrencyUnit && value !== 0
+                        ? new Intl.NumberFormat(locale).format(value)
+                        : value
+                    }
+                    onChange={(e) => handleInputChange(input.id, e.target.value)}
+                    className={`w-36 sm:w-44 h-11 text-right pr-4 font-bold text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all ${
+                      isCurrencyUnit ? (symbol.length > 2 ? "pl-11" : symbol.length > 1 ? "pl-9" : "pl-7") : "pl-4"
+                    }`}
+                  />
+                  {!isCurrencyUnit && input.unit && (
+                    <span className="ml-1.5 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
+                      {input.unit}
+                    </span>
+                  )}
+                </div>
+              </div>
+              {helperTextStr && (
+                <p className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold leading-relaxed">
+                  {helperTextStr}
+                </p>
+              )}
+            </div>
+          );
+        }
+
         // Default slider/number hybrid inputs
         const min = input.min ?? 0;
         const max = input.max ?? 100000000;
         const step = input.step ?? 1;
 
         return (
-          <div key={input.id} className="space-y-3">
+          <div key={input.id} className="space-y-2">
             <div className="flex justify-between items-center gap-2 sm:gap-4">
               <label htmlFor={`input-num-${input.id}`} className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 flex-1 min-w-0 py-1">
                 {input.label}
               </label>
               <div className="relative flex items-center shrink-0">
-                {input.unit === "₹" && (
+                {isCurrencyUnit && (
                   <span className="absolute left-3 text-sm font-medium text-zinc-400">{symbol}</span>
                 )}
                 <input
                   id={`input-num-${input.id}`}
                   type="text"
                   value={
-                    input.unit === "₹"
+                    isCurrencyUnit
                       ? new Intl.NumberFormat(locale).format(value)
                       : value
                   }
                   onChange={(e) => handleInputChange(input.id, e.target.value)}
                   className={`w-32 sm:w-36 h-11 text-right pr-4 font-bold text-zinc-900 dark:text-zinc-100 bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all ${
-                    input.unit === "₹" ? (symbol.length > 2 ? "pl-11" : symbol.length > 1 ? "pl-9" : "pl-7") : "pl-4"
+                    isCurrencyUnit ? (symbol.length > 2 ? "pl-11" : symbol.length > 1 ? "pl-9" : "pl-7") : "pl-4"
                   }`}
                 />
-                {input.unit !== "₹" && input.unit && (
+                {!isCurrencyUnit && input.unit && (
                   <span className="ml-1.5 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
                     {input.unit}
                   </span>
@@ -85,7 +129,7 @@ export function CalculatorForm({ inputs, values, onChange, isIndiaSpecific = fal
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 pt-1">
               <input
                 type="range"
                 id={`input-slide-${input.id}`}
@@ -98,7 +142,11 @@ export function CalculatorForm({ inputs, values, onChange, isIndiaSpecific = fal
                 className="w-full h-1.5 bg-zinc-150 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-500 dark:accent-emerald-400 focus:outline-none"
               />
             </div>
-
+            {helperTextStr && (
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium leading-relaxed pt-0.5">
+                {helperTextStr}
+              </p>
+            )}
           </div>
         );
       })}

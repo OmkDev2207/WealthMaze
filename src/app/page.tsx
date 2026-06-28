@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "WealthMaze – Free Financial Calculators for Indian Investors",
+        alt: "WealthMaze – Free Financial Calculators for Global Investors",
       },
     ],
   },
@@ -46,7 +46,7 @@ const organizationSchema = JSON.stringify({
         "url": `${siteConfig.url}/favicon.ico`,
         "caption": "WealthMaze - Free Financial Calculators",
       },
-      "description": "WealthMaze provides free, accurate financial calculators for SIP, EMI, income tax, retirement, CAGR, and investment planning — built for Indian investors.",
+      "description": "WealthMaze provides free, accurate financial calculators for SIP, EMI, income tax, retirement, CAGR, and investment planning — built for global investors.",
       "sameAs": [],
     },
     {
@@ -54,7 +54,7 @@ const organizationSchema = JSON.stringify({
       "@id": `${siteConfig.url}/#website`,
       "url": siteConfig.url,
       "name": "WealthMaze",
-      "description": "Free financial calculators and investment planning tools for Indian investors.",
+      "description": "Free financial calculators and investment planning tools for global investors.",
       "publisher": { "@id": `${siteConfig.url}/#organization` },
       "potentialAction": {
         "@type": "SearchAction",
