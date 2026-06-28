@@ -188,7 +188,7 @@ A 12% CAGR you can hold for 15 years beats a 16% CAGR you abandon after year thr
 
 ## How to Use the WealthMaze CAGR Calculator
 
-The WealthMaze CAGR Calculator at [wealthmaze.in/cagr-calculator](https://wealthmaze.in/cagr-calculator) makes these calculations instant — no formula memory required.
+The WealthMaze CAGR Calculator at [wealthmaze.in/cagr-calculator](/cagr-calculator) makes these calculations instant — no formula memory required.
 
 **Use case 1 — Evaluate a past investment**
 Enter your purchase price as the starting value, today's market value as the ending value, and the number of years held. The calculator shows your CAGR instantly. Compare it to the S&P 500 or Nifty 50 CAGR over the same period to assess whether you outperformed, matched, or underperformed the market.
@@ -215,6 +215,6 @@ Used naively — accepting a single period CAGR from a marketing document withou
 
 Know the difference. Run the numbers yourself.
 
-*Calculate CAGR for any investment instantly with the [WealthMaze CAGR Calculator](https://wealthmaze.in/cagr-calculator). For investments with multiple cash flows like monthly SIPs, use the [XIRR Calculator](https://wealthmaze.in/xirr-calculator) instead — it gives you the time-weighted return that CAGR cannot. Compare investment scenarios with the [Investment Growth Calculator](https://wealthmaze.in/investment-growth-calculator).*
+*Calculate CAGR for any investment instantly with the [WealthMaze CAGR Calculator](/cagr-calculator). For investments with multiple cash flows like monthly SIPs, use the [XIRR Calculator](/xirr-calculator) instead — it gives you the time-weighted return that CAGR cannot. Compare investment scenarios with the [Investment Growth Calculator](/investment-growth-calculator).*
 
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Historical market returns cited are approximate and based on publicly available index data. Past performance does not guarantee future results. Please consult a qualified financial advisor before making investment decisions.*
