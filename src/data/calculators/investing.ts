@@ -1368,5 +1368,111 @@ export const investingCalculators: CalculatorConfig[] = [
       { question: "Why does delaying by just 1 or 2 years increase my required SIP so drastically?", answer: "Compound interest relies heavily on time. When you delay starting, you lose the most explosive compounding years at the end of your investment horizon. To make up for lost compounding returns, your out-of-pocket contributions must increase exponentially." },
       { question: "Should I include existing savings in the goal planner?", answer: "Yes! Entering existing savings reduces the fresh capital you need to contribute monthly, as your existing wealth continues compounding alongside your new SIP installments." }
     ]
+  },
+  {
+    id: "financial-goal-planner",
+    name: "Financial Goal Planner ⭐⭐⭐⭐⭐",
+    category: "Investing",
+    description: "Map out your financial target, compare projected returns against your goal, and discover the exact monthly investment needed.",
+    seoTitle: "Financial Goal Planner — Calculate Required Monthly Savings & Progress | WealthMaze",
+    seoDescription: "Enter current savings, monthly investment, target amount, and horizon to check if you are on track to achieve your financial goal.",
+    inputs: [
+      { id: "currentSavings", label: "Current Savings", type: "number", default: 100000, unit: "$", placeholder: "100,000", helperText: "Your existing lumpsum wealth dedicated to this goal" },
+      { id: "monthlyInvestment", label: "Monthly Investment", type: "number", default: 15000, unit: "$", placeholder: "15,000", helperText: "How much you currently invest every month" },
+      { id: "targetAmount", label: "Target Amount", type: "number", default: 5000000, unit: "$", placeholder: "5,000,000", helperText: "The total corpus you want to achieve" },
+      { id: "targetYears", label: "Target Year (Time Horizon)", type: "slider", min: 1, max: 40, step: 1, default: 10, unit: " yrs", helperText: (vals) => `Goal deadline in ${vals.targetYears || 10} years` },
+      { id: "expectedReturn", label: "Expected Annual Return (%)", type: "slider", min: 4, max: 20, step: 0.5, default: 12, unit: "%", helperText: (vals) => { const r = vals.expectedReturn || 12; if (r <= 8) return "6–8% → Debt / Conservative"; if (r <= 12) return "9–12% → Moderate Equity / Balanced"; return "13–20% → Aggressive Equity"; } },
+    ],
+    outputs: [
+      { id: "projectedCorpus", label: "Projected Future Corpus", format: "currency" },
+      { id: "requiredMonthly", label: "Required Monthly Investment", format: "currency" },
+      { id: "surplusDeficit", label: "Expected Surplus / Deficit", format: "currency" },
+    ],
+    calculate: (vals) => {
+      const currentSavings = Number(vals.currentSavings || 0);
+      const monthlyInvestment = Number(vals.monthlyInvestment || 0);
+      const targetAmount = Number(vals.targetAmount || 0);
+      const years = Number(vals.targetYears || 1);
+      const expectedReturn = Number(vals.expectedReturn || 12);
+
+      const monthlyRate = expectedReturn / 100 / 12;
+      const totalMonths = years * 12;
+
+      const fvSavings = currentSavings * Math.pow(1 + monthlyRate, totalMonths);
+
+      let fvSip = 0;
+      if (monthlyRate > 0) {
+        fvSip = monthlyInvestment * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
+      } else {
+        fvSip = monthlyInvestment * totalMonths;
+      }
+
+      const projectedCorpus = Math.round(fvSavings + fvSip);
+      const surplusDeficit = Math.round(projectedCorpus - targetAmount);
+
+      const neededFromSip = Math.max(0, targetAmount - fvSavings);
+      let requiredMonthly = 0;
+      if (neededFromSip > 0) {
+        if (monthlyRate > 0) {
+          const sipFactor = ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
+          requiredMonthly = Math.round(neededFromSip / sipFactor);
+        } else {
+          requiredMonthly = Math.round(neededFromSip / totalMonths);
+        }
+      }
+
+      const chartData = [];
+      for (let y = 0; y <= years; y++) {
+        const m = y * 12;
+        const fvSavYr = currentSavings * Math.pow(1 + monthlyRate, m);
+        let fvSipYr = 0;
+        if (m > 0) {
+          if (monthlyRate > 0) {
+            fvSipYr = monthlyInvestment * ((Math.pow(1 + monthlyRate, m) - 1) / monthlyRate) * (1 + monthlyRate);
+          } else {
+            fvSipYr = monthlyInvestment * m;
+          }
+        }
+        chartData.push({
+          year: `Year ${y}`,
+          "Projected Corpus": Math.round(fvSavYr + fvSipYr),
+          "Target Goal": targetAmount,
+        });
+      }
+
+      const comparison = {
+        title: "Current Track vs Target Goal Analysis",
+        headers: ["Metric", "Current Trajectory", "Required for Goal"],
+        rows: [
+          ["Monthly Investment", Math.round(monthlyInvestment), Math.round(requiredMonthly)],
+          ["Expected Maturity Value", projectedCorpus, targetAmount],
+          ["Surplus / Deficit Status", surplusDeficit >= 0 ? `+${surplusDeficit}` : `${surplusDeficit}`, surplusDeficit >= 0 ? "On Track" : "Shortfall"],
+        ],
+      };
+
+      return {
+        values: {
+          projectedCorpus,
+          requiredMonthly,
+          surplusDeficit,
+        },
+        chartData,
+        comparison,
+      };
+    },
+    educationalContent: [
+      {
+        title: "How Financial Goal Planning Works",
+        content: "Achieving major financial milestones requires combining existing lump sum wealth with disciplined monthly contributions. By calculating the expected compound interest growth over your time horizon, you can see instantly whether your current investment pace is sufficient or if an adjustment is needed."
+      },
+      {
+        title: "Which Calculators to Use Next",
+        content: "Once you know your required monthly savings rate, explore these complementary tools to refine your strategy:\n\n- **SIP Calculator**: Model different monthly step-up contribution rates.\n- **Lumpsum Calculator**: See how adding an initial lump sum boost reduces your monthly burden.\n- **Retirement Calculator**: Align this specific milestone with your long-term FIRE and pension goals.\n- **Inflation Calculator**: Ensure your target goal amount accounts for future purchasing power erosion."
+      }
+    ],
+    faqs: [
+      { question: "What if my Expected Surplus / Deficit is negative?", answer: "A negative deficit means your current savings and monthly investments will fall short of the target corpus by that exact amount. To get back on track, you can either increase your monthly investment to match the 'Required Monthly Investment' output, extend your target timeline, or aim for a slightly higher expected return asset class." },
+      { question: "Why should I check the Inflation Calculator next?", answer: "A goal that costs $500,000 today will cost significantly more in 10 or 15 years due to inflation. Using the Inflation Calculator helps you adjust your target corpus upwards so you don't underestimate your future expense needs." }
+    ]
   }
 ];

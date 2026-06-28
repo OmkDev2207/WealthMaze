@@ -36,12 +36,12 @@ export interface BlogLinkData {
 export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "sip-calculator": {
-    relatedCalculators: ["lumpsum-calculator", "mutual-fund-return-calculator", "sip-comparison-calculator", "goal-based-investment-calculator"],
+    relatedCalculators: ["financial-goal-planner", "lumpsum-calculator", "mutual-fund-return-calculator", "sip-comparison-calculator", "goal-based-investment-calculator"],
     relatedPosts: ["what-is-sip", "power-of-starting-early", "small-financial-decisions-compound", "compounding-explained", "sip-vs-fd", "sip-mistakes", "sip-for-retirement", "sip-for-students", "beginner-investing-guide", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
   },
 
   "lumpsum-calculator": {
-    relatedCalculators: ["sip-calculator", "cagr-calculator", "mutual-fund-return-calculator", "xirr-calculator"],
+    relatedCalculators: ["financial-goal-planner", "sip-calculator", "cagr-calculator", "mutual-fund-return-calculator", "xirr-calculator"],
     relatedPosts: ["compounding-explained", "cagr-explained", "sip-vs-fd", "beginner-investing-guide"],
   },
 
@@ -75,6 +75,11 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
     relatedPosts: ["what-nobody-tells-you-about-your-first-salary", "salary-is-not-your-wealth", "why-most-people-retire-poor"],
   },
 
+  "financial-goal-planner": {
+    relatedCalculators: ["sip-calculator", "lumpsum-calculator", "retirement-calculator", "inflation-impact-calculator"],
+    relatedPosts: ["power-of-starting-early", "small-financial-decisions-compound", "compounding-explained", "beginner-investing-guide"],
+  },
+
   "portfolio-return-calculator": {
     relatedCalculators: ["xirr-calculator", "cagr-calculator", "stock-return-calculator", "net-worth-calculator"],
     relatedPosts: ["asset-allocation", "investing-psychology", "cagr-explained", "understanding-market-volatility"],
@@ -82,7 +87,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   // ─── Retirement ────────────────────────────────────────────────────────────
   "retirement-calculator": {
-    relatedCalculators: ["fire-calculator", "sip-calculator", "goal-based-investment-calculator", "nps-calculator"],
+    relatedCalculators: ["financial-goal-planner", "fire-calculator", "sip-calculator", "goal-based-investment-calculator", "nps-calculator"],
     relatedPosts: ["sip-for-retirement", "compounding-explained", "asset-allocation"],
   },
 
@@ -188,7 +193,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   // ─── Lifestyle ────────────────────────────────────────────────────────────────
   "inflation-impact-calculator": {
-    relatedCalculators: ["goal-based-investment-calculator", "fire-calculator", "retirement-calculator"],
+    relatedCalculators: ["financial-goal-planner", "goal-based-investment-calculator", "fire-calculator", "retirement-calculator"],
     relatedPosts: ["asset-allocation", "sip-for-retirement", "compounding-explained"],
   },
 
