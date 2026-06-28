@@ -28,7 +28,6 @@ XIRR does. It accounts for the exact date of every single transaction — every 
 
 This is why XIRR is the industry standard for evaluating mutual fund returns, portfolio performance, and any investment involving multiple cash flows over time.
 
----
 
 ## XIRR vs CAGR vs IRR — The Differences That Matter
 
@@ -47,7 +46,6 @@ For anyone investing through a monthly plan — whether a US index fund contribu
 
 The reason most retail investors don't use it is that calculating it manually requires an iterative mathematical process that cannot be solved with a simple formula — it requires software or an online calculator to compute. Which is exactly what the WealthMaze XIRR Calculator is built for.
 
----
 
 ## A Real Example: Why XIRR Gives You a Different Answer Than CAGR
 
@@ -86,7 +84,6 @@ Running Alex's transactions through the WealthMaze XIRR Calculator produces an X
 
 That 11.2% is the number Alex should compare against his benchmark index. If the S&P 500 returned 10% over the same period, Alex's portfolio outperformed. If it returned 13%, his portfolio underperformed. XIRR gives him the apples-to-apples comparison that simple return and CAGR cannot provide.
 
----
 
 ## How to Use the WealthMaze XIRR Calculator
 
@@ -127,7 +124,6 @@ A positive XIRR means your investment generated a positive annualised return. A 
 - Compare two different investments on equal footing regardless of their timing
 - Assess whether an investment strategy is working relative to alternatives
 
----
 
 ## What a Good XIRR Actually Looks Like
 
@@ -146,7 +142,6 @@ Context matters when interpreting your XIRR result. Here is a general framework 
 
 **Comparing across asset classes:** XIRR allows you to compare an equity portfolio with a bond portfolio on equal footing — something CAGR and simple return cannot do reliably when investment patterns differ. If your equity portfolio shows XIRR of 11% and your bond portfolio shows 5%, you have a clear, time-adjusted basis for evaluating the trade-off between risk and return across your holdings.
 
----
 
 ## Common Mistakes When Calculating XIRR
 
@@ -160,7 +155,6 @@ Context matters when interpreting your XIRR result. Here is a general framework 
 
 **Comparing XIRR to a benchmark that uses a different calculation method.** When benchmarking your XIRR against an index, make sure the index return you're comparing is also on an annualized basis over the same period. Comparing your XIRR to a total cumulative index return produces an unfair comparison.
 
----
 
 ## XIRR in Excel — For Those Who Prefer Spreadsheets
 
@@ -196,7 +190,6 @@ Excel will return the XIRR as a decimal — multiply by 100 or format as percent
 
 The WealthMaze XIRR Calculator does all of this automatically — no spreadsheet setup required, no formula errors, no date format issues. For investors who check returns occasionally rather than maintaining ongoing spreadsheets, the online calculator is faster and simpler.
 
----
 
 ## Why XIRR Matters More Than You Think
 
@@ -210,7 +203,6 @@ The goal of measuring returns accurately is not mathematical precision for its o
 
 XIRR gives you that clarity.
 
----
 
 *Calculate your investment's true annualized return with the [WealthMaze XIRR Calculator](/xirr-calculator). Compare returns across different investments using the [CAGR Calculator](/cagr-calculator) for lumpsum investments. Model future portfolio growth with the [Compound Interest Calculator](/compound-interest-calculator).*
 

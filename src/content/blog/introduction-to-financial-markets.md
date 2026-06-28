@@ -10,7 +10,6 @@ But here is the truth: financial markets are just a big matching system. On one 
 
 Keeping all your money in a savings bank account is a silent wealth killer. With inflation running at 5-6% and savings accounts paying only 3%, your money loses purchasing power every single day. Financial markets are the engine that helps you outrun inflation. If you don't understand how these assets work, you will either take too much risk and lose your shirts, or take too little risk and watch your savings slowly erode. 
 
----
 
 ## The Three Main Asset Classes
 
@@ -31,7 +30,6 @@ For most beginners, buying individual stocks or bonds is too time-consuming and 
 - **How you make money:** By owning a basket of dozens of different stocks or bonds. If a few companies in the basket do poorly, the others offset the loss.
 - **The Risk:** Depends on what the fund invests in. An equity mutual fund is volatile, while a debt mutual fund is relatively stable.
 
----
 
 ## Real-World Example: Alex's $200 Experiment
 
@@ -54,7 +52,6 @@ Alex's $200 Investment
 - **Asset 3: Mutual Fund ($65)**
   Alex invests in an index fund tracking the top 50 companies in the country. Since the overall economy grew steadily, the fund grew by 12%. The $65 is now worth **$73**. No need to worry about a single company failing because the fund spread the risk across 50 different businesses.
 
----
 
 ## Common Mistakes I See People Make
 
@@ -67,7 +64,6 @@ When the stock market is booming, people get greedy and put 100% of their money 
 ### 3. Buying Complex Products
 Stay away from structured notes, hybrid insurance plans, and derivatives. If you cannot explain how a financial product makes money to a 10-year-old in two sentences, do not put your money in it.
 
----
 
 ## Key Takeaways
 
@@ -75,7 +71,6 @@ Stay away from structured notes, hybrid insurance plans, and derivatives. If you
 - **Diversification is your only free lunch:** Don't put all your eggs in one basket. Spreading your money across different companies and asset classes reduces risk without destroying returns.
 - **Focus on consistency:** Investing a small amount every month is far better than waiting for the perfect time to invest a lump sum.
 
----
 
 ## Frequently Asked Questions
 
@@ -97,6 +92,5 @@ Dividends are a portion of a company's profits that its board of directors decid
 ### 6. Do I need a lot of money to start investing in financial markets?
 No. Today, you can start investing in mutual funds with as little as $1 or $6 per month through a Systematic Investment Plan (SIP). You do not need to be wealthy to start; you need to start to become wealthy.
 
----
 
 Understanding financial markets is like learning to drive. It feels intimidating when you first get behind the wheel, but once you learn the basic controls—accelerating with equities, braking with debt, and staying in your lane with mutual funds—it becomes second nature. Start small, build your confidence, and let compounding do the heavy lifting.

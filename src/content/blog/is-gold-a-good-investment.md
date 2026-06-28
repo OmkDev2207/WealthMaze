@@ -16,7 +16,6 @@ If you are asking gold to build wealth the way equities build wealth — compoun
 
 The mistake most investors make is not owning gold or avoiding it. It is misunderstanding which job gold is qualified for.
 
----
 
 ## What Gold Actually Does — And What It Doesn't
 
@@ -30,7 +29,6 @@ Gold creates nothing. Its value is determined entirely by what other people are 
 
 This is not a criticism. It is a description. And understanding it changes everything about how to think about gold's role in a portfolio.
 
----
 
 ## The Historical Return Reality
 
@@ -48,7 +46,6 @@ Over the very long term, gold has approximately kept pace with inflation. Not be
 
 This is the honest historical picture. And it actually makes gold more useful, not less — once you understand what it means.
 
----
 
 ## The Psychological Argument — And Why It's More Important Than the Math
 
@@ -70,7 +67,6 @@ Alex holds a portfolio that is 90% equities and 10% gold. During the 2020 crash,
 
 The 10% gold allocation cost Alex some returns during the bull market. It potentially saved him from a catastrophic behavioural mistake during the crash. The net benefit is real and significant — even if it never appears in a simple return calculation.
 
----
 
 ## Gold as Portfolio Diversification — The Correlation Argument
 
@@ -88,7 +84,6 @@ For this purpose, the research generally supports a gold allocation of 5% to 15%
 
 The 10% allocation is a reasonable middle ground that has held up across multiple market cycles and academic studies.
 
----
 
 ## Gold in Times of Crisis — The Historic Security Argument
 
@@ -104,7 +99,6 @@ But gold is not an asset you hold for normal times. It is an asset you hold for 
 
 The countries and individuals who held gold through the 2008 financial crisis, through COVID-19, through the 2022 inflation surge, through geopolitical disruptions — they were not paranoid preppers. They were diversified investors who understood that the modern financial system, for all its sophistication, operates on trust. And trust is a fragile foundation during extreme stress.
 
----
 
 ## The Forms of Gold — Not All Are Equal
 
@@ -134,7 +128,6 @@ The combination of gold price exposure plus 2.5% annual interest plus tax-free m
 
 Owning shares of gold mining companies provides leveraged exposure to gold prices — when gold rises, mining companies often rise more. But mining stocks also carry equity risk independent of gold prices: management quality, operational issues, geopolitical risks in mining regions, and cost structures all affect returns independently of the gold price. For most investors seeking gold's diversification properties, mining stocks add complexity without proportional benefit.
 
----
 
 ## How Much Gold — The Allocation Question
 
@@ -150,7 +143,6 @@ The right gold allocation depends on your investment horizon, risk tolerance, an
 
 The allocation should also reflect your life stage. A 25-year-old with 35 years of investment runway can afford minimal gold — the equity compounding opportunity cost of holding too much gold is highest when you are young and the time horizon is long. A 55-year-old approaching retirement has less runway to recover from a catastrophic equity crash and benefits more from the stability gold provides.
 
----
 
 ## The Balanced View
 
@@ -164,6 +156,5 @@ Own it in the right form. Own it in the right proportion. And own it for the rig
 
 That is what five thousand years of history says gold is for. And that is a good enough reason to give it a place in your portfolio.
 
----
 
 *Compare gold's historical returns against equity and other asset classes using WealthMaze's [CAGR Calculator](/cagr-calculator). Calculate how a gold allocation affects your overall portfolio with the [Net Worth Calculator](/net-worth-calculator). Model your long-term wealth building with the [Compound Interest Calculator](/compound-interest-calculator).*

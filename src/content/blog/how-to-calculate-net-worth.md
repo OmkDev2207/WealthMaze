@@ -28,7 +28,6 @@ On the liability side, people tend to undercount. They forget about the remainin
 
 An accurate net worth calculation requires honesty on both sides. The WealthMaze Net Worth Calculator walks you through each category systematically — ensuring nothing gets overlooked, overcounted, or conveniently forgotten.
 
----
 
 ## Assets: What to Include and What Not To
 
@@ -66,7 +65,6 @@ These are assets you can convert to cash quickly without penalty or significant 
 - Future expected income (your salary is income, not an asset — it only becomes part of net worth once you save or invest it)
 - The value of your education or skills (human capital is real but not included in standard net worth calculations)
 
----
 
 ## Liabilities: The Side People Undercount
 
@@ -87,7 +85,6 @@ Liabilities are every financial obligation you currently owe. Be thorough here �
 
 **The honest test:** If someone demanded payment from you today, would you have to pay this? If yes — it is a liability.
 
----
 
 ## How to Use the WealthMaze Net Worth Calculator
 
@@ -127,7 +124,6 @@ The calculator displays:
 
 Write down today's net worth and the date. Set a calendar reminder to recalculate in 90 days. The single calculation tells you where you are. The trend over time tells you whether you are moving in the right direction.
 
----
 
 ## What Your Net Worth Number Actually Means
 
@@ -147,7 +143,6 @@ Calculate the ratio of your net worth to your annual income. A rough benchmark: 
 
 The direction matters more than the absolute number at any given moment. A net worth growing by $500 to $1,000 per month — through debt paydown, investment contributions, and asset appreciation — is financial progress regardless of whether the starting number is positive or negative. Track the monthly change as closely as you track the total.
 
----
 
 ## The Two Levers That Move Your Net Worth
 
@@ -169,7 +164,6 @@ Third, invest consistently into appreciating assets — index funds, retirement 
 
 Fourth, pay down moderate-rate debt (mortgages, student loans below 6-7%) over time, while continuing to invest. At these interest rates, the math often favors investing over aggressive debt paydown — but this depends on individual circumstances and risk tolerance.
 
----
 
 ## Net Worth Benchmarks by Age — A Reality Check
 
@@ -189,7 +183,6 @@ First, the growth from under-35 to 65-74 is approximately 10x — driven almost 
 
 Second, the median figures are modest. A 65-year-old with $410,000 in net worth, generating 4% annually in retirement income, receives approximately $16,400 per year — well below what most people need for a comfortable retirement. This is the mathematical reality of why starting early and investing consistently matters so significantly.
 
----
 
 ## The Most Important Thing Net Worth Reveals
 
@@ -207,7 +200,6 @@ Calculate your net worth today. Track it quarterly. Make every significant finan
 
 That discipline, sustained over time, is the entire strategy.
 
----
 
 *Calculate your net worth right now with the [WealthMaze Net Worth Calculator](/net-worth-calculator). Track your wealth building progress with the [SIP Calculator](/sip-calculator) — see how consistent monthly investment grows your asset column over 10, 20, and 30 years. Use the [Financial Freedom Calculator](/financial-freedom-calculator) to find out how large your net worth needs to be to fund your retirement.*
 

@@ -76,7 +76,9 @@ export default async function BlogPostPage({ params }: PageProps) {
   let markdownContent = "";
   try {
     const filePath = path.join(process.cwd(), "src/content/blog", `${slug}.md`);
-    markdownContent = fs.readFileSync(filePath, "utf8");
+    const rawContent = fs.readFileSync(filePath, "utf8");
+    const withoutFm = rawContent.replace(/^---[\s\S]*?---\r?\n*/, "");
+    markdownContent = withoutFm.replace(/^[ \t]*---[ \t]*$/gm, "");
   } catch (err) {
     console.error("Failed to read markdown file:", err);
     markdownContent = "Article content is currently unavailable. Please try again later.";
@@ -88,7 +90,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     .map((s) => getPostBySlug(s))
     .filter((p) => p !== undefined && p.slug !== post.slug) as typeof blogPosts;
 
-  const relatedCalcIds = getRelatedCalculatorsForBlog(post.slug, 3);
+  const relatedCalcIds = getRelatedCalculatorsForBlog(post.slug, 5);
   // Serialize to plain objects — removes calculate() function to avoid Client Component error
   const graphRelatedCalcs = relatedCalcIds
     .map((id) => getCalculatorById(id))
@@ -265,6 +267,17 @@ export default async function BlogPostPage({ params }: PageProps) {
                   ))}
                 </div>
               )}
+
+              {/* Bottom Related Content grid for internal linking architecture */}
+              <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+                <RelatedContent
+                  calculators={graphRelatedCalcs}
+                  posts={graphRelatedPosts}
+                  calculatorHeading="Try These Related Calculators"
+                  postHeading="Further Reading & Related Articles"
+                  layout="grid"
+                />
+              </div>
             </main>
 
             {/* Sidebar with Related Content via link graph */}

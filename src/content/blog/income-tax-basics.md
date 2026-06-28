@@ -10,7 +10,6 @@ Taxation is one of those subjects we are never taught in school, yet it affects 
 
 Paying tax is a civic duty, but paying more than you legally owe is just bad planning. If you don't understand the basics, you cannot plan your investments. You will end up making rushed decisions in March, buying useless insurance policies just to save tax, or worse, getting a warning letter from the tax department for failing to declare interest income. Learning the basics puts you in control of your earnings.
 
----
 
 ## Understanding the Key Terms
 
@@ -42,7 +41,6 @@ If you earn ₹7,00,000, you don't pay 10% on the entire ₹7,00,000. You pay:
 - 10% on the remaining ₹1,00,000 = ₹10,000
 - **Total Tax:** ₹25,000.
 
----
 
 ## Real-World Example: Rahul's Tax Calculation
 
@@ -66,7 +64,6 @@ Let's look at Rahul, a 26-year-old software engineer earning a gross package of 
 
 By spending a few hours planning his investments, Rahul saves **₹36,000** in tax. That is money he can invest for his future instead of giving it away.
 
----
 
 ## Common Mistakes I See People Make
 
@@ -79,7 +76,6 @@ Many people think interest earned on savings accounts and fixed deposits is tax-
 ### 3. Confusing Tax Exemptions with Deductions
 Exemptions are parts of your salary (like HRA or LTA) that are not taxed at all. Deductions are investments or expenses (like PPF, ELSS, or home loan interest) that you subtract from your total income to lower your tax liability. Knowing the difference helps you plan your salary structure.
 
----
 
 ## Key Takeaways
 
@@ -87,7 +83,6 @@ Exemptions are parts of your salary (like HRA or LTA) that are not taxed at all.
 - **Understand the regimes:** Choose between the Old and New Tax Regimes based on whether you want to invest to save tax or keep your investments simple.
 - **Invest early:** Start your ELSS or PPF investments in April, at the start of the financial year, to let your money compound longer.
 
----
 
 ## Frequently Asked Questions
 
@@ -109,6 +104,5 @@ If you miss the July 31st deadline, you can still file a "belated return" until 
 ### 6. Can I claim HRA if I live with my parents?
 Yes, you can claim HRA by paying rent to your parents. However, the rental payments must be realistic, you must have a proper rental agreement, pay via bank transfers, and your parents must declare that rent as rental income in their own tax returns.
 
----
 
 Taxes don't have to be a nightmare. Once you spend a little time understanding how the brackets and deductions work, you can design a simple annual plan that takes less than an hour to execute. Keep it simple, stay organized, and keep more of your hard-earned money.

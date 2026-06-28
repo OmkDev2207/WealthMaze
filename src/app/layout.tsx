@@ -134,7 +134,44 @@ export default function RootLayout({
 
           {/* Footer */}
           <footer className="bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-150 dark:border-zinc-900 py-10 print:hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+              {/* SEO Internal Linking Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-8 border-b border-zinc-200/60 dark:border-zinc-900 text-left max-w-5xl mx-auto">
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3.5">Popular Calculators</h3>
+                  <ul className="space-y-2.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+                    <li><Link href="/sip-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">SIP Calculator</Link></li>
+                    <li><Link href="/lumpsum-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Lumpsum Calculator</Link></li>
+                    <li><Link href="/emi-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Loan EMI Calculator</Link></li>
+                    <li><Link href="/retirement-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Retirement Calculator</Link></li>
+                    <li><Link href="/cagr-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">CAGR Calculator</Link></li>
+                    <li><Link href="/income-tax-calculator" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Income Tax Calculator</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3.5">Top Guides & Topics</h3>
+                  <ul className="space-y-2.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+                    <li><Link href="/blog/category/investing" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Investing Guides</Link></li>
+                    <li><Link href="/blog/category/wealth-building" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Wealth Building</Link></li>
+                    <li><Link href="/blog/category/retirement" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Retirement Planning</Link></li>
+                    <li><Link href="/blog/category/savings" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Savings & Budgeting</Link></li>
+                    <li><Link href="/blog/category/loans" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Loan Affordability</Link></li>
+                    <li><Link href="/blog/category/tax" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Tax Strategies</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3.5">Explore WealthMaze</h3>
+                  <ul className="space-y-2.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+                    <li><Link href="/calculators" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">All Calculators Directory</Link></li>
+                    <li><Link href="/blog" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Financial Knowledge Base</Link></li>
+                    <li><Link href="/financial-health-quiz" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Financial Health Quiz</Link></li>
+                    <li><Link href="/about" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About WealthMaze</Link></li>
+                    <li><Link href="/methodology" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Calculator Methodology</Link></li>
+                    <li><Link href="/contact" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Contact Us</Link></li>
+                  </ul>
+                </div>
+              </div>
+
               {/* Footer disclaimer */}
               <div className="text-center text-xs leading-relaxed text-zinc-400 dark:text-zinc-500 border-b border-zinc-200/50 dark:border-zinc-900 pb-6 max-w-4xl mx-auto">
                 <p>

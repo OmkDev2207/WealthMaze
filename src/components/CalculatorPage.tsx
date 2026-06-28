@@ -348,7 +348,7 @@ function CalculatorPageInner({
 
   // Related calculators using the internal link graph — serialized (no functions)
   const relatedCalculators = React.useMemo((): SerializableCalc[] => {
-    const ids = getRelatedCalculators(calculatorId, allCalculators, 4);
+    const ids = getRelatedCalculators(calculatorId, allCalculators, 5);
     return ids
       .map((id) => allCalculators.find((c) => c.id === id))
       .filter(Boolean)
@@ -637,6 +637,8 @@ function CalculatorPageInner({
             <RelatedContent
               calculators={relatedCalculators}
               posts={relatedArticles}
+              calculatorHeading="Related Calculators"
+              postHeading="Educational Guides & Related Articles"
               layout="grid"
             />
           </div>

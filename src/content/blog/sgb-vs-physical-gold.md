@@ -14,7 +14,6 @@ Gold is a great portfolio diversifier. It acts as a hedge against inflation and 
 
 But how you choose to hold your gold determines your net return. Choosing physical gold for investment means losing money to middleman fees, storage costs, and taxes. Choosing Sovereign Gold Bonds (SGBs) actually pays you to hold your gold, making it the most profitable way to own this asset.
 
----
 
 ## The Core Differences
 
@@ -36,7 +35,6 @@ Let's look at how these two gold investment options stack up.
 - **Physical Gold:** Subject to capital gains tax. Long-term capital gains (if held for more than 3 years) are taxed at 12.5%.
 - **SGBs:** If you hold the bond until its **8-year maturity**, all capital gains are **100% tax-free**. (Note: The 2.5% annual interest is taxable according to your income tax slab).
 
----
 
 ## Real-World Example: Kavita vs. Rohan
 
@@ -65,7 +63,6 @@ Let's look at Kavita and Rohan. Both want to invest ₹5 Lakhs in gold for the n
 
 **The Verdict:** By choosing SGBs, Rohan ends up with **₹2,19,000 more** than Kavita on the exact same asset class.
 
----
 
 ## Common Mistakes I See People Make
 
@@ -78,7 +75,6 @@ SGBs are listed on the stock exchange, allowing you to sell them before the 8-ye
 ### 3. Buying Paper Gold from Unregulated Sources
 Only buy SGBs issued by the RBI, or Gold ETFs and Gold Mutual Funds managed by registered asset management companies. Avoid unregulated digital gold apps that charge high spreads and lack regulatory protection.
 
----
 
 ## Key Takeaways
 
@@ -86,7 +82,6 @@ Only buy SGBs issued by the RBI, or Gold ETFs and Gold Mutual Funds managed by r
 - **SGB is king for investors:** If you don't need to wear the gold, SGBs are the most profitable, secure, and tax-efficient option available.
 - **Use physical gold only for utility:** Buy jewelry or physical coins only when you need them for weddings, gifting, or immediate personal use.
 
----
 
 ## Frequently Asked Questions
 
@@ -108,6 +103,5 @@ The price of the bond is based on the simple average of the closing price of 999
 ### 6. Can I transfer SGBs to someone else?
 Yes, SGBs held in digital form can be transferred to another person by executing a transfer deed, or they can be gifted to family members. If you transfer the bonds, the receiver will enjoy the remaining interest payments and maturity terms.
 
----
 
 Gold has held its value for thousands of years, but the way we invest in it must evolve. By swapping physical gold coins for Sovereign Gold Bonds, you protect your wealth from theft and inflation while earning a guaranteed income on the side. Invest smart, look at the math, and keep your returns in your pocket.

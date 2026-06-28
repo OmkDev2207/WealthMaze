@@ -12,7 +12,6 @@ That is when I realized that net worth doesn't matter if you don't have liquidit
 
 Liquidity is the oxygen of personal finance. Without it, you can be paper-wealthy but cash-poor. A healthy financial plan balances liquid assets (cash you can access tonight) with illiquid assets (investments that build long-term wealth but take time to sell). If you don't have enough liquid assets, a single emergency can force you to sell your long-term investments at a loss or trap you in a cycle of high-interest debt.
 
----
 
 ## The Liquidity Spectrum
 
@@ -35,7 +34,6 @@ These assets take weeks, months, or even years to convert into cash, or carry he
 - **Lock-in Investments:** Products like retirement accounts or index funds with lock-in periods, or Equity Linked Savings Schemes (ELSS) with a 3-year lock-in.
 - **Physical Gold Jewelry:** Involves significant deductions for making charges, stone weights, and purity tests, reducing its cash value.
 
----
 
 ## Real-World Example: Alex's Family vs. Jordan's Family
 
@@ -63,7 +61,6 @@ Both families experience a sudden leak in their house roof, costing $3,750 to re
 - **Jordan's Family:**
   They have $2,500 in their savings account and $7,500 in a High-Yield Savings account. They pay for the repair instantly by drawing from their High-Yield Savings. They pay zero interest, face zero stress, and their long-term mutual fund investments remain untouched.
 
----
 
 ## Common Mistakes I See People Make
 
@@ -76,7 +73,6 @@ I see many young professionals in their late 20s buying a house and locking up 8
 ### 3. Putting Emergency Funds in Regular FDs
 Regular Fixed Deposits are great, but if you break them prematurely, banks charge a penalty (usually 0.5% to 1% of the interest rate). Use High-Yield Savings accounts or liquid funds for your emergency stash instead.
 
----
 
 ## Key Takeaways
 
@@ -84,7 +80,6 @@ Regular Fixed Deposits are great, but if you break them prematurely, banks charg
 - **Diversify across the spectrum:** A perfect portfolio has cash for the short term, mutual funds/stocks for the medium term, and real estate/retirement funds for the long term.
 - **Know the exit rules:** Before you invest a single dollar, always read the terms regarding lock-in periods, exit loads, and tax penalties on early withdrawals.
 
----
 
 ## Frequently Asked Questions
 
@@ -106,6 +101,5 @@ Liquid funds are debt mutual funds that invest in short-term government securiti
 ### 6. Is a retirement account a liquid asset?
 No, a retirement account or index fund with a lock-in period is an illiquid asset. While you may be able to make partial withdrawals under specific conditions, the funds are largely inaccessible for short-term needs.
 
----
 
 Wealth is about peace of mind, not just the size of your portfolio. By ensuring you always have enough cash or cash-like assets to cover life's surprises, you give your long-term investments the time they need to compound and grow undisturbed. Keep it balanced, keep it simple.

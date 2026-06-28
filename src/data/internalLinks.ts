@@ -13,6 +13,9 @@
  *   3. Zero orphan pages  → every page appears in at least one relation list
  */
 
+import { blogPosts } from "@/data/blog/posts";
+import { allCalculators } from "@/data/calculators";
+
 export interface CalculatorLinkData {
   /** Other calculator IDs that are closely related */
   relatedCalculators: string[];
@@ -442,43 +445,147 @@ export const blogLinks: Record<string, BlogLinkData> = {
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
+ * Helper to compute token overlap score between two strings or arrays.
+ */
+function computeScore(textA: string, tokensB: string[]): number {
+  const lowerA = textA.toLowerCase();
+  let score = 0;
+  for (const token of tokensB) {
+    if (token.length > 2 && lowerA.includes(token.toLowerCase())) {
+      score += 2;
+    }
+  }
+  return score;
+}
+
+/**
  * Returns up to `limit` related calculator IDs for a given calculator.
- * Falls back to same-category logic if no explicit mapping exists.
+ * Backfills using category and keyword similarity if explicit mappings are insufficient.
  */
 export function getRelatedCalculators(
   calculatorId: string,
-  allCalculators: { id: string; category: string }[],
-  limit = 4
+  calcsList: { id: string; category: string; name?: string; description?: string }[] = allCalculators,
+  limit = 5
 ): string[] {
-  const explicit = calculatorLinks[calculatorId]?.relatedCalculators ?? [];
-  if (explicit.length > 0) {
+  const explicit = (calculatorLinks[calculatorId]?.relatedCalculators ?? []).filter((id) => id !== calculatorId);
+  if (explicit.length >= limit) {
     return explicit.slice(0, limit);
   }
-  // Fallback: same category, excluding self
-  const thisCat = allCalculators.find((c) => c.id === calculatorId)?.category;
-  return allCalculators
-    .filter((c) => c.id !== calculatorId && c.category === thisCat)
-    .slice(0, limit)
-    .map((c) => c.id);
+
+  const result = new Set<string>(explicit);
+  const currentCalc = calcsList.find((c) => c.id === calculatorId);
+  const currentCat = currentCalc?.category;
+  const currentTokens = (currentCalc?.name ?? calculatorId).toLowerCase().split(/[- \s]+/);
+
+  // Score candidates
+  const candidates = calcsList
+    .filter((c) => c.id !== calculatorId && !result.has(c.id))
+    .map((c) => {
+      let score = c.category === currentCat ? 5 : 0;
+      score += computeScore(c.name ?? c.id, currentTokens);
+      if (c.description) score += computeScore(c.description, currentTokens) * 0.5;
+      return { id: c.id, score };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  for (const item of candidates) {
+    if (result.size >= limit) break;
+    result.add(item.id);
+  }
+
+  return Array.from(result).slice(0, limit);
 }
 
 /**
  * Returns up to `limit` related blog post slugs for a given calculator.
  */
 export function getRelatedPostsForCalculator(calculatorId: string, limit = 4): string[] {
-  return (calculatorLinks[calculatorId]?.relatedPosts ?? []).slice(0, limit);
+  const explicit = (calculatorLinks[calculatorId]?.relatedPosts ?? []);
+  if (explicit.length >= limit) {
+    return explicit.slice(0, limit);
+  }
+
+  const result = new Set<string>(explicit);
+  const currentCalc = allCalculators.find((c) => c.id === calculatorId);
+  const tokens = (currentCalc?.name ?? calculatorId).toLowerCase().split(/[- \s]+/);
+
+  const candidates = blogPosts
+    .filter((p) => !result.has(p.slug))
+    .map((p) => {
+      let score = 0;
+      score += computeScore(`${p.title} ${p.category} ${p.tags.join(" ")}`, tokens);
+      return { slug: p.slug, score };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  for (const item of candidates) {
+    if (result.size >= limit) break;
+    result.add(item.slug);
+  }
+
+  return Array.from(result).slice(0, limit);
 }
 
 /**
  * Returns up to `limit` related blog post slugs for a given blog post.
  */
-export function getRelatedPostsForBlog(slug: string, limit = 4): string[] {
-  return (blogLinks[slug]?.relatedPosts ?? []).slice(0, limit);
+export function getRelatedPostsForBlog(slug: string, limit = 5): string[] {
+  const explicit = (blogLinks[slug]?.relatedPosts ?? []).filter((s) => s !== slug);
+  if (explicit.length >= limit) {
+    return explicit.slice(0, limit);
+  }
+
+  const result = new Set<string>(explicit);
+  const currentPost = blogPosts.find((p) => p.slug === slug);
+  const currentCat = currentPost?.category;
+  const currentTags = currentPost?.tags ?? [];
+  const tokens = (currentPost?.title ?? slug).toLowerCase().split(/[- \s]+/);
+
+  const candidates = blogPosts
+    .filter((p) => p.slug !== slug && !result.has(p.slug))
+    .map((p) => {
+      let score = p.category === currentCat ? 4 : 0;
+      for (const tag of p.tags) {
+        if (currentTags.includes(tag)) score += 3;
+      }
+      score += computeScore(p.title, tokens);
+      return { slug: p.slug, score };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  for (const item of candidates) {
+    if (result.size >= limit) break;
+    result.add(item.slug);
+  }
+
+  return Array.from(result).slice(0, limit);
 }
 
 /**
  * Returns up to `limit` related calculator IDs for a given blog post.
  */
-export function getRelatedCalculatorsForBlog(slug: string, limit = 3): string[] {
-  return (blogLinks[slug]?.relatedCalculators ?? []).slice(0, limit);
+export function getRelatedCalculatorsForBlog(slug: string, limit = 5): string[] {
+  const explicit = (blogLinks[slug]?.relatedCalculators ?? []);
+  if (explicit.length >= limit) {
+    return explicit.slice(0, limit);
+  }
+
+  const result = new Set<string>(explicit);
+  const currentPost = blogPosts.find((p) => p.slug === slug);
+  const tokens = `${currentPost?.title ?? ""} ${currentPost?.category ?? ""} ${currentPost?.tags.join(" ") ?? ""}`.toLowerCase().split(/[- \s]+/);
+
+  const candidates = allCalculators
+    .filter((c) => !result.has(c.id))
+    .map((c) => {
+      let score = computeScore(`${c.name} ${c.category} ${c.description ?? ""}`, tokens);
+      return { id: c.id, score };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  for (const item of candidates) {
+    if (result.size >= limit) break;
+    result.add(item.id);
+  }
+
+  return Array.from(result).slice(0, limit);
 }

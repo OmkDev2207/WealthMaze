@@ -16,7 +16,6 @@ Active trading is a full-time job. Unless you are a professional researcher with
 
 Passive investing is the most reliable, stress-free path to wealth creation. It allows you to grow your savings at the speed of the overall economy, with minimal fees and zero daily effort.
 
----
 
 ## The Core Pillars of Passive Investing
 
@@ -33,7 +32,6 @@ An SIP is the automation engine. You set up your bank account to automatically i
 ### 3. Reinvesting Dividends (The Growth Option)
 When you choose a mutual fund, always select the **Growth** option rather than the dividend-payout option. Under the Growth option, any dividends paid by the underlying companies are automatically reinvested into the fund to buy more units, accelerating the compounding process.
 
----
 
 ## Real-World Example: Alex vs. Jordan
 
@@ -57,7 +55,6 @@ Let's look at Alex and Jordan. Both are 25 years old and decide to invest $125 p
 
 **The Result:** Even though both funds had the same underlying performance, Jordan ends up with **$49,000 more** than Alex. Jordan did zero research and paid no attention to market news, while Alex paid a premium to a manager who did not add any extra value.
 
----
 
 ## Common Mistakes I See People Make
 
@@ -70,7 +67,6 @@ When you buy mutual funds, you can buy them as a **Regular** plan (through an ag
 ### 3. Panicking and Stopping SIPs During Market Dips
 The entire benefit of a passive SIP relies on staying invested through market cycles. If you stop your SIP when the market drops, you miss the opportunity to buy cheap units, which ruins your long-term average return.
 
----
 
 ## Key Takeaways
 
@@ -78,7 +74,6 @@ The entire benefit of a passive SIP relies on staying invested through market cy
 - **You don't need to beat the market:** Trying to beat the market index is a game of chance. Matching the market over 20 years will put you ahead of 90% of active investors.
 - **Automate everything:** Set up your SIPs, choose Direct Growth plans, and let the system run on autopilot while you focus on your career and family.
 
----
 
 ## Frequently Asked Questions
 
@@ -100,6 +95,5 @@ Yes, in the short term. Since passive funds track the overall market index, if t
 ### 6. Are Exchange Traded Funds (ETFs) different from index funds?
 They are very similar, but ETFs are traded on the stock exchange throughout the day, just like individual stocks. Index mutual funds are bought or sold at the end of the day at a fixed NAV. ETFs often have slightly lower expense ratios than index funds but require a Demat and trading account to buy and sell.
 
----
 
 Wealth creation is not about being the smartest person in the room; it is about being the most disciplined. Passive investing takes away the stress of trying to outsmart the market. Set up your plan, automate your savings, and let the compounding engine do the heavy lifting in the background.

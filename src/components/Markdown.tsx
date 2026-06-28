@@ -130,7 +130,7 @@ export function Markdown({ content }: MarkdownProps) {
             flushTable(idx);
           }
 
-          if (trimmed === "") {
+          if (trimmed === "" || /^---+$/.test(trimmed)) {
             return;
           }
 
