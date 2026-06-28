@@ -7,6 +7,7 @@ import { allCalculators, getCalculatorById } from "@/data/calculators";
 import { getPostBySlug } from "@/data/blog/posts";
 import { getRelatedCalculators, getRelatedPostsForCalculator } from "@/data/internalLinks";
 import { CalculatorForm } from "./CalculatorForm";
+import { XirrCalculatorForm } from "./XirrCalculatorForm";
 import { CalculatorResults } from "./CalculatorResults";
 import { RelatedContent, SerializableCalc } from "./RelatedContent";
 import { AdSlot } from "./AdSlot";
@@ -434,7 +435,11 @@ function CalculatorPageInner({
                 </Link>
               </div>
             )}
-            <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
+            {config.id === "xirr-calculator" ? (
+              <XirrCalculatorForm values={values} onBatchChange={(newVals) => setValues((prev) => ({ ...prev, ...newVals }))} />
+            ) : (
+              <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
+            )}
             <div className="mt-4">
               <DisclaimerBox isMutualFund={isMutualFund} amcName={amcName} />
             </div>
@@ -569,7 +574,11 @@ function CalculatorPageInner({
                     </Link>
                   </div>
                 )}
-                <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
+                {config.id === "xirr-calculator" ? (
+                  <XirrCalculatorForm values={values} onBatchChange={(newVals) => setValues((prev) => ({ ...prev, ...newVals }))} />
+                ) : (
+                  <CalculatorForm inputs={config.inputs} values={values} onChange={handleValueChange} isIndiaSpecific={config.isIndiaSpecific} />
+                )}
 
                 <DisclaimerBox isMutualFund={isMutualFund} amcName={amcName} />
               </div>

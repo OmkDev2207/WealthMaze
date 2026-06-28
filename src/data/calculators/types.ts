@@ -19,7 +19,7 @@ export interface CalculatorOutput {
 }
 
 export interface CalculatorResult {
-  values: Record<string, number>;
+  values: Record<string, any>;
   chartData: Record<string, any>[];
   schedule?: Record<string, any>[];
   comparison?: {
@@ -48,7 +48,7 @@ export interface CalculatorConfig {
   seoDescription: string;
   inputs: CalculatorInput[];
   outputs: CalculatorOutput[];
-  calculate: (inputs: Record<string, number>) => CalculatorResult;
+  calculate: (inputs: Record<string, any>) => CalculatorResult;
   educationalContent: EducationalSection[];
   faqs: FAQItem[];
   isIndiaSpecific?: boolean;

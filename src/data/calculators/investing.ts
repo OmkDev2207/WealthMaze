@@ -294,68 +294,139 @@ export const investingCalculators: CalculatorConfig[] = [
     description: "Calculate the Extended Internal Rate of Return (XIRR) for irregular cash flows and investments.",
     seoTitle: "XIRR Calculator – Calculate SIP and Portfolio ROI Online",
     seoDescription: "Calculate mutual fund and stock portfolio XIRR. Get an accurate annualized return for irregular buy and sell transaction dates with our calculator.",
-    inputs: [
-      { id: "flow0", label: "Initial Investment (Year 0)", type: "number", default: -100000, min: -1000000, max: 0, step: 5000, unit: "₹" },
-      { id: "flow1", label: "Year 1 Cash Flow (- for invested, + for received)", type: "number", default: -12000, min: -200000, max: 200000, step: 1000, unit: "₹" },
-      { id: "flow2", label: "Year 2 Cash Flow (- for invested, + for received)", type: "number", default: -12000, min: -200000, max: 200000, step: 1000, unit: "₹" },
-      { id: "flow3", label: "Year 3 Cash Flow (- for invested, + for received)", type: "number", default: -12000, min: -200000, max: 200000, step: 1000, unit: "₹" },
-      { id: "flow4", label: "Final Portfolio Value (Year 4)", type: "number", default: 175000, min: 0, max: 2000000, step: 5000, unit: "₹" },
-    ],
+    inputs: [],
     outputs: [
       { id: "xirrRate", label: "Annualized XIRR", format: "percent" },
       { id: "netGain", label: "Net Profit / Loss", format: "currency" },
     ],
     calculate: (inputs) => {
-      const flows = [
-        { amount: inputs.flow0, days: 0 },
-        { amount: inputs.flow1, days: 365 },
-        { amount: inputs.flow2, days: 730 },
-        { amount: inputs.flow3, days: 1095 },
-        { amount: inputs.flow4, days: 1460 },
-      ];
-
-      const netGain = flows.reduce((sum, f) => sum + f.amount, 0);
-
-      const npv = (r: number) => {
-        return flows.reduce((sum, f) => {
-          const t = f.days / 365;
-          return sum + f.amount / Math.pow(1 + r, t);
-        }, 0);
+      // Helper to generate default worked example if state is not yet initialized
+      const getDefaultFlows = () => {
+        const today = new Date();
+        const flows = [];
+        for (let i = 11; i >= 0; i--) {
+          const d = new Date(today.getFullYear(), today.getMonth() - i, today.getDate());
+          const year = d.getFullYear();
+          const month = String(d.getMonth() + 1).padStart(2, "0");
+          const day = String(d.getDate()).padStart(2, "0");
+          flows.push({
+            id: `flow_${11 - i}`,
+            date: `${year}-${month}-${day}`,
+            amount: 500,
+            type: "invested",
+          });
+        }
+        return flows;
       };
 
-      let r0 = 0.1;
-      let r1 = 0.2;
-      let xirrRate = 0;
-      let iterations = 0;
+      const rawFlows = Array.isArray(inputs.xirrFlows) && inputs.xirrFlows.length > 0
+        ? inputs.xirrFlows
+        : getDefaultFlows();
+      
+      const todayStr = new Date().toISOString().split("T")[0];
+      const currentDateStr = inputs.currentDate || todayStr;
+      const currentValue = inputs.currentValue !== undefined ? Number(inputs.currentValue) : 6600;
 
-      while (iterations < 100) {
-        const npv0 = npv(r0);
-        const npv1 = npv(r1);
-
-        if (Math.abs(npv1 - npv0) < 1e-10) break;
-
-        const rNext = r1 - (npv1 * (r1 - r0)) / (npv1 - npv0);
-        r0 = r1;
-        r1 = rNext;
-
-        if (Math.abs(r1 - r0) < 1e-6) {
-          xirrRate = r1 * 100;
-          break;
-        }
-        iterations++;
+      const parsedFlows: { date: Date; amount: number; isFinal?: boolean }[] = [];
+      for (const f of rawFlows) {
+        if (!f.date || isNaN(new Date(f.date).getTime())) continue;
+        const amt = Number(f.amount) || 0;
+        if (amt === 0) continue;
+        const signedAmt = f.type === "invested" ? -Math.abs(amt) : Math.abs(amt);
+        parsedFlows.push({ date: new Date(f.date), amount: signedAmt });
       }
 
-      if (iterations >= 100 || isNaN(xirrRate) || !isFinite(xirrRate)) {
+      if (currentValue > 0 && currentDateStr && !isNaN(new Date(currentDateStr).getTime())) {
+        parsedFlows.push({ date: new Date(currentDateStr), amount: Math.abs(currentValue), isFinal: true });
+      }
+
+      parsedFlows.sort((a, b) => a.date.getTime() - b.date.getTime());
+
+      if (parsedFlows.length < 2) {
+        return { values: { xirrRate: 0, netGain: 0 }, chartData: [] };
+      }
+
+      const netGain = parsedFlows.reduce((sum, f) => sum + f.amount, 0);
+
+      const d0 = parsedFlows[0].date.getTime();
+      const msPerYear = 1000 * 3600 * 24 * 365.25;
+      const flowsWithYears = parsedFlows.map((f) => ({
+        amount: f.amount,
+        years: (f.date.getTime() - d0) / msPerYear,
+        isFinal: f.isFinal,
+        date: f.date,
+      }));
+
+      const npv = (r: number) => flowsWithYears.reduce((sum, f) => sum + f.amount / Math.pow(1 + r, f.years), 0);
+      const dnpv = (r: number) => flowsWithYears.reduce((sum, f) => sum - (f.years * f.amount) / Math.pow(1 + r, f.years + 1), 0);
+
+      let r = 0.1;
+      let xirrRate = 0;
+      let converged = false;
+
+      for (let i = 0; i < 50; i++) {
+        const fValue = npv(r);
+        const fDeriv = dnpv(r);
+        if (Math.abs(fValue) < 1e-8) {
+          xirrRate = r * 100;
+          converged = true;
+          break;
+        }
+        if (Math.abs(fDeriv) < 1e-10) break;
+        const rNext = r - fValue / fDeriv;
+        if (Math.abs(rNext - r) < 1e-7) {
+          xirrRate = rNext * 100;
+          converged = true;
+          break;
+        }
+        r = rNext;
+        if (r <= -0.9999) r = -0.99;
+        if (r > 50) { r = 5; break; }
+      }
+
+      if (!converged || isNaN(xirrRate) || !isFinite(xirrRate)) {
+        let r0 = -0.9, r1 = 5.0;
+        for (let i = 0; i < 50; i++) {
+          const npv0 = npv(r0);
+          const npv1 = npv(r1);
+          if (Math.abs(npv1 - npv0) < 1e-10) break;
+          const rNext = r1 - (npv1 * (r1 - r0)) / (npv1 - npv0);
+          r0 = r1;
+          r1 = rNext;
+          if (Math.abs(r1 - r0) < 1e-6) {
+            xirrRate = r1 * 100;
+            if (isFinite(xirrRate)) converged = true;
+            break;
+          }
+        }
+      }
+
+      if (!converged || isNaN(xirrRate) || !isFinite(xirrRate)) {
         xirrRate = 0;
       }
 
-      let cumulative = 0;
-      const chartData = flows.map((f, idx) => {
-        cumulative += f.amount;
+      const rateDecimal = !isNaN(xirrRate) && isFinite(xirrRate) ? xirrRate / 100 : 0;
+      let cumInvested = 0;
+
+      const chartData = flowsWithYears.map((f) => {
+        if (f.amount < 0) {
+          cumInvested += Math.abs(f.amount);
+        }
+        const tCurr = f.date.getTime();
+        let portVal = 0;
+        for (const prev of flowsWithYears) {
+          if (prev.date.getTime() <= tCurr) {
+            if (prev === f && f.isFinal) continue;
+            const yrs = (tCurr - prev.date.getTime()) / msPerYear;
+            portVal += (-prev.amount) * Math.pow(Math.max(0, 1 + rateDecimal), yrs);
+          }
+        }
+        if (portVal < 0) portVal = 0;
+        const dateLabel = f.date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
         return {
-          name: `Yr ${idx}`,
-          "Cash Flow": f.amount,
-          "Cumulative Outflow": cumulative < 0 ? -cumulative : 0,
+          name: dateLabel,
+          "Invested Amount": Math.round(cumInvested),
+          "Portfolio Value": Math.round(f.isFinal ? f.amount : portVal),
         };
       });
 
