@@ -1,5 +1,3 @@
-## The Power of Starting Early: Why Time Beats Higher Returns
-
 Imagine two friends, Alex and Ben. Both want to build a retirement nest egg. Alex starts investing at age 22, fresh out of college, putting away $250 every month. Ben decided to wait until age 32, when his career is more established and he has more breathing room in his budget. 
 
 What happens to their money by the time they reach age 62 is one of the most surprising mathematical realities of personal finance. It shows why starting early is the single most powerful decision you can make, outweighing almost every other factor in your investing life.

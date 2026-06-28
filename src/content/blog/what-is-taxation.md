@@ -1,5 +1,3 @@
-## What is Taxation? Understanding the Basics
-
 Let's be honest: paying taxes is about as popular as a trip to the dentist. Nobody opens their monthly salary slip, sees the tax deduction, and cheers. But whether we like it or not, taxes are the price we pay for a civilized society. Before we complain about the system, it helps to take a step back and understand what taxation actually is, why it exists, and how the social contract between citizens and the government works.
 
 ## Why This Matters

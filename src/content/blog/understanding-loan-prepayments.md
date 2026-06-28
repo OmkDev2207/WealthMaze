@@ -1,5 +1,3 @@
-## The Mathematics of Loan Prepayments
-
 When you sign a 20-year home loan agreement, it is easy to feel like you have signed away a part of your freedom. Seeing that monthly EMI debit from your bank account month after month is exhausting. But here is a secret that banks will not volunteer to tell you: you do not have to carry that debt for 20 years. By understanding how loan prepayments work, you can beat the bank at its own game and save yourself a fortune in interest.
 
 ## Why This Matters

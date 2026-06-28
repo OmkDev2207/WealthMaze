@@ -1,15 +1,10 @@
-## Investing Psychology: How to Master Your Emotions and Survive Market Panics
-
 During the market crash of March 2020, when the COVID-19 pandemic first hit, my phone rang constantly. Friends, family, and clients were in a state of absolute panic. I watched smart people sell their equity portfolios at a 30% to 40% loss, convinced that the global economy was collapsing and they needed to "save whatever was left."
 
 Within a few months, the market bottomed out and began a historic bull run. Those who panicked locked in their losses permanently and had to watch from the sidelines as the market soared to new highs. Those who did nothing—or bought more—saw their wealth grow significantly.
 
----
-
 ## Why This Matters
 
 You can have the most sophisticated spreadsheet, the best mutual funds, and a flawless financial plan, but if you cannot control your emotions during a market crash, none of it matters. Wealth creation is 10% math and 90% psychology. Your ability to stay calm when everyone else is losing their minds is your greatest financial asset.
-
 
 ## The Psychological Traps
 
@@ -25,7 +20,6 @@ When things go wrong, we have an instinctive urge to *do something*. In everyday
 
 ### 3. The Herd Mentality
 We feel safe in crowds. When everyone is buying stocks and talking about overnight riches (during a bubble), we jump in because we fear missing out (FOMO). When everyone is selling and predicting doom (during a crash), we sell because we fear losing everything. This ensures we buy at the peak and sell at the bottom.
-
 
 ## Real-World Example: Alex vs. Jordan
 
@@ -47,7 +41,6 @@ March 2020 Market Crash (-30%)
 
 By mastering emotions, Jordan ended up with more than double Alex's wealth, even though they started with the exact same amount.
 
-
 ## Common Mistakes I See People Make
 
 ### 1. Confusing Risk Tolerance with Risk Appetite
@@ -59,13 +52,11 @@ Financial news channels and websites need clicks and ratings. They make money by
 ### 3. Trying to Time the Market
 People often say, "I'll sell my stocks now and buy them back when they drop lower." This rarely works. You have to be right twice: once when you sell, and once when you buy back. Missing just the 10 best days in the stock market over a decade can cut your long-term returns in half.
 
-
 ## Key Takeaways
 
 - **Corrections are the price of admission:** The stock market offers high returns *because* it is volatile. Think of volatility not as a fine or a punishment, but as a fee you pay to get superior returns over the long term.
 - **Automate your investing:** Set up automatic monthly SIPs. This removes decision-making from the equation. You buy fewer units when prices are high, and more units when prices are low, without having to think about it.
 - **Keep a cash buffer:** Always maintain a 6-month emergency fund in a liquid account. When you know your living expenses are secure, you won't be forced to sell your stocks during a market downturn.
-
 
 ## Frequently Asked Questions
 
@@ -86,6 +77,5 @@ Use asset allocation. Instead of putting 100% of your money into stocks, mix in 
 
 ### 6. What should I do if a stock I own has dropped by 50%?
 Evaluate the fundamentals of the company, not just the stock price. Ask yourself: Is the business model still solid? Are their earnings growing? If the business is fundamentally broken, it might make sense to sell and cut your losses. But if it is a solid company experiencing temporary market panic, selling is a mistake.
-
 
 The next time the market drops and the headlines predict the end of the financial world, take a deep breath. Turn off the TV, close your investment apps, and go for a walk. The market has survived world wars, recessions, and pandemics, and it will survive this correction too. Patience is the ultimate competitive advantage in investing.

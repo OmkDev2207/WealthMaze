@@ -78,7 +78,18 @@ export default async function BlogPostPage({ params }: PageProps) {
     const filePath = path.join(process.cwd(), "src/content/blog", `${slug}.md`);
     const rawContent = fs.readFileSync(filePath, "utf8");
     const withoutFm = rawContent.replace(/^---[\s\S]*?---\r?\n*/, "");
-    markdownContent = withoutFm.replace(/^[ \t]*---[ \t]*$/gm, "");
+    let cleaned = withoutFm.replace(/^[ \t]*---[ \t]*$/gm, "");
+    const lines = cleaned.split(/\r?\n/);
+    while (
+      lines.length > 0 &&
+      (lines[0].trim() === "" ||
+        lines[0].trim().startsWith("#") ||
+        lines[0].toLowerCase().includes("by om") ||
+        lines[0].toLowerCase().includes("min read"))
+    ) {
+      lines.shift();
+    }
+    markdownContent = lines.join("\n").trim();
   } catch (err) {
     console.error("Failed to read markdown file:", err);
     markdownContent = "Article content is currently unavailable. Please try again later.";

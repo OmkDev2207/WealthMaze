@@ -1,5 +1,3 @@
-## How to Calculate Your Net Worth — And Why It's the Only Financial Number That Actually Matters
-
 Most people know their salary to the dollar. They can tell you their hourly rate, their annual CTC, their take-home after tax. They track their income carefully because income feels like the scoreboard — the number that tells you how well you're doing financially.
 
 It isn't.
@@ -9,8 +7,6 @@ Your salary tells you how much money is flowing through your hands. Your net wor
 Net worth is the single most accurate measure of financial health available. Not your income. Not your credit score. Not the balance in your checking account on the day after payday. Your net worth — what you own minus what you owe — is the number that tells you whether your financial life is moving forward or standing still.
 
 This guide explains what net worth is, how to calculate it accurately using the WealthMaze Net Worth Calculator, what your number actually means, and — most importantly — what to do with it.
-
----
 
 ## What Net Worth Actually Is
 
@@ -27,7 +23,6 @@ On the asset side, people tend to overcount. They include the full value of a ca
 On the liability side, people tend to undercount. They forget about the remaining balance on a car lease. They ignore the interest accruing on a student loan that's been on income-based repayment for years. They overlook the credit card balance they intended to pay off last month.
 
 An accurate net worth calculation requires honesty on both sides. The WealthMaze Net Worth Calculator walks you through each category systematically — ensuring nothing gets overlooked, overcounted, or conveniently forgotten.
-
 
 ## Assets: What to Include and What Not To
 
@@ -65,7 +60,6 @@ These are assets you can convert to cash quickly without penalty or significant 
 - Future expected income (your salary is income, not an asset — it only becomes part of net worth once you save or invest it)
 - The value of your education or skills (human capital is real but not included in standard net worth calculations)
 
-
 ## Liabilities: The Side People Undercount
 
 Liabilities are every financial obligation you currently owe. Be thorough here — this is where most people's net worth calculations go wrong.
@@ -84,7 +78,6 @@ Liabilities are every financial obligation you currently owe. Be thorough here �
 - Any other outstanding financial obligation
 
 **The honest test:** If someone demanded payment from you today, would you have to pay this? If yes — it is a liability.
-
 
 ## How to Use the WealthMaze Net Worth Calculator
 
@@ -124,7 +117,6 @@ The calculator displays:
 
 Write down today's net worth and the date. Set a calendar reminder to recalculate in 90 days. The single calculation tells you where you are. The trend over time tells you whether you are moving in the right direction.
 
-
 ## What Your Net Worth Number Actually Means
 
 Here is where most net worth articles stop — at the calculation. But the number itself is only useful in context.
@@ -142,7 +134,6 @@ Calculate the ratio of your net worth to your annual income. A rough benchmark: 
 **If your net worth is growing:**
 
 The direction matters more than the absolute number at any given moment. A net worth growing by $500 to $1,000 per month — through debt paydown, investment contributions, and asset appreciation — is financial progress regardless of whether the starting number is positive or negative. Track the monthly change as closely as you track the total.
-
 
 ## The Two Levers That Move Your Net Worth
 
@@ -164,7 +155,6 @@ Third, invest consistently into appreciating assets — index funds, retirement 
 
 Fourth, pay down moderate-rate debt (mortgages, student loans below 6-7%) over time, while continuing to invest. At these interest rates, the math often favors investing over aggressive debt paydown — but this depends on individual circumstances and risk tolerance.
 
-
 ## Net Worth Benchmarks by Age — A Reality Check
 
 These figures are based on Federal Reserve Survey of Consumer Finances data and represent median net worth by age group in the United States:
@@ -183,7 +173,6 @@ First, the growth from under-35 to 65-74 is approximately 10x — driven almost 
 
 Second, the median figures are modest. A 65-year-old with $410,000 in net worth, generating 4% annually in retirement income, receives approximately $16,400 per year — well below what most people need for a comfortable retirement. This is the mathematical reality of why starting early and investing consistently matters so significantly.
 
-
 ## The Most Important Thing Net Worth Reveals
 
 Beyond the calculation and the benchmarks, net worth reveals something that no other financial metric does: **the relationship between your income and your wealth.**
@@ -199,7 +188,6 @@ The salary measures the tap. The net worth measures the tank. And the tank is th
 Calculate your net worth today. Track it quarterly. Make every significant financial decision with one question in mind: does this increase my net worth or decrease it?
 
 That discipline, sustained over time, is the entire strategy.
-
 
 *Calculate your net worth right now with the [WealthMaze Net Worth Calculator](/net-worth-calculator). Track your wealth building progress with the [SIP Calculator](/sip-calculator) — see how consistent monthly investment grows your asset column over 10, 20, and 30 years. Use the [Financial Freedom Calculator](/financial-freedom-calculator) to find out how large your net worth needs to be to fund your retirement.*
 

@@ -1,5 +1,3 @@
-## What is Tax Policy? How Governments Design and Levy Taxes
-
 Every year on budget day, millions of people tune in to watch the Finance Minister deliver a speech. Everyone wants to know the same things: *Will tax rates go down? Will petrol cost more? Will my savings be taxed differently?* This annual exercise is the public face of tax policy. It is not just a bunch of dry rules; it is the framework that decides how much money stays in your pocket and how much goes to the government.
 
 ## Why This Matters

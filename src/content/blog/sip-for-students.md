@@ -1,5 +1,3 @@
-## How Students Can Start Investing with a ₹500 SIP
-
 When I was in college, the word "investing" felt like something only rich people in expensive suits did. Most of my pocket money went toward canteen tea, printouts, and weekend hangouts. If someone had told me back then that I could start investing with just ₹500, I probably would have laughed. But the truth is, you do not need a fat paycheck to start building wealth. You just need a bank account, a smartphone, and the willingness to take the first step.
 
 ## Why This Matters

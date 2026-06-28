@@ -1,5 +1,3 @@
-## Financial Freedom Is Simpler Than You Think
-
 The phrase "financial freedom" sounds like a luxury reserved for the ultra-wealthy. We picture multi-millionaires lounging on private yachts or tech founders retiring in their twenties. 
 
 Because of this, many people give up before they even start. They assume that since they will never have a ten-million-dollar portfolio, they are destined to work stressful jobs until they are 65. 

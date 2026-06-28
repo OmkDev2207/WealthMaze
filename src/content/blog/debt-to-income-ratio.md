@@ -1,5 +1,3 @@
-## Debt-to-Income Ratio: The Number That Decides Your Loan Approval
-
 A colleague of my father was shocked when his home loan application got rejected. He had a great salary, a credit score of 780, and zero history of defaulting. He asked me, "Om, why would they reject me? I pay all my bills on time!" When we dug into his finances, the reason became clear. He was already paying a car loan EMI, a personal loan EMI, and had a high balance on two credit cards. Even though his credit history was clean, his monthly debt obligations were taking up more than half of his salary. The bank saw him as a high-risk borrower. They rejected him because of a metric called the Debt-to-Income (DTI) ratio.
 
 ## Why This Matters

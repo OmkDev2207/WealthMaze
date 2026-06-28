@@ -1,5 +1,3 @@
-## How to Build a Bulletproof Emergency Fund: A Step-by-Step Guide
-
 In early 2020, when the pandemic hit and businesses began shutting down, I got a message from a friend. He was in tears. His company had just laid off half its staff, and he was one of them. He had a home loan, a car loan, and a baby on the way, but only had $185 in his bank account. He was forced to sell his stock portfolio at a 30% loss just to pay his bills. That conversation cemented a truth I always tell people: before you try to grow your money, you must protect your downside. You need an emergency fund.
 
 ## Why This Matters

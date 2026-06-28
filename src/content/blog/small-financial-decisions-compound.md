@@ -1,5 +1,3 @@
-## How Small Financial Decisions Compound Over Time
-
 We tend to think that building wealth requires making massive, life-altering financial moves. We imagine that we need to launch a successful startup, inherit a fortune, or strike it rich on a single stock. 
 
 But the reality of personal finance is much more mundane. Most people who achieve financial stability do so through the compounding effect of hundreds of small, daily decisions. Just as a slow, steady leak can eventually fill a bucket, small savings habits can compound into significant wealth over a working career.

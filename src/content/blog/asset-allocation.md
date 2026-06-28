@@ -1,5 +1,3 @@
-## Asset Allocation: The Secret to Surviving Market Crashes
-
 During the 2020 market crash, my phone would not stop ringing. Friends who had put 100% of their savings into momentum stocks were panicking, watching their portfolios shrink by 30% or 40% in weeks. They wanted to sell everything. Meanwhile, those who had a simple, balanced portfolio slept peacefully. That is the power of asset allocation. It is not about getting rich overnight; it is about making sure a market crash does not wipe you out.
 
 ## Why This Matters

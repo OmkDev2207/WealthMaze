@@ -1,5 +1,3 @@
-## What is an Index Fund? Understanding Passive Investing Concepts
-
 Choosing a mutual fund can feel like ordering from a massive restaurant menu. You have thousands of choices, and everyone is trying to sell you their "special recipe." Active fund managers promise that they can pick the best stocks and beat the market. But what if you did not need to beat the market? What if you could just copy it, pay next to nothing in fees, and still walk away with great returns? That is the simple power of index funds.
 
 ## Why This Matters

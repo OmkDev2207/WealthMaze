@@ -1,5 +1,3 @@
-## How to Start Investing: A Guide for Complete Beginners
-
 When I first started looking at the stock market, it felt like looking at a wall of alien text. NAVs, expense ratios, debt instruments, equity indices—it was overwhelming. I almost gave up and left my money in a standard savings account. But then I realized something crucial: doing nothing is the riskiest move of all because inflation is silently stealing your hard-earned cash. Here is how I wish someone had explained investing to me when I was starting out.
 
 ## Why This Matters

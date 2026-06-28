@@ -1,17 +1,12 @@
-## How to Save Your First ₹1 Lakh: A Step-by-Step Blueprint
-
 When I was 22, my bank account was a transit lounge. My salary arrived, stayed for a few days, and then flew out to pay rent, cover restaurant bills, and fund weekend trips. At the end of every month, I had less than ₹1,000 left. I felt like I was running on a treadmill—working hard but going nowhere. 
 
 One day, I decided enough was enough. I set a goal to save my first ₹1 Lakh. It felt like an impossible summit back then, but when I finally saw six figures in my account, something shifted in my head. I went from being a spender to an accumulator. 
-
----
 
 ## Why This Matters
 
 The first ₹1 Lakh is the hardest money you will ever save. Why? Because you get zero help from compounding. When you have ₹1 Crore, a simple 10% return earns you ₹10 Lakhs without you lifting a finger. But when you start at zero, every single rupee must be squeezed out of your monthly salary through discipline and sacrifice. 
 
 This milestone isn't just about the money. It is about proving to yourself that you can control your impulses, design a plan, and execute it. Once you save your first Lakh, saving the next five becomes much easier.
-
 
 ## The Saving Blueprint
 
@@ -31,7 +26,6 @@ Pick a timeline that challenges you but doesn't make your daily life miserable.
 
 ### 3. Separate and Automate
 Open a secondary bank account at a different bank. Do not install the shopping apps linked to this account, and do not carry its debit card in your wallet. Set up an automatic transfer (or Recurring Deposit) from your salary account to this new account for the day after your salary is credited. Out of sight, out of mind.
-
 
 ## Real-World Example: Priya's 12-Month Plan
 
@@ -62,7 +56,6 @@ To hit her target of ₹1 Lakh in a year, Priya needed to save roughly ₹8,333 
 
 By making these minor adjustments, Priya saved ₹8,500 every month without feeling deprived. After 12 months, she had **₹1,02,000** plus interest.
 
-
 ## Common Mistakes I See People Make
 
 ### 1. Investing in High-Risk Assets Too Early
@@ -74,13 +67,11 @@ If you have a bad month where you had to spend extra on a wedding or car repair 
 ### 3. Upgrading Your Lifestyle with Every Raise
 When you get a salary hike or a bonus, don't immediately move to a more expensive apartment or buy a new phone. Keep your expenses flat for just one year, and redirect 100% of your raise toward your savings goal.
 
-
 ## Key Takeaways
 
 - **Automate pay day savings:** Treat your savings like a bill that you must pay to your future self every single month.
 - **Small changes add up:** Cutting back on minor conveniences like food delivery and cabs is the easiest way to free up cash flow.
 - **Focus on safety first:** Do not risk your foundational capital in volatile markets. Build your safety net first.
-
 
 ## Frequently Asked Questions
 
@@ -101,6 +92,5 @@ A Fixed Deposit requires you to invest a lump sum of money all at once for a spe
 
 ### 6. Is it worth saving if my salary is very low?
 Yes, it is even more critical. Saving is about building habits, not just accumulating wealth. Even if you can only save ₹1,000 per month, start there. As your income grows, your saving habits will already be established, allowing you to scale up your savings rapidly.
-
 
 Saving your first ₹1 Lakh is a rite of passage. It requires discipline, minor lifestyle adjustments, and a refusal to let money slip through your fingers. Once you cross the finish line, you will look at your bank account not as a temporary holding area, but as a launchpad for your financial freedom. Start today, automate the first transfer, and don't look back.

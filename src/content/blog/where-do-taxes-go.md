@@ -1,5 +1,3 @@
-## Where Do Taxes Go? How Tax Revenue is Used by Governments
-
 Whenever you hit a nasty pothole on your way to work or wait in a long queue at a government office, you probably ask yourself, *Where on earth do my tax rupees actually go?* It is a fair question. When we pay our hard-earned money to the government, we want to know what we are getting in return. The truth is that while the system is far from perfect, our tax money funds a massive machine that keeps the country running behind the scenes.
 
 ## Why This Matters

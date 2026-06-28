@@ -1,15 +1,10 @@
-## How Much Loan Can You Actually Afford? The 35/40 Debt Rule
-
 I recently sat down with a young couple who were beaming with excitement. They had just been pre-approved for a home loan of $100,000. Their combined monthly take-home salary was $1,875, and the monthly EMI for this loan was $840. They asked me, "Om, should we go ahead and book the flat?"
 
 I had to play the party pooper. I told them that if they took this loan, they would become "house poor." They would own a beautiful flat, but they wouldn't have enough money left to travel, go out for dinner, invest for retirement, or handle a minor emergency without panic. They were looking at their *approval limit*, not their *affordability limit*.
 
----
-
 ## Why This Matters
 
 Lenders care about one thing: the probability that you will pay them back. They do not care if you have money left over to buy groceries, fund your children's education, or invest in your future. If you borrow up to the absolute maximum that a bank is willing to give you, you are handing over control of your financial life to your lender. You need a simple system to calculate your own safe limits.
-
 
 ## The 35/40 Debt Rule Explained
 
@@ -30,7 +25,6 @@ Your total monthly debt obligations—including your home loan, car loan, person
 - If your net salary is $1,000, your total monthly EMIs should not exceed $400.
 
 If your monthly debt payments exceed these limits, you are over-leveraged. A minor event like a delayed salary, medical emergency, or job transition can throw your entire life out of balance.
-
 
 ## Real-World Example: Alex and Jordan's Budget
 
@@ -62,7 +56,6 @@ At an interest rate of 9% and a tenure of 20 years:
 - If they had gone to the bank, the bank might have evaluated their gross income and offered them a loan of **$75,000** (requiring an EMI of $675). 
 - If they had accepted the bank's offer, their total monthly EMI would be $825 ($675 home loan + $150 car loan). That is **55% of their net take-home salary**, leaving them in a high-risk financial position.
 
-
 ## Common Mistakes I See People Make
 
 ### 1. Thinking "Approved" Means "Affordable"
@@ -74,13 +67,11 @@ When you move from renting to owning, your monthly expenses go up by more than j
 ### 3. Borrowing Your Emergency Fund for the Down Payment
 I have seen people empty their savings accounts, sell their emergency investments, and borrow from parents to make a large down payment. If you start your homeownership journey with zero cash in bank, a single leaking pipe or medical bill will force you into high-interest personal debt.
 
-
 ## Key Takeaways
 
 - **Rule of Thumb:** Your total EMIs should not cross 40% of your take-home pay. Keep this limit non-negotiable.
 - **Factor in existing loans:** Always subtract your car loan, personal loan, or student loan payments before calculating how much home loan EMI you can take on.
 - **Build a loan emergency buffer:** Before you sign the loan agreement, save at least 6 months of EMIs in a separate liquid account. This ensures you can pay your EMIs even during a job loss or medical emergency.
-
 
 ## Frequently Asked Questions
 
@@ -101,6 +92,5 @@ A high debt-to-income ratio indicates that you are spending a large portion of y
 
 ### 6. Can I buy a home if my total EMIs are 50% of my net salary but I have no other dependents?
 It is still risky. Life is unpredictable. Even with no dependents, your cost of living will increase over time due to inflation. Having half of your salary locked up leaves you zero room for career changes, starting a business, or handling health crises. Focus on clearing other debts or buying a smaller property first.
-
 
 A home is an emotional purchase, but a home loan is a pure financial transaction. Don't let your emotions dictate your financial terms. Keep your debt within safe boundaries, protect your cash flow, and ensure that your home remains a source of joy rather than a financial burden.

@@ -1,5 +1,3 @@
-## Market Volatility and Financial Cycles Explained
-
 Opening your investment app during a stock market dip can feel like riding a roller coaster without a seatbelt. One day your portfolio is up, and the next day it looks like a sea of red. This constant movement is what we call market volatility. While it can be scary, it is completely normal. In fact, if you want to build long-term wealth in the stock market, volatility is the price of admission.
 
 ## Why This Matters

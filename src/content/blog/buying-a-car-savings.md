@@ -1,5 +1,3 @@
-## How to Save for a Car: The Smart Way to Buy a Vehicle
-
 I will never forget the look on my friend's face when he bought a flashy SUV on a 7-year loan. He was thrilled. But six months later, the excitement wore off. He was stuck paying a massive EMI, his insurance premium was sky-high, and fuel prices were rising. He realized he was working just to fund a metal box that sits in his garage 90% of the time. Buying a car is exciting, but it is also one of the easiest ways to trap yourself in a cycle of bad debt. Here is how to plan, save, and buy a car the smart way.
 
 ## Why This Matters

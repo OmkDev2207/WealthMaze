@@ -1,5 +1,3 @@
-## How is Loan EMI Calculated? The Formula and Math Explained
-
 When you walk into a bank to take a loan, the agent will quickly print out a sheet showing you a fixed monthly number. "Sir, your EMI will be exactly $320," they will say. If you ask them how they got that number, they will point to a computer screen and say it is automated. But understanding the math behind your Equated Monthly Installment (EMI) is not just an academic exercise. It is the key to understanding how banks make money off you—and how you can save thousands of dollars by outsmarting them.
 
 ## Why This Matters

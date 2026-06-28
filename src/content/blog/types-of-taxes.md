@@ -1,5 +1,3 @@
-## The Main Types of Taxes Explained
-
 The next time you eat at a restaurant, look at the bottom of your bill. You will see lines like CGST and SGST added to your food total. Then, look at your salary slip at the end of the month and you will see a deduction for TDS (Tax Deducted at Source). Taxes are a constant presence in our lives, but they do not all work the same way. In fact, they are split into two completely different families: Direct Taxes and Indirect Taxes.
 
 ## Why This Matters

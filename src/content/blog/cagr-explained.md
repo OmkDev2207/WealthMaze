@@ -1,5 +1,3 @@
-## CAGR Explained: The Real Way to Measure Your Investment Returns
-
 A few years back, an investment agent tried to sell me a policy. He proudly said, "Om, this scheme will double your money!" It sounded fantastic. But when I asked him how long it would take, he said, "Just 10 years." I smiled and did the mental math. Doubling your money in 10 years means an annual return of about 7.2%. You can get close to that with a bank Fixed Deposit, without any of the risks of his scheme. The agent was using "absolute returns" to make a mediocre product look like a gold mine. This is why you need to understand CAGR.
 
 ## Why This Matters

@@ -1,5 +1,3 @@
-## Why Most People Never Build Wealth (And How to Avoid It)
-
 If you look around, you will see a strange paradox. People are earning more money than ever before. Salaries in major cities are rising, and yet, a surprising number of people who make good money are living paycheck to paycheck. They feel constantly stressed about their bank balances. 
 
 Building wealth has very little to do with how smart you are or what your income is. It has everything to do with how you behave. The truth is that most people never build wealth because they fall into a few predictable, common traps. If you want to break out of this cycle, you need to understand these traps and learn how to navigate around them.
