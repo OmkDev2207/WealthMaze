@@ -11,18 +11,24 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const categories = Array.from(new Set(blogPosts.map((p) => p.category)));
-  return categories.map((cat) => ({
-    category: cat.toLowerCase(),
-  }));
+  const params: { category: string }[] = [];
+  categories.forEach((cat) => {
+    params.push({ category: cat.toLowerCase() });
+    const kebab = cat.toLowerCase().replace(/\s+/g, "-");
+    if (kebab !== cat.toLowerCase()) {
+      params.push({ category: kebab });
+    }
+  });
+  return params;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const categoryParam = resolvedParams.category;
+  const decodedParam = decodeURIComponent(resolvedParams.category).toLowerCase();
   
-  // Find match case-insensitively
+  // Find match case-insensitively supporting spaces or hyphens
   const matchingPost = blogPosts.find(
-    (p) => p.category.toLowerCase() === categoryParam
+    (p) => p.category.toLowerCase() === decodedParam || p.category.toLowerCase().replace(/\s+/g, "-") === decodedParam
   );
 
   if (!matchingPost) {
@@ -35,12 +41,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${categoryName} Financial Guides & Calculators | WealthMaze`,
     description: `Expert articles and interactive calculators for ${categoryName}. Read WealthMaze guides on compound interest, tax slabs, EMI maths, and investment planning.`,
     alternates: {
-      canonical: `${siteConfig.url}/blog/category/${categoryParam}`,
+      canonical: `${siteConfig.url}/blog/category/${resolvedParams.category}`,
     },
     openGraph: {
       title: `${categoryName} Financial Guides | WealthMaze`,
       description: `Read expert ${categoryName} articles on WealthMaze. Interactive calculators and guides for smarter money decisions.`,
-      url: `${siteConfig.url}/blog/category/${categoryParam}`,
+      url: `${siteConfig.url}/blog/category/${resolvedParams.category}`,
       type: "website",
       siteName: "WealthMaze",
     },
@@ -54,10 +60,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CategoryPage({ params }: PageProps) {
   const resolvedParams = await params;
-  const categoryParam = resolvedParams.category;
+  const decodedParam = decodeURIComponent(resolvedParams.category).toLowerCase();
 
   const matchingPost = blogPosts.find(
-    (p) => p.category.toLowerCase() === categoryParam
+    (p) => p.category.toLowerCase() === decodedParam || p.category.toLowerCase().replace(/\s+/g, "-") === decodedParam
   );
 
   if (!matchingPost) {

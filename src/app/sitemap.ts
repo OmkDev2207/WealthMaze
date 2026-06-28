@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // All static page routes
   const staticPages = [
     { route: "", priority: 1.0, freq: "weekly" as const },
+    { route: "/financial-health-score", priority: 0.95, freq: "weekly" as const },
     { route: "/about", priority: 0.7, freq: "monthly" as const },
     { route: "/contact", priority: 0.5, freq: "monthly" as const },
     { route: "/privacy", priority: 0.4, freq: "yearly" as const },

@@ -155,6 +155,25 @@ export function HomePageClient() {
               className="w-full h-14 pl-12 pr-4 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl text-base text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 shadow-sm transition-all"
             />
           </div>
+
+          {/* Compact Financial Health Score Banner (Note 4) */}
+          <div className="pt-2 max-w-2xl mx-auto">
+            <div className="p-3 bg-gradient-to-r from-emerald-500/10 via-indigo-500/10 to-emerald-500/10 border border-emerald-500/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm hover:border-emerald-500 transition-all">
+              <div className="flex items-center space-x-2 text-left">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                <span className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 leading-tight">
+                  How financially healthy are you? Take the 3-minute quiz → Get your free score out of 100.
+                </span>
+              </div>
+              <Link
+                href="/financial-health-score"
+                className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-xs font-extrabold shrink-0 shadow-sm transition-all flex items-center space-x-1"
+              >
+                <span>Take Quiz</span>
+                <ChevronRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* Trending Calculators Section */}

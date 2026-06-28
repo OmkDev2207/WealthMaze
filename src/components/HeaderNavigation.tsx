@@ -126,6 +126,10 @@ export function HeaderNavigation() {
         <Link href="/blog" className="hover:text-emerald-500 transition-colors">
           Blog Hub
         </Link>
+        <Link href="/financial-health-score" className="hover:text-emerald-500 transition-colors text-emerald-600 dark:text-emerald-400 font-extrabold flex items-center space-x-1">
+          <span>Health Score</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+        </Link>
       </nav>
 
       <span className="hidden lg:inline-block h-4 w-[1px] bg-zinc-200 dark:bg-zinc-800" />
@@ -166,6 +170,13 @@ export function HeaderNavigation() {
                 className="flex items-center justify-center h-10 bg-zinc-50 dark:bg-zinc-900/60 rounded-xl text-xs font-bold text-zinc-700 dark:text-zinc-300"
               >
                 Blog Hub
+              </Link>
+              <Link
+                href="/financial-health-score"
+                onClick={closeAll}
+                className="col-span-2 flex items-center justify-center h-10 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-xs font-extrabold text-emerald-600 dark:text-emerald-400"
+              >
+                🎯 Financial Health Score Quiz
               </Link>
             </div>
 
