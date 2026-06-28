@@ -1371,7 +1371,7 @@ export const investingCalculators: CalculatorConfig[] = [
   },
   {
     id: "financial-goal-planner",
-    name: "Financial Goal Planner ⭐⭐⭐⭐⭐",
+    name: "Financial Goal Planner",
     category: "Investing",
     description: "Map out your financial target, compare projected returns against your goal, and discover the exact monthly investment needed.",
     seoTitle: "Financial Goal Planner — Calculate Required Monthly Savings & Progress | WealthMaze",
@@ -1434,9 +1434,10 @@ export const investingCalculators: CalculatorConfig[] = [
           }
         }
         chartData.push({
-          year: `Year ${y}`,
+          name: `Yr ${y}`,
+          "Total Invested": Math.round(currentSavings + (monthlyInvestment * m)),
           "Projected Corpus": Math.round(fvSavYr + fvSipYr),
-          "Target Goal": targetAmount,
+          "Target": targetAmount,
         });
       }
 
