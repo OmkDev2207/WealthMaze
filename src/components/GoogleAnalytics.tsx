@@ -2,6 +2,7 @@
 "use client";
 
 import React from "react";
+import Script from "next/script";
 import { usePathname } from "next/navigation";
 
 const GA_MEASUREMENT_ID = "G-4LVW5230JP";
@@ -35,82 +36,37 @@ export const trackOutboundClick = (url: string) => {
 
 export function GoogleAnalytics() {
   const pathname = usePathname();
-  const [initialized, setInitialized] = React.useState(false);
 
+  // Track SPA page views on route changes
   React.useEffect(() => {
-    let loaded = false;
-
-    const loadGA = () => {
-      if (loaded) return;
-
-      const consent = localStorage.getItem("cookie-consent");
-      if (consent !== "accepted") return;
-
-      loaded = true;
-
-      // Remove event listeners immediately
-      window.removeEventListener("scroll", loadGA);
-      window.removeEventListener("mousemove", loadGA);
-      window.removeEventListener("touchstart", loadGA);
-      window.removeEventListener("keydown", loadGA);
-
-      // 1. Inject the tracking library script
-      const script = document.createElement("script");
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-      script.async = true;
-      document.head.appendChild(script);
-
-      // 2. Initialize gtag global config
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      const gtag = (...args: any[]) => {
-        (window as any).dataLayer.push(args);
-      };
-      (window as any).gtag = gtag;
-
-      gtag("js", new Date());
-      gtag("config", GA_MEASUREMENT_ID, {
-        page_path: window.location.pathname,
-      });
-
-      setInitialized(true);
-    };
-
-    // Listen to first user interaction
-    window.addEventListener("scroll", loadGA, { passive: true });
-    window.addEventListener("mousemove", loadGA, { passive: true });
-    window.addEventListener("touchstart", loadGA, { passive: true });
-    window.addEventListener("keydown", loadGA, { passive: true });
-
-    // Listen to custom consent accepted event
-    const handleConsentAccepted = () => {
-      loadGA();
-    };
-    window.addEventListener("cookie-consent-accepted", handleConsentAccepted);
-
-    // If consent is already accepted, try running it on interaction or load
-    const consent = localStorage.getItem("cookie-consent");
-    if (consent === "accepted") {
-      // In case user returns and page has already scrolled
-      loadGA();
-    }
-
-    return () => {
-      window.removeEventListener("scroll", loadGA);
-      window.removeEventListener("mousemove", loadGA);
-      window.removeEventListener("touchstart", loadGA);
-      window.removeEventListener("keydown", loadGA);
-      window.removeEventListener("cookie-consent-accepted", handleConsentAccepted);
-    };
-  }, []);
-
-  // Track page views on route changes if already initialized
-  React.useEffect(() => {
-    if (initialized && typeof window !== "undefined" && (window as any).gtag) {
+    if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("config", GA_MEASUREMENT_ID, {
         page_path: pathname,
       });
     }
-  }, [pathname, initialized]);
+  }, [pathname]);
 
-  return null;
+  return (
+    <>
+      <Script
+        id="gtag-base"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+    </>
+  );
 }
