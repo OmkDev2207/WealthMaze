@@ -50,7 +50,18 @@ export const metadata: Metadata = {
     title: "WealthMaze – Financial Calculators & Wealth Planning",
     description: "Free financial calculators and planning tools from WealthMaze.",
     images: ["/og-image.png"],
-  }
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

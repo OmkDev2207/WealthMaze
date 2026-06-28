@@ -19,6 +19,11 @@ const SpotlightGlow = dynamic(
   { ssr: false }
 );
 
+const MazeAssist = dynamic(
+  () => import("./MazeAssist").then((mod) => mod.MazeAssist),
+  { ssr: false }
+);
+
 export function LayoutClientWidgets() {
   return (
     <>
@@ -26,6 +31,7 @@ export function LayoutClientWidgets() {
       <CookieConsent />
       <AdSenseLoader />
       <SpotlightGlow />
+      <MazeAssist />
     </>
   );
 }

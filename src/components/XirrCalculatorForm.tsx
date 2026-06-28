@@ -18,27 +18,25 @@ interface XirrCalculatorFormProps {
 
 export function getDefaultXirrState() {
   const today = new Date();
-  const flows: XirrCashFlow[] = [];
-  
-  // 12 monthly investments of $500 prior to today
-  for (let i = 11; i >= 0; i--) {
-    const d = new Date(today.getFullYear(), today.getMonth() - i, today.getDate());
+  const formatDate = (d: Date) => {
     const year = d.getFullYear();
     const month = String(d.getMonth() + 1).padStart(2, "0");
     const day = String(d.getDate()).padStart(2, "0");
-    flows.push({
-      id: `flow_${11 - i}`,
-      date: `${year}-${month}-${day}`,
-      amount: 500,
-      type: "invested",
-    });
-  }
+    return `${year}-${month}-${day}`;
+  };
 
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  const currentDate = `${year}-${month}-${day}`;
-  const currentValue = 6600;
+  const d1 = new Date(today.getFullYear(), today.getMonth() - 24, today.getDate());
+  const d2 = new Date(today.getFullYear(), today.getMonth() - 12, today.getDate());
+  const d3 = new Date(today.getFullYear(), today.getMonth() - 6, today.getDate());
+
+  const flows: XirrCashFlow[] = [
+    { id: "flow_1", date: formatDate(d1), amount: 2000, type: "invested" },
+    { id: "flow_2", date: formatDate(d2), amount: 2000, type: "invested" },
+    { id: "flow_3", date: formatDate(d3), amount: 2000, type: "invested" },
+  ];
+
+  const currentDate = formatDate(today);
+  const currentValue = 7200;
 
   return { xirrFlows: flows, currentDate, currentValue };
 }
