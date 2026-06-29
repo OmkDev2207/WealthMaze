@@ -5,7 +5,8 @@ import * as React from "react";
 import Link from "next/link";
 import { allCalculators, categories } from "@/data/calculators";
 import { blogPosts } from "@/data/blog/posts";
-import { Search, ChevronRight, TrendingUp, Calendar, ShieldCheck, Percent, FileText, BarChart3, Coins, Activity, Flame, Clock, BookOpen } from "lucide-react";
+import { Search, ChevronRight, TrendingUp, Calendar, ShieldCheck, Percent, FileText, BarChart3, Coins, Activity, Flame, Clock, BookOpen, Sparkles, UserCheck, Zap } from "lucide-react";
+import { homepageConfig } from "@/config/homepage";
 
 // Map category string to Lucide icon components dynamically
 const iconMap: Record<string, React.ComponentType<any>> = {
@@ -17,6 +18,15 @@ const iconMap: Record<string, React.ComponentType<any>> = {
   BarChart3: BarChart3,
   Coins: Coins,
   Activity: Activity,
+};
+
+const credibilityIconMap: Record<string, React.ComponentType<any>> = {
+  Sparkles,
+  UserCheck,
+  ShieldCheck,
+  Zap,
+  BookOpen,
+  TrendingUp,
 };
 
 const trendingIds = [
@@ -143,6 +153,14 @@ export function HomePageClient() {
             Plan investments, calculate returns, track wealth growth and make smarter financial decisions with our simple, accurate, and lightning-fast tools.
           </p>
 
+          {/* Premium Trust Badge */}
+          <div className="flex items-center justify-center pt-2">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-bold text-emerald-600 dark:text-emerald-450 shadow-2xs">
+              <ShieldCheck className="h-3.5 w-3.5 shrink-0" />
+              <span>{homepageConfig.trustBadge.text}</span>
+            </div>
+          </div>
+
           {/* Interactive Search Bar */}
           <div className="relative max-w-xl mx-auto pt-2">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -252,6 +270,44 @@ export function HomePageClient() {
                     </div>
                     <span className="text-xs font-bold tracking-tight">{cat.name}</span>
                   </button>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Credibility Grid Section */}
+        {!searchQuery && !selectedCategory && (
+          <section className="space-y-8 pt-4">
+            <div className="text-center max-w-3xl mx-auto space-y-2.5">
+              <h2 className="text-2xl font-black text-zinc-900 dark:text-white tracking-tight">
+                {homepageConfig.credibility.title}
+              </h2>
+              <p className="text-xs text-zinc-550 dark:text-zinc-400">
+                {homepageConfig.credibility.subtitle}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {homepageConfig.credibility.cards.map((card, idx) => {
+                const Icon = credibilityIconMap[card.iconName] || ShieldCheck;
+                return (
+                  <div
+                    key={idx}
+                    className="p-5 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800/80 rounded-2xl shadow-sm dark:shadow-none hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col space-y-3"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 text-emerald-500 flex items-center justify-center shrink-0">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="space-y-1">
+                      <h3 className="text-sm font-bold text-zinc-850 dark:text-zinc-100">
+                        {card.title}
+                      </h3>
+                      <p className="text-xs text-zinc-450 dark:text-zinc-550 leading-relaxed">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
                 );
               })}
             </div>

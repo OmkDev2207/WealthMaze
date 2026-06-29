@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Shield, Award, Landmark, HelpCircle as HelpIcon } from "lucide-react";
+import { HelpCircle as HelpIcon } from "lucide-react";
 import { AdSlot } from "@/components/AdSlot";
 
 export function HomeContent() {
@@ -56,50 +56,6 @@ export function HomeContent() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
-        {/* Why Use WealthMaze Grid */}
-        <div className="space-y-8">
-          <header className="text-center max-w-3xl mx-auto space-y-2.5">
-            <h2 className="text-2xl font-black text-zinc-900 dark:text-white tracking-tight">
-              Why Use WealthMaze Financial Calculators?
-            </h2>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">
-              High-performance, private, and precise investment planners designed for modern investors.
-            </p>
-          </header>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800/80 rounded-2xl space-y-3">
-              <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 text-emerald-500 flex items-center justify-center">
-                <Shield className="h-5 w-5" />
-              </div>
-              <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-100">100% Private & Secure</h3>
-              <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">
-                All calculations are executed locally inside your web browser. We never transmit, store, or sell your net worth details, salary records, or outstanding loan data.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800/80 rounded-2xl space-y-3">
-              <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 text-emerald-500 flex items-center justify-center">
-                <Award className="h-5 w-5" />
-              </div>
-              <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-100">Premium Responsive Design</h3>
-              <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">
-                WealthMaze uses a premium dark/light adaptive layout with responsive inputs. Plan your investments seamlessly on a smartphone, tablet, or desktop.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-800/80 rounded-2xl space-y-3">
-              <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 text-emerald-500 flex items-center justify-center">
-                <Landmark className="h-5 w-5" />
-              </div>
-              <h3 className="text-sm font-bold text-zinc-800 dark:text-zinc-100">Verified Financial Algorithms</h3>
-              <p className="text-xs text-zinc-400 dark:text-zinc-500 leading-relaxed">
-                Our mathematical models conform to standard guidelines from banking regulators and global accounting frameworks, ensuring accurate interest schedules and returns.
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* Master Financial Planning Guide (1500+ Words) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
