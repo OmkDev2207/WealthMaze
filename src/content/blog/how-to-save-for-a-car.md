@@ -176,14 +176,4 @@ Run the numbers yourself before you sign anything.
 
 *Compare loan tenures and total interest instantly with the [WealthMaze EMI Calculator](/emi-calculator). Already have a car loan? See how much a lump-sum payment saves with the [Loan Prepayment Calculator](/loan-prepayment-calculator). Plan your down-payment savings timeline with the [Savings Calculator](/savings-calculator).*
 
-```
-SLUG: how-to-save-for-a-car
-META TITLE: How to Save for a Car: The Real Math Dealers Hope You Never Run
-META DESCRIPTION: Car dealers sell you the EMI, not the true cost. Here's the real math on depreciation, loan tenure, and the 20/4/10 rule for buying a car you can actually afford.
-FOCUS KEYWORD: how to save for a car
-SECONDARY KEYWORDS: car loan EMI calculator, car affordability rule, 20/4/10 rule, car depreciation, car loan tenure interest, true cost of car ownership
-CATEGORY: Loans
-READ TIME: 11 min
-```
-
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. EMI, interest, and depreciation figures cited are illustrative approximations and will vary by lender, region, and vehicle. Please consult a qualified financial advisor before making a major purchase or loan decision.*
