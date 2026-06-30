@@ -443,6 +443,21 @@ export const blogLinks: Record<string, BlogLinkData> = {
     relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "wealth-vs-income", "saving-first-1-lakh"],
     relatedCalculators: ["sip-calculator", "savings-calculator", "financial-freedom-calculator"],
   },
+
+  "how-to-save-for-a-car": {
+    relatedPosts: ["buying-a-car-savings", "how-is-loan-emi-calculated", "emi-formula-explained", "reducing-emi"],
+    relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "savings-calculator"],
+  },
+
+  "how-is-loan-emi-calculated": {
+    relatedPosts: ["how-to-save-for-a-car", "emi-formula-explained", "reducing-emi", "understanding-loan-prepayments"],
+    relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
+  },
+
+  "cagr-in-share-market": {
+    relatedPosts: ["cagr-explained", "what-is-xirr-calculator-guide", "compounding-explained"],
+    relatedCalculators: ["cagr-calculator", "xirr-calculator", "investment-growth-calculator"],
+  },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

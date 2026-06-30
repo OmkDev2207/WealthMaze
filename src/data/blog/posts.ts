@@ -580,6 +580,30 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["cagr-calculator", "xirr-calculator", "investment-growth-calculator"],
   },
+  // 48. How to Save for a Car
+  {
+    slug: "how-to-save-for-a-car",
+    title: "How to Save for a Car: The Real Math Dealers Hope You Never Run",
+    description: "Car dealers sell you the EMI, not the true cost. Here's the real math on depreciation, loan tenure, and the 20/4/10 rule for buying a car you can actually afford.",
+    publishedAt: "June 30, 2026",
+    readTime: "11 min read",
+    category: "Loans",
+    tags: ["Car Loan", "20/4/10 Rule", "Car Depreciation", "EMI Calculator", "True Cost of Ownership"],
+    author: authors.omk,
+    relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "savings-calculator"],
+  },
+  // 49. How Is Loan EMI Calculated
+  {
+    slug: "how-is-loan-emi-calculated",
+    title: "How Is Loan EMI Calculated? The Formula, the Amortization Trap, and Why \"Lower EMI\" Is Often the Worse Deal",
+    description: "EMI looks simple but hides a structural trap — front-loaded interest and a \"lower EMI\" pitch that benefits lenders more than borrowers. The formula, the math, and how to outsmart it.",
+    publishedAt: "June 30, 2026",
+    readTime: "11 min read",
+    category: "Loans",
+    tags: ["EMI Formula", "Amortization Schedule", "Reducing Balance Interest", "Flat Rate vs Reducing Rate", "Loan Prepayment"],
+    author: authors.omk,
+    relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
+  },
 ];
 
 export const getPostsByCalculatorId = (calculatorId: string): BlogPost[] => {
