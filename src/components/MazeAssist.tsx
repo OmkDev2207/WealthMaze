@@ -207,7 +207,7 @@ export function MazeAssist() {
           text: "💡 In early amortization years, your monthly **EMI** goes primarily toward paying off accumulated interest rather than principal balance. Understanding this structure helps you strategize repayments.\n\n👇 **Calculate your EMI breakdown:**",
           links: [
             { name: "EMI Calculator", url: "/emi-calculator", category: "Loans", description: "General loan planner for home, car, or personal loans." },
-            { name: "EMI Formula Explained", url: "/blog/emi-formula-explained", category: "Guide", description: "Deep dive into the mathematics behind monthly installments." }
+            { name: "How Is Loan EMI Calculated?", url: "/blog/how-is-loan-emi-calculated", category: "Guide", description: "Deep dive into the mathematics behind monthly installments." }
           ],
           chips: ["↩️ Back to main menu"]
         }]);

@@ -114,7 +114,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "rd-calculator": {
     relatedCalculators: ["fd-calculator", "ppf-calculator", "sip-calculator"],
-    relatedPosts: ["saving-first-1-lakh", "budget-rule-50-30-20", "emergency-fund-guide", "buying-a-car-savings"],
+    relatedPosts: ["saving-first-1-lakh", "budget-rule-50-30-20", "emergency-fund-guide", "how-to-save-for-a-car"],
   },
 
   "ppf-calculator": {
@@ -135,12 +135,12 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
   // ─── Loans ──────────────────────────────────────────────────────────────────
   "emi-calculator": {
     relatedCalculators: ["loan-prepayment-calculator", "loan-comparison-calculator", "sip-calculator"],
-    relatedPosts: ["emi-formula-explained", "debt-to-income-ratio", "reducing-emi", "home-loan-vs-personal-loan", "loan-affordability-guide", "understanding-loan-prepayments"],
+    relatedPosts: ["how-is-loan-emi-calculated", "debt-to-income-ratio", "reducing-emi", "home-loan-vs-personal-loan", "loan-affordability-guide", "understanding-loan-prepayments"],
   },
 
   "loan-prepayment-calculator": {
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
-    relatedPosts: ["understanding-loan-prepayments", "reducing-emi", "emi-formula-explained", "debt-to-income-ratio"],
+    relatedPosts: ["understanding-loan-prepayments", "reducing-emi", "how-is-loan-emi-calculated", "debt-to-income-ratio"],
   },
 
   "loan-comparison-calculator": {
@@ -205,12 +205,12 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
   // ─── Car/Home Loan (programmatic variants also use these) ────────────────────
   "car-loan-emi-calculator": {
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "rd-calculator"],
-    relatedPosts: ["buying-a-car-savings", "emi-formula-explained", "debt-to-income-ratio", "reducing-emi"],
+    relatedPosts: ["how-to-save-for-a-car", "how-is-loan-emi-calculated", "debt-to-income-ratio", "reducing-emi"],
   },
 
   "home-loan-emi-calculator": {
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
-    relatedPosts: ["buying-a-house-financial-roadmap", "home-loan-vs-personal-loan", "emi-formula-explained", "understanding-loan-prepayments"],
+    relatedPosts: ["buying-a-house-financial-roadmap", "home-loan-vs-personal-loan", "how-is-loan-emi-calculated", "understanding-loan-prepayments"],
   },
 
   "step-up-sip-calculator": {
@@ -225,7 +225,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "personal-loan-emi-calculator": {
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "loan-prepayment-calculator", "home-loan-emi-calculator"],
-    relatedPosts: ["home-loan-vs-personal-loan", "loan-affordability-guide", "emi-formula-explained", "debt-to-income-ratio"],
+    relatedPosts: ["home-loan-vs-personal-loan", "loan-affordability-guide", "how-is-loan-emi-calculated", "debt-to-income-ratio"],
   },
 
   "compound-interest-calculator": {
@@ -264,18 +264,9 @@ export const blogLinks: Record<string, BlogLinkData> = {
     relatedCalculators: ["cagr-calculator", "xirr-calculator", "portfolio-return-calculator"],
   },
 
-  "emi-formula-explained": {
-    relatedPosts: ["debt-to-income-ratio", "reducing-emi", "home-loan-vs-personal-loan", "understanding-loan-prepayments"],
-    relatedCalculators: ["emi-calculator", "loan-prepayment-calculator"],
-  },
-
-  "buying-a-car-savings": {
-    relatedPosts: ["saving-first-1-lakh", "budget-rule-50-30-20", "emi-formula-explained"],
-    relatedCalculators: ["rd-calculator", "fd-calculator", "emi-calculator"],
-  },
 
   "buying-a-house-financial-roadmap": {
-    relatedPosts: ["home-loan-vs-personal-loan", "emi-formula-explained", "saving-first-1-lakh"],
+    relatedPosts: ["home-loan-vs-personal-loan", "how-is-loan-emi-calculated", "saving-first-1-lakh"],
     relatedCalculators: ["emi-calculator", "sip-calculator", "loan-prepayment-calculator"],
   },
 
@@ -295,7 +286,7 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "budget-rule-50-30-20": {
-    relatedPosts: ["saving-first-1-lakh", "emergency-fund-guide", "liquid-vs-non-liquid-assets", "buying-a-car-savings"],
+    relatedPosts: ["saving-first-1-lakh", "emergency-fund-guide", "liquid-vs-non-liquid-assets", "how-to-save-for-a-car"],
     relatedCalculators: ["rd-calculator", "fd-calculator"],
   },
 
@@ -315,12 +306,12 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "debt-to-income-ratio": {
-    relatedPosts: ["emi-formula-explained", "loan-affordability-guide", "reducing-emi"],
+    relatedPosts: ["how-is-loan-emi-calculated", "loan-affordability-guide", "reducing-emi"],
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
   },
 
   "understanding-loan-prepayments": {
-    relatedPosts: ["reducing-emi", "emi-formula-explained", "home-loan-vs-personal-loan"],
+    relatedPosts: ["reducing-emi", "how-is-loan-emi-calculated", "home-loan-vs-personal-loan"],
     relatedCalculators: ["loan-prepayment-calculator", "emi-calculator"],
   },
 
@@ -350,7 +341,7 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "home-loan-vs-personal-loan": {
-    relatedPosts: ["emi-formula-explained", "debt-to-income-ratio", "loan-affordability-guide", "understanding-loan-prepayments"],
+    relatedPosts: ["how-is-loan-emi-calculated", "debt-to-income-ratio", "loan-affordability-guide", "understanding-loan-prepayments"],
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
   },
 
@@ -360,7 +351,7 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "loan-affordability-guide": {
-    relatedPosts: ["debt-to-income-ratio", "reducing-emi", "emi-formula-explained", "home-loan-vs-personal-loan"],
+    relatedPosts: ["debt-to-income-ratio", "reducing-emi", "how-is-loan-emi-calculated", "home-loan-vs-personal-loan"],
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
   },
 
@@ -370,12 +361,12 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "reducing-emi": {
-    relatedPosts: ["understanding-loan-prepayments", "debt-to-income-ratio", "emi-formula-explained", "loan-affordability-guide"],
+    relatedPosts: ["understanding-loan-prepayments", "debt-to-income-ratio", "how-is-loan-emi-calculated", "loan-affordability-guide"],
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator"],
   },
 
   "saving-first-1-lakh": {
-    relatedPosts: ["budget-rule-50-30-20", "emergency-fund-guide", "sip-for-students", "buying-a-car-savings"],
+    relatedPosts: ["budget-rule-50-30-20", "emergency-fund-guide", "sip-for-students", "how-to-save-for-a-car"],
     relatedCalculators: ["rd-calculator", "fd-calculator", "sip-calculator"],
   },
 
@@ -445,12 +436,12 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "how-to-save-for-a-car": {
-    relatedPosts: ["buying-a-car-savings", "how-is-loan-emi-calculated", "emi-formula-explained", "reducing-emi"],
+    relatedPosts: ["how-is-loan-emi-calculated", "reducing-emi", "budget-rule-50-30-20", "saving-first-1-lakh"],
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "savings-calculator"],
   },
 
   "how-is-loan-emi-calculated": {
-    relatedPosts: ["how-to-save-for-a-car", "emi-formula-explained", "reducing-emi", "understanding-loan-prepayments"],
+    relatedPosts: ["how-to-save-for-a-car", "reducing-emi", "understanding-loan-prepayments", "debt-to-income-ratio"],
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
   },
 

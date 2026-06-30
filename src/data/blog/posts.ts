@@ -231,30 +231,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["cagr-calculator", "stock-return-calculator"],
   },
-  // 4. EMI Formula
-  {
-    slug: "emi-formula-explained",
-    title: "How is Loan EMI Calculated? Formula & Math Explained",
-    description: "Learn the exact mathematical formula behind Equated Monthly Installments (EMI) and understand how amortization works.",
-    publishedAt: "June 18, 2026",
-    readTime: "6 min read",
-    category: "Loans",
-    tags: ["EMI", "Home Loan", "Personal Loan"],
-    author: authors.omk,
-    relatedCalculators: ["emi-calculator"],
-  },
-  // 5. How to Save for a Car
-  {
-    slug: "buying-a-car-savings",
-    title: "How to Save for a Car & Buy a Car with Savings",
-    description: "Learn how to save for a car and buy a vehicle with your savings. Compare car loan interest vs cash purchases, use budgeting rules, and plan your target.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["How to Save for a Car", "Buy Car with Savings", "Car Budgeting", "Savings Plan"],
-    author: authors.omk,
-    relatedCalculators: ["car-loan-emi-calculator", "rd-calculator", "fd-calculator"],
-  },
   // 6. How to Save for a House
   {
     slug: "buying-a-house-financial-roadmap",
