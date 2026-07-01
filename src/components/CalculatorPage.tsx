@@ -336,6 +336,16 @@ function CalculatorPageInner({
     }
   }, [config, values]);
 
+  const inputsSummary = React.useMemo(() => {
+    return config.inputs.map((inp) => {
+      const val = values[inp.id] ?? 0;
+      return {
+        label: inp.label,
+        value: formatSummaryValue(val, inp.unit === "₹" ? "currency" : inp.unit === "%" ? "percent" : "number", inp.unit),
+      };
+    });
+  }, [config.inputs, values, formatSummaryValue]);
+
   // Update URL search parameters and local state
   const handleValueChange = React.useCallback((id: string, val: number) => {
     if (typeof window !== "undefined") {
@@ -448,7 +458,7 @@ function CalculatorPageInner({
           {/* Right Side: Charts & Results */}
           <div className="lg:col-span-7 space-y-4">
             <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-4 rounded-2xl shadow-sm dark:shadow-none space-y-4">
-              <CalculatorResults outputs={config.outputs} result={result} isIndiaSpecific={config.isIndiaSpecific} />
+              <CalculatorResults outputs={config.outputs} result={result} isIndiaSpecific={config.isIndiaSpecific} title={config.name} inputsSummary={inputsSummary} />
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-805">
                 <DeferredChart chartData={result.chartData} calculatorId={config.id} isIndiaSpecific={config.isIndiaSpecific} resultValues={result.values} />
               </div>
@@ -593,7 +603,7 @@ function CalculatorPageInner({
                 <h2 className="text-lg font-bold text-zinc-900 dark:text-white border-b border-zinc-100 dark:border-zinc-800 pb-3">
                   Calculation Output & Analysis
                 </h2>
-                <CalculatorResults outputs={config.outputs} result={result} isIndiaSpecific={config.isIndiaSpecific} />
+                <CalculatorResults outputs={config.outputs} result={result} isIndiaSpecific={config.isIndiaSpecific} title={config.name} inputsSummary={inputsSummary} />
 
                 <div className="hidden print:block text-[10px] text-zinc-400 mt-6 border-t pt-4">
                   Report generated via WealthMaze. Calculate your financial future at wealthmaze.in.
