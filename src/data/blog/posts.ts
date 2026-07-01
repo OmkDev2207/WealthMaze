@@ -176,14 +176,14 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "power-of-starting-early",
-    title: "The Power of Starting Early: Why Time Beats Higher Returns",
-    description: "Discover how the time horizon and early compounding outweigh higher investment returns. Compare starting early versus starting late with real-world scenarios.",
-    publishedAt: "June 22, 2026",
-    readTime: "5 min read",
+    title: "The Power of Starting Early: Why Time Is the One Advantage Nobody Can Buy",
+    description: "Starting early is the only investing advantage that cannot be purchased. Here's the precise mathematics of why — and the contrarian points most early investing advice misses.",
+    publishedAt: "July 1, 2026",
+    readTime: "12 min read",
     category: "Investing",
-    tags: ["Compounding", "Early Investing", "SIP", "Time Horizon"],
+    tags: ["Compounding", "Early Investing", "Time Horizon", "SIP", "Investing"],
     author: authors.omk,
-    relatedCalculators: ["sip-calculator", "investment-growth-calculator", "compound-interest-calculator"],
+    relatedCalculators: ["compound-interest-calculator", "sip-calculator", "sip-goal-planner"],
   },
   {
     slug: "small-financial-decisions-compound",
@@ -218,18 +218,6 @@ export const blogPosts: BlogPost[] = [
     tags: ["Compounding", "Investing", "Education"],
     author: authors.omk,
     relatedCalculators: ["cagr-calculator", "sip-calculator"],
-  },
-  // 3. CAGR
-  {
-    slug: "cagr-explained",
-    title: "Understanding CAGR (Compound Annual Growth Rate) in Stock Markets",
-    description: "Learn how to calculate and interpret CAGR to evaluate stock returns, mutual fund performance, and benchmark performance.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Stock Market",
-    tags: ["CAGR", "Stocks", "Investment Math"],
-    author: authors.omk,
-    relatedCalculators: ["cagr-calculator", "stock-return-calculator"],
   },
   // 6. How to Save for a House
   {
@@ -378,14 +366,14 @@ export const blogPosts: BlogPost[] = [
   // 18. Beginner Investing Guide
   {
     slug: "beginner-investing-guide",
-    title: "The Ultimate Guide to Investing for Complete Beginners",
-    description: "A complete beginner's guide to understanding stocks, mutual funds, bonds, and starting your investment journey.",
-    publishedAt: "June 18, 2026",
-    readTime: "6 min read",
+    title: "What Investing Actually Is — And Why Every Dollar You Own Should Be Working While You Sleep",
+    description: "Investing isn't about Wall Street complexity. It's about putting every dollar to work so it fights for your financial freedom even when you're not. Here's where to start.",
+    publishedAt: "July 1, 2026",
+    readTime: "15 min read",
     category: "Investing",
-    tags: ["Beginners", "Investing", "Education"],
+    tags: ["Beginner Investing", "Investing Basics", "Asset Classes", "Compounding", "Index Funds"],
     author: authors.omk,
-    relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator", "goal-based-investment-calculator"],
+    relatedCalculators: ["compound-interest-calculator", "sip-calculator", "financial-freedom-calculator"],
   },
   // 19. Emergency Fund Guide
   {
@@ -498,14 +486,14 @@ export const blogPosts: BlogPost[] = [
   // 28. SIP for Retirement
   {
     slug: "sip-for-retirement",
-    title: "Building Your Retirement Corpus with Systematic Investment Plans",
-    description: "Learn how to estimate your retirement corpus and plan monthly SIPs to secure your post-retirement financial freedom.",
-    publishedAt: "June 18, 2026",
-    readTime: "6 min read",
-    category: "Retirement",
-    tags: ["Retirement", "SIP", "FIRE"],
+    title: "Building Your Retirement Corpus With SIP — The Math Nobody Shows You",
+    description: "Retirement is the only goal you can't borrow for. Here's what the compounding math actually looks like, why delay is so expensive, and how to build your corpus systematically.",
+    publishedAt: "July 1, 2026",
+    readTime: "11 min read",
+    category: "Retirement Planning",
+    tags: ["Retirement Planning", "SIP", "Retirement Corpus", "4% Rule", "FIRE"],
     author: authors.omk,
-    relatedCalculators: ["retirement-calculator", "fire-calculator", "sip-calculator"],
+    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "financial-freedom-calculator"],
   },
   // 29. SIP for Students
   {
