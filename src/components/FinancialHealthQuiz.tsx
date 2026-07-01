@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, RotateCcw, Share2, Download, ShieldCheck, AlertCircle, Award, Sparkles, ChevronRight, BookOpen, Info } from "lucide-react";
+import jsPDF from "jspdf";
 
 interface QuestionOption {
   label: string;
@@ -293,13 +294,13 @@ export function FinancialHealthQuiz() {
     setViewState("quiz");
   };
 
-  // Canvas PNG Generation & Download (Enhanced 1200x1600 Report)
-  const generateAndDownloadPNG = () => {
+  // Helper to render the report canvas with exact coordinates & measurements
+  const renderReportCanvas = (): HTMLCanvasElement | null => {
     const canvas = document.createElement("canvas");
     canvas.width = 1200;
     canvas.height = 1600;
     const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    if (!ctx) return null;
 
     // Background
     ctx.fillStyle = "#09090b"; // dark zinc-950
@@ -310,13 +311,15 @@ export function FinancialHealthQuiz() {
     ctx.lineWidth = 4;
     ctx.strokeRect(20, 20, 1160, 1560);
 
-    // Header Logo & Title
-    ctx.font = "bold 36px Inter, sans-serif";
+    // Header Logo & Title (Fixed Overlap by dynamically measuring logoWidth)
+    ctx.font = "bold 38px Inter, sans-serif";
     ctx.fillStyle = "#10b981"; // emerald-500
     ctx.fillText("WealthMaze", 60, 85);
+    const logoWidth = ctx.measureText("WealthMaze").width;
+
     ctx.font = "bold 18px Inter, sans-serif";
     ctx.fillStyle = "#a1a1aa";
-    ctx.fillText("COMPREHENSIVE FINANCIAL HEALTH REPORT", 260, 83);
+    ctx.fillText("COMPREHENSIVE FINANCIAL HEALTH REPORT", 60 + logoWidth + 24, 82);
 
     const dateStr = savedData?.date || new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
     ctx.font = "16px Inter, sans-serif";
@@ -340,16 +343,16 @@ export function FinancialHealthQuiz() {
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    // Center Score Number
+    // Center Score Number (Fixed Overlap by measuring scoreWidth AT 110px font size!)
     ctx.font = "bold 110px Inter, sans-serif";
     ctx.fillStyle = "#ffffff";
     const scoreStr = `${totalScore}`;
+    const scoreWidth = ctx.measureText(scoreStr).width;
     ctx.fillText(scoreStr, 120, 310);
 
     ctx.font = "bold 36px Inter, sans-serif";
     ctx.fillStyle = "#71717a";
-    const scoreWidth = ctx.measureText(scoreStr).width;
-    ctx.fillText("/ 100", 120 + scoreWidth + 12, 310);
+    ctx.fillText("/ 100", 120 + scoreWidth + 16, 310);
 
     // Grade Badge inside Hero Box
     const gradeText = `Grade ${gradeInfo.letter} — ${gradeInfo.label}`;
@@ -369,10 +372,10 @@ export function FinancialHealthQuiz() {
     ctx.fillStyle = "#ffffff";
     ctx.fillText(gradeText, badgeX + 30, badgeY + 36);
 
-    // Section 1: 10-Pillar Breakdown
+    // Section 1: 10-Pillar Breakdown (Fixed duplicate "Pillar" typo)
     ctx.font = "bold 22px Inter, sans-serif";
     ctx.fillStyle = "#ffffff";
-    ctx.fillText("1. 10-Pillar Financial Pillar Breakdown", 60, 435);
+    ctx.fillText("1. 10-Pillar Category Breakdown", 60, 435);
 
     ctx.font = "bold 15px Inter, sans-serif";
     const leftColX = 60;
@@ -503,11 +506,29 @@ export function FinancialHealthQuiz() {
     ctx.fillStyle = "#09090b";
     ctx.fillText("Take your free 3-minute financial health assessment at wealthmaze.in/financial-health-score", 200, 1560);
 
-    // Download PNG
+    return canvas;
+  };
+
+  const generateAndDownloadPNG = () => {
+    const canvas = renderReportCanvas();
+    if (!canvas) return;
     const link = document.createElement("a");
     link.download = `WealthMaze-Financial-Health-Score-${totalScore}.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
+  };
+
+  const generateAndDownloadPDF = () => {
+    const canvas = renderReportCanvas();
+    if (!canvas) return;
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "px",
+      format: [1200, 1600],
+    });
+    pdf.addImage(imgData, "PNG", 0, 0, 1200, 1600);
+    pdf.save(`WealthMaze-Financial-Health-Score-${totalScore}.pdf`);
   };
 
   return (
@@ -751,11 +772,18 @@ export function FinancialHealthQuiz() {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
               <button
-                onClick={generateAndDownloadPNG}
-                className="px-6 py-3 bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-2"
+                onClick={generateAndDownloadPDF}
+                className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-xs font-extrabold transition-all shadow-lg shadow-emerald-500/20 flex items-center space-x-2"
               >
                 <Download className="h-4 w-4" />
-                <span>Download Shareable Comprehensive Report (PNG)</span>
+                <span>Download Report (PDF)</span>
+              </button>
+              <button
+                onClick={generateAndDownloadPNG}
+                className="px-5 py-3 bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-2"
+              >
+                <Download className="h-4 w-4" />
+                <span>Download Image (PNG)</span>
               </button>
               <button
                 onClick={handleRetake}
