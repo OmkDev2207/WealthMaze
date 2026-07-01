@@ -510,14 +510,14 @@ export const blogPosts: BlogPost[] = [
   // 29. SIP for Students
   {
     slug: "sip-for-students",
-    title: "How Students Can Start Investing with a ₹500 SIP",
-    description: "Learn how students can start small mutual fund SIPs with as little as ₹500, leveraging compounding early.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
+    title: "SIP for Students: Why Starting Early Matters — And Why It's Not the Whole Story",
+    description: "Starting a SIP as a student is smart. But blindly investing $50/month while ignoring skill-building is the wrong priority. Here's the honest framework for student investors.",
+    publishedAt: "July 1, 2026",
+    readTime: "11 min read",
     category: "Investing",
-    tags: ["SIP", "Students", "Beginners"],
+    tags: ["SIP for Students", "Student Investing", "Career Capital", "Beginner Guide"],
     author: authors.omk,
-    relatedCalculators: ["sip-calculator", "goal-based-investment-calculator", "rd-calculator"],
+    relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "net-worth-calculator"],
   },
 
   // 32. Tax Policy Basics
