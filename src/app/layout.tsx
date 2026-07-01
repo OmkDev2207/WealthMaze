@@ -166,6 +166,7 @@ export default function RootLayout({
                     <li><Link href="/blog" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Financial Knowledge Base</Link></li>
                     <li><Link href="/financial-health-quiz" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Financial Health Quiz</Link></li>
                     <li><Link href="/about" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About WealthMaze</Link></li>
+                    <li><Link href="/author/om-k" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About the Author (Om K.)</Link></li>
                     <li><Link href="/methodology" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Calculator Methodology</Link></li>
                     <li><Link href="/contact" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Contact Us</Link></li>
                   </ul>
@@ -183,6 +184,9 @@ export default function RootLayout({
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
                 <Link href="/about" className="hover:text-zinc-800 dark:hover:text-white transition-colors">
                   About Us
+                </Link>
+                <Link href="/author/om-k" className="hover:text-zinc-800 dark:hover:text-white transition-colors">
+                  About the Author
                 </Link>
                 <Link href="/contact" className="hover:text-zinc-800 dark:hover:text-white transition-colors">
                   Contact
