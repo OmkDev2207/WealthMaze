@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, RotateCcw, Share2, Download, ShieldCheck, AlertCircle, Award, Sparkles, ChevronRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, RotateCcw, Share2, Download, ShieldCheck, AlertCircle, Award, Sparkles, ChevronRight, BookOpen, Info } from "lucide-react";
 
 interface QuestionOption {
   label: string;
@@ -13,6 +13,7 @@ interface Question {
   id: string;
   category: string;
   question: string;
+  context: string;
   options: QuestionOption[];
   actionItem: string;
   actionLinkText?: string;
@@ -24,6 +25,7 @@ const QUESTIONS: Question[] = [
     id: "q1",
     category: "Emergency Fund",
     question: "How many months of expenses do you have saved in an easily accessible account?",
+    context: "Financial planners widely recommend maintaining 3–6 months of essential living expenses in liquid savings to absorb unexpected medical bills, job transitions, or urgent repairs without falling into debt.",
     options: [
       { label: "I have no emergency fund", points: 0 },
       { label: "Less than 1 month", points: 2 },
@@ -39,6 +41,7 @@ const QUESTIONS: Question[] = [
     id: "q2",
     category: "High Interest Debt",
     question: "Do you carry high-interest debt? (credit cards, personal loans above 10%)",
+    context: "High-interest debt compounds heavily against wealth creation. For example, carrying a 20% interest balance works like a guaranteed negative 20% return — making debt elimination the highest-yield financial priority.",
     options: [
       { label: "Yes, and I'm struggling to pay it", points: 0 },
       { label: "Yes, but I'm making minimum payments", points: 3 },
@@ -53,6 +56,7 @@ const QUESTIONS: Question[] = [
     id: "q3",
     category: "Savings Rate",
     question: "What percentage of your monthly income do you save or invest?",
+    context: "Based on the foundational 50/30/20 budgeting rule, allocating at least 20% of net income toward savings and investments is a well-established benchmark for achieving financial independence on standard timelines.",
     options: [
       { label: "I spend everything I earn", points: 0 },
       { label: "Less than 5%", points: 3 },
@@ -68,6 +72,7 @@ const QUESTIONS: Question[] = [
     id: "q4",
     category: "Retirement Planning",
     question: "Are you actively saving for retirement?",
+    context: "Thanks to the power of compound interest over multi-decade horizons, starting retirement contributions early dramatically lowers the monthly capital required to reach long-term retirement goals.",
     options: [
       { label: "No, I haven't started", points: 0 },
       { label: "I plan to start soon", points: 3 },
@@ -83,6 +88,7 @@ const QUESTIONS: Question[] = [
     id: "q5",
     category: "Investment Diversification",
     question: "How is your money currently invested?",
+    context: "Modern portfolio theory emphasizes spreading investments across uncorrelated asset classes (equities, fixed income, cash reserves) to minimize downside volatility while capturing market growth.",
     options: [
       { label: "I don't invest at all", points: 0 },
       { label: "All in cash or savings account", points: 2 },
@@ -98,6 +104,7 @@ const QUESTIONS: Question[] = [
     id: "q6",
     category: "Insurance Coverage",
     question: "Do you have adequate insurance coverage?",
+    context: "Adequate health and term life insurance form the defensive shield of personal finance, protecting accumulated wealth and family dependents from catastrophic medical or income loss events.",
     options: [
       { label: "No insurance at all", points: 0 },
       { label: "Health insurance only", points: 4 },
@@ -112,6 +119,7 @@ const QUESTIONS: Question[] = [
     id: "q7",
     category: "Budget Awareness",
     question: "Do you track your monthly income and expenses?",
+    context: "Consistent expense visibility prevents lifestyle inflation and unmonitored cash flow leaks. Regularly auditing expenditures ensures that spending actively reflects long-term financial priorities.",
     options: [
       { label: "No idea where my money goes", points: 0 },
       { label: "Roughly aware but don't track", points: 3 },
@@ -124,6 +132,7 @@ const QUESTIONS: Question[] = [
     id: "q8",
     category: "Financial Goals",
     question: "Do you have specific written financial goals?",
+    context: "Behavioral economics studies show that individuals with specific, quantified financial milestones and documented target timelines are significantly more likely to achieve wealth targets.",
     options: [
       { label: "No financial goals", points: 0 },
       { label: "Vague goals in my head", points: 3 },
@@ -138,6 +147,7 @@ const QUESTIONS: Question[] = [
     id: "q9",
     category: "Net Worth Awareness",
     question: "Do you know your current net worth (assets minus liabilities)?",
+    context: "Net worth is the definitive bottom-line indicator of personal financial health. Tracking net worth growth over time verifies whether income generation is effectively translating into permanent wealth.",
     options: [
       { label: "No idea", points: 0 },
       { label: "Rough estimate only", points: 5 },
@@ -151,6 +161,7 @@ const QUESTIONS: Question[] = [
     id: "q10",
     category: "Income Diversification",
     question: "Do you have any income sources beyond your primary job or business?",
+    context: "Relying on a single employer or revenue source introduces systemic income risk. Building supplementary income streams (investments, dividends, side ventures) builds vital economic resilience.",
     options: [
       { label: "No, single income source only", points: 0 },
       { label: "Small side income occasionally", points: 4 },
@@ -282,48 +293,70 @@ export function FinancialHealthQuiz() {
     setViewState("quiz");
   };
 
-  // Canvas PNG Generation & Download
+  // Canvas PNG Generation & Download (Enhanced 1200x1600 Report)
   const generateAndDownloadPNG = () => {
     const canvas = document.createElement("canvas");
     canvas.width = 1200;
-    canvas.height = 630;
+    canvas.height = 1600;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Background
     ctx.fillStyle = "#09090b"; // dark zinc-950
-    ctx.fillRect(0, 0, 1200, 630);
+    ctx.fillRect(0, 0, 1200, 1600);
 
-    // Border
+    // Outer Border
     ctx.strokeStyle = "#27272a";
     ctx.lineWidth = 4;
-    ctx.strokeRect(20, 20, 1160, 590);
+    ctx.strokeRect(20, 20, 1160, 1560);
 
-    // Top-left Logo
-    ctx.font = "bold 32px Inter, sans-serif";
+    // Header Logo & Title
+    ctx.font = "bold 36px Inter, sans-serif";
     ctx.fillStyle = "#10b981"; // emerald-500
-    ctx.fillText("WealthMaze", 60, 80);
-    ctx.font = "18px Inter, sans-serif";
+    ctx.fillText("WealthMaze", 60, 85);
+    ctx.font = "bold 18px Inter, sans-serif";
+    ctx.fillStyle = "#a1a1aa";
+    ctx.fillText("COMPREHENSIVE FINANCIAL HEALTH REPORT", 260, 83);
+
+    const dateStr = savedData?.date || new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    ctx.font = "16px Inter, sans-serif";
     ctx.fillStyle = "#71717a";
-    ctx.fillText("FINANCIAL HEALTH ASSESSMENT", 240, 78);
+    ctx.fillText(`Assessment Date: ${dateStr}`, 60, 120);
+
+    // Divider line
+    ctx.strokeStyle = "#18181b";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(60, 145);
+    ctx.lineTo(1140, 145);
+    ctx.stroke();
+
+    // Score Hero Section (Top Box)
+    ctx.fillStyle = "#18181b";
+    ctx.beginPath();
+    ctx.roundRect(60, 175, 1080, 210, 24);
+    ctx.fill();
+    ctx.strokeStyle = "#27272a";
+    ctx.lineWidth = 2;
+    ctx.stroke();
 
     // Center Score Number
-    ctx.font = "bold 130px Inter, sans-serif";
+    ctx.font = "bold 110px Inter, sans-serif";
     ctx.fillStyle = "#ffffff";
     const scoreStr = `${totalScore}`;
-    const scoreWidth = ctx.measureText(scoreStr).width;
-    ctx.fillText(scoreStr, 600 - scoreWidth - 10, 240);
+    ctx.fillText(scoreStr, 120, 310);
 
-    ctx.font = "bold 44px Inter, sans-serif";
+    ctx.font = "bold 36px Inter, sans-serif";
     ctx.fillStyle = "#71717a";
-    ctx.fillText("/ 100", 600 + 10, 240);
+    const scoreWidth = ctx.measureText(scoreStr).width;
+    ctx.fillText("/ 100", 120 + scoreWidth + 12, 310);
 
-    // Grade Badge
+    // Grade Badge inside Hero Box
     const gradeText = `Grade ${gradeInfo.letter} — ${gradeInfo.label}`;
-    ctx.font = "bold 28px Inter, sans-serif";
+    ctx.font = "bold 26px Inter, sans-serif";
     const badgeWidth = ctx.measureText(gradeText).width + 60;
-    const badgeX = 600 - badgeWidth / 2;
-    const badgeY = 280;
+    const badgeX = 1080 - badgeWidth;
+    const badgeY = 240;
 
     ctx.fillStyle = gradeInfo.letter === "A" || gradeInfo.letter === "B" ? "#064e3b" : gradeInfo.letter === "C" ? "#78350f" : "#7f1d1d";
     ctx.beginPath();
@@ -336,44 +369,139 @@ export function FinancialHealthQuiz() {
     ctx.fillStyle = "#ffffff";
     ctx.fillText(gradeText, badgeX + 30, badgeY + 36);
 
-    // Category Breakdown Preview (10 bars across 2 columns)
-    ctx.font = "bold 16px Inter, sans-serif";
-    const leftColX = 100;
-    const rightColX = 640;
-    let startY = 380;
+    // Section 1: 10-Pillar Breakdown
+    ctx.font = "bold 22px Inter, sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("1. 10-Pillar Financial Pillar Breakdown", 60, 435);
+
+    ctx.font = "bold 15px Inter, sans-serif";
+    const leftColX = 60;
+    const rightColX = 610;
+    let startY = 480;
 
     QUESTIONS.forEach((q, idx) => {
       const colX = idx < 5 ? leftColX : rightColX;
-      const rowY = startY + (idx % 5) * 36;
+      const rowY = startY + (idx % 5) * 54;
       const pts = selectedAnswers[idx] !== -1 ? q.options[selectedAnswers[idx]].points : 0;
 
-      ctx.fillStyle = "#a1a1aa";
-      ctx.fillText(q.category, colX, rowY);
+      // Category box background
+      ctx.fillStyle = "#18181b";
+      ctx.beginPath();
+      ctx.roundRect(colX, rowY - 26, 530, 44, 12);
+      ctx.fill();
+
+      ctx.fillStyle = "#e4e4e7";
+      ctx.fillText(q.category, colX + 16, rowY + 3);
 
       // Draw bar background
       ctx.fillStyle = "#27272a";
       ctx.beginPath();
-      ctx.roundRect(colX + 240, rowY - 14, 200, 16, 8);
+      ctx.roundRect(colX + 260, rowY - 10, 180, 14, 7);
       ctx.fill();
 
       // Draw active fill
-      const fillWidth = (pts / 10) * 200;
+      const fillWidth = (pts / 10) * 180;
       ctx.fillStyle = pts >= 8 ? "#10b981" : pts >= 5 ? "#f59e0b" : "#ef4444";
       ctx.beginPath();
-      ctx.roundRect(colX + 240, rowY - 14, Math.max(16, fillWidth), 16, 8);
+      ctx.roundRect(colX + 260, rowY - 10, Math.max(14, fillWidth), 14, 7);
       ctx.fill();
 
       // Points text
       ctx.fillStyle = "#ffffff";
-      ctx.fillText(`${pts}/10`, colX + 455, rowY);
+      ctx.fillText(`${pts}/10`, colX + 460, rowY + 3);
     });
 
-    // Bottom Footer
+    // Section 2: Top Priority Actions
+    ctx.font = "bold 22px Inter, sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("2. Key Priority Action Items", 60, 775);
+
+    const priorityQs = QUESTIONS.map((q, idx) => ({
+      q,
+      pts: selectedAnswers[idx] !== -1 ? q.options[selectedAnswers[idx]].points : 0
+    })).filter(item => item.pts < 10).sort((a, b) => a.pts - b.pts).slice(0, 3);
+
+    let actionY = 815;
+    if (priorityQs.length === 0) {
+      ctx.fillStyle = "#064e3b";
+      ctx.beginPath();
+      ctx.roundRect(60, actionY, 1080, 90, 16);
+      ctx.fill();
+      ctx.font = "bold 18px Inter, sans-serif";
+      ctx.fillStyle = "#10b981";
+      ctx.fillText("Flawless Financial Score!", 90, actionY + 35);
+      ctx.font = "15px Inter, sans-serif";
+      ctx.fillStyle = "#e4e4e7";
+      ctx.fillText("You scored 100/100 across every pillar. Keep maintaining your disciplined budget, investments, and insurance.", 90, actionY + 65);
+      actionY += 120;
+    } else {
+      priorityQs.forEach((item, i) => {
+        ctx.fillStyle = "#18181b";
+        ctx.beginPath();
+        ctx.roundRect(60, actionY, 1080, 110, 16);
+        ctx.fill();
+        ctx.strokeStyle = "#27272a";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        ctx.font = "bold 16px Inter, sans-serif";
+        ctx.fillStyle = "#10b981";
+        ctx.fillText(`PRIORITY ${i + 1}: ${item.q.category.toUpperCase()} (${item.pts}/10)`, 90, actionY + 32);
+
+        ctx.font = "15px Inter, sans-serif";
+        ctx.fillStyle = "#d4d4d8";
+        const words = item.q.actionItem.split(" ");
+        let line = "";
+        let lineY = actionY + 62;
+        const maxLineWidth = 1000;
+
+        for (let n = 0; n < words.length; n++) {
+          const testLine = line + words[n] + " ";
+          const metrics = ctx.measureText(testLine);
+          if (metrics.width > maxLineWidth && n > 0) {
+            ctx.fillText(line, 90, lineY);
+            line = words[n] + " ";
+            lineY += 24;
+          } else {
+            line = testLine;
+          }
+        }
+        ctx.fillText(line, 90, lineY);
+        actionY += 130;
+      });
+    }
+
+    // Section 3: Methodology & Benchmarks
+    const methodY = Math.max(actionY + 20, 1220);
+    ctx.font = "bold 22px Inter, sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("3. Methodology & Financial Benchmarks", 60, methodY);
+
     ctx.fillStyle = "#18181b";
-    ctx.fillRect(22, 560, 1156, 48);
-    ctx.font = "bold 20px Inter, sans-serif";
+    ctx.beginPath();
+    ctx.roundRect(60, methodY + 25, 1080, 180, 16);
+    ctx.fill();
+    ctx.strokeStyle = "#27272a";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    ctx.font = "bold 15px Inter, sans-serif";
     ctx.fillStyle = "#10b981";
-    ctx.fillText("Take the free quiz at wealthmaze.in/financial-health-score", 340, 590);
+    ctx.fillText("Scoring Framework Alignment:", 90, methodY + 60);
+
+    ctx.font = "14px Inter, sans-serif";
+    ctx.fillStyle = "#a1a1aa";
+    ctx.fillText("• Emergency Reserves: Evaluates alignment with standard 3–6 month liquid savings rules.", 90, methodY + 90);
+    ctx.fillText("• Debt Ratios & Savings Rate: Aligns with 50/30/20 budget guidelines and high-interest debt elimination benchmarks.", 90, methodY + 115);
+    ctx.fillText("• Retirement & Diversification: Reflects foundational long-term portfolio compounding principles (3-fund portfolio rules).", 90, methodY + 140);
+    ctx.fillText("• Risk Protection: Evaluates critical term life and health insurance coverage required for wealth preservation.", 90, methodY + 165);
+
+    // Bottom Footer
+    ctx.fillStyle = "#10b981";
+    ctx.fillRect(22, 1530, 1156, 48);
+    ctx.font = "bold 18px Inter, sans-serif";
+    ctx.fillStyle = "#09090b";
+    ctx.fillText("Take your free 3-minute financial health assessment at wealthmaze.in/financial-health-score", 200, 1560);
 
     // Download PNG
     const link = document.createElement("a");
@@ -450,6 +578,35 @@ export function FinancialHealthQuiz() {
             </button>
           </div>
 
+          {/* Methodology & Credibility Section */}
+          <div className="pt-8 border-t border-zinc-200/80 dark:border-zinc-800/80 text-left max-w-xl mx-auto space-y-4">
+            <div className="flex items-center space-x-2 text-zinc-900 dark:text-white font-extrabold text-sm">
+              <BookOpen className="h-4 w-4 text-emerald-500" />
+              <span>How We Score & Assessment Methodology</span>
+            </div>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium">
+              Your Financial Health Score evaluates 10 core pillars of personal finance based on established financial planning frameworks and widely recognized guidelines:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div className="p-3.5 rounded-xl bg-zinc-100/80 dark:bg-zinc-900/50 border border-zinc-200/60 dark:border-zinc-800 space-y-1">
+                <span className="font-bold text-zinc-900 dark:text-zinc-200">Emergency Reserves</span>
+                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-normal">Evaluates alignment with standard 3–6 month liquid savings rules.</p>
+              </div>
+              <div className="p-3.5 rounded-xl bg-zinc-100/80 dark:bg-zinc-900/50 border border-zinc-200/60 dark:border-zinc-800 space-y-1">
+                <span className="font-bold text-zinc-900 dark:text-zinc-200">50/30/20 Budgeting</span>
+                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-normal">Measures savings rate against established wealth accumulation ratios.</p>
+              </div>
+              <div className="p-3.5 rounded-xl bg-zinc-100/80 dark:bg-zinc-900/50 border border-zinc-200/60 dark:border-zinc-800 space-y-1">
+                <span className="font-bold text-zinc-900 dark:text-zinc-200">Debt Elimination</span>
+                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-normal">Prioritizes high-interest debt repayment over speculative yield.</p>
+              </div>
+              <div className="p-3.5 rounded-xl bg-zinc-100/80 dark:bg-zinc-900/50 border border-zinc-200/60 dark:border-zinc-800 space-y-1">
+                <span className="font-bold text-zinc-900 dark:text-zinc-200">Risk Mitigation</span>
+                <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-normal">Checks critical health and term life insurance defensive barriers.</p>
+              </div>
+            </div>
+          </div>
+
           {/* Disclaimer 1 — Required Educational Disclaimer */}
           <div className="pt-6 border-t border-zinc-100 dark:border-zinc-900/80">
             <p className="text-[11px] text-zinc-400 dark:text-zinc-500 leading-relaxed max-w-xl mx-auto">
@@ -481,6 +638,19 @@ export function FinancialHealthQuiz() {
             <h2 className="text-xl sm:text-2xl font-extrabold text-zinc-900 dark:text-white leading-snug">
               {QUESTIONS[currentStep].question}
             </h2>
+
+            {/* Why This Matters Context Banner */}
+            <div className="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-150 dark:border-zinc-800/80 flex items-start space-x-3 text-left">
+              <Info className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+              <div className="space-y-1">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">
+                  Why This Matters
+                </span>
+                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium">
+                  {QUESTIONS[currentStep].context}
+                </p>
+              </div>
+            </div>
 
             {/* Options List */}
             <div className="space-y-3">
@@ -585,7 +755,7 @@ export function FinancialHealthQuiz() {
                 className="px-6 py-3 bg-zinc-900 dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl text-xs font-bold transition-all shadow-md flex items-center space-x-2"
               >
                 <Download className="h-4 w-4" />
-                <span>Download Shareable Scorecard (PNG)</span>
+                <span>Download Shareable Comprehensive Report (PNG)</span>
               </button>
               <button
                 onClick={handleRetake}
@@ -594,6 +764,38 @@ export function FinancialHealthQuiz() {
                 <RotateCcw className="h-4 w-4" />
                 <span>Retake Quiz</span>
               </button>
+            </div>
+          </div>
+
+          {/* Grade Benchmark Table */}
+          <div className="p-6 sm:p-8 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-3xl shadow-lg space-y-4">
+            <div className="border-b border-zinc-100 dark:border-zinc-900 pb-3">
+              <h3 className="text-base font-extrabold text-zinc-900 dark:text-white flex items-center space-x-2">
+                <BookOpen className="h-4 w-4 text-emerald-500" />
+                <span>Understanding Your Financial Health Grade</span>
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 text-left">
+              <div className={`p-3.5 rounded-xl border ${gradeInfo.letter === "A" ? "border-emerald-500 bg-emerald-500/10" : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"}`}>
+                <div className="font-extrabold text-emerald-500 text-sm">Grade A (85–100)</div>
+                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Exceptional financial foundations across all 10 core pillars.</div>
+              </div>
+              <div className={`p-3.5 rounded-xl border ${gradeInfo.letter === "B" ? "border-emerald-500 bg-emerald-500/10" : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"}`}>
+                <div className="font-extrabold text-emerald-500 text-sm">Grade B (70–84)</div>
+                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Strong financial health with targeted opportunities to optimize.</div>
+              </div>
+              <div className={`p-3.5 rounded-xl border ${gradeInfo.letter === "C" ? "border-amber-500 bg-amber-500/10" : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"}`}>
+                <div className="font-extrabold text-amber-500 text-sm">Grade C (50–69)</div>
+                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Developing financial habits; specific gaps require attention.</div>
+              </div>
+              <div className={`p-3.5 rounded-xl border ${gradeInfo.letter === "D" ? "border-orange-500 bg-orange-500/10" : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"}`}>
+                <div className="font-extrabold text-orange-500 text-sm">Grade D (30–49)</div>
+                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">Vulnerable position; prioritize debt repayment and emergency reserves.</div>
+              </div>
+              <div className={`p-3.5 rounded-xl border ${gradeInfo.letter === "F" ? "border-rose-500 bg-rose-500/10" : "border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"}`}>
+                <div className="font-extrabold text-rose-500 text-sm">Grade F (0–29)</div>
+                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">At risk; urgent reinforcement of basic budgeting and savings needed.</div>
+              </div>
             </div>
           </div>
 
