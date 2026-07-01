@@ -160,22 +160,32 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
     doc.setFillColor(16, 185, 129); // Top emerald stripe
     doc.rect(margin, 36, contentWidth, 4, "F");
 
+    // Tier 1: Brand Headline & Date (Overlap Proof)
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(18);
-    doc.setTextColor(15, 23, 42);
-    const reportTitle = title ? `${title} — Assessment Dossier` : "Financial Assessment Dossier";
-    doc.text(cleanPDFText(reportTitle), margin, 64);
+    doc.setFontSize(10.5);
+    doc.setTextColor(16, 185, 129);
+    doc.text("WEALTHMAZE FINANCIAL REPORT", margin, 52);
 
     doc.setFont("helvetica", "normal");
-    doc.setFontSize(9.5);
+    doc.setFontSize(9);
     doc.setTextColor(100, 116, 139);
-    doc.text(`Generated: ${dateStr}`, pageWidth - margin - 100, 62);
+    const dateLabel = `Generated: ${dateStr}`;
+    doc.text(dateLabel, pageWidth - margin - doc.getTextWidth(dateLabel), 52);
 
+    // Tier 2: Calculator Title (Word Wrapped & No "Dossier")
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.setTextColor(15, 23, 42);
+    const rawTitle = title ? `${title} — Projection Report` : "Financial Assessment Report";
+    const titleLines = doc.splitTextToSize(cleanPDFText(rawTitle), contentWidth);
+    doc.text(titleLines, margin, 70);
+
+    const headerBottomY = 70 + (titleLines.length - 1) * 18 + 10;
     doc.setDrawColor(226, 232, 240);
     doc.setLineWidth(1);
-    doc.line(margin, 78, pageWidth - margin, 78);
+    doc.line(margin, headerBottomY, pageWidth - margin, headerBottomY);
 
-    let currentY = 104;
+    let currentY = headerBottomY + 18;
 
     // 1. INPUT PARAMETERS GRID
     if (inputsSummary && inputsSummary.length > 0) {
@@ -183,12 +193,13 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.setFontSize(12);
       doc.setTextColor(30, 41, 59);
       doc.text("1. Assessment Input Parameters", margin, currentY);
-      currentY += 16;
+      currentY += 14;
 
+      const isDense = inputsSummary.length > 4;
       const cols = 2;
       const cardW = (contentWidth - 14) / 2;
-      const cardH = 42;
-      const gapY = 10;
+      const cardH = isDense ? 34 : 40;
+      const gapY = isDense ? 8 : 10;
 
       inputsSummary.forEach((inp, idx) => {
         const col = idx % cols;
@@ -201,18 +212,18 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
         doc.roundedRect(xPos, yPos, cardW, cardH, 5, 5, "FD");
 
         doc.setFont("helvetica", "normal");
-        doc.setFontSize(8.5);
+        doc.setFontSize(8);
         doc.setTextColor(100, 116, 139);
-        doc.text(cleanPDFText(inp.label.toUpperCase()), xPos + 12, yPos + 16);
+        doc.text(cleanPDFText(inp.label.toUpperCase()), xPos + 10, yPos + (isDense ? 13 : 15));
 
         doc.setFont("helvetica", "bold");
-        doc.setFontSize(12.5);
+        doc.setFontSize(isDense ? 11.5 : 12.5);
         doc.setTextColor(15, 23, 42);
-        doc.text(cleanPDFText(inp.value), xPos + 12, yPos + 32);
+        doc.text(cleanPDFText(inp.value), xPos + 10, yPos + (isDense ? 26 : 30));
       });
 
       const numRows = Math.ceil(inputsSummary.length / cols);
-      currentY += numRows * (cardH + gapY) + 20;
+      currentY += numRows * (cardH + gapY) + 16;
     }
 
     // 2. STRATEGIC WEALTH PROJECTION & OUTPUTS
@@ -220,18 +231,18 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
     doc.setFontSize(12);
     doc.setTextColor(30, 41, 59);
     doc.text("2. Strategic Wealth Projection", margin, currentY);
-    currentY += 16;
+    currentY += 14;
 
     const numOuts = outputs.length;
     const outCols = Math.min(numOuts, 3);
     const outCardW = (contentWidth - (outCols - 1) * 12) / outCols;
-    const outCardH = 64;
+    const outCardH = numOuts > 3 ? 54 : 60;
 
     outputs.forEach((out, idx) => {
       const col = idx % 3;
       const row = Math.floor(idx / 3);
       const xPos = margin + col * (outCardW + 12);
-      const yPos = currentY + row * (outCardH + 12);
+      const yPos = currentY + row * (outCardH + 10);
 
       const val = result.values[out.id] ?? 0;
       const isTotal =
@@ -250,21 +261,48 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.roundedRect(xPos, yPos, outCardW, outCardH, 6, 6, "FD");
 
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(8.5);
+      doc.setFontSize(8);
       doc.setTextColor(isTotal ? 5 : 100, isTotal ? 150 : 116, isTotal ? 105 : 139);
-      doc.text(cleanPDFText(out.label.toUpperCase()), xPos + 12, yPos + 20);
+      doc.text(cleanPDFText(out.label.toUpperCase()), xPos + 10, yPos + 18);
 
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(isTotal ? 15.5 : 14);
+      doc.setFontSize(isTotal ? 14.5 : 13.5);
       doc.setTextColor(isTotal ? 4 : 15, isTotal ? 120 : 23, isTotal ? 87 : 42);
       const formattedVal = formatValue(val, out.format, out.unit);
-      doc.text(cleanPDFText(formattedVal), xPos + 12, yPos + 46);
+      doc.text(cleanPDFText(formattedVal), xPos + 10, yPos + (numOuts > 3 ? 40 : 44));
     });
 
     const outRows = Math.ceil(numOuts / 3);
-    currentY += outRows * (outCardH + 12) + 20;
+    currentY += outRows * (outCardH + 10) + 16;
 
-    // 3. VECTOR PORTFOLIO ALLOCATION METER
+    // 3. RAZOR-SHARP VECTOR DONUT CHART
+    const drawVectorDonutSlice = (
+      cx: number,
+      cy: number,
+      outerR: number,
+      innerR: number,
+      startAngleDeg: number,
+      endAngleDeg: number,
+      fillColorRGB: [number, number, number]
+    ) => {
+      const steps = Math.max(2, Math.ceil(Math.abs(endAngleDeg - startAngleDeg) / 2));
+      const points: [number, number][] = [];
+      for (let i = 0; i <= steps; i++) {
+        const rad = (Math.PI / 180) * (startAngleDeg + ((endAngleDeg - startAngleDeg) * i) / steps);
+        points.push([cx + outerR * Math.cos(rad), cy + outerR * Math.sin(rad)]);
+      }
+      for (let i = steps; i >= 0; i--) {
+        const rad = (Math.PI / 180) * (startAngleDeg + ((endAngleDeg - startAngleDeg) * i) / steps);
+        points.push([cx + innerR * Math.cos(rad), cy + innerR * Math.sin(rad)]);
+      }
+      const deltas: [number, number][] = [];
+      for (let i = 1; i < points.length; i++) {
+        deltas.push([points[i][0] - points[i - 1][0], points[i][1] - points[i - 1][1]]);
+      }
+      doc.setFillColor(...fillColorRGB);
+      doc.lines(deltas, points[0][0], points[0][1], [1, 1], "F", true);
+    };
+
     let investedVal = 0;
     let gainsVal = 0;
     outputs.forEach((out) => {
@@ -282,50 +320,63 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
     }
     const totalPie = investedVal + gainsVal;
 
-    if (totalPie > 0 && currentY < pageHeight - 160) {
-      const meterBoxH = 88;
+    if (totalPie > 0 && currentY < pageHeight - 145) {
+      const donutBoxH = Math.min(125, pageHeight - 45 - currentY);
       doc.setFillColor(248, 250, 252);
       doc.setDrawColor(226, 232, 240);
-      doc.roundedRect(margin, currentY, contentWidth, meterBoxH, 6, 6, "FD");
+      doc.roundedRect(margin, currentY, contentWidth, donutBoxH, 6, 6, "FD");
 
       doc.setFont("helvetica", "bold");
       doc.setFontSize(11);
       doc.setTextColor(30, 41, 59);
       doc.text("Portfolio Allocation Breakdown", margin + 14, currentY + 22);
 
-      const barX = margin + 14;
-      const barY = currentY + 34;
-      const barW = contentWidth - 28;
-      const barH = 16;
+      const cx = margin + 90;
+      const cy = currentY + (donutBoxH / 2) + 8;
+      const outerR = Math.min(44, (donutBoxH - 32) / 2);
+      const innerR = outerR * 0.62;
+
       const invRatio = Math.min(1, Math.max(0, investedVal / totalPie));
-      const w1 = invRatio * barW;
-      const w2 = barW - w1;
+      const invSpan = invRatio * 360;
 
-      // Draw Principal Segment (#3b82f6)
-      if (w1 > 0) {
-        doc.setFillColor(59, 130, 246);
-        doc.roundedRect(barX, barY, w1, barH, 3, 3, "F");
+      // Draw Principal Slice (#3b82f6)
+      if (invSpan > 0.5) {
+        drawVectorDonutSlice(cx, cy, outerR, innerR, -90, -90 + invSpan, [59, 130, 246]);
       }
-      // Draw Returns Segment (#10b981)
-      if (w2 > 0) {
-        doc.setFillColor(16, 185, 129);
-        doc.roundedRect(barX + w1, barY, w2, barH, 3, 3, "F");
+      // Draw Returns Slice (#10b981)
+      if (360 - invSpan > 0.5) {
+        drawVectorDonutSlice(cx, cy, outerR, innerR, -90 + invSpan, 270, [16, 185, 129]);
       }
 
+      // Center hole label
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(7.5);
+      doc.setTextColor(100, 116, 139);
+      const lbl = "TOTAL";
+      doc.text(lbl, cx - doc.getTextWidth(lbl) / 2, cy - 3);
+
+      doc.setFontSize(10);
+      doc.setTextColor(15, 23, 42);
+      const totalOut = outputs.find((o) => o.id.toLowerCase().includes("total") || o.id.toLowerCase().includes("maturity"));
+      const totValStr = cleanPDFText(formatCompact(totalOut ? (result.values[totalOut.id] ?? totalPie) : totalPie, "currency"));
+      doc.text(totValStr, cx - doc.getTextWidth(totValStr) / 2, cy + 9);
+
+      // Legend Pills beside donut
+      const legendX = margin + 195;
+      const legendY = currentY + (donutBoxH / 2) - 8;
       const invPct = (invRatio * 100).toFixed(1);
       const gainPct = ((1 - invRatio) * 100).toFixed(1);
 
-      // Legend Pills
       doc.setFillColor(59, 130, 246);
-      doc.rect(margin + 14, currentY + 63, 10, 10, "F");
+      doc.rect(legendX, legendY - 8, 10, 10, "F");
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(9);
+      doc.setFontSize(9.5);
       doc.setTextColor(51, 65, 85);
-      doc.text(cleanPDFText(`Invested Principal: ${invPct}%`), margin + 28, currentY + 72);
+      doc.text(cleanPDFText(`Invested Principal: ${invPct}%`), legendX + 16, legendY);
 
       doc.setFillColor(16, 185, 129);
-      doc.rect(margin + 230, currentY + 63, 10, 10, "F");
-      doc.text(cleanPDFText(`Compound Wealth Gain: ${gainPct}%`), margin + 244, currentY + 72);
+      doc.rect(legendX, legendY + 14, 10, 10, "F");
+      doc.text(cleanPDFText(`Compound Wealth Gain: ${gainPct}%`), legendX + 16, legendY + 22);
     }
 
     drawFooter(1);
@@ -339,12 +390,17 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.rect(margin, 36, contentWidth, 4, "F");
 
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(16);
+      doc.setFontSize(10.5);
+      doc.setTextColor(16, 185, 129);
+      doc.text("WEALTHMAZE FINANCIAL REPORT", margin, 52);
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(15);
       doc.setTextColor(15, 23, 42);
-      doc.text("Alternative Scenarios & Growth Timeline Analysis", margin, 62);
+      doc.text("Alternative Scenarios & Growth Timeline Analysis", margin, 70);
 
       doc.setDrawColor(226, 232, 240);
-      doc.line(margin, 76, pageWidth - margin, 76);
+      doc.line(margin, 80, pageWidth - margin, 80);
 
       let p2Y = 100;
 
@@ -466,7 +522,7 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
     }
 
     const cleanTitle = (title || "calculator").toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    doc.save(`wealthmaze-${cleanTitle}-dossier.pdf`);
+    doc.save(`wealthmaze-${cleanTitle}-report.pdf`);
   };
 
   return (
