@@ -1,7 +1,3 @@
-# How to Save for a Car: The Real Math Dealers Hope You Never Run
-
-*By Om K. | WealthMaze | Loans | 11 min read*
-
 There is a number every car dealership leads with. Every showroom salesperson asks for it within the first two minutes. Every financing brochure puts it in the largest font on the page.
 
 That number is the EMI.

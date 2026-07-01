@@ -1,7 +1,3 @@
-# How Is Loan EMI Calculated? The Formula, the Amortization Trap, and Why "Lower EMI" Is Often the Worse Deal
-
-*By Om K. | WealthMaze | Loans | 11 min read*
-
 There is a number every bank loan officer can produce instantly. Punch in the loan amount, the rate, the tenure — out comes a fixed monthly figure, printed cleanly on a sanction letter. "Your EMI is $320," they'll say, with the confidence of someone reading off a calculator.
 
 Ask them to explain how that number breaks down internally — how much of it is interest, how much is actually yours, how that ratio shifts over the loan — and the conversation usually stalls. Not because the math is hidden. Because almost nobody asks.
@@ -121,7 +117,7 @@ The lesson contradicts a common instinct: people often wait to prepay until they
 
 **Confusing flat rate with reducing rate.** A flat interest rate calculates interest on the full original loan amount for the entire tenure, ignoring that you're paying it down monthly. A reducing-balance rate — what nearly all formal bank loans use — only charges interest on what's actually still owed. A "12% flat rate" loan can cost roughly the same as a 20–24% reducing-rate loan. This single misunderstanding is one of the most expensive mistakes a borrower can make, particularly with informal or vehicle financing that still advertises flat rates.
 
-**Treating the down payment as separate from the interest decision.** A larger down payment doesn't just reduce your EMI — it shrinks P in the formula directly, which compounds into a disproportionately larger reduction in total interest paid, because every rupee of principal removed was going to be charged interest for the entire remaining tenure.
+**Treating the down payment as separate from the interest decision.** A larger down payment doesn't just reduce your EMI — it shrinks P in the formula directly, which compounds into a disproportionately larger reduction in total interest paid, because every dollar of principal removed was going to be charged interest for the entire remaining tenure.
 
 ## Using the WealthMaze EMI Calculator
 

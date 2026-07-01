@@ -1,7 +1,3 @@
-# SIP for Students: Why Starting Early Matters — And Why It's Not the Whole Story
-
-*By Om K. | WealthMaze | Investing | 11 min read*
-
 Every personal finance article written for students says the same thing.
 
 Start a SIP now. Even $50 a month. Time is your biggest asset. Compounding will do the rest. The earlier you start, the wealthier you'll be.
