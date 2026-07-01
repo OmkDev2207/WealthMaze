@@ -49,25 +49,16 @@ export default function AboutPage() {
 
         <h2 className="text-xl font-bold text-zinc-800 dark:text-zinc-200 mt-8">Who&apos;s Behind WealthMaze</h2>
         <p>
-          My name is Om K. I&apos;m an active equity investor, a finance management student, and the person who built every calculator on this site.
+          Om K. is the founder of WealthMaze and a self-directed personal finance researcher who has spent years reading, studying, and writing about how money actually works — and why most people get it wrong.
         </p>
         <p>
-          WealthMaze started because I couldn&apos;t find a single financial tool platform that was fast, private, and actually built for how real investors think. Most calculator sites were cluttered, ad-heavy, or required you to hand over personal data just to run a simple SIP projection. I built WealthMaze to fix that.
+          His interest in finance is not academic in the traditional sense. It started with curiosity — about why intelligent, hardworking people often struggle financially, why conventional money advice rarely works in practice, and what behavioral psychology reveals about the real reasons people make the financial decisions they do.
         </p>
         <p>
-          My obsession is behavioral finance — the study of why people make the financial decisions they do, even when the math says otherwise. Why does someone with a ₹2 lakh salary feel broke while someone earning ₹60,000 builds wealth steadily? Why do investors panic-sell at the exact moment they should be buying? These questions drive everything I write and every tool I build here.
+          He built WealthMaze after struggling to find a single financial tool platform that was fast, genuinely useful, and completely private. Every calculator on WealthMaze runs entirely in your browser — your financial data never leaves your device.
         </p>
         <p>
-          I actively invest in equity markets and spend a significant amount of time studying financial systems, market history, and the psychology behind money decisions. I don&apos;t have a television channel or a SEBI advisory license. What I have is genuine curiosity, real skin in the game, and a commitment to giving you tools and perspectives that are honest — not designed to sell you anything.
-        </p>
-        <p>
-          Every calculator on WealthMaze runs locally in your browser. Every article is written to give you a real perspective, not just repeat what every other finance site already says.
-        </p>
-        <p>
-          That&apos;s the promise.
-        </p>
-        <p className="font-semibold text-zinc-700 dark:text-zinc-350">
-          — Om K., Founder, WealthMaze
+          His writing focuses on the ideas and frameworks that actually change financial behavior — not recycled tips, not generic advice, and not content designed to impress rather than inform. The goal of every article on WealthMaze is to give readers a clearer, more honest picture of how money works than they had before reading it.
         </p>
 
         <h2 className="text-xl font-bold text-zinc-800 dark:text-zinc-200 mt-8">Why Users Choose WealthMaze</h2>
