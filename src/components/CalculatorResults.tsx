@@ -110,6 +110,27 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
     const contentWidth = pageWidth - margin * 2;
     let y = 50;
 
+    const cleanPDFText = (text: any): string => {
+      if (text === null || text === undefined) return "";
+      let str = String(text);
+      str = str.replace(/₹/g, "Rs. ");
+      str = str.replace(/€/g, "EUR ");
+      str = str.replace(/£/g, "GBP ");
+      str = str.replace(/¥/g, "Yen ");
+      str = str.replace(/₽/g, "RUB ");
+      str = str.replace(/₩/g, "KRW ");
+      str = str.replace(/د\.إ/g, "AED ");
+      str = str.replace(/ر\.س/g, "SAR ");
+      str = str.replace(/₺/g, "TRY ");
+      str = str.replace(/₪/g, "ILS ");
+      str = str.replace(/฿/g, "THB ");
+      str = str.replace(/₱/g, "PHP ");
+      str = str.replace(/₫/g, "VND ");
+      str = str.replace(/[\u00A0\u202F\u2007\u2060\u200B-\u200D\uFEFF]/g, " ");
+      str = str.replace(/[^\x20-\x7E]/g, "");
+      return str.replace(/\s+/g, " ").trim();
+    };
+
     // 1. Header & Branding
     doc.setFont("helvetica", "bold");
     doc.setFontSize(22);
@@ -121,14 +142,14 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
     doc.setFontSize(14);
     doc.setTextColor(39, 39, 42);
     const reportTitle = title ? `${title} — Assessment Report` : "Financial Calculator Report";
-    doc.text(reportTitle, margin + logoWidth + 14, y - 1);
+    doc.text(cleanPDFText(reportTitle), margin + logoWidth + 14, y - 1);
 
     y += 18;
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(113, 113, 122);
     const dateStr = new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" });
-    doc.text(`Generated on: ${dateStr}`, margin, y);
+    doc.text(cleanPDFText(`Generated on: ${dateStr}`), margin, y);
 
     y += 14;
     doc.setDrawColor(228, 228, 231);
@@ -163,12 +184,13 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
         doc.setFont("helvetica", "normal");
         doc.setFontSize(10);
         doc.setTextColor(100, 116, 139);
-        doc.text(`${inp.label}: `, xPos, curY);
-        const labelW = doc.getTextWidth(`${inp.label}: `);
+        const cleanLabel = cleanPDFText(`${inp.label}: `);
+        doc.text(cleanLabel, xPos, curY);
+        const labelW = doc.getTextWidth(cleanLabel);
 
         doc.setFont("helvetica", "bold");
         doc.setTextColor(15, 23, 42);
-        doc.text(`${inp.value}`, xPos + labelW, curY);
+        doc.text(cleanPDFText(inp.value), xPos + labelW, curY);
       });
 
       y += boxHeight + 24;
@@ -209,13 +231,13 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.setFont("helvetica", "bold");
       doc.setFontSize(8.5);
       doc.setTextColor(100, 116, 139);
-      doc.text(out.label.toUpperCase(), boxX + 12, y + 18);
+      doc.text(cleanPDFText(out.label.toUpperCase()), boxX + 12, y + 18);
 
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(14);
+      doc.setFontSize(13.5);
       doc.setTextColor(isTotal ? 5 : 15, isTotal ? 150 : 23, isTotal ? 105 : 42);
       const formattedVal = formatValue(val, out.format, out.unit);
-      doc.text(formattedVal, boxX + 12, y + 40);
+      doc.text(cleanPDFText(formattedVal), boxX + 12, y + 40);
     });
 
     const totalOutRows = Math.ceil(outputs.length / 3);
@@ -249,7 +271,7 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.setFontSize(9);
       doc.setTextColor(71, 85, 105);
       headers.forEach((h, i) => {
-        doc.text(String(h), margin + 8 + i * colW, y + 16);
+        doc.text(cleanPDFText(String(h)), margin + 8 + i * colW, y + 16);
       });
       y += 24;
 
@@ -263,11 +285,11 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
         doc.line(margin, y + 24, margin + contentWidth, y + 24);
 
         doc.setFont("helvetica", rIdx === 0 ? "bold" : "normal");
-        doc.setFontSize(9);
+        doc.setFontSize(8.5);
         doc.setTextColor(rIdx === 0 ? 15 : 51, rIdx === 0 ? 23 : 65, rIdx === 0 ? 42 : 85);
 
         row.forEach((cell, cIdx) => {
-          doc.text(String(cell), margin + 8 + cIdx * colW, y + 16);
+          doc.text(cleanPDFText(String(cell)), margin + 8 + cIdx * colW, y + 16);
         });
         y += 24;
       });
@@ -294,7 +316,7 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.setFontSize(9);
       doc.setTextColor(71, 85, 105);
       schedHeaders.forEach((h, i) => {
-        doc.text(String(h), margin + 8 + i * schedColW, y + 16);
+        doc.text(cleanPDFText(String(h)), margin + 8 + i * schedColW, y + 16);
       });
       y += 24;
 
@@ -314,7 +336,7 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
 
         Object.values(row).forEach((val: any, cIdx) => {
           const displayVal = typeof val === "number" && cIdx > 0 ? formatValue(val, "currency") : String(val);
-          doc.text(displayVal, margin + 8 + cIdx * schedColW, y + 15);
+          doc.text(cleanPDFText(displayVal), margin + 8 + cIdx * schedColW, y + 15);
         });
         y += 22;
       });
