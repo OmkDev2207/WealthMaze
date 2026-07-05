@@ -12,14 +12,16 @@ import { CalculatorResults } from "./CalculatorResults";
 import { RelatedContent, SerializableCalc } from "./RelatedContent";
 import { AdSlot } from "./AdSlot";
 import Link from "next/link";
-import { ChevronRight, ArrowLeft, Calendar, User, Eye, X, Share2, Link2, Check } from "lucide-react";
+import { ChevronRight, ArrowLeft, Calendar, User, Eye, X, Share2, Link2, Check, Code, Copy } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { trackCalculatorUse } from "./GoogleAnalytics";
 import { useCurrency } from "@/lib/CurrencyContext";
 
 /** Inline social share bar — shown in calculator hero headers */
-function SocialShareBar({ title }: { title: string }) {
+function SocialShareBar({ title, slug }: { title: string; slug?: string }) {
   const [copied, setCopied] = React.useState(false);
+  const [showEmbedModal, setShowEmbedModal] = React.useState(false);
+  const [embedCopied, setEmbedCopied] = React.useState(false);
   // Use state for the URL so that SSR and initial client render match.
   // After mount, update to the real page URL (no hydration mismatch).
   const [pageUrl, setPageUrl] = React.useState(siteConfig.url);
@@ -96,6 +98,100 @@ function SocialShareBar({ title }: { title: string }) {
           <Link2 className="h-3.5 w-3.5" />
         )}
       </button>
+
+      {/* Embed Widget Button */}
+      {slug && (
+        <>
+          <button
+            onClick={() => setShowEmbedModal(true)}
+            aria-label="Embed this calculator on your site"
+            className="p-1.5 px-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 font-bold text-[11px] flex items-center gap-1 transition-colors border border-indigo-200/50 dark:border-indigo-800/40 ml-1"
+          >
+            <Code className="h-3.5 w-3.5" />
+            <span>Embed</span>
+          </button>
+
+          {showEmbedModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+              <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 max-w-lg w-full shadow-2xl relative text-left space-y-4">
+                <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400">
+                      <Code className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-zinc-900 dark:text-white text-base">
+                        Embed This Calculator
+                      </h3>
+                      <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                        Add {title} to your website or blog in 1 click!
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setShowEmbedModal(false)}
+                    className="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-wider block">
+                    Copy Embed Code (HTML / Iframe)
+                  </label>
+                  <div className="relative">
+                    <textarea
+                      readOnly
+                      rows={4}
+                      value={`<iframe src="${siteConfig.url}/embed/${slug}" width="100%" height="700" frameborder="0" style="border: 1px solid #e4e4e7; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);"></iframe>\n<p style="font-size: 12px; text-align: center; margin-top: 8px;"><a href="${siteConfig.url}/${slug}" target="_blank" rel="noopener noreferrer" style="color: #6366f1; text-decoration: none; font-weight: bold;">Powered by WealthMaze Financial Calculators</a></p>`}
+                      className="w-full text-xs font-mono bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 text-zinc-700 dark:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="p-3 bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100 dark:border-indigo-900/30 rounded-xl text-xs text-indigo-900 dark:text-indigo-300 flex items-start gap-2">
+                  <span className="font-bold text-indigo-600 dark:text-indigo-400">💡 SEO Benefit:</span>
+                  <span>
+                    Embedding this tool on your WordPress, Medium, or financial blog provides an interactive experience for your readers while keeping them on your page longer!
+                  </span>
+                </div>
+
+                <div className="flex justify-end gap-3 pt-2">
+                  <button
+                    onClick={() => setShowEmbedModal(false)}
+                    className="px-4 py-2 rounded-xl text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                  >
+                    Close
+                  </button>
+                  <button
+                    onClick={() => {
+                      const code = `<iframe src="${siteConfig.url}/embed/${slug}" width="100%" height="700" frameborder="0" style="border: 1px solid #e4e4e7; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);"></iframe>\n<p style="font-size: 12px; text-align: center; margin-top: 8px;"><a href="${siteConfig.url}/${slug}" target="_blank" rel="noopener noreferrer" style="color: #6366f1; text-decoration: none; font-weight: bold;">Powered by WealthMaze Financial Calculators</a></p>`;
+                      navigator.clipboard.writeText(code).then(() => {
+                        setEmbedCopied(true);
+                        setTimeout(() => setEmbedCopied(false), 2000);
+                      });
+                    }}
+                    className="px-5 py-2 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-500/20 flex items-center gap-1.5 transition-all"
+                  >
+                    {embedCopied ? (
+                      <>
+                        <Check className="h-4 w-4" />
+                        <span>Copied to Clipboard!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-4 w-4" />
+                        <span>Copy Iframe Code</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }

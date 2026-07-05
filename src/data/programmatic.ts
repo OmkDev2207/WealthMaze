@@ -613,6 +613,629 @@ export const programmaticPages: ProgrammaticPageConfig[] = [
       },
     ],
   },
+  {
+    id: "compound-interest-calculator-500-a-month",
+    parentCalculatorId: "compound-interest-calculator",
+    name: "Compound Interest Calculator ($500 / ₹500 a Month)",
+    seoTitle: "Compound Interest Calculator $500 a Month – Wealth Growth",
+    seoDescription: "Calculate how investing $500 or ₹500 a month compounds over 10, 20, and 30 years. Estimate interest earned and total portfolio value online.",
+    defaultOverrides: {
+      monthlyContribution: 500,
+      principal: 1000,
+      interestRate: 10,
+      timePeriod: 20,
+    },
+    educationalContent: [
+      {
+        title: "The Power of Compounding $500 a Month",
+        content: "Consistently investing $500 or ₹500 every month is a proven strategy to achieve long-term wealth. By letting compound interest work on your regular deposits over two or three decades, the accumulated interest can significantly surpass your total out-of-pocket contributions.",
+      },
+      {
+        title: "Long-Term Projections",
+        content: "Assuming an average 10% annual return compounded monthly:\n- **In 10 Years:** Total deposits of ~61,000 grow to over 100,000.\n- **In 20 Years:** Total deposits of ~121,000 grow to nearly 380,000.\n- **In 30 Years:** Your portfolio can exceed 1.1 Million!",
+      },
+    ],
+  },
+  {
+    id: "compound-interest-calculator-1000-a-month",
+    parentCalculatorId: "compound-interest-calculator",
+    name: "Compound Interest Calculator ($1,000 / ₹1,000 a Month)",
+    seoTitle: "Compound Interest Calculator $1000 a Month – Wealth Maze",
+    seoDescription: "See how investing $1,000 a month compounds over time. Estimate future wealth, interest growth, and compounding curves.",
+    defaultOverrides: {
+      monthlyContribution: 1000,
+      principal: 5000,
+      interestRate: 10,
+      timePeriod: 20,
+    },
+    educationalContent: [
+      {
+        title: "Building Serious Wealth: $1,000 Monthly Commitment",
+        content: "A monthly contribution of $1,000 or ₹1,000 puts you on a fast track toward financial independence. Over 20 to 30 years, this steady discipline harnesses exponential compounding to build a multi-million dollar or multi-crore net worth.",
+      },
+    ],
+  },
+  {
+    id: "compound-interest-calculator-100-a-month",
+    parentCalculatorId: "compound-interest-calculator",
+    name: "Compound Interest Calculator ($100 / ₹100 a Month)",
+    seoTitle: "Compound Interest Calculator $100 a Month – Start Investing",
+    seoDescription: "Discover how small savings of $100 or ₹100 a month grow with compound interest over 10 to 30 years. Perfect for beginner investors.",
+    defaultOverrides: {
+      monthlyContribution: 100,
+      principal: 500,
+      interestRate: 8,
+      timePeriod: 15,
+    },
+    educationalContent: [
+      {
+        title: "Starting Small: Why $100 a Month Matters",
+        content: "You don't need wealth to start investing—you just need consistency. Saving $100 a month builds financial discipline and demonstrates how compounding accelerates wealth creation over long horizons.",
+      },
+    ],
+  },
+  {
+    id: "compound-interest-calculator-10-years",
+    parentCalculatorId: "compound-interest-calculator",
+    name: "10-Year Compound Interest Calculator",
+    seoTitle: "10-Year Compound Interest Calculator – Estimate Decade Growth",
+    seoDescription: "Calculate how your investments grow over a 10-year period with compound interest. Compare monthly and yearly compounding frequencies.",
+    defaultOverrides: {
+      timePeriod: 10,
+    },
+    educationalContent: [
+      {
+        title: "The 10-Year Compounding Horizon",
+        content: "A 10-year period is ideal for medium-term financial planning. Over a decade, compound interest begins to show real momentum as your earned interest starts generating its own returns.",
+      },
+    ],
+  },
+  {
+    id: "compound-interest-calculator-20-years",
+    parentCalculatorId: "compound-interest-calculator",
+    name: "20-Year Compound Interest Calculator",
+    seoTitle: "20-Year Compound Interest Calculator – Estimate 2-Decade Wealth",
+    seoDescription: "Project compound interest growth over 20 years. See how exponential compounding curves create substantial retirement corpuses.",
+    defaultOverrides: {
+      timePeriod: 20,
+    },
+    educationalContent: [
+      {
+        title: "The 20-Year Wealth Engine",
+        content: "Over two decades, compounding enters its steepest growth phase. In the second decade of investing, the interest earned each year often exceeds your annual contributions.",
+      },
+    ],
+  },
+  {
+    id: "compound-interest-calculator-30-years",
+    parentCalculatorId: "compound-interest-calculator",
+    name: "30-Year Compound Interest Calculator",
+    seoTitle: "30-Year Compound Interest Calculator – Retirement Projections",
+    seoDescription: "See the massive impact of 30 years of compound interest on regular investments. Plan your lifetime retirement portfolio online.",
+    defaultOverrides: {
+      timePeriod: 30,
+    },
+    educationalContent: [
+      {
+        title: "Generational Wealth in 30 Years",
+        content: "Thirty years is the ultimate test of patience and compounding. Whether in dollars or rupees, maintaining a steady investment schedule over 30 years virtually ensures financial freedom.",
+      },
+    ],
+  },
+  {
+    id: "fire-calculator-lean-fire",
+    parentCalculatorId: "fire-calculator",
+    name: "Lean FIRE Calculator",
+    seoTitle: "Lean FIRE Calculator – Retire Early on a Minimalist Budget",
+    seoDescription: "Calculate your Lean FIRE number. Find out how soon you can achieve financial independence by living a streamlined, minimalist lifestyle.",
+    defaultOverrides: {
+      annualIncome: 800000,
+      savingsRate: 60,
+      currentSavings: 1000000,
+    },
+    educationalContent: [
+      {
+        title: "What is Lean FIRE?",
+        content: "Lean FIRE focuses on achieving financial independence with a lean, minimalist budget. By keeping annual living expenses low, your target FIRE corpus is much smaller, allowing you to retire years or even decades earlier.",
+      },
+    ],
+  },
+  {
+    id: "fire-calculator-fat-fire",
+    parentCalculatorId: "fire-calculator",
+    name: "Fat FIRE Calculator",
+    seoTitle: "Fat FIRE Calculator – Retire Early in Abundance",
+    seoDescription: "Calculate your Fat FIRE number. Plan an early retirement with an abundant, high-spending budget without compromising on lifestyle.",
+    defaultOverrides: {
+      annualIncome: 3000000,
+      savingsRate: 50,
+      currentSavings: 5000000,
+    },
+    educationalContent: [
+      {
+        title: "What is Fat FIRE?",
+        content: "Fat FIRE is for individuals who want to retire early without sacrificing luxury or comfort. It requires building a substantial portfolio that supports a higher annual withdrawal rate.",
+      },
+    ],
+  },
+  {
+    id: "retirement-calculator-500-a-month",
+    parentCalculatorId: "retirement-calculator",
+    name: "Retirement Calculator ($500 / ₹500 a Month)",
+    seoTitle: "Retirement Calculator $500 a Month – Plan Your Nest Egg",
+    seoDescription: "Estimate how saving $500 or ₹500 a month contributes to your retirement nest egg. Project inflation-adjusted wealth at age 60.",
+    defaultOverrides: {
+      monthlyExpenses: 50000,
+      currentAge: 30,
+      retirementAge: 60,
+    },
+    educationalContent: [
+      {
+        title: "Retiring Comfortably with $500/Month Savings",
+        content: "Setting aside $500 or ₹500 monthly from age 30 to 60 gives you 30 years of compounding. In growth-oriented index funds or mutual funds, this disciplined habit builds a secure retirement cushion.",
+      },
+    ],
+  },
+  {
+    id: "retirement-calculator-1000-a-month",
+    parentCalculatorId: "retirement-calculator",
+    name: "Retirement Calculator ($1,000 / ₹1,000 a Month)",
+    seoTitle: "Retirement Calculator $1000 a Month – Wealth Maze",
+    seoDescription: "Calculate your retirement corpus when investing $1,000 a month. Check safe withdrawal rates and inflation-adjusted living expenses.",
+    defaultOverrides: {
+      monthlyExpenses: 100000,
+      currentAge: 35,
+      retirementAge: 60,
+    },
+    educationalContent: [
+      {
+        title: "Building a Premium Retirement Corpus",
+        content: "A $1,000 monthly investment provides an accelerated path to financial freedom, ensuring your post-work years are funded against rising inflation and healthcare costs.",
+      },
+    ],
+  },
+  {
+    id: "retirement-calculator-age-40",
+    parentCalculatorId: "retirement-calculator",
+    name: "Retire at 40 Calculator",
+    seoTitle: "Retire at 40 Calculator – Early Retirement & FIRE Planner",
+    seoDescription: "Want to retire at age 40? Use our specialized early retirement calculator to determine the savings rate and corpus needed to exit the rat race early.",
+    defaultOverrides: {
+      currentAge: 25,
+      retirementAge: 40,
+    },
+    educationalContent: [
+      {
+        title: "The Roadmap to Retiring at Age 40",
+        content: "Retiring at 40 requires an aggressive savings rate (often 50%+) and disciplined investing in high-growth equities. This tool helps you map out the exact target number needed to support a 40+ year retirement.",
+      },
+    ],
+  },
+  {
+    id: "retirement-calculator-age-50",
+    parentCalculatorId: "retirement-calculator",
+    name: "Retire at 50 Calculator",
+    seoTitle: "Retire at 50 Calculator – Financial Independence Planner",
+    seoDescription: "Plan your retirement at age 50. Estimate required monthly savings, inflation impacts, and life expectancy withdrawal rates.",
+    defaultOverrides: {
+      currentAge: 30,
+      retirementAge: 50,
+    },
+    educationalContent: [
+      {
+        title: "Retiring a Decade Early at 50",
+        content: "Exiting the workforce at 50 gives you healthy, active years to pursue travel and personal projects. See how much you need to save over a 20-year career to make it a reality.",
+      },
+    ],
+  },
+  {
+    id: "savings-calculator-500-a-month",
+    parentCalculatorId: "savings-calculator",
+    name: "Savings Calculator ($500 / ₹500 a Month)",
+    seoTitle: "Savings Calculator $500 a Month – Track Deposit Growth",
+    seoDescription: "Calculate the growth of saving $500 or ₹500 monthly in high-yield accounts or term deposits over time.",
+    defaultOverrides: {
+      monthlySavings: 500,
+      initialSavings: 1000,
+      timePeriod: 5,
+    },
+    educationalContent: [
+      {
+        title: "Consistent Savings Habits",
+        content: "Whether you are building an emergency fund or saving for a down payment, putting away $500 monthly builds a solid financial foundation.",
+      },
+    ],
+  },
+  {
+    id: "savings-calculator-1000-a-month",
+    parentCalculatorId: "savings-calculator",
+    name: "Savings Calculator ($1,000 / ₹1,000 a Month)",
+    seoTitle: "Savings Calculator $1000 a Month – Estimate Interest Earned",
+    seoDescription: "Project your total savings balance when contributing $1,000 monthly. Check interest earned and maturity totals.",
+    defaultOverrides: {
+      monthlySavings: 1000,
+      initialSavings: 5000,
+      timePeriod: 10,
+    },
+    educationalContent: [
+      {
+        title: "Maximizing Your Savings Growth",
+        content: "Saving $1,000 a month over a decade builds a significant cash reserves. Comparing interest yields ensures your money keeps pace with inflation.",
+      },
+    ],
+  },
+  {
+    id: "cagr-calculator-stock-market",
+    parentCalculatorId: "cagr-calculator",
+    name: "CAGR Calculator for Stock Market & S&P 500",
+    seoTitle: "CAGR Calculator Stock Market – S&P 500 Annual Growth Rate",
+    seoDescription: "Calculate the Compound Annual Growth Rate (CAGR) of your stock market portfolio or S&P 500 investments easily online.",
+    defaultOverrides: {
+      initialValue: 10000,
+      finalValue: 35000,
+      years: 10,
+    },
+    educationalContent: [
+      {
+        title: "Why CAGR Matters in Stock Markets",
+        content: "Stock markets fluctuate from year to year. CAGR smooths out this volatility to give you the true annualized return rate of your stock or index fund portfolio over any time period.",
+      },
+    ],
+  },
+  {
+    id: "cagr-calculator-mutual-funds",
+    parentCalculatorId: "cagr-calculator",
+    name: "CAGR Calculator for Mutual Funds",
+    seoTitle: "CAGR Calculator Mutual Funds – Annualized Return Finder",
+    seoDescription: "Calculate the exact Compound Annual Growth Rate (CAGR) for your mutual fund investments and compare fund performance.",
+    defaultOverrides: {
+      initialValue: 50000,
+      finalValue: 200000,
+      years: 10,
+    },
+    educationalContent: [
+      {
+        title: "Measuring Mutual Fund Performance",
+        content: "CAGR is the industry standard for evaluating mutual fund performance over periods longer than one year, helping you compare active funds against benchmark indices.",
+      },
+    ],
+  },
+  {
+    id: "net-worth-calculator-by-age",
+    parentCalculatorId: "net-worth-calculator",
+    name: "Net Worth Calculator by Age & Milestones",
+    seoTitle: "Net Worth Calculator by Age – Check Your Financial Health",
+    seoDescription: "Calculate your total net worth by assessing assets and liabilities. Compare your financial standing against age-based wealth milestones.",
+    defaultOverrides: {
+      cashBank: 500000,
+      mutualFunds: 2000000,
+      stocks: 1000000,
+      realEstate: 6000000,
+      homeLoan: 2500000,
+    },
+    educationalContent: [
+      {
+        title: "Tracking Net Worth Milestones",
+        content: "Your net worth is the ultimate scorecard of financial health. Tracking it annually helps ensure your assets grow faster than your liabilities as you progress through different career stages.",
+      },
+    ],
+  },
+  {
+    id: "net-worth-calculator-for-beginners",
+    parentCalculatorId: "net-worth-calculator",
+    name: "Net Worth Calculator for Beginners",
+    seoTitle: "Net Worth Calculator for Beginners – Step by Step Guide",
+    seoDescription: "New to personal finance? Use our simple net worth calculator to list your bank balance, investments, and loans to find your starting net worth.",
+    defaultOverrides: {
+      cashBank: 100000,
+      mutualFunds: 300000,
+      stocks: 150000,
+      realEstate: 0,
+      homeLoan: 0,
+    },
+    educationalContent: [
+      {
+        title: "Your First Net Worth Calculation",
+        content: "Everyone starts somewhere. Even if your initial net worth is modest or negative due to student loans, knowing your starting point is essential for setting realistic savings goals.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-index-funds",
+    parentCalculatorId: "sip-calculator",
+    name: "Index Fund SIP Calculator (Global & Asia)",
+    seoTitle: "Index Fund SIP Calculator – Global & Asian Market Returns",
+    seoDescription: "Calculate returns on regular monthly SIP investments in low-cost index funds across US, Indian, and Asian stock markets.",
+    defaultOverrides: {
+      monthlyInvestment: 15000,
+      expectedReturn: 11,
+      timePeriod: 15,
+    },
+    educationalContent: [
+      {
+        title: "Index Investing via SIP",
+        content: "Index funds offer low expense ratios and broad market diversification. Regular SIP contributions into index funds remove emotional timing from investing and capture long-term economic growth.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-1-crore",
+    parentCalculatorId: "sip-calculator",
+    name: "SIP Calculator for ₹1 Crore Corpus",
+    seoTitle: "How Much SIP Needed for ₹1 Crore? – SIP Calculator",
+    seoDescription: "Calculate the monthly SIP amount required to build a ₹1 Crore net worth. Test different timelines and expected return rates online.",
+    defaultOverrides: {
+      monthlyInvestment: 35000,
+      expectedReturn: 12,
+      timePeriod: 12,
+    },
+    educationalContent: [
+      {
+        title: "The ₹1 Crore Milestone",
+        content: "Reaching a ₹1 Crore portfolio is a major psychological and financial milestone for Indian investors. At a 12% expected annual return, a monthly SIP of ₹35,000 reaches ₹1 Crore in approximately 12 years.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-50-lakhs",
+    parentCalculatorId: "sip-calculator",
+    name: "SIP Calculator for ₹50 Lakhs Corpus",
+    seoTitle: "How Much SIP Needed for ₹50 Lakhs? – Wealth Maze",
+    seoDescription: "Find out how much you need to invest monthly via SIP to reach a ₹50 Lakhs financial target over 5, 10, or 15 years.",
+    defaultOverrides: {
+      monthlyInvestment: 18000,
+      expectedReturn: 12,
+      timePeriod: 12,
+    },
+    educationalContent: [
+      {
+        title: "Building a ₹50 Lakhs Safety Net",
+        content: "A ₹50 Lakhs corpus provides robust financial security for home ownership, higher education, or starting a business. Disciplined SIP investing makes this goal achievable within a decade.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-5-years",
+    parentCalculatorId: "sip-calculator",
+    name: "5-Year SIP Return Calculator",
+    seoTitle: "5-Year SIP Calculator – Estimate Short-Term Growth",
+    seoDescription: "Calculate mutual fund SIP returns over a 5-year timeframe. Plan short-to-medium term wealth goals with compounding estimates.",
+    defaultOverrides: {
+      timePeriod: 5,
+    },
+    educationalContent: [
+      {
+        title: "5-Year Investment Horizon",
+        content: "While equities perform best over 10+ years, a 5-year SIP in balanced or hybrid funds provides disciplined growth for medium-term targets like purchasing a car or funding a wedding.",
+      },
+    ],
+  },
+  {
+    id: "sip-calculator-12-years",
+    parentCalculatorId: "sip-calculator",
+    name: "12-Year SIP Return Calculator",
+    seoTitle: "12-Year SIP Calculator – Estimate Compounding Wealth",
+    seoDescription: "See how much your SIP investment grows over 12 years. Project capital gains and total maturity value with compound interest.",
+    defaultOverrides: {
+      timePeriod: 12,
+    },
+    educationalContent: [
+      {
+        title: "The 12-Year Wealth Acceleration",
+        content: "Around year 10 to 12 of a SIP, compound interest begins to dramatically accelerate your total portfolio value beyond your cumulative principal deposits.",
+      },
+    ],
+  },
+  {
+    id: "lumpsum-calculator-1-lakh",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Lumpsum Calculator for ₹1 Lakh",
+    seoTitle: "Lumpsum Calculator for ₹1 Lakh Investment | WealthMaze",
+    seoDescription: "Calculate the future maturity value of a one-time ₹1 Lakh investment in mutual funds or fixed deposits over 5 to 20 years.",
+    defaultOverrides: {
+      lumpsumAmount: 100000,
+      expectedReturn: 12,
+      timePeriod: 10,
+    },
+    educationalContent: [
+      {
+        title: "Investing ₹1 Lakh Lumpsum",
+        content: "A one-time ₹1 Lakh investment in equity mutual funds growing at 12% p.a. compounds to over ₹3.1 Lakhs in 10 years and nearly ₹9.6 Lakhs in 20 years.",
+      },
+    ],
+  },
+  {
+    id: "lumpsum-calculator-5-lakhs",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Lumpsum Calculator for ₹5 Lakhs",
+    seoTitle: "Lumpsum Calculator for ₹5 Lakhs Investment | WealthMaze",
+    seoDescription: "Estimate compound returns on a ₹5 Lakhs one-time mutual fund investment. Check projected wealth growth over a decade.",
+    defaultOverrides: {
+      lumpsumAmount: 500000,
+      expectedReturn: 12,
+      timePeriod: 10,
+    },
+    educationalContent: [
+      {
+        title: "Compounding ₹5 Lakhs Over Time",
+        content: "Deploying ₹5 Lakhs into a diversified portfolio allows compound interest to generate significant capital appreciation without requiring further monthly contributions.",
+      },
+    ],
+  },
+  {
+    id: "lumpsum-calculator-10-years",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "10-Year Lumpsum Investment Calculator",
+    seoTitle: "10-Year Lumpsum Calculator – Estimate 10-Year Returns",
+    seoDescription: "Project the growth of a one-time lumpsum investment over a 10-year holding period. Compare mutual fund return rates online.",
+    defaultOverrides: {
+      timePeriod: 10,
+    },
+    educationalContent: [
+      {
+        title: "10-Year Lumpsum Compounding",
+        content: "Holding a lumpsum investment for a full decade allows businesses and equities to grow through economic cycles, maximizing your annualized compounding returns.",
+      },
+    ],
+  },
+  {
+    id: "lumpsum-investment-calculator-10000",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Lumpsum Investment Calculator ($10,000 / ₹10,000)",
+    seoTitle: "Lumpsum Calculator $10,000 – Check 10-Year Growth",
+    seoDescription: "Calculate how a one-time $10,000 or ₹10,000 investment grows over 5, 10, or 20 years with compound interest.",
+    defaultOverrides: {
+      lumpsumAmount: 10000,
+      expectedReturn: 10,
+      timePeriod: 15,
+    },
+    educationalContent: [
+      {
+        title: "The Growth of a $10,000 Investment",
+        content: "Whether investing a bonus or inheritance, putting $10,000 to work in index funds or equities can grow into more than $40,000 over 15 years at an average 10% annual return.",
+      },
+    ],
+  },
+  {
+    id: "lumpsum-investment-calculator-50000",
+    parentCalculatorId: "lumpsum-calculator",
+    name: "Lumpsum Investment Calculator ($50,000 / ₹50,000)",
+    seoTitle: "Lumpsum Calculator $50,000 – Long Term Wealth Planner",
+    seoDescription: "Project the maturity value and compound gains of a $50,000 one-time investment in stocks, ETFs, or mutual funds.",
+    defaultOverrides: {
+      lumpsumAmount: 50000,
+      expectedReturn: 10,
+      timePeriod: 15,
+    },
+    educationalContent: [
+      {
+        title: "Compounding a $50,000 Capital Base",
+        content: "A $50,000 capital base provides substantial compounding leverage. Without adding another dollar, at 10% p.a., it surpasses $200,000 in 15 years.",
+      },
+    ],
+  },
+  {
+    id: "mutual-fund-return-calculator-10-years",
+    parentCalculatorId: "mutual-fund-return-calculator",
+    name: "10-Year Mutual Fund Return Calculator",
+    seoTitle: "10-Year Mutual Fund Return Calculator – Estimate Growth",
+    seoDescription: "Calculate combined SIP and lumpsum mutual fund returns over a 10-year period. Project total accumulated wealth online.",
+    defaultOverrides: {
+      timePeriod: 10,
+    },
+    educationalContent: [
+      {
+        title: "Combining SIP and Lumpsum Over 10 Years",
+        content: "Many investors combine an initial lumpsum deposit with regular monthly SIPs. This calculator models both income streams compounding together over a decade.",
+      },
+    ],
+  },
+  {
+    id: "mutual-fund-return-calculator-20-years",
+    parentCalculatorId: "mutual-fund-return-calculator",
+    name: "20-Year Mutual Fund Return Calculator",
+    seoTitle: "20-Year Mutual Fund Return Calculator – Long Term Growth",
+    seoDescription: "See how combining lumpsum and monthly SIP investments grows over a 20-year timeline with exponential compounding.",
+    defaultOverrides: {
+      timePeriod: 20,
+    },
+    educationalContent: [
+      {
+        title: "20-Year Portfolio Projections",
+        content: "Over 20 years, a combined investment strategy builds generational wealth, protecting your family against long-term inflation.",
+      },
+    ],
+  },
+  {
+    id: "emi-calculator-home-loan-1-crore",
+    parentCalculatorId: "emi-calculator",
+    name: "Home Loan EMI Calculator for ₹1 Crore",
+    seoTitle: "EMI Calculator for ₹1 Crore Home Loan | WealthMaze",
+    seoDescription: "Calculate monthly EMI, interest payable, and amortization schedule for a ₹1 Crore housing loan over 15 to 30 years.",
+    defaultOverrides: {
+      loanAmount: 10000000,
+      interestRate: 8.5,
+      tenure: 20,
+    },
+    educationalContent: [
+      {
+        title: "Structuring a ₹1 Crore Home Loan",
+        content: "For a ₹1 Crore home loan at an 8.5% interest rate for 20 years, the monthly EMI is ~₹86,782. Total interest over 20 years exceeds ₹1.08 Crores, making annual prepayments essential for interest savings.",
+      },
+    ],
+  },
+  {
+    id: "fd-calculator-5-years",
+    parentCalculatorId: "fd-calculator",
+    name: "5-Year FD Calculator (Fixed Deposit)",
+    seoTitle: "5-Year FD Calculator – Estimate Fixed Deposit Interest",
+    seoDescription: "Calculate maturity value and interest earned on 5-year tax-saving Fixed Deposits (FD) with quarterly or monthly compounding.",
+    defaultOverrides: {
+      principal: 100000,
+      interestRate: 7.1,
+      timePeriod: 5,
+    },
+    educationalContent: [
+      {
+        title: "5-Year Tax Saving Fixed Deposits",
+        content: "In India, 5-year bank FDs qualify for tax deduction under Section 80C up to ₹1.5 Lakhs per financial year while offering guaranteed, risk-free returns.",
+      },
+    ],
+  },
+  {
+    id: "ppf-calculator-15-years",
+    parentCalculatorId: "ppf-calculator",
+    name: "15-Year PPF Calculator (Public Provident Fund)",
+    seoTitle: "15-Year PPF Calculator – Check Tax-Free Maturity Value",
+    seoDescription: "Calculate the tax-free maturity corpus of your Public Provident Fund (PPF) investment over its mandatory 15-year lock-in tenure.",
+    defaultOverrides: {
+      yearlyInvestment: 150000,
+      interestRate: 7.1,
+      timePeriod: 15,
+    },
+    educationalContent: [
+      {
+        title: "The EEE Tax Benefit of PPF",
+        content: "PPF enjoys exempt-exempt-exempt (EEE) tax status in India—your contributions, annual interest earned, and final maturity withdrawals are all completely tax-free.",
+      },
+    ],
+  },
+  {
+    id: "epf-calculator-retirement",
+    parentCalculatorId: "epf-calculator",
+    name: "EPF Calculator for Retirement",
+    seoTitle: "EPF Calculator – Estimate Employees Provident Fund Corpus",
+    seoDescription: "Calculate your accumulated Employees' Provident Fund (EPF) balance at retirement based on salary, employer matching, and interest rates.",
+    defaultOverrides: {
+      basicSalary: 50000,
+      increment: 8,
+      timePeriod: 25,
+    },
+    educationalContent: [
+      {
+        title: "Maximizing Your Retirement EPF",
+        content: "EPF is the foundation of retirement planning for salaried Indian employees. Both employee and employer contribute 12% of basic salary, compounding at sovereign-backed interest rates.",
+      },
+    ],
+  },
+  {
+    id: "nps-calculator-retirement",
+    parentCalculatorId: "nps-calculator",
+    name: "NPS Retirement Calculator (National Pension System)",
+    seoTitle: "NPS Calculator – Estimate Pension & Lumpsum Corpus",
+    seoDescription: "Calculate your National Pension System (NPS) maturity corpus, tax-free lumpsum withdrawal, and monthly annuity pension at age 60.",
+    defaultOverrides: {
+      monthlyContribution: 10000,
+      expectedReturn: 10,
+      currentAge: 30,
+    },
+    educationalContent: [
+      {
+        title: "Retirement Security with NPS",
+        content: "NPS combines market-linked equity returns during your working years with a guaranteed annuity pension after age 60, offering additional tax savings under Section 80CCD(1B).",
+      },
+    ],
+  },
 ];
 
 export const getProgrammaticPageById = (id: string): ProgrammaticPageConfig | undefined => {

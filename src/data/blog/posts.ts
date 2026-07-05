@@ -270,14 +270,14 @@ export const blogPosts: BlogPost[] = [
   // 10. Budget Rule (Target: Savings, Budgeting, Rules)
   {
     slug: "budget-rule-50-30-20",
-    title: "Savings Basics: The 50/30/20 Budgeting Rule Explained",
-    description: "Learn the fundamentals of saving money, liquid assets, and how budgeting rules like the 50/30/20 rule help you manage household cash flow.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["Budgeting", "Savings", "Financial Habits"],
+    title: "The 50/30/20 Rule Explained — And Why You're Probably Using It Wrong",
+    description: "The 50/30/20 rule is the simplest money framework ever invented. Here's exactly how it works, where it breaks down, and the version that actually changes financial lives.",
+    publishedAt: "July 5, 2026",
+    readTime: "10 min read",
+    category: "Personal Finance",
+    tags: ["50 30 20 Rule", "Budgeting", "Personal Finance", "Money Management", "Savings"],
     author: authors.omk,
-    relatedCalculators: ["rd-calculator", "fd-calculator", "sip-calculator"],
+    relatedCalculators: ["compound-interest-calculator", "sip-goal-planner", "net-worth-calculator"],
   },
   // 11. Liquid vs Non-Liquid Assets (Target: Savings, Liquidity)
   {
