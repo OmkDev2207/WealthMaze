@@ -130,12 +130,11 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       return str.replace(/\s+/g, " ").trim();
     };
 
-    const hasPage2 = Boolean(result.comparison || (result.schedule && result.schedule.length > 0));
-    const totalPages = hasPage2 ? 2 : 1;
+    const totalPages = 1;
     const dateStr = new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
     // Helper to draw footer on any page
-    const drawFooter = (pageNum: number) => {
+    const drawFooter = () => {
       doc.setDrawColor(226, 232, 240);
       doc.setLineWidth(1);
       doc.line(margin, pageHeight - 38, pageWidth - margin, pageHeight - 38);
@@ -148,101 +147,96 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.setFont("helvetica", "bold");
       doc.setTextColor(16, 185, 129);
       doc.textWithLink("https://wealthmaze.in", margin + 312, pageHeight - 22, { url: "https://wealthmaze.in" });
-
-      doc.setFont("helvetica", "normal");
-      doc.setTextColor(148, 163, 184);
-      doc.text(`Page ${pageNum} of ${totalPages}`, pageWidth - margin - 50, pageHeight - 22);
     };
 
     // ==========================================
-    // PAGE 1: PURE VECTOR EXECUTIVE REPORT
+    // EXACT USER-FAVORITE 1-PAGE VECTOR REPORT
     // ==========================================
     doc.setFillColor(16, 185, 129); // Top emerald stripe
-    doc.rect(margin, 36, contentWidth, 4, "F");
+    doc.rect(margin, 36, contentWidth, 3, "F");
 
-    // Tier 1: Brand Headline & Date (Overlap Proof)
+    // Brand "WealthMaze" + Calculator Title
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(10.5);
+    doc.setFontSize(22);
     doc.setTextColor(16, 185, 129);
-    doc.text("WEALTHMAZE FINANCIAL REPORT", margin, 52);
+    const brandStr = "WealthMaze ";
+    doc.text(brandStr, margin, 60);
 
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(9);
-    doc.setTextColor(100, 116, 139);
-    const dateLabel = `Generated: ${dateStr}`;
-    doc.text(dateLabel, pageWidth - margin - doc.getTextWidth(dateLabel), 52);
-
-    // Tier 2: Calculator Title (Word Wrapped & No "Dossier")
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(16);
+    const brandW = doc.getTextWidth(brandStr);
+    doc.setFontSize(15);
     doc.setTextColor(15, 23, 42);
-    const rawTitle = title ? `${title} — Projection Report` : "Financial Assessment Report";
-    const titleLines = doc.splitTextToSize(cleanPDFText(rawTitle), contentWidth);
-    doc.text(titleLines, margin, 70);
+    const reportTitle = title ? `${cleanPDFText(title)} — Assessment Report` : "Assessment Report";
+    doc.text(reportTitle, margin + brandW, 59);
 
-    const headerBottomY = 70 + (titleLines.length - 1) * 18 + 10;
+    // Timestamp
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9.5);
+    doc.setTextColor(100, 116, 139);
+    doc.text(`Generated on: ${dateStr}`, margin, 76);
+
+    // Divider Line
     doc.setDrawColor(226, 232, 240);
     doc.setLineWidth(1);
-    doc.line(margin, headerBottomY, pageWidth - margin, headerBottomY);
+    doc.line(margin, 88, pageWidth - margin, 88);
 
-    let currentY = headerBottomY + 18;
+    let currentY = 112;
 
-    // 1. INPUT PARAMETERS GRID
+    // 1. INPUT PARAMETERS (Unified Rounded Box with 2 Columns)
     if (inputsSummary && inputsSummary.length > 0) {
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(12);
+      doc.setFontSize(13);
       doc.setTextColor(30, 41, 59);
-      doc.text("1. Assessment Input Parameters", margin, currentY);
+      doc.text("Input Parameters", margin, currentY);
       currentY += 14;
 
-      const isDense = inputsSummary.length > 4;
       const cols = 2;
-      const cardW = (contentWidth - 14) / 2;
-      const cardH = isDense ? 34 : 40;
-      const gapY = isDense ? 8 : 10;
+      const numRows = Math.ceil(inputsSummary.length / cols);
+      const rowH = 22;
+      const boxH = Math.max(48, numRows * rowH + 16);
 
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(margin, currentY, contentWidth, boxH, 6, 6, "FD");
+
+      const colW = contentWidth / cols;
       inputsSummary.forEach((inp, idx) => {
         const col = idx % cols;
         const row = Math.floor(idx / cols);
-        const xPos = margin + col * (cardW + 14);
-        const yPos = currentY + row * (cardH + gapY);
-
-        doc.setFillColor(248, 250, 252);
-        doc.setDrawColor(226, 232, 240);
-        doc.roundedRect(xPos, yPos, cardW, cardH, 5, 5, "FD");
+        const xPos = margin + 16 + col * colW;
+        const yPos = currentY + 24 + row * rowH;
 
         doc.setFont("helvetica", "normal");
-        doc.setFontSize(8);
+        doc.setFontSize(9.5);
         doc.setTextColor(100, 116, 139);
-        doc.text(cleanPDFText(inp.label.toUpperCase()), xPos + 10, yPos + (isDense ? 13 : 15));
+        const labelStr = cleanPDFText(`${inp.label}: `);
+        doc.text(labelStr, xPos, yPos);
 
+        const labelW = doc.getTextWidth(labelStr);
         doc.setFont("helvetica", "bold");
-        doc.setFontSize(isDense ? 11.5 : 12.5);
         doc.setTextColor(15, 23, 42);
-        doc.text(cleanPDFText(inp.value), xPos + 10, yPos + (isDense ? 26 : 30));
+        doc.text(cleanPDFText(inp.value), xPos + labelW, yPos);
       });
 
-      const numRows = Math.ceil(inputsSummary.length / cols);
-      currentY += numRows * (cardH + gapY) + 16;
+      currentY += boxH + 24;
     }
 
-    // 2. STRATEGIC WEALTH PROJECTION & OUTPUTS
+    // 2. CALCULATION OUTPUT & SUMMARY (Side-by-Side Hero Cards)
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(12);
+    doc.setFontSize(13);
     doc.setTextColor(30, 41, 59);
-    doc.text("2. Strategic Wealth Projection", margin, currentY);
+    doc.text("Calculation Output & Summary", margin, currentY);
     currentY += 14;
 
     const numOuts = outputs.length;
     const outCols = Math.min(numOuts, 3);
     const outCardW = (contentWidth - (outCols - 1) * 12) / outCols;
-    const outCardH = numOuts > 3 ? 54 : 60;
+    const outCardH = 64;
 
     outputs.forEach((out, idx) => {
       const col = idx % 3;
       const row = Math.floor(idx / 3);
       const xPos = margin + col * (outCardW + 12);
-      const yPos = currentY + row * (outCardH + 10);
+      const yPos = currentY + row * (outCardH + 12);
 
       const val = result.values[out.id] ?? 0;
       const isTotal =
@@ -261,265 +255,72 @@ export function CalculatorResults({ outputs, result, isIndiaSpecific = false, ti
       doc.roundedRect(xPos, yPos, outCardW, outCardH, 6, 6, "FD");
 
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(8);
+      doc.setFontSize(8.5);
       doc.setTextColor(isTotal ? 5 : 100, isTotal ? 150 : 116, isTotal ? 105 : 139);
-      doc.text(cleanPDFText(out.label.toUpperCase()), xPos + 10, yPos + 18);
+      doc.text(cleanPDFText(out.label.toUpperCase()), xPos + 14, yPos + 20);
 
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(isTotal ? 14.5 : 13.5);
+      doc.setFontSize(isTotal ? 15.5 : 14.5);
       doc.setTextColor(isTotal ? 4 : 15, isTotal ? 120 : 23, isTotal ? 87 : 42);
       const formattedVal = formatValue(val, out.format, out.unit);
-      doc.text(cleanPDFText(formattedVal), xPos + 10, yPos + (numOuts > 3 ? 40 : 44));
+      doc.text(cleanPDFText(formattedVal), xPos + 14, yPos + 46);
     });
 
     const outRows = Math.ceil(numOuts / 3);
-    currentY += outRows * (outCardH + 10) + 16;
+    currentY += outRows * (outCardH + 12) + 24;
 
-    // 3. RAZOR-SHARP VECTOR DONUT CHART
-    const drawVectorDonutSlice = (
-      cx: number,
-      cy: number,
-      outerR: number,
-      innerR: number,
-      startAngleDeg: number,
-      endAngleDeg: number,
-      fillColorRGB: [number, number, number]
-    ) => {
-      const steps = Math.max(2, Math.ceil(Math.abs(endAngleDeg - startAngleDeg) / 2));
-      const points: [number, number][] = [];
-      for (let i = 0; i <= steps; i++) {
-        const rad = (Math.PI / 180) * (startAngleDeg + ((endAngleDeg - startAngleDeg) * i) / steps);
-        points.push([cx + outerR * Math.cos(rad), cy + outerR * Math.sin(rad)]);
-      }
-      for (let i = steps; i >= 0; i--) {
-        const rad = (Math.PI / 180) * (startAngleDeg + ((endAngleDeg - startAngleDeg) * i) / steps);
-        points.push([cx + innerR * Math.cos(rad), cy + innerR * Math.sin(rad)]);
-      }
-      const deltas: [number, number][] = [];
-      for (let i = 1; i < points.length; i++) {
-        deltas.push([points[i][0] - points[i - 1][0], points[i][1] - points[i - 1][1]]);
-      }
-      doc.setFillColor(...fillColorRGB);
-      doc.lines(deltas, points[0][0], points[0][1], [1, 1], "F", true);
-    };
-
-    let investedVal = 0;
-    let gainsVal = 0;
-    outputs.forEach((out) => {
-      const val = result.values[out.id] ?? 0;
-      const lower = out.id.toLowerCase();
-      if (lower.includes("invest") || lower.includes("principal") || lower.includes("loan")) {
-        investedVal = val;
-      } else if (lower.includes("return") || lower.includes("gain") || lower.includes("interest") || lower.includes("profit")) {
-        gainsVal = val;
-      }
-    });
-    if (investedVal === 0 && outputs.length >= 2) {
-      investedVal = result.values[outputs[0].id] ?? 0;
-      gainsVal = result.values[outputs[1].id] ?? 0;
-    }
-    const totalPie = investedVal + gainsVal;
-
-    if (totalPie > 0 && currentY < pageHeight - 145) {
-      const donutBoxH = Math.min(125, pageHeight - 45 - currentY);
-      doc.setFillColor(248, 250, 252);
-      doc.setDrawColor(226, 232, 240);
-      doc.roundedRect(margin, currentY, contentWidth, donutBoxH, 6, 6, "FD");
-
+    // 3. ALTERNATIVE SCENARIOS / SUMMARY TABLE (Right on Same Page!)
+    if (result.comparison && currentY < pageHeight - 140) {
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(11);
+      doc.setFontSize(13);
       doc.setTextColor(30, 41, 59);
-      doc.text("Portfolio Allocation Breakdown", margin + 14, currentY + 22);
+      doc.text(cleanPDFText(result.comparison.title || "Alternative Scenarios"), margin, currentY);
+      currentY += 14;
 
-      const cx = margin + 90;
-      const cy = currentY + (donutBoxH / 2) + 8;
-      const outerR = Math.min(44, (donutBoxH - 32) / 2);
-      const innerR = outerR * 0.62;
+      const headers = result.comparison.headers;
+      const rows = result.comparison.rows;
+      const colW = contentWidth / headers.length;
+      const rowH = 24;
 
-      const invRatio = Math.min(1, Math.max(0, investedVal / totalPie));
-      const invSpan = invRatio * 360;
-
-      // Draw Principal Slice (#3b82f6)
-      if (invSpan > 0.5) {
-        drawVectorDonutSlice(cx, cy, outerR, innerR, -90, -90 + invSpan, [59, 130, 246]);
-      }
-      // Draw Returns Slice (#10b981)
-      if (360 - invSpan > 0.5) {
-        drawVectorDonutSlice(cx, cy, outerR, innerR, -90 + invSpan, 270, [16, 185, 129]);
-      }
-
-      // Center hole label
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(7.5);
-      doc.setTextColor(100, 116, 139);
-      const lbl = "TOTAL";
-      doc.text(lbl, cx - doc.getTextWidth(lbl) / 2, cy - 3);
-
-      doc.setFontSize(10);
-      doc.setTextColor(15, 23, 42);
-      const totalOut = outputs.find((o) => o.id.toLowerCase().includes("total") || o.id.toLowerCase().includes("maturity"));
-      const totValStr = cleanPDFText(formatCompact(totalOut ? (result.values[totalOut.id] ?? totalPie) : totalPie, "currency"));
-      doc.text(totValStr, cx - doc.getTextWidth(totValStr) / 2, cy + 9);
-
-      // Legend Pills beside donut
-      const legendX = margin + 195;
-      const legendY = currentY + (donutBoxH / 2) - 8;
-      const invPct = (invRatio * 100).toFixed(1);
-      const gainPct = ((1 - invRatio) * 100).toFixed(1);
-
-      doc.setFillColor(59, 130, 246);
-      doc.rect(legendX, legendY - 8, 10, 10, "F");
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(9.5);
-      doc.setTextColor(51, 65, 85);
-      doc.text(cleanPDFText(`Invested Principal: ${invPct}%`), legendX + 16, legendY);
-
-      doc.setFillColor(16, 185, 129);
-      doc.rect(legendX, legendY + 14, 10, 10, "F");
-      doc.text(cleanPDFText(`Compound Wealth Gain: ${gainPct}%`), legendX + 16, legendY + 22);
-    }
-
-    drawFooter(1);
-
-    // ==========================================
-    // PAGE 2: STRATEGY MATRIX & VECTOR BAR CHART
-    // ==========================================
-    if (hasPage2) {
-      doc.addPage("a4", "portrait");
-      doc.setFillColor(16, 185, 129);
-      doc.rect(margin, 36, contentWidth, 4, "F");
-
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(10.5);
-      doc.setTextColor(16, 185, 129);
-      doc.text("WEALTHMAZE FINANCIAL REPORT", margin, 52);
-
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(15);
-      doc.setTextColor(15, 23, 42);
-      doc.text("Alternative Scenarios & Growth Timeline Analysis", margin, 70);
-
+      doc.setFillColor(241, 245, 249);
       doc.setDrawColor(226, 232, 240);
-      doc.line(margin, 80, pageWidth - margin, 80);
+      doc.rect(margin, currentY, contentWidth, rowH, "FD");
 
-      let p2Y = 100;
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      headers.forEach((h, i) => {
+        doc.text(cleanPDFText(String(h)), margin + 10 + i * colW, currentY + 16);
+      });
+      currentY += rowH;
 
-      // 1. COMPARISON TABLE
-      if (result.comparison) {
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(12);
-        doc.setTextColor(30, 41, 59);
-        doc.text(cleanPDFText(result.comparison.title), margin, p2Y);
-        p2Y += 14;
+      const maxRows = Math.floor((pageHeight - 50 - currentY) / rowH);
+      const displayRows = rows.slice(0, maxRows);
 
-        const headers = result.comparison.headers;
-        const rows = result.comparison.rows;
-        const colW = contentWidth / headers.length;
-        const rowH = 26;
-
-        doc.setFillColor(241, 245, 249);
-        doc.setDrawColor(226, 232, 240);
-        doc.rect(margin, p2Y, contentWidth, rowH, "FD");
-
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(9);
-        doc.setTextColor(51, 65, 85);
-        headers.forEach((h, i) => {
-          doc.text(cleanPDFText(String(h)), margin + 8 + i * colW, p2Y + 17);
-        });
-        p2Y += rowH;
-
-        rows.forEach((row, rIdx) => {
-          const isHighlight = rIdx === 0;
-          if (isHighlight) {
-            doc.setFillColor(236, 253, 245);
-          } else if (rIdx % 2 === 1) {
-            doc.setFillColor(248, 250, 252);
-          } else {
-            doc.setFillColor(255, 255, 255);
-          }
-          doc.setDrawColor(226, 232, 240);
-          doc.rect(margin, p2Y, contentWidth, rowH, "FD");
-
-          doc.setFont("helvetica", isHighlight ? "bold" : "normal");
-          doc.setFontSize(8.5);
-          doc.setTextColor(isHighlight ? 4 : 30, isHighlight ? 120 : 41, isHighlight ? 87 : 59);
-
-          row.forEach((cell, cIdx) => {
-            doc.text(cleanPDFText(String(cell)), margin + 8 + cIdx * colW, p2Y + 17);
-          });
-          p2Y += rowH;
-        });
-        p2Y += 28;
-      }
-
-      // 2. VECTOR GROWTH BAR CHART
-      if (result.schedule && result.schedule.length > 0 && p2Y < pageHeight - 240) {
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(12);
-        doc.setTextColor(30, 41, 59);
-        doc.text("Multi-Year Corpus Growth Progression", margin, p2Y);
-        p2Y += 14;
-
-        const chartH = 210;
-        doc.setFillColor(248, 250, 252);
-        doc.setDrawColor(226, 232, 240);
-        doc.roundedRect(margin, p2Y, contentWidth, chartH, 6, 6, "FD");
-
-        const sched = result.schedule;
-        const step = Math.max(1, Math.floor(sched.length / 6));
-        const milestones = [];
-        for (let i = 0; i < sched.length; i += step) {
-          milestones.push(sched[i]);
+      displayRows.forEach((row, rIdx) => {
+        const isHighlight = rIdx === 0;
+        if (isHighlight) {
+          doc.setFillColor(236, 253, 245);
+        } else if (rIdx % 2 === 1) {
+          doc.setFillColor(248, 250, 252);
+        } else {
+          doc.setFillColor(255, 255, 255);
         }
-        if (milestones[milestones.length - 1] !== sched[sched.length - 1]) {
-          milestones.push(sched[sched.length - 1]);
-        }
+        doc.setDrawColor(226, 232, 240);
+        doc.rect(margin, currentY, contentWidth, rowH, "FD");
 
-        const keys = Object.keys(sched[0]);
-        const valKey = keys.find((k) => k.toLowerCase().includes("balance") || k.toLowerCase().includes("value") || k.toLowerCase().includes("total")) || keys[keys.length - 1];
-        const labelKey = keys[0];
+        doc.setFont("helvetica", isHighlight ? "bold" : "normal");
+        doc.setFontSize(8.5);
+        doc.setTextColor(isHighlight ? 4 : 30, isHighlight ? 120 : 41, isHighlight ? 87 : 59);
 
-        let maxVal = 0;
-        milestones.forEach((m) => {
-          const v = Number(String(m[valKey] || 0).replace(/[^0-9.]/g, ""));
-          if (v > maxVal) maxVal = v;
+        row.forEach((cell, cIdx) => {
+          doc.text(cleanPDFText(String(cell)), margin + 10 + cIdx * colW, currentY + 16);
         });
-
-        const barAreaH = chartH - 64;
-        const barBottomY = p2Y + chartH - 28;
-        const numBars = milestones.length;
-        const slotW = (contentWidth - 28) / numBars;
-        const barW = Math.min(slotW * 0.55, 36);
-
-        milestones.forEach((m, idx) => {
-          const rawV = Number(String(m[valKey] || 0).replace(/[^0-9.]/g, ""));
-          const barH = maxVal > 0 ? Math.max((rawV / maxVal) * barAreaH, 6) : 6;
-          const barX = margin + 14 + idx * slotW + (slotW - barW) / 2;
-          const barTopY = barBottomY - barH;
-
-          // Razor sharp vector bar
-          doc.setFillColor(16, 185, 129);
-          doc.roundedRect(barX, barTopY, barW, barH, 2, 2, "F");
-
-          // Value above bar
-          doc.setFont("helvetica", "bold");
-          doc.setFontSize(8);
-          doc.setTextColor(15, 23, 42);
-          const compactStr = cleanPDFText(formatCompact(rawV, "currency"));
-          doc.text(compactStr, barX + barW / 2 - doc.getTextWidth(compactStr) / 2, barTopY - 6);
-
-          // Milestone label below X axis
-          doc.setFont("helvetica", "normal");
-          doc.setFontSize(8);
-          doc.setTextColor(100, 116, 139);
-          const lblStr = cleanPDFText(String(m[labelKey] || `P${idx + 1}`));
-          doc.text(lblStr, barX + barW / 2 - doc.getTextWidth(lblStr) / 2, barBottomY + 14);
-        });
-      }
-
-      drawFooter(2);
+        currentY += rowH;
+      });
     }
+
+    drawFooter();
 
     const cleanTitle = (title || "calculator").toLowerCase().replace(/[^a-z0-9]+/g, "-");
     doc.save(`wealthmaze-${cleanTitle}-report.pdf`);
