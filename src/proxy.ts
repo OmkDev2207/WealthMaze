@@ -14,7 +14,7 @@ export async function proxy(request: NextRequest) {
   const token = request.cookies.get("admin_session")?.value;
 
   if (!token) {
-    return redirectToLogin(request);
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
@@ -22,18 +22,12 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   } catch {
     // Token invalid or expired
-    const response = redirectToLogin(request);
+    const response = NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     response.cookies.delete("admin_session");
     return response;
   }
 }
 
-function redirectToLogin(request: NextRequest) {
-  const loginUrl = new URL("/wm-studio2207", request.url);
-  loginUrl.searchParams.set("auth", "required");
-  return NextResponse.redirect(loginUrl);
-}
-
 export const config = {
-  matcher: ["/wm-studio2207/:path*", "/api/admin/:path*"],
+  matcher: ["/api/admin/:path*"],
 };
