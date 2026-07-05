@@ -142,4 +142,14 @@ That is not magic. That is mathematics. And it is available to anyone willing to
 
 *Ready to see what compounding can do with your specific numbers? Use WealthMaze's [Compound Interest Calculator](/compound-interest-calculator) to model your exact scenario — or run a [SIP projection](/sip-calculator) to see how monthly investments compound into a retirement corpus. The [CAGR Calculator](/cagr-calculator) lets you measure what your existing investments have actually returned.*
 
+---
+
+## Sources & Further Reading
+
+- [Investopedia — Compound Interest](https://www.investopedia.com/terms/c/compoundinterest.asp) — Comprehensive breakdown of how compound interest works and the formula.
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Long-run S&P 500 return data referenced for benchmark comparisons.
+- Note: The "eighth wonder of the world" quote is widely attributed to Einstein but has no verified primary source — used here as a cultural reference only.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Past market returns are not a guarantee of future performance. Please consult a SEBI-registered financial advisor before making investment decisions.*

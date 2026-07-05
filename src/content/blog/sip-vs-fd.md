@@ -146,4 +146,14 @@ FDs protect nominal capital. Equity SIPs protect purchasing power. For long hori
 
 *Run the exact numbers for your own scenario with WealthMaze's [SIP Calculator](/sip-calculator) and [FD Calculator](/fd-calculator) side by side. Use the [Inflation Impact Calculator](/inflation-impact-calculator) to see what today's savings will actually be worth in 15 or 20 years after inflation. The [CAGR Calculator](/cagr-calculator) lets you compare what different return rates actually produce over time.*
 
+---
+
+## Sources & Further Reading
+
+- [RBI — Bank Deposit Rates](https://www.rbi.org.in/scripts/bs_viewcontent.aspx?Id=3175) — Official Reserve Bank of India data on bank deposit interest rates.
+- [NSE India — Nifty 50 Historical Returns](https://www.nseindia.com/market-data/indices-historical-data) — Long-run Nifty 50 return data used for equity return assumptions.
+- [Investopedia — Real Rate of Return](https://www.investopedia.com/terms/r/realrateofreturn.asp) — Framework for understanding real vs nominal returns after inflation and tax.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Mutual fund investments are subject to market risks. Past returns are not a guarantee of future performance. Please consult a SEBI-registered financial advisor before making any investment decisions.*

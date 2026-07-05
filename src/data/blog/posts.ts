@@ -165,14 +165,14 @@ export const blogPosts: BlogPost[] = [
   // New Articles (June 22, 2026)
   {
     slug: "why-most-people-never-build-wealth",
-    title: "Why Most People Never Build Wealth (And How to Avoid It)",
-    description: "Understand the primary habits and traps that prevent people from building lasting wealth, and learn the practical steps to avoid them.",
-    publishedAt: "June 22, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["Wealth Building", "Financial Habits", "Personal Finance", "Budgeting"],
+    title: "Why Most People Never Build Wealth — And It Has Almost Nothing to Do With Money",
+    description: "Most people fail to build wealth not from lack of knowledge but because wealth building is psychologically invisible while consumption is loud. Here's the honest behavioral picture.",
+    publishedAt: "July 5, 2026",
+    readTime: "11 min read",
+    category: "Wealth Building",
+    tags: ["Wealth Building", "Lifestyle Inflation", "Behavioral Finance", "Net Worth", "Personal Finance"],
     author: authors.omk,
-    relatedCalculators: ["net-worth-calculator", "savings-calculator", "goal-based-investment-calculator"],
+    relatedCalculators: ["net-worth-calculator", "sip-calculator", "financial-freedom-calculator"],
   },
   {
     slug: "power-of-starting-early",
@@ -187,14 +187,14 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "small-financial-decisions-compound",
-    title: "How Small Financial Decisions Compound Over Time",
-    description: "See how minor daily or monthly choices compound into massive financial outcomes over decades, and learn how to recognize opportunity costs.",
+    title: "How Small Financial Decisions Compound Over Time — A Self-Awareness Guide",
+    description: "Most people don't overspend because they're irresponsible — they overspend because they're unaware. Here's the self-awareness practice that changes your relationship with money.",
     publishedAt: "June 22, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["Compounding", "Financial Habits", "Micro Investing", "Savings"],
+    readTime: "10 min read",
+    category: "Personal Finance",
+    tags: ["Personal Finance", "Self-Awareness", "Savings", "Compounding", "Opportunity Cost", "Goal Funds"],
     author: authors.omk,
-    relatedCalculators: ["compound-interest-calculator", "savings-calculator", "sip-calculator"],
+    relatedCalculators: ["net-worth-calculator", "compound-interest-calculator", "sip-goal-planner"],
   },
   {
     slug: "financial-freedom-is-simpler",
@@ -222,14 +222,14 @@ export const blogPosts: BlogPost[] = [
   // 6. How to Save for a House
   {
     slug: "buying-a-house-financial-roadmap",
-    title: "How to Save for a House: Investment & Buying Roadmap",
-    description: "Learn how to save for a house and invest to buy your dream home. Calculate down payments, mortgage affordability, and build a savings roadmap.",
+    title: "The House You Want and the Life You're Building — A Financial Roadmap",
+    description: "Nobody buys a house because of the math. They buy it for stability, identity, and belonging. Here's how to honor that without letting the dream become a financial trap.",
     publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["How to Save for a House", "Invest to Buy House", "Home Down Payment", "Real Estate Planning"],
+    readTime: "12 min read",
+    category: "Personal Finance",
+    tags: ["How to Save for a House", "Home Down Payment", "Rent vs Buy", "House Poor", "Real Estate Planning", "Personal Finance"],
     author: authors.omk,
-    relatedCalculators: ["home-loan-emi-calculator", "emi-calculator", "sip-calculator", "loan-prepayment-calculator"],
+    relatedCalculators: ["sip-goal-planner", "emi-calculator", "net-worth-calculator"],
   },
   // 7. What is Taxation
   {

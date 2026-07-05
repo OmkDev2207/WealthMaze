@@ -118,4 +118,14 @@ The salary will keep arriving as long as you show up. The question is whether an
 
 *Calculate how your salary, invested systematically, builds into an asset base with WealthMaze's [SIP Calculator](/sip-calculator). Use the [Financial Freedom Calculator](/financial-freedom-calculator) to find your crossover point — the month your assets outearn your salary. The [Compound Interest Calculator](/compound-interest-calculator) shows what any lump sum becomes over time.*
 
+---
+
+## Sources & Further Reading
+
+- [Investopedia — Passive Income](https://www.investopedia.com/terms/p/passiveincome.asp) — Definition and examples of income generated independent of active effort.
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Long-run equity return data underpinning the asset ownership argument.
+- Housel, M. (2020). *The Psychology of Money.* Harriman House. — Framework for distinguishing income from wealth and the crossover point concept.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Please consult a SEBI-registered financial advisor before making investment decisions.*

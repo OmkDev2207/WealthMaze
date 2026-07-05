@@ -143,4 +143,14 @@ The decision to start is the only one that cannot wait.
 
 *Calculate exactly what monthly SIP you need to reach your retirement corpus with the [WealthMaze SIP Calculator](/sip-calculator). See how a step-up SIP changes your retirement outcome with the [Step-Up SIP Calculator](/step-up-sip-calculator). Find your retirement freedom number with the [Financial Freedom Calculator](/financial-freedom-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- Bengen, W. (1994). Determining Withdrawal Rates Using Historical Data. *Journal of Financial Planning.* — Original source of the 4% rule and 25x corpus target referenced throughout.
+- [Vanguard — How America Saves](https://institutional.vanguard.com/insights/research/how-america-saves) — Retirement savings behavior research referenced in the behavioral section.
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Equity return assumptions used for all corpus projections.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Return rates and corpus projections are illustrative estimates based on historical averages and do not guarantee future performance. Please consult a qualified financial advisor before making retirement planning decisions.*

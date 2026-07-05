@@ -217,4 +217,15 @@ Know the difference. Run the numbers yourself.
 
 *Calculate CAGR for any investment instantly with the [WealthMaze CAGR Calculator](/cagr-calculator). For investments with multiple cash flows like monthly SIPs, use the [XIRR Calculator](/xirr-calculator) instead — it gives you the time-weighted return that CAGR cannot. Compare investment scenarios with the [Investment Growth Calculator](/investment-growth-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Source for S&P 500 long-run CAGR data cited in the benchmarks section.
+- [NSE India — Nifty 50 Historical Data](https://www.nseindia.com/market-data/indices-historical-data) — Source for Nifty 50 CAGR data across 10 and 20-year periods.
+- [Investopedia — CAGR Definition and Formula](https://www.investopedia.com/terms/c/cagr.asp) — Authoritative definition and formula reference.
+- [SPIVA — S&P Indices vs Active Funds Report](https://www.spglobal.com/spdji/en/research-insights/spiva/) — Data showing active fund managers underperforming benchmarks over 15-year periods.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Historical market returns cited are approximate and based on publicly available index data. Past performance does not guarantee future results. Please consult a qualified financial advisor before making investment decisions.*

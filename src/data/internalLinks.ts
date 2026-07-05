@@ -267,7 +267,7 @@ export const blogLinks: Record<string, BlogLinkData> = {
 
   "buying-a-house-financial-roadmap": {
     relatedPosts: ["home-loan-vs-personal-loan", "how-is-loan-emi-calculated", "saving-first-1-lakh"],
-    relatedCalculators: ["emi-calculator", "sip-calculator", "loan-prepayment-calculator"],
+    relatedCalculators: ["sip-goal-planner", "emi-calculator", "net-worth-calculator"],
   },
 
   "what-is-taxation": {
@@ -422,7 +422,7 @@ export const blogLinks: Record<string, BlogLinkData> = {
 
   "small-financial-decisions-compound": {
     relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "budget-rule-50-30-20"],
-    relatedCalculators: ["compound-interest-calculator", "savings-calculator", "sip-calculator"],
+    relatedCalculators: ["net-worth-calculator", "compound-interest-calculator", "sip-goal-planner"],
   },
 
   "financial-freedom-is-simpler": {

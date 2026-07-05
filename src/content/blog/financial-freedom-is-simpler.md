@@ -134,4 +134,14 @@ The only prerequisite is starting.
 
 *Calculate your personal financial freedom number with the [WealthMaze Financial Freedom Calculator](/financial-freedom-calculator) — enter your annual expenses, current savings, and monthly investment to see your timeline to independence. Model different savings rates with the [SIP Calculator](/sip-calculator). Track progress toward your number with the [Net Worth Calculator](/net-worth-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- Bengen, W. (1994). Determining Withdrawal Rates Using Historical Data. *Journal of Financial Planning.* — Original academic paper establishing the 4% rule referenced throughout.
+- [Investopedia — The 4% Rule](https://www.investopedia.com/terms/f/four-percent-rule.asp) — Accessible explanation of the 4% withdrawal rate and 25x portfolio target.
+- [Mr. Money Mustache — The Shockingly Simple Math Behind Early Retirement](https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/) — The savings rate to retirement timeline relationship referenced in the spectrum section.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. The 4% rule and financial independence calculations are illustrative guidelines based on historical data and do not guarantee future outcomes. Please consult a qualified financial advisor before making investment decisions.*

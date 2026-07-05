@@ -144,4 +144,15 @@ The army grows one dollar at a time. The battle begins the moment you deploy the
 
 *Start modeling your investment growth with the [WealthMaze Compound Interest Calculator](/compound-interest-calculator). See what regular monthly investment builds over time with the [SIP Calculator](/sip-calculator). Calculate your financial independence number with the [Financial Freedom Calculator](/financial-freedom-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Century-long equity return data referenced in the compounding section.
+- [SPIVA — Active vs Passive Fund Performance](https://www.spglobal.com/spdji/en/research-insights/spiva/) — Data showing index funds outperforming active management over long periods.
+- Bogle, J. (2007). *The Little Book of Common Sense Investing.* Wiley. — Core philosophy behind index fund investing referenced throughout.
+- [Investopedia — What is Investing?](https://www.investopedia.com/terms/i/investing.asp) — Foundational definition and asset class overview.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Historical return figures cited are approximate long-run averages and do not guarantee future performance. Please consult a qualified financial advisor before making investment decisions.*

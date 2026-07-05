@@ -177,4 +177,14 @@ That is the power of starting early. Not the inspiration. The arithmetic.
 
 *Use the [WealthMaze Compound Interest Calculator](/compound-interest-calculator) to model exactly what starting today versus starting in 5 years costs in final corpus. The [SIP Calculator](/sip-calculator) shows what any monthly investment becomes over any timeline. Use the [SIP Goal Planner](/sip-goal-planner) to find what monthly investment you need to reach any specific target.*
 
+---
+
+## Sources & Further Reading
+
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Long-run return data underpinning all compounding calculations in the article.
+- [Investopedia — Time Value of Money](https://www.investopedia.com/terms/t/timevalueofmoney.asp) — The mathematical foundation for why early investment outperforms later investment.
+- Thaler, R. & Sunstein, C. (2008). *Nudge.* Yale University Press. — Behavioral economics research on present bias and temporal discounting referenced in the delay cost section.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Return rates and corpus projections are illustrative estimates based on historical market averages and do not guarantee future performance. Please consult a qualified financial advisor before making investment decisions.*

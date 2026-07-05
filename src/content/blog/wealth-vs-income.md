@@ -110,4 +110,14 @@ Ronald Read had options. He spent his entire adult life building them, quietly, 
 
 *Track your own wealth trajectory with WealthMaze's [Net Worth Calculator](/net-worth-calculator) — the number that actually measures your financial progress. Use the [Financial Freedom Calculator](/financial-freedom-calculator) to see how far your current assets take you. Run a [SIP projection](/sip-calculator) to model what consistent investing does to your net worth over 10, 20, and 30 years.*
 
+---
+
+## Sources & Further Reading
+
+- Housel, M. (2020). *The Psychology of Money.* Harriman House. — Ronald Read and Richard Fuscone stories, and the core thesis that wealth is what you don't see.
+- [Federal Reserve — Survey of Consumer Finances](https://www.federalreserve.gov/econres/scfindex.htm) — US household wealth data by income level referenced in the article.
+- Stanley, T. & Danko, W. (1996). *The Millionaire Next Door.* Taylor Trade Publishing. — Research on actual millionaire spending and lifestyle habits referenced in the invisible wealth section.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Please consult a qualified financial advisor before making investment decisions.*

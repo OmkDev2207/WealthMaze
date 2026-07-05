@@ -158,4 +158,14 @@ The only way to break a SIP is to intervene. And every intervention — pausing,
 
 *Run the numbers on your own SIP with WealthMaze's [SIP Calculator](/sip-calculator). See how a Step-Up SIP changes your final corpus with the [Step-Up SIP Calculator](/step-up-sip-calculator). Compare what pausing for even 12 months costs you using the [SIP Comparison Calculator](/sip-comparison-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- [DALBAR — Quantitative Analysis of Investor Behavior](https://www.dalbar.com/QAIB/Index) — Documents the consistent gap between fund returns and actual investor returns due to behavioral mistakes.
+- Kahneman, D. (2011). *Thinking, Fast and Slow.* Farrar, Straus and Giroux. — Foundation for loss aversion, present bias, and recency bias concepts referenced throughout.
+- [NSE India — Nifty 50 Historical Data](https://www.nseindia.com/market-data/indices-historical-data) — Source for Nifty 50 crash and recovery data for 2008 and 2020 market events.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute investment advice. Mutual fund investments are subject to market risks. Past performance does not guarantee future returns. Please consult a SEBI-registered financial advisor before making investment decisions.*

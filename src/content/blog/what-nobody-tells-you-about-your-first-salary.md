@@ -142,4 +142,14 @@ The celebration is earned. Enjoy it. Then, the morning after, set up the SIP.
 
 *Use WealthMaze's [SIP Calculator](/sip-calculator) to see what your first salary investment grows into over 20, 30, and 40 years. The [Step-Up SIP Calculator](/step-up-sip-calculator) shows how increasing your investment with every salary increment accelerates the outcome. Calculate your emergency fund target with the [Emergency Fund Calculator](/emergency-fund-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- [Investopedia — Human Capital](https://www.investopedia.com/terms/h/humancapital.asp) — The economic case for treating skill development as a financial investment.
+- [Bureau of Labor Statistics — Employment Situation](https://www.bls.gov/news.release/empsit.toc.htm) — US salary and income data referenced for first-salary context.
+- Thaler, R. & Sunstein, C. (2008). *Nudge.* Yale University Press. — Present bias and automation concepts referenced in the savings section.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Please consult a SEBI-registered financial advisor before making investment decisions.*

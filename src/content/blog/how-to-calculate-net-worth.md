@@ -191,4 +191,14 @@ That discipline, sustained over time, is the entire strategy.
 
 *Calculate your net worth right now with the [WealthMaze Net Worth Calculator](/net-worth-calculator). Track your wealth building progress with the [SIP Calculator](/sip-calculator) — see how consistent monthly investment grows your asset column over 10, 20, and 30 years. Use the [Financial Freedom Calculator](/financial-freedom-calculator) to find out how large your net worth needs to be to fund your retirement.*
 
+---
+
+## Sources & Further Reading
+
+- [Federal Reserve — Survey of Consumer Finances](https://www.federalreserve.gov/econres/scfindex.htm) — Source for US median net worth by age group data cited in the benchmarks table.
+- [Investopedia — Net Worth Definition](https://www.investopedia.com/terms/n/networth.asp) — Authoritative definition and calculation methodology.
+- [Investopedia — Liquid Assets](https://www.investopedia.com/terms/l/liquidasset.asp) — Distinction between liquid and illiquid assets referenced in the assets section.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Net worth benchmarks cited are based on publicly available Federal Reserve data. Please consult a qualified financial advisor before making investment decisions.*

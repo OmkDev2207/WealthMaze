@@ -10,8 +10,10 @@
     "publish": "node scripts/publish-article.js"
   },
   "dependencies": {
+    "@octokit/rest": "^22.0.1",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "jose": "^6.2.3",
     "jspdf": "^4.2.1",
     "lucide-react": "^1.21.0",
     "next": "16.2.9",

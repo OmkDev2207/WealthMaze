@@ -142,4 +142,15 @@ The decision is available to anyone. The time to make it is the month the first 
 
 *Use WealthMaze's [Investment Calculator](/sip-calculator) to model what consistent monthly investment builds over 20, 30, and 35 years. The [Inflation Impact Calculator](/inflation-impact-calculator) shows exactly how much purchasing power your savings lose if they sit in low-return instruments. The [Financial Freedom Calculator](/financial-freedom-calculator) helps you calculate the corpus you need and the monthly investment required to get there.*
 
+---
+
+## Sources & Further Reading
+
+- [Federal Reserve — Survey of Consumer Finances](https://www.federalreserve.gov/econres/scfindex.htm) — US household retirement savings data and net worth by age group.
+- [Vanguard — How America Saves Report](https://institutional.vanguard.com/insights/research/how-america-saves) — Annual research on actual retirement savings behavior and contribution rates.
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Long-run equity return assumptions referenced throughout.
+- Kahneman, D. (2011). *Thinking, Fast and Slow.* Farrar, Straus and Giroux. — Present bias concept underpinning why retirement savings gets perpetually delayed.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Please consult a qualified financial advisor before making investment decisions.*

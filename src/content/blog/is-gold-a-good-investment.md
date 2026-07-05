@@ -143,3 +143,16 @@ Own it in the right form. Own it in the right proportion. And own it for the rig
 That is what five thousand years of history says gold is for. And that is a good enough reason to give it a place in your portfolio.
 
 *Compare gold's historical returns against equity and other asset classes using WealthMaze's [CAGR Calculator](/cagr-calculator). Calculate how a gold allocation affects your overall portfolio with the [Net Worth Calculator](/net-worth-calculator). Model your long-term wealth building with the [Compound Interest Calculator](/compound-interest-calculator).*
+
+---
+
+## Sources & Further Reading
+
+- [World Gold Council — Gold Price Data](https://www.gold.org/goldhub/data/gold-prices) — Historical gold price data referenced throughout.
+- [Investopedia — Gold as an Investment](https://www.investopedia.com/articles/basics/09/precious-metals-gold-silver-platinum.asp) — Framework for evaluating gold's role in a diversified portfolio.
+- [VanEck — Gold Miners ETF (GDX)](https://www.vaneck.com/us/en/investments/gold-miners-etf-gdx/) — GDX fund data and gold mining sector overview.
+- Housel, M. (2020). *The Psychology of Money.* Harriman House. — Behavioral context for why investors gravitate toward gold during uncertainty.
+
+---
+
+*Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Please consult a qualified financial advisor before making investment decisions.*

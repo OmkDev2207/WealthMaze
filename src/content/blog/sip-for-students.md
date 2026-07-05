@@ -151,4 +151,14 @@ There is no contradiction between investing early and investing in yourself. The
 
 *Model what your student SIP becomes with consistent investing using the [WealthMaze SIP Calculator](/sip-calculator). See how increasing your SIP with each income jump changes your final corpus with the [Step-Up SIP Calculator](/step-up-sip-calculator). Track your overall financial progress with the [Net Worth Calculator](/net-worth-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Equity return data used for long-term compounding projections.
+- [Investopedia — Human Capital](https://www.investopedia.com/terms/h/humancapital.asp) — Economic concept of skill investment as a financial asset with measurable return.
+- Thaler, R. & Sunstein, C. (2008). *Nudge.* Yale University Press. — Automation and default behavior research underpinning the SIP habit argument.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Investment returns cited are based on historical averages and do not guarantee future performance. Please consult a qualified financial advisor before making investment decisions.*

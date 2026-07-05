@@ -194,4 +194,14 @@ XIRR gives you that clarity.
 
 *Calculate your investment's true annualized return with the [WealthMaze XIRR Calculator](/xirr-calculator). Compare returns across different investments using the [CAGR Calculator](/cagr-calculator) for lumpsum investments. Model future portfolio growth with the [Compound Interest Calculator](/compound-interest-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- [Investopedia — XIRR Definition](https://www.investopedia.com/terms/x/xirr.asp) — Authoritative definition and formula explanation.
+- [Microsoft Support — XIRR Function in Excel](https://support.microsoft.com/en-us/office/xirr-function-de1242ec-6477-445b-b11b-a303ad9adc9d) — Official documentation for the Excel XIRR formula referenced in the spreadsheet section.
+- [Investopedia — IRR vs XIRR](https://www.investopedia.com/ask/answers/040315/what-difference-between-irr-and-xirr.asp) — Explanation of the distinction between IRR and XIRR for irregular cash flows.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Please consult a qualified financial advisor before making investment decisions.*

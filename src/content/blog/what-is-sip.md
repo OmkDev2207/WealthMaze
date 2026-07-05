@@ -148,4 +148,14 @@ Discipline, in investing, is not a personality trait. It is a system. And SIP is
 
 *Model your exact SIP scenario on WealthMaze's [SIP Calculator](/sip-calculator) — enter your monthly amount, expected return, and time horizon to see how your corpus grows year by year. The [Step-Up SIP Calculator](/step-up-sip-calculator) shows you how annual increases to your SIP accelerate your wealth. Compare two SIP strategies side by side with the [SIP Comparison Calculator](/sip-comparison-calculator).*
 
+---
+
+## Sources & Further Reading
+
+- [AMFI India — What is SIP](https://www.amfiindia.com/investor-corner/knowledge-center/sip.html) — Official mutual fund industry body explanation of Systematic Investment Plans.
+- [Investopedia — Dollar Cost Averaging](https://www.investopedia.com/terms/d/dollarcostaveraging.asp) — The global equivalent of Rupee Cost Averaging explained with examples.
+- [DALBAR — Quantitative Analysis of Investor Behavior](https://www.dalbar.com/QAIB/Index) — Annual research on how investor behavior affects real returns vs fund returns.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only and does not constitute investment advice. Mutual fund investments are subject to market risks. Past performance does not guarantee future returns. Please consult a SEBI-registered financial advisor before making investment decisions.*

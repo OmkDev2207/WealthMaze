@@ -140,4 +140,14 @@ The wealthiest version of your future self will not be the one who found the bes
 
 *Use WealthMaze's [SIP Calculator](/sip-calculator) to model what your wealth trajectory looks like at different income levels — and see for yourself how much faster things compound when the income variable changes.*
 
+---
+
+## Sources & Further Reading
+
+- [Investopedia — Human Capital Theory](https://www.investopedia.com/terms/h/humancapital.asp) — The economic concept of treating earning capacity as a financial asset.
+- [Bureau of Labor Statistics — Wage Growth Data](https://www.bls.gov/bls/wages.htm) — US wage growth data underpinning the income trajectory argument.
+- Housel, M. (2020). *The Psychology of Money.* Harriman House. — Behavioral finance foundation for why savings optimization is psychologically appealing but strategically limiting.
+
+---
+
 *Disclaimer: This article is for educational and informational purposes only. It does not constitute financial advice. Please consult a SEBI-registered financial advisor before making investment decisions.*

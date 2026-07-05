@@ -61,3 +61,16 @@ Absolutely. If you can live frugally and keep your Needs and Wants low, saving 3
 ## Conclusion
 
 A budget is not about restricting your freedom; it is about giving you control. By using the 50/30/20 rule, you take the guesswork out of your monthly finances. Set up your automated transfers this month, enjoy your guilt-free fun money, and watch your savings grow quietly in the background.
+
+---
+
+## Sources & Further Reading
+
+- Warren, E. & Tyagi, A.W. (2005). *All Your Worth: The Ultimate Lifetime Money Plan.* Free Press. — The original source of the 50/30/20 framework.
+- [NerdWallet — What Is the 50/30/20 Budget Rule?](https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator) — Practical breakdown and calculator tools.
+- [Investopedia — The 50/30/20 Budget Rule](https://www.investopedia.com/ask/answers/022916/what-502030-budget-rule.asp) — Comprehensive framework overview.
+- [Wealthvieu — 50/30/20 Budget Rule 2026](https://wealthvieu.com/personal-finance/budgeting-guide/50-30-20-rule/) — Current data on American housing costs and income allocation realities.
+
+---
+
+*Disclaimer: This article is for educational and informational purposes only and does not constitute financial or investment advice. Please consult a qualified financial advisor before making investment decisions.*

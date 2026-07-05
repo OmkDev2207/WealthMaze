@@ -232,4 +232,14 @@ The answers will be more useful than any article you read about SIPs — because
 
 *[Open the WealthMaze SIP Calculator](/sip-calculator) | Also explore: [Step-Up SIP Calculator](/step-up-sip-calculator) | [SIP & Lumpsum Calculator](/mutual-fund-return-calculator) | [Compound Interest Calculator](/compound-interest-calculator)*
 
+---
+
+## Sources & Further Reading
+
+- [S&P 500 Historical Annual Returns — Macrotrends](https://www.macrotrends.net/2526/sp-500-historical-annual-returns) — Historical return data used as basis for calculator example projections.
+- [SEBI — Mutual Fund Regulations](https://www.sebi.gov.in/legal/regulations/jun-2023/sebi-mutual-fund-regulations-1996-last-amended-on-june-15-2023-_73630.html) — Regulatory framework for SIP investments in India referenced in the guide.
+- [Investopedia — Systematic Investment Plan](https://www.investopedia.com/terms/s/systematicinvestmentplan.asp) — Authoritative definition of SIP referenced in the tutorial.
+
+---
+
 *Disclaimer: All calculations in this article are illustrative estimates based on fixed assumed return rates. Actual mutual fund returns vary based on market conditions and fund performance. This article does not constitute financial advice. Please consult a SEBI-registered financial advisor before making investment decisions.*
