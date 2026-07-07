@@ -69,9 +69,12 @@ export default function AboutPage() {
           <li><strong>Latest Regulations</strong>: We continuously review and update our calculation engines to reflect the latest rules, such as the New Tax Regime slabs and capital gains updates.</li>
         </ul>
 
-        <h2 className="text-xl font-bold text-zinc-800 dark:text-zinc-200 mt-8">Our Editorial & Calculation Standards</h2>
+        <h2 className="text-xl font-bold text-zinc-800 dark:text-zinc-200 mt-8">Our Editorial &amp; Calculation Standards</h2>
         <p>
-          To maintain absolute trust, all mathematical engines on WealthMaze are designed in-house by financial engineering professionals and cross-verified against official regulations and banking standards. Our educational content is entirely original, written with a focus on objectivity, clarity, and user value. We strictly maintain a non-sponsored stance and do not recommend specific stocks, mutual funds, or brokers.
+          Every calculator on WealthMaze is built from scratch using verified financial formulas, cross-checked against official publications from RBI, SEBI, AMFI, and the Income Tax Department of India. No third-party calculator APIs are used — each tool is coded and tested independently to ensure the math is correct.
+        </p>
+        <p>
+          Our educational content is entirely original, written by Om K. with a focus on clarity, accuracy, and genuine usefulness. We do not accept sponsored content, paid placements, or affiliate relationships that could bias our writing. We do not recommend specific stocks, mutual funds, or brokers.
         </p>
       </section>
     </article>
