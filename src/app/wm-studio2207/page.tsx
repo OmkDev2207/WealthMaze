@@ -399,6 +399,13 @@ function AdminPanel() {
     setPostsLoading(false);
   }
 
+  // ── Load history ───────────────────────────────────────────────────────────
+  async function loadHistory() {
+    // History is fetched from the published log in the repo
+    // For simplicity, we use the posts API which reads from GitHub
+    setHistoryLog([]); // reset; real implementation reads publishLog.json
+  }
+
   useEffect(() => {
     if (activeTab === "manager") loadPosts();
     if (activeTab === "history") loadHistory();
@@ -410,13 +417,6 @@ function AdminPanel() {
       setPosts((prev) => prev.filter((p) => p.slug !== slug));
       setDeleteConfirm(null);
     } catch {}
-  }
-
-  // ── Load history ───────────────────────────────────────────────────────────
-  async function loadHistory() {
-    // History is fetched from the published log in the repo
-    // For simplicity, we use the posts API which reads from GitHub
-    setHistoryLog([]); // reset; real implementation reads publishLog.json
   }
 
   async function handleLogout() {
