@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     slug: "sip-vs-step-up-sip",
     title: "SIP vs Step-Up SIP: Why a 10% Annual Increase Can Double Your Final Wealth",
     description: "Alex invested $200/month flat for 25 years and built $265,000. Sam increased by 10% annually and built $614,000. Same fund. Same start. Here's the math behind the gap.",
-    publishedAt: "June 28, 2026",
+    publishedAt: "July 8, 2026",
     readTime: "10 min read",
     category: "Investing",
     tags: ["step-up SIP", "SIP vs step-up SIP", "top-up SIP", "SIP calculator", "wealth building"],
