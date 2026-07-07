@@ -1,5 +1,3 @@
-**YMYL Advisory Notice:** This article is part of WealthMaze's educational library. Information is compiled from official regulatory portals (such as RBI, SEBI, or the Income Tax Dept) but does not constitute personal financial, tax, or investment advice. Read our [Editorial Policy](/editorial-policy) and [Calculator Methodology](/methodology) to learn how our content and calculators are verified. *Mutual fund investments are subject to market risks; read all scheme related documents carefully.*
-
 A friend of mine did everything "right." He bought a plot of land the moment he had enough saved up, because every uncle at every family function told him real estate "only goes up." By 32, his net worth on paper looked enviable — close to $250,000, mostly locked in that land and a chunk of gold jewelry from his wedding.
 
 Then his father needed emergency heart surgery. The bill: $6,250, due in 48 hours.
