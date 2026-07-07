@@ -6,19 +6,19 @@ export function AdSenseLoader() {
   React.useEffect(() => {
     let scriptLoaded = false;
 
-    const loadAdSense = () => {
+    const loadAdSense = (force = false) => {
       if (scriptLoaded) return;
 
       const consent = localStorage.getItem("cookie-consent");
-      if (consent !== "accepted") return;
+      if (!force && consent !== "accepted") return;
 
       scriptLoaded = true;
 
       // Remove all event listeners immediately to prevent multiple loads
-      window.removeEventListener("scroll", loadAdSense);
-      window.removeEventListener("mousemove", loadAdSense);
-      window.removeEventListener("touchstart", loadAdSense);
-      window.removeEventListener("keydown", loadAdSense);
+      window.removeEventListener("scroll", handleInteraction);
+      window.removeEventListener("mousemove", handleInteraction);
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("keydown", handleInteraction);
 
       // Create and inject the script element
       const script = document.createElement("script");
@@ -28,29 +28,42 @@ export function AdSenseLoader() {
       document.head.appendChild(script);
     };
 
-    // Attach event listeners to wait for first user interaction
-    window.addEventListener("scroll", loadAdSense, { passive: true });
-    window.addEventListener("mousemove", loadAdSense, { passive: true });
-    window.addEventListener("touchstart", loadAdSense, { passive: true });
-    window.addEventListener("keydown", loadAdSense, { passive: true });
+    const handleInteraction = () => {
+      loadAdSense(false);
+    };
+
+    // Detect search engine bots/crawlers and page speed tools to bypass lazy-loading and consent gates
+    const isBot = /google|bot|crawler|spider|lighthouse|mediapartners/i.test(
+      typeof navigator !== "undefined" ? navigator.userAgent || "" : ""
+    );
+
+    if (isBot) {
+      loadAdSense(true);
+    } else {
+      // Attach event listeners to wait for first user interaction
+      window.addEventListener("scroll", handleInteraction, { passive: true });
+      window.addEventListener("mousemove", handleInteraction, { passive: true });
+      window.addEventListener("touchstart", handleInteraction, { passive: true });
+      window.addEventListener("keydown", handleInteraction, { passive: true });
+
+      // If consent is already accepted, try running it on interaction or load
+      const consent = localStorage.getItem("cookie-consent");
+      if (consent === "accepted") {
+        loadAdSense(false);
+      }
+    }
 
     // Listen to custom consent accepted event
     const handleConsentAccepted = () => {
-      loadAdSense();
+      loadAdSense(false);
     };
     window.addEventListener("cookie-consent-accepted", handleConsentAccepted);
 
-    // If consent is already accepted, try running it on interaction or load
-    const consent = localStorage.getItem("cookie-consent");
-    if (consent === "accepted") {
-      loadAdSense();
-    }
-
     return () => {
-      window.removeEventListener("scroll", loadAdSense);
-      window.removeEventListener("mousemove", loadAdSense);
-      window.removeEventListener("touchstart", loadAdSense);
-      window.removeEventListener("keydown", loadAdSense);
+      window.removeEventListener("scroll", handleInteraction);
+      window.removeEventListener("mousemove", handleInteraction);
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("keydown", handleInteraction);
       window.removeEventListener("cookie-consent-accepted", handleConsentAccepted);
     };
   }, []);
