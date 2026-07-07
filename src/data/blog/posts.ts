@@ -282,14 +282,14 @@ export const blogPosts: BlogPost[] = [
   // 11. Liquid vs Non-Liquid Assets (Target: Savings, Liquidity)
   {
     slug: "liquid-vs-non-liquid-assets",
-    title: "Liquid Assets vs Non-Liquid Assets: Understanding Liquidity",
-    description: "Learn the difference between liquid assets (bank cash, sweep FDs) and non-liquid assets (real estate, jewelry) for financial planning.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["Savings", "Liquidity", "Financial Planning"],
+    title: "Why Being \"Rich on Paper\" Can Still Bankrupt You: Understanding Liquidity",
+    description: "Net worth measures how much you have; liquidity measures how much you can actually use when it matters. Learn the liquidity spectrum, the mirage of credit limits, and how to build a 4-layer liquidity ladder.",
+    publishedAt: "July 7, 2026",
+    readTime: "11 min read",
+    category: "Investing",
+    tags: ["Liquidity", "Savings", "Financial Planning", "Emergency Fund", "Net Worth", "Asset Allocation"],
     author: authors.omk,
-    relatedCalculators: ["fd-calculator", "rd-calculator"],
+    relatedCalculators: ["net-worth-calculator", "emergency-fund-calculator", "fd-calculator", "sip-calculator"],
   },
   // 12. Intro to Financial Markets
   {
