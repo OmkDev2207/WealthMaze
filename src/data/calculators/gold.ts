@@ -166,5 +166,86 @@ export const goldCalculators: CalculatorConfig[] = [
       { question: "How is silver purity measured?", answer: "Fine silver has 99.9% purity (999 fineness). Sterling silver has 92.5% purity (925 fineness) and is alloyed with copper for durability." },
       { question: "How do I calculate silver investment returns online?", answer: "Enter your initial investment amount, current silver rate per kg, expected appreciation rate, and holding tenure into the silver investment calculator to estimate your returns instantly." }
     ]
+  },
+  {
+    id: "digital-gold-calculator",
+    name: "Digital Gold Calculator",
+    category: "Gold",
+    description: "Calculate weight in grams, GST tax impacts, buy-sell spreads, and estimated future returns on digital gold investments.",
+    seoTitle: "Digital Gold Calculator – Calculate Weight, GST & Net Returns",
+    seoDescription: "Estimate your digital gold returns online. Calculate net gold weight in grams after 3% GST, project buy-sell spread impact, and future value growth.",
+    inputs: [
+      { id: "investment", label: "Investment Amount (Inclusive of GST)", type: "slider", min: 500, max: 2000000, step: 500, default: 10000, unit: "₹" },
+      { id: "goldRate", label: "Current Gold Buying Price (per Gram)", type: "number", default: 7200, unit: "₹/g" },
+      { id: "gstRate", label: "GST Rate on Purchase", type: "slider", min: 0, max: 10, step: 0.5, default: 3, unit: "%" },
+      { id: "spreadRate", label: "Buy-Sell Spread / Platform Fee", type: "slider", min: 0, max: 10, step: 0.5, default: 3, unit: "%" },
+      { id: "appreciation", label: "Expected Annual Appreciation", type: "slider", min: 1, max: 20, step: 0.5, default: 8, unit: "%" },
+      { id: "years", label: "Investment Tenure", type: "slider", min: 1, max: 30, step: 1, default: 5, unit: "Yr" },
+    ],
+    outputs: [
+      { id: "netInvested", label: "Net Amount Invested", format: "currency" },
+      { id: "gstAmount", label: "GST Amount Paid", format: "currency" },
+      { id: "goldWeight", label: "Gold Weight Purchased (Grams)", format: "number" },
+      { id: "grossMaturity", label: "Gross Maturity Value", format: "currency" },
+      { id: "spreadCost", label: "Spread Cost at Sale", format: "currency" },
+      { id: "maturityValue", label: "Net Maturity Value", format: "currency" },
+      { id: "purchasingPower", label: "Value in Today's Money (6% Inflation)", format: "currency" },
+    ],
+    calculate: (inputs) => {
+      const amt = inputs.investment;
+      const rate = inputs.goldRate;
+      const gst = inputs.gstRate;
+      const spread = inputs.spreadRate;
+      const app = inputs.appreciation;
+      const t = inputs.years;
+
+      const netInvested = amt / (1 + gst / 100);
+      const gstAmount = amt - netInvested;
+      const goldWeight = netInvested / rate;
+      const grossMaturity = netInvested * Math.pow(1 + app / 100, t);
+      const spreadCost = grossMaturity * (spread / 100);
+      const maturityValue = grossMaturity - spreadCost;
+      const purchasingPower = maturityValue / Math.pow(1.06, t);
+
+      const chartData = [];
+      for (let yr = 1; yr <= t; yr++) {
+        const grossVal = netInvested * Math.pow(1 + app / 100, yr);
+        const spreadAmt = grossVal * (spread / 100);
+        const netVal = grossVal - spreadAmt;
+        chartData.push({
+          name: `Yr ${yr}`,
+          "Gold Investment Value": Math.round(netVal),
+          "Invested Capital": amt,
+        });
+      }
+
+      return {
+        values: {
+          netInvested,
+          gstAmount,
+          goldWeight,
+          grossMaturity,
+          spreadCost,
+          maturityValue,
+          purchasingPower,
+        },
+        chartData,
+      };
+    },
+    educationalContent: [
+      {
+        title: "How Does a Digital Gold Calculator Work?",
+        content: "Our Digital Gold Calculator helps you compute the net physical gold weight and maturity returns of your online gold purchases. When you buy digital gold on popular platforms, a 3% Goods and Services Tax (GST) is applied to your transaction amount. The remaining capital is used to purchase 24K physical gold, which is stored securely in vaults. When you sell, a transaction spread (the difference between buying and selling rates, usually around 3% to 6%) is applied. This calculator factors in all of these friction costs to show you the real net profit of your gold holdings."
+      },
+      {
+        title: "Digital Gold vs. Sovereign Gold Bonds (SGB) and Gold ETFs",
+        content: "While digital gold is highly convenient (allowing investments as low as ₹1), it carries unique costs like GST and buy-sell spreads. In contrast, Gold ETFs are traded on stock exchanges and carry small expense ratios instead of GST. Sovereign Gold Bonds (SGBs) are backed by the government, carry no GST, and pay an additional 2.5% annual interest. Investors looking to accumulate gold should weigh convenience against these fee structures to choose the most cost-efficient route."
+      }
+    ],
+    faqs: [
+      { question: "Why is there a difference between the buying and selling price of digital gold?", answer: "Digital gold providers charge a buy-sell spread (usually 3% to 6%) to cover administrative costs, vault insurance, secure physical storage, and transaction fees. This means your gold must appreciate by at least the spread percentage for you to break even." },
+      { question: "How is GST calculated on digital gold purchases?", answer: "GST is calculated at a flat 3% on the purchase value of digital gold in India. If you invest ₹10,000, your net investment is ₹9,708.74 and the GST paid is ₹291.26." },
+      { question: "Can I take physical delivery of digital gold?", answer: "Yes, most digital gold providers allow you to convert your digital balance into physical gold coins or bars and have them delivered to your home. However, you must pay additional making charges and delivery fees." }
+    ]
   }
 ];

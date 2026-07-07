@@ -69,6 +69,7 @@ const ALL_CALCULATORS = [
   { id: "portfolio-return-calculator", name: "Portfolio Return" },
   { id: "gold-investment-calculator", name: "Gold Investment" },
   { id: "gold-sip-calculator", name: "Gold SIP" },
+  { id: "digital-gold-calculator", name: "Digital Gold" },
   { id: "inflation-impact-calculator", name: "Inflation Impact" },
 ];
 

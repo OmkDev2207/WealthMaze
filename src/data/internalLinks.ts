@@ -178,18 +178,23 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   // ─── Gold ────────────────────────────────────────────────────────────────────
   "gold-investment-calculator": {
-    relatedCalculators: ["gold-sip-calculator", "silver-investment-calculator", "inflation-impact-calculator"],
+    relatedCalculators: ["gold-sip-calculator", "digital-gold-calculator", "silver-investment-calculator", "inflation-impact-calculator"],
     relatedPosts: ["liquid-vs-non-liquid-assets"],
   },
 
   "gold-sip-calculator": {
-    relatedCalculators: ["gold-investment-calculator", "sip-calculator", "silver-investment-calculator"],
+    relatedCalculators: ["gold-investment-calculator", "digital-gold-calculator", "sip-calculator", "silver-investment-calculator"],
     relatedPosts: ["sip-for-retirement"],
   },
 
   "silver-investment-calculator": {
-    relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator", "inflation-impact-calculator"],
+    relatedCalculators: ["gold-investment-calculator", "digital-gold-calculator", "gold-sip-calculator", "inflation-impact-calculator"],
     relatedPosts: [],
+  },
+
+  "digital-gold-calculator": {
+    relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator", "silver-investment-calculator"],
+    relatedPosts: ["is-gold-a-good-investment"],
   },
 
   // ─── Lifestyle ────────────────────────────────────────────────────────────────

@@ -64,6 +64,7 @@ const semanticKeywordsMap: Record<string, string[]> = {
   "gold-investment-calculator": ["gold", "physical gold", "sovereign gold bond", "sgb", "hedge", "inflation", "jewelry", "money"],
   "gold-sip-calculator": ["gold sip", "paper gold", "monthly gold savings", "gold ETF", "hedge", "inflation", "money"],
   "silver-investment-calculator": ["silver", "precious metal", "silver rate", "commodity", "inflation", "money"],
+  "digital-gold-calculator": ["digital gold", "gold", "gst", "buy-sell spread", "safegold", "mmtc", "commodity", "money"],
   "compound-interest-calculator": ["compound interest", "interest", "compounding", "investment return", "savings", "grow wealth", "money"],
   "investment-growth-calculator": ["investment growth", "portfolio", "growth", "interest", "wealth forecast", "mutual fund", "stocks"],
   "financial-independence-calculator": ["financial independence", "fire", "retirement", "passive income", "savings", "early retirement", "swr"],
