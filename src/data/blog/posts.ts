@@ -104,7 +104,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "mutual-fund-return-calculator", "compound-interest-calculator"],
   },
-  // 1. SIP vs FD
   {
     slug: "sip-vs-fd",
     title: "Mutual Fund SIP vs Fixed Deposit: The Real Comparison Nobody Wants to Have",
@@ -116,7 +115,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-calculator", "fd-calculator", "inflation-impact-calculator", "cagr-calculator"],
   },
-  // 2. SIP Mistakes
   {
     slug: "sip-mistakes",
     title: "The Real Reason Your SIP Isn't Building Wealth — And It's Not the Market",
@@ -128,7 +126,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "sip-comparison-calculator"],
   },
-  // 3. SIP Calculator
   {
     slug: "what-is-sip",
     title: "What is SIP? The Investment Method That Turns Market Crashes Into Your Biggest Advantage",
@@ -162,7 +159,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-calculator", "savings-calculator", "financial-freedom-calculator"],
   },
-  // New Articles (June 22, 2026)
   {
     slug: "why-most-people-never-build-wealth",
     title: "Why Most People Never Build Wealth — And It Has Almost Nothing to Do With Money",
@@ -207,7 +203,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["financial-freedom-calculator", "sip-calculator", "net-worth-calculator"],
   },
-  // 2. Compounding
   {
     slug: "compounding-explained",
     title: "The Magic of Compound Interest: The Eighth Wonder of the World",
@@ -219,7 +214,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["cagr-calculator", "sip-calculator"],
   },
-  // 6. How to Save for a House
   {
     slug: "buying-a-house-financial-roadmap",
     title: "The House You Want and the Life You're Building — A Financial Roadmap",
@@ -231,43 +225,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-goal-planner", "emi-calculator", "net-worth-calculator"],
   },
-  // 7. What is Taxation
-  {
-    slug: "what-is-taxation",
-    title: "What is Taxation? Understanding the Basics",
-    description: "An educational overview of how taxation works, why governments levy taxes, and the core principles of a tax system.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Tax",
-    tags: ["Taxation", "Economics", "Education"],
-    author: authors.omk,
-    relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-  // 8. Types of Taxes
-  {
-    slug: "types-of-taxes",
-    title: "The Main Types of Taxes Explained",
-    description: "Learn about the difference between Direct and Indirect taxes, including income tax, sales tax, corporate tax, and GST.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Tax",
-    tags: ["Taxation", "GST", "Economics"],
-    author: authors.omk,
-    relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-  // 9. Income Tax Basics
-  {
-    slug: "income-tax-basics",
-    title: "Basics of Income Tax: An Educational Overview",
-    description: "A simple introduction to income tax brackets, heads of income, taxable vs gross income, and progressive tax slabs.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Tax",
-    tags: ["Income Tax", "Education", "Basics"],
-    author: authors.omk,
-    relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-  // 10. Budget Rule (Target: Savings, Budgeting, Rules)
   {
     slug: "budget-rule-50-30-20",
     title: "The 50/30/20 Rule Explained — And Why You're Probably Using It Wrong",
@@ -279,7 +236,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["compound-interest-calculator", "sip-goal-planner", "net-worth-calculator"],
   },
-  // 11. Liquid vs Non-Liquid Assets (Target: Savings, Liquidity)
   {
     slug: "liquid-vs-non-liquid-assets",
     title: "Why Being \"Rich on Paper\" Can Still Bankrupt You: Understanding Liquidity",
@@ -291,79 +247,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["net-worth-calculator", "emergency-fund-calculator", "fd-calculator", "sip-calculator"],
   },
-  // 12. Intro to Financial Markets
-  {
-    slug: "introduction-to-financial-markets",
-    title: "Introduction to Financial Markets and Securities",
-    description: "An educational introduction to core financial terms: defining equities (stocks), debt (bonds), and mutual funds.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Investing",
-    tags: ["Beginners", "Stocks", "Bonds", "Mutual Funds"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "stock-return-calculator", "mutual-fund-return-calculator"],
-  },
-  // 13. Index Funds
-  {
-    slug: "what-is-index-fund",
-    title: "What is an Index Fund? Understanding Passive Investing Concepts",
-    description: "Learn about passive management strategies, index trackers (Nifty 50, S&P 500), low expense ratios, and index mutual funds.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Investing",
-    tags: ["Passive Investing", "SIP", "Index Funds"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator"],
-  },
-  // 14. Debt-to-Income Ratio
-  {
-    slug: "debt-to-income-ratio",
-    title: "Understanding Debt-to-Income Ratios in Banking",
-    description: "Learn the mathematical formula banks use to evaluate loan eligibility, and how front-end and back-end DTI ratios work.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Loans",
-    tags: ["EMI", "Banking Ratios", "Debt"],
-    author: authors.omk,
-    relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "car-loan-emi-calculator"],
-  },
-  // 15. Loan Prepayments
-  {
-    slug: "understanding-loan-prepayments",
-    title: "The Mathematics of Loan Prepayments",
-    description: "Understand the mathematical effects of prepayments on outstanding principal, future interest charges, and loan tenure.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Loans",
-    tags: ["EMI", "Interest Savings", "Loan Prepayment"],
-    author: authors.omk,
-    relatedCalculators: ["loan-prepayment-calculator", "home-loan-emi-calculator"],
-  },
-  // 16. Market Volatility
-  {
-    slug: "understanding-market-volatility",
-    title: "Market Volatility and Financial Cycles Explained",
-    description: "An educational guide defining market volatility, standard deviation, and market phases (bull and bear markets).",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Stock Market",
-    tags: ["Market Volatility", "Stocks", "Market Cycles"],
-    author: authors.omk,
-    relatedCalculators: ["stock-return-calculator", "cagr-calculator", "portfolio-return-calculator"],
-  },
-  // 17. Asset Allocation
-  {
-    slug: "asset-allocation",
-    title: "Asset Allocation 101: Balancing Equity, Debt, and Gold",
-    description: "Learn how to balance equity, debt, and gold to minimize portfolio risk and maximize long-term returns.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Investing",
-    tags: ["Asset Allocation", "Portfolio", "Diversification"],
-    author: authors.omk,
-    relatedCalculators: ["portfolio-return-calculator", "net-worth-calculator", "gold-investment-calculator"],
-  },
-  // 18. Beginner Investing Guide
   {
     slug: "beginner-investing-guide",
     title: "What Investing Actually Is — And Why Every Dollar You Own Should Be Working While You Sleep",
@@ -375,115 +258,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["compound-interest-calculator", "sip-calculator", "financial-freedom-calculator"],
   },
-  // 19. Emergency Fund Guide
-  {
-    slug: "emergency-fund-guide",
-    title: "How to Build a Bulletproof Emergency Fund",
-    description: "Learn how to calculate, build, and store an emergency fund to secure your household finance against unexpected events.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["Emergency Fund", "Savings", "Budgeting"],
-    author: authors.omk,
-    relatedCalculators: ["fd-calculator", "rd-calculator"],
-  },
-  // 20. Gold Investment Guide
-  {
-    slug: "gold-investment-guide",
-    title: "Is Gold a Good Investment? Historical Returns & Benefits",
-    description: "Explore the role of gold in hedging inflation, historical returns, and how to allocate precious metals in your portfolio.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Gold",
-    tags: ["Gold", "Inflation", "Hedge"],
-    author: authors.omk,
-    relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator"],
-  },
-  // 21. Home Loan vs Personal Loan
-  {
-    slug: "home-loan-vs-personal-loan",
-    title: "Home Loan vs Personal Loan: A Detailed Comparison",
-    description: "Understand the differences between secured home loans and unsecured personal loans, including rates, tenures, and tax benefits.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Loans",
-    tags: ["Home Loan", "Personal Loan", "EMI"],
-    author: authors.omk,
-    relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "loan-prepayment-calculator"],
-  },
-  // 22. Investing Psychology
-  {
-    slug: "investing-psychology",
-    title: "Long-Term Investing Psychology & How to Survive Market Panics",
-    description: "Learn how to control emotions, avoid panic selling, and benefit from market corrections using disciplined financial planning.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Investing",
-    tags: ["Psychology", "Stock Market", "Volatility"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "portfolio-return-calculator", "cagr-calculator"],
-  },
-  // 23. Loan Affordability Guide
-  {
-    slug: "loan-affordability-guide",
-    title: "How Much Loan Can I Afford? The 35/40 Debt Rule",
-    description: "Use standard banking ratios and the 35/40 rule to calculate your maximum safe loan limit and avoid debt traps.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Loans",
-    tags: ["EMI", "Debt", "Budgeting"],
-    author: authors.omk,
-    relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "loan-prepayment-calculator"],
-  },
-  // 24. Passive Investing Basics
-  {
-    slug: "passive-investing-basics",
-    title: "Earn Money Without Effort? The Basics of Passive Investing",
-    description: "An educational overview of passive investing, passive mutual funds, low-cost index tracking, and expense ratios.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Investing",
-    tags: ["Passive Investing", "Index Funds", "Investing"],
-    author: authors.omk,
-    relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator"],
-  },
-  // 25. Reducing EMI
-  {
-    slug: "reducing-emi",
-    title: "Smart Ways to Reduce Your Loan EMI & Save Lakhs in Interest",
-    description: "Learn actionable strategies like tenure extensions, interest rate negotiations, and balance transfers to reduce EMI burden.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Loans",
-    tags: ["EMI", "Interest Savings", "Prepayment"],
-    author: authors.omk,
-    relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
-  },
-  // 26. Saving First 1 Lakh
-  {
-    slug: "saving-first-1-lakh",
-    title: "Actionable Strategy to Save Your First ₹1 Lakh Faster",
-    description: "Actionable budgeting strategies, saving habits, and cash-flow discipline to reach your first ₹1 Lakh milestone starting from zero.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Savings",
-    tags: ["Savings", "Financial Discipline", "Budgeting"],
-    author: authors.omk,
-    relatedCalculators: ["rd-calculator", "fd-calculator"],
-  },
-  // 27. SGB vs Physical Gold
-  {
-    slug: "sgb-vs-physical-gold",
-    title: "Sovereign Gold Bonds (SGB) vs Physical Gold: Which is Better?",
-    description: "Compare Sovereign Gold Bonds (SGB) with physical gold jewelry, coins, and ETFs on interest, taxation, liquidity, and safety.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Gold",
-    tags: ["SGB", "Gold", "Investing"],
-    author: authors.omk,
-    relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator"],
-  },
-  // 28. SIP for Retirement
   {
     slug: "sip-for-retirement",
     title: "Building Your Retirement Corpus With SIP — The Math Nobody Shows You",
@@ -495,7 +269,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "financial-freedom-calculator"],
   },
-  // 29. SIP for Students
   {
     slug: "sip-for-students",
     title: "SIP for Students: Why Starting Early Matters — And Why It's Not the Whole Story",
@@ -507,32 +280,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["sip-calculator", "step-up-sip-calculator", "net-worth-calculator"],
   },
-
-  // 32. Tax Policy Basics
-  {
-    slug: "tax-policy-basics",
-    title: "What is Tax Policy? How Governments Design and Levy Taxes",
-    description: "Learn the fundamentals of tax policy, how governments design tax systems, who decides tax rates, and the economic principles behind taxation.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Tax",
-    tags: ["Tax Policy", "Economics", "Education"],
-    author: authors.omk,
-    relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-  // 33. Where Do Taxes Go?
-  {
-    slug: "where-do-taxes-go",
-    title: "Where Do Taxes Go? How Tax Revenue is Used by Governments",
-    description: "Explore where tax revenue is spent, from public infrastructure and social security to national defense, education, and public healthcare.",
-    publishedAt: "June 18, 2026",
-    readTime: "5 min read",
-    category: "Tax",
-    tags: ["Taxation", "Public Spend", "Education"],
-    author: authors.omk,
-    relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-  // 47. CAGR in the Stock Market
   {
     slug: "cagr-in-share-market",
     title: "CAGR in the Stock Market: What It Really Means and Why Most Investors Use It Wrong",
@@ -544,7 +291,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["cagr-calculator", "xirr-calculator", "investment-growth-calculator"],
   },
-  // 48. How to Save for a Car
   {
     slug: "how-to-save-for-a-car",
     title: "How to Save for a Car: The Real Math Dealers Hope You Never Run",
@@ -556,7 +302,6 @@ export const blogPosts: BlogPost[] = [
     author: authors.omk,
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "savings-calculator"],
   },
-  // 49. How Is Loan EMI Calculated
   {
     slug: "how-is-loan-emi-calculated",
     title: "How Is Loan EMI Calculated? The Formula, the Amortization Trap, and Why \"Lower EMI\" Is Often the Worse Deal",

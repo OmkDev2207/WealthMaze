@@ -221,7 +221,7 @@ export function MazeAssist() {
           text: "💡 Making even one extra EMI payment per year or prepaying 5% of your outstanding principal balance annually slashes years off your loan tenure and saves thousands in interest!\n\n👇 **Simulate your prepayment savings:**",
           links: [
             { name: "Loan Prepayment Calculator", url: "/loan-prepayment-calculator", category: "Loans", description: "Find exact interest savings and tenure reduction." },
-            { name: "Understanding Loan Prepayments", url: "/blog/understanding-loan-prepayments", category: "Guide", description: "How smart early repayments unlock financial freedom." }
+            { name: "How Is Loan EMI Calculated?", url: "/blog/how-is-loan-emi-calculated", category: "Guide", description: "Deep dive into the mathematics behind monthly installments." }
           ],
           chips: ["↩️ Back to main menu"]
         }]);

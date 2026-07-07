@@ -15,6 +15,7 @@
 
 import { blogPosts } from "@/data/blog/posts";
 import { allCalculators } from "@/data/calculators";
+import { programmaticPages } from "@/data/programmatic";
 
 export interface CalculatorLinkData {
   /** Other calculator IDs that are closely related */
@@ -47,27 +48,27 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "mutual-fund-return-calculator": {
     relatedCalculators: ["sip-calculator", "lumpsum-calculator", "sip-comparison-calculator", "xirr-calculator"],
-    relatedPosts: ["what-is-sip", "what-is-index-fund", "passive-investing-basics", "sip-vs-fd", "beginner-investing-guide"],
+    relatedPosts: ["what-is-sip", "sip-vs-fd", "beginner-investing-guide"],
   },
 
   "sip-comparison-calculator": {
     relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "lumpsum-calculator"],
-    relatedPosts: ["what-is-sip", "sip-vs-fd", "sip-mistakes", "passive-investing-basics"],
+    relatedPosts: ["what-is-sip", "sip-vs-fd", "sip-mistakes"],
   },
 
   "cagr-calculator": {
     relatedCalculators: ["lumpsum-calculator", "xirr-calculator", "stock-return-calculator", "portfolio-return-calculator"],
-    relatedPosts: ["cagr-explained", "compounding-explained", "understanding-market-volatility", "beginner-investing-guide"],
+    relatedPosts: ["cagr-explained", "compounding-explained", "beginner-investing-guide"],
   },
 
   "xirr-calculator": {
     relatedCalculators: ["cagr-calculator", "portfolio-return-calculator", "mutual-fund-return-calculator"],
-    relatedPosts: ["cagr-explained", "compounding-explained", "investing-psychology"],
+    relatedPosts: ["cagr-explained", "compounding-explained"],
   },
 
   "goal-based-investment-calculator": {
     relatedCalculators: ["sip-calculator", "retirement-calculator", "fire-calculator", "inflation-impact-calculator"],
-    relatedPosts: ["sip-for-retirement", "compounding-explained", "beginner-investing-guide", "saving-first-1-lakh"],
+    relatedPosts: ["sip-for-retirement", "compounding-explained", "beginner-investing-guide"],
   },
 
   "sip-goal-planner": {
@@ -82,44 +83,44 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "portfolio-return-calculator": {
     relatedCalculators: ["xirr-calculator", "cagr-calculator", "stock-return-calculator", "net-worth-calculator"],
-    relatedPosts: ["asset-allocation", "investing-psychology", "cagr-explained", "understanding-market-volatility"],
+    relatedPosts: ["cagr-explained"],
   },
 
   // ─── Retirement ────────────────────────────────────────────────────────────
   "retirement-calculator": {
     relatedCalculators: ["financial-goal-planner", "fire-calculator", "sip-calculator", "goal-based-investment-calculator", "nps-calculator"],
-    relatedPosts: ["sip-for-retirement", "compounding-explained", "asset-allocation"],
+    relatedPosts: ["sip-for-retirement", "compounding-explained"],
   },
 
   "fire-calculator": {
     relatedCalculators: ["retirement-calculator", "financial-freedom-calculator", "sip-calculator", "inflation-impact-calculator"],
-    relatedPosts: ["sip-for-retirement", "asset-allocation", "compounding-explained"],
+    relatedPosts: ["sip-for-retirement", "compounding-explained"],
   },
 
   "financial-freedom-calculator": {
     relatedCalculators: ["fire-calculator", "retirement-calculator", "how-long-until-1-crore"],
-    relatedPosts: ["financial-freedom-is-simpler", "wealth-vs-income", "sip-for-retirement", "saving-first-1-lakh", "passive-investing-basics", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
+    relatedPosts: ["financial-freedom-is-simpler", "wealth-vs-income", "sip-for-retirement", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
   },
 
   "how-long-until-1-crore": {
     relatedCalculators: ["financial-freedom-calculator", "sip-calculator", "goal-based-investment-calculator"],
-    relatedPosts: ["saving-first-1-lakh", "compounding-explained", "sip-for-retirement"],
+    relatedPosts: ["compounding-explained", "sip-for-retirement"],
   },
 
   // ─── Savings ────────────────────────────────────────────────────────────────
   "fd-calculator": {
     relatedCalculators: ["rd-calculator", "ppf-calculator", "epf-calculator"],
-    relatedPosts: ["sip-vs-fd", "liquid-vs-non-liquid-assets", "emergency-fund-guide", "saving-first-1-lakh", "budget-rule-50-30-20"],
+    relatedPosts: ["sip-vs-fd", "liquid-vs-non-liquid-assets", "budget-rule-50-30-20"],
   },
 
   "rd-calculator": {
     relatedCalculators: ["fd-calculator", "ppf-calculator", "sip-calculator"],
-    relatedPosts: ["saving-first-1-lakh", "budget-rule-50-30-20", "emergency-fund-guide", "how-to-save-for-a-car"],
+    relatedPosts: ["budget-rule-50-30-20", "how-to-save-for-a-car"],
   },
 
   "ppf-calculator": {
     relatedCalculators: ["epf-calculator", "nps-calculator", "fd-calculator"],
-    relatedPosts: ["sip-vs-fd", "saving-first-1-lakh", "liquid-vs-non-liquid-assets"],
+    relatedPosts: ["sip-vs-fd", "liquid-vs-non-liquid-assets"],
   },
 
   "epf-calculator": {
@@ -129,88 +130,88 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "nps-calculator": {
     relatedCalculators: ["epf-calculator", "ppf-calculator", "retirement-calculator", "fire-calculator"],
-    relatedPosts: ["sip-for-retirement", "asset-allocation"],
+    relatedPosts: ["sip-for-retirement"],
   },
 
   // ─── Loans ──────────────────────────────────────────────────────────────────
   "emi-calculator": {
     relatedCalculators: ["loan-prepayment-calculator", "loan-comparison-calculator", "sip-calculator"],
-    relatedPosts: ["how-is-loan-emi-calculated", "debt-to-income-ratio", "reducing-emi", "home-loan-vs-personal-loan", "loan-affordability-guide", "understanding-loan-prepayments"],
+    relatedPosts: ["how-is-loan-emi-calculated"],
   },
 
   "loan-prepayment-calculator": {
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
-    relatedPosts: ["understanding-loan-prepayments", "reducing-emi", "how-is-loan-emi-calculated", "debt-to-income-ratio"],
+    relatedPosts: ["how-is-loan-emi-calculated"],
   },
 
   "loan-comparison-calculator": {
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator"],
-    relatedPosts: ["home-loan-vs-personal-loan", "loan-affordability-guide", "debt-to-income-ratio"],
+    relatedPosts: [],
   },
 
   // ─── Tax ────────────────────────────────────────────────────────────────────
   "income-tax-calculator": {
     relatedCalculators: ["capital-gains-calculator", "epf-calculator", "ppf-calculator"],
-    relatedPosts: ["income-tax-basics", "types-of-taxes", "what-is-taxation", "tax-policy-basics", "where-do-taxes-go"],
+    relatedPosts: [],
   },
 
   "capital-gains-calculator": {
     relatedCalculators: ["income-tax-calculator", "stock-return-calculator", "cagr-calculator"],
-    relatedPosts: ["income-tax-basics", "types-of-taxes", "cagr-explained"],
+    relatedPosts: ["cagr-explained"],
   },
 
   // ─── Stock Market ────────────────────────────────────────────────────────────
   "stock-return-calculator": {
     relatedCalculators: ["cagr-calculator", "dividend-yield-calculator", "capital-gains-calculator", "position-size-calculator"],
-    relatedPosts: ["cagr-explained", "understanding-market-volatility", "investing-psychology", "introduction-to-financial-markets"],
+    relatedPosts: ["cagr-explained"],
   },
 
   "dividend-yield-calculator": {
     relatedCalculators: ["stock-return-calculator", "portfolio-return-calculator"],
-    relatedPosts: ["introduction-to-financial-markets", "investing-psychology", "passive-investing-basics"],
+    relatedPosts: [],
   },
 
   "position-size-calculator": {
     relatedCalculators: ["stock-return-calculator", "portfolio-return-calculator"],
-    relatedPosts: ["understanding-market-volatility", "investing-psychology"],
+    relatedPosts: [],
   },
 
   // ─── Gold ────────────────────────────────────────────────────────────────────
   "gold-investment-calculator": {
     relatedCalculators: ["gold-sip-calculator", "silver-investment-calculator", "inflation-impact-calculator"],
-    relatedPosts: ["gold-investment-guide", "sgb-vs-physical-gold", "asset-allocation", "liquid-vs-non-liquid-assets"],
+    relatedPosts: ["liquid-vs-non-liquid-assets"],
   },
 
   "gold-sip-calculator": {
     relatedCalculators: ["gold-investment-calculator", "sip-calculator", "silver-investment-calculator"],
-    relatedPosts: ["gold-investment-guide", "sgb-vs-physical-gold", "sip-for-retirement"],
+    relatedPosts: ["sip-for-retirement"],
   },
 
   "silver-investment-calculator": {
     relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator", "inflation-impact-calculator"],
-    relatedPosts: ["gold-investment-guide", "asset-allocation"],
+    relatedPosts: [],
   },
 
   // ─── Lifestyle ────────────────────────────────────────────────────────────────
   "inflation-impact-calculator": {
     relatedCalculators: ["financial-goal-planner", "goal-based-investment-calculator", "fire-calculator", "retirement-calculator"],
-    relatedPosts: ["asset-allocation", "sip-for-retirement", "compounding-explained"],
+    relatedPosts: ["sip-for-retirement", "compounding-explained"],
   },
 
   "net-worth-calculator": {
     relatedCalculators: ["portfolio-return-calculator", "financial-freedom-calculator", "retirement-calculator"],
-    relatedPosts: ["why-most-people-never-build-wealth", "wealth-vs-income", "asset-allocation", "liquid-vs-non-liquid-assets", "saving-first-1-lakh"],
+    relatedPosts: ["why-most-people-never-build-wealth", "wealth-vs-income", "liquid-vs-non-liquid-assets"],
   },
 
   // ─── Car/Home Loan (programmatic variants also use these) ────────────────────
   "car-loan-emi-calculator": {
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "rd-calculator"],
-    relatedPosts: ["how-to-save-for-a-car", "how-is-loan-emi-calculated", "debt-to-income-ratio", "reducing-emi"],
+    relatedPosts: ["how-to-save-for-a-car", "how-is-loan-emi-calculated"],
   },
 
   "home-loan-emi-calculator": {
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
-    relatedPosts: ["buying-a-house-financial-roadmap", "home-loan-vs-personal-loan", "how-is-loan-emi-calculated", "understanding-loan-prepayments"],
+    relatedPosts: ["buying-a-house-financial-roadmap", "how-is-loan-emi-calculated"],
   },
 
   "step-up-sip-calculator": {
@@ -220,12 +221,12 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "coast-fire-calculator": {
     relatedCalculators: ["fire-calculator", "retirement-calculator", "financial-freedom-calculator", "sip-calculator"],
-    relatedPosts: ["sip-for-retirement", "compounding-explained", "saving-first-1-lakh", "asset-allocation"],
+    relatedPosts: ["sip-for-retirement", "compounding-explained"],
   },
 
   "personal-loan-emi-calculator": {
     relatedCalculators: ["emi-calculator", "loan-comparison-calculator", "loan-prepayment-calculator", "home-loan-emi-calculator"],
-    relatedPosts: ["home-loan-vs-personal-loan", "loan-affordability-guide", "how-is-loan-emi-calculated", "debt-to-income-ratio"],
+    relatedPosts: ["how-is-loan-emi-calculated"],
   },
 
   "compound-interest-calculator": {
@@ -240,7 +241,7 @@ export const calculatorLinks: Record<string, CalculatorLinkData> = {
 
   "savings-calculator": {
     relatedCalculators: ["compound-interest-calculator", "fd-calculator", "rd-calculator"],
-    relatedPosts: ["small-financial-decisions-compound", "why-most-people-never-build-wealth", "saving-first-1-lakh", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
+    relatedPosts: ["small-financial-decisions-compound", "why-most-people-never-build-wealth", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
   },
 };
 
@@ -260,133 +261,42 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "cagr-explained": {
-    relatedPosts: ["compounding-explained", "understanding-market-volatility", "investing-psychology"],
+    relatedPosts: ["compounding-explained"],
     relatedCalculators: ["cagr-calculator", "xirr-calculator", "portfolio-return-calculator"],
   },
 
-
   "buying-a-house-financial-roadmap": {
-    relatedPosts: ["home-loan-vs-personal-loan", "how-is-loan-emi-calculated", "saving-first-1-lakh"],
+    relatedPosts: ["how-is-loan-emi-calculated"],
     relatedCalculators: ["sip-goal-planner", "emi-calculator", "net-worth-calculator"],
   },
 
-  "what-is-taxation": {
-    relatedPosts: ["types-of-taxes", "income-tax-basics", "tax-policy-basics", "where-do-taxes-go"],
-    relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-
-  "types-of-taxes": {
-    relatedPosts: ["what-is-taxation", "income-tax-basics", "tax-policy-basics", "where-do-taxes-go"],
-    relatedCalculators: ["income-tax-calculator"],
-  },
-
-  "income-tax-basics": {
-    relatedPosts: ["types-of-taxes", "what-is-taxation", "tax-policy-basics"],
-    relatedCalculators: ["income-tax-calculator", "capital-gains-calculator"],
-  },
-
   "budget-rule-50-30-20": {
-    relatedPosts: ["saving-first-1-lakh", "emergency-fund-guide", "liquid-vs-non-liquid-assets", "how-to-save-for-a-car"],
+    relatedPosts: ["liquid-vs-non-liquid-assets", "how-to-save-for-a-car"],
     relatedCalculators: ["rd-calculator", "fd-calculator"],
   },
 
   "liquid-vs-non-liquid-assets": {
-    relatedPosts: ["emergency-fund-guide", "budget-rule-50-30-20", "asset-allocation", "sip-vs-fd"],
+    relatedPosts: ["budget-rule-50-30-20", "sip-vs-fd"],
     relatedCalculators: ["fd-calculator", "rd-calculator"],
-  },
-
-  "introduction-to-financial-markets": {
-    relatedPosts: ["beginner-investing-guide", "what-is-sip", "passive-investing-basics", "cagr-explained"],
-    relatedCalculators: ["sip-calculator", "stock-return-calculator"],
-  },
-
-  "what-is-index-fund": {
-    relatedPosts: ["passive-investing-basics", "beginner-investing-guide", "what-is-sip", "sip-mistakes"],
-    relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator"],
-  },
-
-  "debt-to-income-ratio": {
-    relatedPosts: ["how-is-loan-emi-calculated", "loan-affordability-guide", "reducing-emi"],
-    relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
-  },
-
-  "understanding-loan-prepayments": {
-    relatedPosts: ["reducing-emi", "how-is-loan-emi-calculated", "home-loan-vs-personal-loan"],
-    relatedCalculators: ["loan-prepayment-calculator", "emi-calculator"],
-  },
-
-  "understanding-market-volatility": {
-    relatedPosts: ["investing-psychology", "cagr-explained", "asset-allocation"],
-    relatedCalculators: ["stock-return-calculator", "cagr-calculator"],
-  },
-
-  "asset-allocation": {
-    relatedPosts: ["investing-psychology", "passive-investing-basics", "gold-investment-guide", "liquid-vs-non-liquid-assets"],
-    relatedCalculators: ["portfolio-return-calculator", "net-worth-calculator", "gold-investment-calculator"],
   },
 
   "beginner-investing-guide": {
-    relatedPosts: ["what-is-sip", "introduction-to-financial-markets", "compounding-explained", "what-is-index-fund"],
+    relatedPosts: ["what-is-sip", "compounding-explained"],
     relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator", "cagr-calculator"],
   },
 
-  "emergency-fund-guide": {
-    relatedPosts: ["budget-rule-50-30-20", "saving-first-1-lakh", "liquid-vs-non-liquid-assets"],
-    relatedCalculators: ["fd-calculator", "rd-calculator"],
-  },
-
-  "gold-investment-guide": {
-    relatedPosts: ["sgb-vs-physical-gold", "asset-allocation", "liquid-vs-non-liquid-assets"],
-    relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator", "silver-investment-calculator"],
-  },
-
-  "home-loan-vs-personal-loan": {
-    relatedPosts: ["how-is-loan-emi-calculated", "debt-to-income-ratio", "loan-affordability-guide", "understanding-loan-prepayments"],
-    relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
-  },
-
-  "investing-psychology": {
-    relatedPosts: ["understanding-market-volatility", "asset-allocation", "sip-mistakes", "beginner-investing-guide"],
-    relatedCalculators: ["sip-calculator", "portfolio-return-calculator"],
-  },
-
-  "loan-affordability-guide": {
-    relatedPosts: ["debt-to-income-ratio", "reducing-emi", "how-is-loan-emi-calculated", "home-loan-vs-personal-loan"],
-    relatedCalculators: ["emi-calculator", "loan-comparison-calculator"],
-  },
-
-  "passive-investing-basics": {
-    relatedPosts: ["what-is-index-fund", "beginner-investing-guide", "asset-allocation", "sip-mistakes"],
-    relatedCalculators: ["sip-calculator", "mutual-fund-return-calculator"],
-  },
-
-  "reducing-emi": {
-    relatedPosts: ["understanding-loan-prepayments", "debt-to-income-ratio", "how-is-loan-emi-calculated", "loan-affordability-guide"],
-    relatedCalculators: ["emi-calculator", "loan-prepayment-calculator"],
-  },
-
-  "saving-first-1-lakh": {
-    relatedPosts: ["budget-rule-50-30-20", "emergency-fund-guide", "sip-for-students", "how-to-save-for-a-car"],
-    relatedCalculators: ["rd-calculator", "fd-calculator", "sip-calculator"],
-  },
-
-  "sgb-vs-physical-gold": {
-    relatedPosts: ["gold-investment-guide", "asset-allocation", "liquid-vs-non-liquid-assets"],
-    relatedCalculators: ["gold-investment-calculator", "gold-sip-calculator"],
-  },
-
   "sip-for-retirement": {
-    relatedPosts: ["compounding-explained", "sip-mistakes", "asset-allocation", "sip-for-students"],
+    relatedPosts: ["compounding-explained", "sip-mistakes", "sip-for-students"],
     relatedCalculators: ["retirement-calculator", "sip-calculator", "fire-calculator", "goal-based-investment-calculator"],
   },
 
   "sip-for-students": {
-    relatedPosts: ["what-is-sip", "saving-first-1-lakh", "beginner-investing-guide", "sip-mistakes"],
+    relatedPosts: ["what-is-sip", "beginner-investing-guide", "sip-mistakes"],
     relatedCalculators: ["sip-calculator", "goal-based-investment-calculator"],
   },
 
   "sip-mistakes": {
-    relatedPosts: ["what-is-sip", "sip-for-students", "investing-psychology", "compounding-explained"],
+    relatedPosts: ["what-is-sip", "sip-for-students", "compounding-explained"],
     relatedCalculators: ["sip-calculator", "sip-comparison-calculator"],
   },
 
@@ -395,18 +305,8 @@ export const blogLinks: Record<string, BlogLinkData> = {
     relatedCalculators: ["sip-calculator", "fd-calculator"],
   },
 
-  "tax-policy-basics": {
-    relatedPosts: ["what-is-taxation", "types-of-taxes", "where-do-taxes-go", "income-tax-basics"],
-    relatedCalculators: ["income-tax-calculator"],
-  },
-
-  "where-do-taxes-go": {
-    relatedPosts: ["what-is-taxation", "types-of-taxes", "tax-policy-basics"],
-    relatedCalculators: ["income-tax-calculator"],
-  },
-
   "why-most-people-never-build-wealth": {
-    relatedPosts: ["small-financial-decisions-compound", "wealth-vs-income", "financial-freedom-is-simpler", "saving-first-1-lakh", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
+    relatedPosts: ["small-financial-decisions-compound", "wealth-vs-income", "financial-freedom-is-simpler", "most-people-think-about-growing-wealth-wrong-at-an-early-age"],
     relatedCalculators: ["net-worth-calculator", "savings-calculator", "goal-based-investment-calculator"],
   },
 
@@ -431,17 +331,17 @@ export const blogLinks: Record<string, BlogLinkData> = {
   },
 
   "most-people-think-about-growing-wealth-wrong-at-an-early-age": {
-    relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "wealth-vs-income", "saving-first-1-lakh"],
+    relatedPosts: ["why-most-people-never-build-wealth", "power-of-starting-early", "wealth-vs-income"],
     relatedCalculators: ["sip-calculator", "savings-calculator", "financial-freedom-calculator"],
   },
 
   "how-to-save-for-a-car": {
-    relatedPosts: ["how-is-loan-emi-calculated", "reducing-emi", "budget-rule-50-30-20", "saving-first-1-lakh"],
+    relatedPosts: ["how-is-loan-emi-calculated", "budget-rule-50-30-20"],
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "savings-calculator"],
   },
 
   "how-is-loan-emi-calculated": {
-    relatedPosts: ["how-to-save-for-a-car", "reducing-emi", "understanding-loan-prepayments", "debt-to-income-ratio"],
+    relatedPosts: ["how-to-save-for-a-car"],
     relatedCalculators: ["emi-calculator", "loan-prepayment-calculator", "loan-comparison-calculator"],
   },
 
@@ -478,15 +378,35 @@ export function getRelatedCalculators(
   calcsList: { id: string; category: string; name?: string; description?: string }[] = allCalculators,
   limit = 5
 ): string[] {
-  const explicit = (calculatorLinks[calculatorId]?.relatedCalculators ?? []).filter((id) => id !== calculatorId);
-  if (explicit.length >= limit) {
-    return explicit.slice(0, limit);
+  const progPage = programmaticPages.find((p) => p.id === calculatorId);
+  const baseId = progPage ? progPage.parentCalculatorId : calculatorId;
+
+  let explicit = (calculatorLinks[baseId]?.relatedCalculators ?? []).filter((id) => id !== calculatorId);
+
+  // If this is a programmatic page, link to its parent + sibling programmatic pages!
+  if (progPage) {
+    const siblings = programmaticPages
+      .filter((p) => p.parentCalculatorId === baseId && p.id !== calculatorId)
+      .map((p) => p.id);
+    explicit = [baseId, ...siblings.slice(0, 3), ...explicit];
+  } else {
+    // If this is a regular parent calculator, automatically link to up to 2 of its child pSEO pages!
+    const children = programmaticPages
+      .filter((p) => p.parentCalculatorId === calculatorId)
+      .slice(0, 2)
+      .map((p) => p.id);
+    explicit = [...explicit, ...children];
   }
 
-  const result = new Set<string>(explicit);
-  const currentCalc = calcsList.find((c) => c.id === calculatorId);
+  // Remove duplicates and self
+  const result = new Set<string>(explicit.filter((id) => id !== calculatorId));
+  if (result.size >= limit) {
+    return Array.from(result).slice(0, limit);
+  }
+
+  const currentCalc = calcsList.find((c) => c.id === baseId);
   const currentCat = currentCalc?.category;
-  const currentTokens = (currentCalc?.name ?? calculatorId).toLowerCase().split(/[- \s]+/);
+  const currentTokens = (progPage?.name ?? currentCalc?.name ?? calculatorId).toLowerCase().split(/[- \s]+/);
 
   // Score candidates
   const candidates = calcsList
@@ -511,14 +431,17 @@ export function getRelatedCalculators(
  * Returns up to `limit` related blog post slugs for a given calculator.
  */
 export function getRelatedPostsForCalculator(calculatorId: string, limit = 4): string[] {
-  const explicit = (calculatorLinks[calculatorId]?.relatedPosts ?? []);
+  const progPage = programmaticPages.find((p) => p.id === calculatorId);
+  const baseId = progPage ? progPage.parentCalculatorId : calculatorId;
+
+  const explicit = (calculatorLinks[baseId]?.relatedPosts ?? []);
   if (explicit.length >= limit) {
     return explicit.slice(0, limit);
   }
 
   const result = new Set<string>(explicit);
-  const currentCalc = allCalculators.find((c) => c.id === calculatorId);
-  const tokens = (currentCalc?.name ?? calculatorId).toLowerCase().split(/[- \s]+/);
+  const currentCalc = allCalculators.find((c) => c.id === baseId);
+  const tokens = (progPage?.name ?? currentCalc?.name ?? calculatorId).toLowerCase().split(/[- \s]+/);
 
   const candidates = blogPosts
     .filter((p) => !result.has(p.slug))
@@ -583,12 +506,13 @@ export function getRelatedCalculatorsForBlog(slug: string, limit = 5): string[] 
 
   const result = new Set<string>(explicit);
   const currentPost = blogPosts.find((p) => p.slug === slug);
-  const tokens = `${currentPost?.title ?? ""} ${currentPost?.category ?? ""} ${currentPost?.tags.join(" ") ?? ""}`.toLowerCase().split(/[- \s]+/);
+  const tokens = (currentPost?.title ?? slug).toLowerCase().split(/[- \s]+/);
 
   const candidates = allCalculators
     .filter((c) => !result.has(c.id))
     .map((c) => {
-      let score = computeScore(`${c.name} ${c.category} ${c.description ?? ""}`, tokens);
+      let score = 0;
+      score += computeScore(`${c.name} ${c.category} ${c.description}`, tokens);
       return { id: c.id, score };
     })
     .sort((a, b) => b.score - a.score);

@@ -22,6 +22,35 @@ export const getCalculatorById = (id: string): CalculatorConfig | undefined => {
   return allCalculators.find((c) => c.id === id);
 };
 
+export const getRelatedCalculatorsByCategory = (
+  category: string,
+  excludeId?: string,
+  limit: number = 3
+): { id: string; name: string; category: string; description: string }[] => {
+  const filtered = allCalculators.filter(
+    (c) =>
+      c.id !== excludeId &&
+      (c.category.toLowerCase() === category.toLowerCase() ||
+        category.toLowerCase().includes(c.category.toLowerCase()) ||
+        c.category.toLowerCase().includes(category.toLowerCase()))
+  );
+
+  const result = [...filtered];
+  if (result.length < limit) {
+    const fallback = allCalculators.filter(
+      (c) => c.id !== excludeId && !result.some((r) => r.id === c.id)
+    );
+    result.push(...fallback.slice(0, limit - result.length));
+  }
+
+  return result.slice(0, limit).map((c) => ({
+    id: c.id,
+    name: c.name,
+    category: c.category,
+    description: c.description,
+  }));
+};
+
 export interface CategoryDetails {
   name: string;
   slug: string;

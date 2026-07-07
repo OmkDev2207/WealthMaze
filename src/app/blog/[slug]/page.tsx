@@ -5,10 +5,10 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import { getPostBySlug, blogPosts } from "@/data/blog/posts";
-import { getCalculatorById } from "@/data/calculators";
+import { getCalculatorById, getRelatedCalculatorsByCategory } from "@/data/calculators";
 import { getRelatedPostsForBlog, getRelatedCalculatorsForBlog } from "@/data/internalLinks";
 import { Markdown } from "@/components/Markdown";
-import { RelatedContent } from "@/components/RelatedContent";
+import { RelatedContent, SerializableCalc } from "@/components/RelatedContent";
 import { Calendar, User, Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { AdSlot } from "@/components/AdSlot";
@@ -78,7 +78,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     const filePath = path.join(process.cwd(), "src/content/blog", `${slug}.md`);
     const rawContent = fs.readFileSync(filePath, "utf8");
     const withoutFm = rawContent.replace(/^---[\s\S]*?---\r?\n*/, "");
-    let cleaned = withoutFm.replace(/^[ \t]*---[ \t]*$/gm, "");
+    // Strictly strip all markdown horizontal dividers (---, ***, ___) per Rule #3
+    let cleaned = withoutFm.replace(/^[ \t]*[-*_]{3,}[ \t]*$/gm, "");
     const lines = cleaned.split(/\r?\n/);
     while (
       lines.length > 0 &&
@@ -101,12 +102,22 @@ export default async function BlogPostPage({ params }: PageProps) {
     .map((s) => getPostBySlug(s))
     .filter((p) => p !== undefined && p.slug !== post.slug) as typeof blogPosts;
 
-  const relatedCalcIds = getRelatedCalculatorsForBlog(post.slug, 5);
+  const relatedCalcIds = getRelatedCalculatorsForBlog(post.slug, 6);
   // Serialize to plain objects — removes calculate() function to avoid Client Component error
-  const graphRelatedCalcs = relatedCalcIds
+  let graphRelatedCalcs: SerializableCalc[] = relatedCalcIds
     .map((id) => getCalculatorById(id))
     .filter(Boolean)
-    .map((c) => ({ id: c!.id, name: c!.name, category: c!.category, description: c!.description }));
+    .map((c) => ({ id: c!.id, name: c!.name, category: c!.category as string, description: c!.description }));
+
+  // If we don't have at least 6 calculators, backfill with category matching!
+  if (graphRelatedCalcs.length < 6) {
+    const fallbackCalcs = getRelatedCalculatorsByCategory(
+      post.category,
+      undefined,
+      6 - graphRelatedCalcs.length
+    ).filter((fc) => !graphRelatedCalcs.some((gc) => gc.id === fc.id));
+    graphRelatedCalcs = [...graphRelatedCalcs, ...fallbackCalcs];
+  }
 
   // Injected Article JSON-LD Schema
   const articleSchema = JSON.stringify({

@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { allCalculators, getCalculatorById } from "@/data/calculators";
 import { getPostBySlug } from "@/data/blog/posts";
 import { getRelatedCalculators, getRelatedPostsForCalculator } from "@/data/internalLinks";
+import { programmaticPages } from "@/data/programmatic";
 import { CalculatorForm } from "./CalculatorForm";
 import { XirrCalculatorForm } from "./XirrCalculatorForm";
 import { CalculatorResults } from "./CalculatorResults";
@@ -454,18 +455,33 @@ function CalculatorPageInner({
 
   // Related calculators using the internal link graph — serialized (no functions)
   const relatedCalculators = React.useMemo((): SerializableCalc[] => {
-    const ids = getRelatedCalculators(calculatorId, allCalculators, 5);
+    const targetId = slug || calculatorId;
+    const ids = getRelatedCalculators(targetId, allCalculators, 6);
     return ids
-      .map((id) => allCalculators.find((c) => c.id === id))
-      .filter(Boolean)
-      .map((c) => ({ id: c!.id, name: c!.name, category: c!.category, description: c!.description }));
-  }, [calculatorId]);
+      .map((id) => {
+        const calc = allCalculators.find((c) => c.id === id);
+        if (calc) return { id: calc.id, name: calc.name, category: calc.category, description: calc.description };
+        const prog = programmaticPages.find((p) => p.id === id);
+        if (prog) {
+          const parent = allCalculators.find((c) => c.id === prog.parentCalculatorId);
+          return {
+            id: prog.id,
+            name: prog.name,
+            category: parent?.category || "Investing",
+            description: prog.seoDescription,
+          };
+        }
+        return null;
+      })
+      .filter(Boolean) as SerializableCalc[];
+  }, [calculatorId, slug]);
 
   // Related blog posts using the internal link graph
   const relatedArticles = React.useMemo(() => {
-    const slugs = getRelatedPostsForCalculator(calculatorId, 4);
-    return slugs.map((slug) => getPostBySlug(slug)).filter(Boolean) as NonNullable<ReturnType<typeof getPostBySlug>>[];
-  }, [calculatorId]);
+    const targetId = slug || calculatorId;
+    const slugs = getRelatedPostsForCalculator(targetId, 4);
+    return slugs.map((s) => getPostBySlug(s)).filter(Boolean) as NonNullable<ReturnType<typeof getPostBySlug>>[];
+  }, [calculatorId, slug]);
 
   const lastUpdated = "June 18, 2026";
   const displayTitle = customTitle || config.name;
