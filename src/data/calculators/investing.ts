@@ -97,7 +97,8 @@ export const investingCalculators: CalculatorConfig[] = [
       { question: "How does a SIP calculator calculate returns?", answer: "It uses the future value of an annuity formula, compounding monthly returns on your periodic savings over the selected holding duration." },
       { question: "Can I calculate SIP maturity amount online?", answer: "Yes, by entering your monthly savings budget, expected yield, and investment tenure, you can estimate your total maturity corpus instantly." },
       { question: "What is the best SIP investment plan?", answer: "The best SIP investment plan depends on your financial goals, risk profile, and investment horizon. Diversified equity mutual funds are generally recommended for long-term horizons of 5 to 10+ years." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "lumpsum-calculator",
@@ -168,7 +169,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "When is the best time to make a lumpsum investment?", answer: "Historically, the best time to invest is when you have the funds available. For equity mutual funds, buying during market corrections or bear runs can improve long-term returns, though market timing is secondary to long investment horizons." },
       { question: "How do I calculate lumpsum compound returns?", answer: "Use our lumpsum calculator to project compounding returns by entering your initial deposit, expected return rate, and investment horizon." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "mutual-fund-return-calculator",
@@ -230,7 +232,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is the difference between Direct and Regular plans?", answer: "Direct plans have lower expense ratios because they do not involve broker commissions, leading to slightly higher returns (typically 0.5% to 1.5% more per year) than Regular plans." },
       { question: "How do I calculate mutual fund compounding returns?", answer: "Enter your lumpsum investment, regular monthly SIP contributions, expected return rate, and time period to estimate the future growth of your mutual fund portfolio." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "cagr-calculator",
@@ -285,7 +288,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Why is CAGR better than Absolute Return?", answer: "Absolute return ignores the time value of money. An absolute return of 100% sounds great, but if it takes 15 years to achieve, it corresponds to a modest CAGR of only ~4.7%. CAGR normalizes growth per year." },
       { question: "How do I calculate CAGR online?", answer: "Enter your initial purchase value, final sale value, and holding tenure in years into the CAGR calculator to see your annualized returns." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "xirr-calculator",
@@ -444,7 +448,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Why should I use XIRR instead of CAGR for SIP?", answer: "CAGR assumes a single initial investment and a single final payout. A SIP has multiple transactions at different points in time. XIRR calculates the exact returns by accounting for the specific number of days each installment has been invested." },
       { question: "How do I calculate XIRR online?", answer: "Enter your cash flow values (investments as negative values, withdrawals/final value as positive values) and corresponding dates into the XIRR calculator to see your annualized yield." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "swp-calculator",
@@ -512,7 +517,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Is SWP tax-free?", answer: "SWP withdrawals are treated as redemptions of units, so they are subject to Capital Gains Tax (LTCG or STCG) depending on the holding period and asset type, rather than being taxed entirely as income (unlike fixed deposit interest or annuity payouts)." },
       { question: "How do I calculate SWP monthly withdrawals?", answer: "Enter your initial retirement corpus, monthly withdrawal amount, expected rate of return, and tenure into the SWP calculator to view your future balance timeline." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "goal-based-investment-calculator",
@@ -568,7 +574,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Should I adjust my goal for inflation?", answer: "Yes, absolutely. A goal of ₹50 Lakhs in 10 years will require a larger nominal corpus because of inflation. If inflation averages 6%, you should set your target goal to ~₹89.5 Lakhs to preserve the purchasing power of your target amount." },
       { question: "How do I calculate monthly SIP for a goal?", answer: "Input your target financial goal amount, investment tenure, and expected return rate to calculate the exact monthly SIP required to reach your goal." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "retirement-calculator",
@@ -648,7 +655,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is the 4% rule?", answer: "The 4% rule is a guideline stating that retirees can safely withdraw 4% of their initial retirement portfolio in the first year, and adjust that amount for inflation each subsequent year, with a high probability that the corpus will last at least 30 years." },
       { question: "How do I calculate retirement corpus online?", answer: "Enter your current age, desired retirement age, life expectancy, monthly expenses, inflation, and investment returns to estimate your required retirement nest egg." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "fire-calculator",
@@ -727,7 +735,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is Lean FIRE vs Fat FIRE?", answer: "Lean FIRE involves retiring early on a minimalist budget (expenses under ₹3-4 Lakhs/year), while Fat FIRE accommodates a luxurious, high-spending early retirement lifestyle (expenses exceeding ₹15-20 Lakhs/year)." },
       { question: "How do I calculate my early retirement target?", answer: "Input your age, annual income, current savings, expected return rate, and target SWR percentage into our FIRE calculator to find the years required to reach financial freedom." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "net-worth-calculator",
@@ -777,7 +786,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How often should I calculate my net worth?", answer: "Calculating your net worth once a quarter or once a year is standard. Regular tracking highlights whether your assets are growing faster than your debts over time." },
       { question: "How do I calculate net worth online?", answer: "Enter your bank balances, stock portfolios, real estate properties, and gold assets, and subtract any outstanding loans or debts to compute your net worth." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "sip-comparison-calculator",
@@ -860,7 +870,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How does return rate affect the final corpus?", answer: "Because compounding is exponential, even a 1% or 2% difference in annual return rates (such as 12% vs 14%) can yield a difference of several lakhs or crores over 20-30 years." },
       { question: "How do I compare two mutual fund SIP plans?", answer: "Enter the monthly installment amounts, return rates, and tenures for both scenarios in the comparison calculator to instantly see differences in maturity value." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "step-up-sip-calculator",
@@ -938,7 +949,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Can I choose a fixed amount instead of a percentage for step-up?", answer: "Yes. Many mutual fund platforms let you increase your monthly contribution by either a flat amount (like ₹1,000 or ₹2,000) or a fixed percentage (like 5%, 10%, or 15%) annually." },
       { question: "How do I calculate a top-up SIP maturity value?", answer: "Enter your starting monthly SIP investment, expected annual step-up percentage, anticipated return rate, and tenure into the step-up calculator to see your accelerated compounding growth." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "coast-fire-calculator",
@@ -1016,7 +1028,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Does Coast FIRE mean I can stop working entirely today?", answer: "No. Reaching Coast FIRE means you don't need to save *more* for retirement, but you still need to earn enough money to cover your day-to-day living expenses until you reach retirement age." },
       { question: "How do I calculate my Coast FIRE target?", answer: "Enter your current age, target retirement age, current savings, annual expenses, expected returns, and inflation rate into our calculator to check if you have saved enough to coast." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "compound-interest-calculator",
@@ -1098,7 +1111,8 @@ export const investingCalculators: CalculatorConfig[] = [
       { question: "What is the difference between simple and compound interest?", answer: "Simple interest is calculated only on the principal amount of a loan or deposit. Compound interest is calculated on the principal plus any accumulated interest from previous periods." },
       { question: "How does the Rule of 72 work?", answer: "The Rule of 72 is a quick mental formula to estimate when an investment will double. Divide 72 by your expected annual interest rate. For example, an investment earning 8% p.a. will double in approximately 9 years (72 / 8 = 9)." },
       { question: "How do I use a compound interest calculator with monthly payments?", answer: "Input your starting principal, additional monthly payments, expected annual interest rate, duration in years, and compounding frequency to calculate the future value of your portfolio." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "investment-growth-calculator",
@@ -1165,7 +1179,8 @@ export const investingCalculators: CalculatorConfig[] = [
       { question: "What return rate should I expect on a diversified portfolio?", answer: "A diversified equity index portfolio historically yields around 8% to 12% p.a. long-term, while fixed-income portfolios yield around 4% to 7% p.a. Note that returns fluctuate and past performance is no guarantee of future results." },
       { question: "How do dividend reinvestments affect growth?", answer: "Reinvesting dividends back into the same stock or mutual fund compounds your returns significantly. Instead of cashing out, you buy more shares, accelerating the growth of your total holdings." },
       { question: "How do I calculate future portfolio returns?", answer: "Enter your starting capital, recurring contributions, expected annual yield, and holding period in years into our calculator to forecast your total portfolio value." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "financial-independence-calculator",
@@ -1247,7 +1262,8 @@ export const investingCalculators: CalculatorConfig[] = [
       { question: "What is the 25x Rule?", answer: "The 25x Rule states that you are financially independent when you accumulate 25 times your annual living expenses in assets. For example, if you spend $40,000 per year, your target FI number is $1,000,000 ($40,000 * 25)." },
       { question: "How does the savings rate affect the time to FI?", answer: "Your savings rate is the single most powerful factor. If you save 10% of your income, you must work 9 years to save for 1 year of expenses. If you save 50%, you save 1 year of expenses for every year worked, reducing the time to FI to under 17 years." },
       { question: "How do I calculate my safe withdrawal rate target?", answer: "Enter your current age, income, savings rate, accumulated savings, investment returns, and expected safe withdrawal rate to calculate the exact years needed to achieve financial independence." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "sip-goal-planner",
@@ -1367,7 +1383,8 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Why does delaying by just 1 or 2 years increase my required SIP so drastically?", answer: "Compound interest relies heavily on time. When you delay starting, you lose the most explosive compounding years at the end of your investment horizon. To make up for lost compounding returns, your out-of-pocket contributions must increase exponentially." },
       { question: "Should I include existing savings in the goal planner?", answer: "Yes! Entering existing savings reduces the fresh capital you need to contribute monthly, as your existing wealth continues compounding alongside your new SIP installments." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "financial-goal-planner",
@@ -1474,6 +1491,7 @@ export const investingCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What if my Expected Surplus / Deficit is negative?", answer: "A negative deficit means your current savings and monthly investments will fall short of the target corpus by that exact amount. To get back on track, you can either increase your monthly investment to match the 'Required Monthly Investment' output, extend your target timeline, or aim for a slightly higher expected return asset class." },
       { question: "Why should I check the Inflation Calculator next?", answer: "A goal that costs $500,000 today will cost significantly more in 10 or 15 years due to inflation. Using the Inflation Calculator helps you adjust your target corpus upwards so you don't underestimate your future expense needs." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   }
 ];

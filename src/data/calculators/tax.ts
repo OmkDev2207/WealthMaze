@@ -105,7 +105,8 @@ export const taxCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Which tax regime is better for me?", answer: "Generally, if your total eligible tax deductions (80C, 80D, HRA, Home Loan Interest) are less than ₹2.5 Lakhs to ₹3 Lakhs, the New Tax Regime will yield a lower tax liability. If you have substantial investments and deductions, the Old Regime may be beneficial." },
       { question: "How do I calculate income tax online?", answer: "Enter your gross annual income, investments under Section 80C, and other deductions into the income tax calculator to compare old and new regime liabilities." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "capital-gains-calculator",
@@ -177,6 +178,7 @@ export const taxCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is indexation in real estate?", answer: "Indexation adjusts the purchase price of property for inflation using the Cost Inflation Index (CII), reducing taxable capital gains. Under the latest rules, indexation is removed for property purchases, and a flat LTCG of 12.5% is applied." },
       { question: "How do I calculate capital gains tax online?", answer: "Input the asset type, purchase cost, sale value, and holding period in months into our capital gains calculator to estimate your STCG or LTCG tax liability." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   }
 ];

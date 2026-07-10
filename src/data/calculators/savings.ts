@@ -58,7 +58,8 @@ export const savingsCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Are FD interest returns taxable?", answer: "Yes, interest earned on FDs is fully taxable as per your income tax slab. If your interest income exceeds ₹40,000 (₹50,000 for senior citizens) in a financial year, the bank will deduct Tax Deducted at Source (TDS) at 10%." },
       { question: "How do I calculate Fixed Deposit interest online?", answer: "Input your deposit principal, interest rate, tenure, and compounding frequency into the FD calculator to instantly view your maturity value." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "rd-calculator",
@@ -115,7 +116,8 @@ export const savingsCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Can I withdraw my RD before maturity?", answer: "Yes, you can make premature withdrawals, but banks usually charge a penalty (typically 0.5% to 1% reduction in the applicable interest rate for the period the deposit remained with the bank)." },
       { question: "How does a recurring deposit calculator calculate returns?", answer: "It uses the quarterly compounding formula for recurring deposits, accumulating interest monthly based on your regular contributions and interest rate." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "ppf-calculator",
@@ -170,7 +172,8 @@ export const savingsCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is the maximum investment limit in PPF?", answer: "The minimum investment in PPF is ₹500, and the maximum is ₹1.5 Lakhs per financial year. Investing above ₹1.5 Lakhs will not earn any interest and is not eligible for tax deductions." },
       { question: "How do I calculate PPF returns online?", answer: "Enter your yearly contribution amount and expected interest rate into the PPF calculator to estimate your maturity value and total interest earned." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "epf-calculator",
@@ -239,7 +242,8 @@ export const savingsCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Is EPF interest tax-free?", answer: "Yes, EPF interest is tax-free as long as the employee's contribution does not exceed ₹2.5 Lakhs per year. If it exceeds ₹2.5 Lakhs, interest earned on the excess contribution is taxable." },
       { question: "How do I calculate EPF maturity corpus?", answer: "Enter your current basic salary, expected annual salary increment, interest rate, and years to retirement into our EPF calculator to estimate your final retirement corpus." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "nps-calculator",
@@ -306,7 +310,8 @@ export const savingsCalculators: CalculatorConfig[] = [
     ],
     faqs: [
       { question: "What are the tax benefits of NPS?", answer: "NPS offers exclusive tax deductions up to ₹50,000 under Section 80CCD(1B), over and above the ₹1.5 Lakhs limit of Section 80C, making it highly attractive for tax saving." },
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "savings-calculator",
@@ -373,6 +378,7 @@ export const savingsCalculators: CalculatorConfig[] = [
       { question: "What is an APY (Annual Percentage Yield)?", answer: "APY is the real rate of return earned on a savings deposit, taking into account the effect of compounding interest over a year. It is slightly higher than the nominal interest rate when interest is compounded more than once a year." },
       { question: "How does inflation affect my savings?", answer: "Inflation erodes the purchasing power of your cash over time. If your savings account interest rate is lower than the inflation rate, the real value (purchasing power) of your money decreases. It is important to compare returns adjusted for inflation." },
       { question: "How do I calculate savings compounding online?", answer: "Input your starting deposit, monthly savings budget, annual interest rate (APY), and duration in years into our savings calculator to instantly view your accumulated savings." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   }
 ];

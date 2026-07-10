@@ -57,7 +57,8 @@ export const stocksCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is the difference between ROI and CAGR in stocks?", answer: "ROI is the absolute return on the stock trade regardless of how long it took. CAGR is the annualized return, which shows how fast your capital grew per year. A 50% ROI over 5 years is a ~8.4% CAGR." },
       { question: "How do I calculate stock return ROI online?", answer: "Enter your share purchase price, sale price, number of shares, dividend payouts, and transaction fees into our stock return calculator to view net ROI." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "portfolio-return-calculator",
@@ -108,7 +109,8 @@ export const stocksCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Why must weights sum to 100%?", answer: "Weights represent the percentage distribution of your capital. The calculator normalizes the inputs so that they represent proportions of whatever total capital is allocated." },
       { question: "How do I calculate weighted portfolio return?", answer: "Input the capital weights and expected returns for each asset category in your portfolio to calculate the aggregate weighted portfolio return." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "dividend-yield-calculator",
@@ -149,7 +151,8 @@ export const stocksCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Is a high dividend yield always good?", answer: "Not necessarily. Sometimes a high dividend yield is a result of a falling stock price (a 'dividend trap'), which could signal that the company is in financial distress and might cut its dividend in the future." },
       { question: "How do I calculate dividend yield online?", answer: "Enter the current share price and annual dividend per share into our dividend yield calculator to instantly check the percentage dividend return." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "position-size-calculator",
@@ -200,6 +203,7 @@ export const stocksCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is the 2% risk rule?", answer: "The 2% risk rule states that you should never risk more than 2% of your total trading capital on any single trade. If your stop loss is hit, you only lose 2% of your capital, preserving the rest to fight another day." },
       { question: "How does a position size calculator work?", answer: "The position size calculator uses your total account capital, risk percentage limit per trade, entry price, and stop loss level to determine the ideal share count to buy." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   }
 ];

@@ -69,7 +69,8 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How can I reach ₹1 Crore faster?", answer: "Increasing your monthly savings rate by even 5% to 10% annually (Step-up SIP) can reduce the time required to hit your target by several years." },
       { question: "How do I use a wealth calculator to determine time to 1 Crore?", answer: "Enter your current savings, monthly savings budget, and expected returns rate into our wealth calculator to estimate the years required to reach ₹1 Crore." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "inflation-impact-calculator",
@@ -120,7 +121,8 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How do I protect my wealth from inflation?", answer: "To prevent purchasing power loss, store savings in capital-appreciating assets like equities, equity mutual funds, or real estate rather than bank accounts, since cash drag underperforms inflation." },
       { question: "How do I calculate future inflation impact on savings?", answer: "Use our inflation calculator by inputting your current monthly costs, average expected inflation rate, and years in the future to see your purchasing power decay." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "financial-freedom-calculator",
@@ -167,7 +169,8 @@ export const lifestyleCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is a Safe Withdrawal Rate (SWR)?", answer: "SWR is the conservative percentage of your total investment portfolio that you can withdraw annually without running out of money. The industry standard SWR is 3% to 4%, depending on your local inflation rate and asset allocation." },
       { question: "How do I determine my financial freedom score?", answer: "Enter your total financial assets, monthly living expenses, and expected safe withdrawal rate to check if your passive income covers expenses. A score of 100% or more means you are financially free." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "inflation-calculator",
@@ -224,6 +227,7 @@ export const lifestyleCalculators: CalculatorConfig[] = [
       { question: "What is the historical average inflation rate?", answer: "Historically, inflation in developed economies like the US, UK, and Canada has averaged around 2% to 3% annually, while developing economies can see averages of 5% to 8% or higher. Central banks often target a 2% inflation rate." },
       { question: "How do I beat inflation?", answer: "To preserve your wealth, you must invest in assets that offer historical returns above the inflation rate. These include equities, stock index mutual funds/ETFs, and real estate. Cash and standard checking accounts are eroded by inflation." },
       { question: "How do I calculate future value adjusted for inflation online?", answer: "Input your current sum, average expected inflation rate, and years into the future into our inflation calculator to estimate future costs and purchasing power." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   }
 ];

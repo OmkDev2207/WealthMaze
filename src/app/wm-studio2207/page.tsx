@@ -691,7 +691,7 @@ function AdminPanel() {
                     <div>
                       <p className="font-semibold">Published!</p>
                       <p className="text-emerald-500/80">{publishMessage}</p>
-                      <a href={`/blog/${meta.slug}`} target="_blank" rel="noopener" className="underline mt-1 inline-flex items-center gap-1">
+                      <a href={`/blog/${meta.slug}`} target="_blank" rel="noopener noreferrer" className="underline mt-1 inline-flex items-center gap-1">
                         View article <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>
@@ -841,7 +841,7 @@ function AdminPanel() {
                             <a
                               href={`/blog/${post.slug}`}
                               target="_blank"
-                              rel="noopener"
+                              rel="noopener noreferrer"
                               className="p-1.5 text-zinc-500 hover:text-emerald-400 transition-colors"
                               title="View live"
                             >

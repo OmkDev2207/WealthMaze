@@ -54,7 +54,8 @@ export const goldCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "What is the best gold investment plan?", answer: "Investors can buy physical gold (jewelry/coins), Digital Gold, Gold ETFs, Gold Mutual Funds, or Sovereign Gold Bonds (SGBs) issued by the government, which also pay an annual interest of 2.5%." },
       { question: "How does a gold investment calculator calculate returns?", answer: "A gold investment calculator calculates the growth of your gold portfolio based on the initial investment amount, current gold rate, expected annual appreciation rate, and holding duration." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "gold-sip-calculator",
@@ -110,7 +111,8 @@ export const goldCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How does the gold SIP calculator calculate returns?", answer: "The gold SIP calculator uses the systematic investment plan compounding formula to project the future value of your regular monthly gold investments." },
       { question: "Can I calculate gold SIP maturity amount online?", answer: "Yes, you can easily calculate gold SIP maturity value and estimated weight accumulation online by inputting your monthly budget and expected growth rate." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "silver-investment-calculator",
@@ -165,7 +167,8 @@ export const goldCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How is silver purity measured?", answer: "Fine silver has 99.9% purity (999 fineness). Sterling silver has 92.5% purity (925 fineness) and is alloyed with copper for durability." },
       { question: "How do I calculate silver investment returns online?", answer: "Enter your initial investment amount, current silver rate per kg, expected appreciation rate, and holding tenure into the silver investment calculator to estimate your returns instantly." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "digital-gold-calculator",
@@ -246,6 +249,7 @@ export const goldCalculators: CalculatorConfig[] = [
       { question: "Why is there a difference between the buying and selling price of digital gold?", answer: "Digital gold providers charge a buy-sell spread (usually 3% to 6%) to cover administrative costs, vault insurance, secure physical storage, and transaction fees. This means your gold must appreciate by at least the spread percentage for you to break even." },
       { question: "How is GST calculated on digital gold purchases?", answer: "GST is calculated at a flat 3% on the purchase value of digital gold in India. If you invest ₹10,000, your net investment is ₹9,708.74 and the GST paid is ₹291.26." },
       { question: "Can I take physical delivery of digital gold?", answer: "Yes, most digital gold providers allow you to convert your digital balance into physical gold coins or bars and have them delivered to your home. However, you must pay additional making charges and delivery fees." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   }
 ];

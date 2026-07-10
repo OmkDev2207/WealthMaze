@@ -21,7 +21,9 @@ const eslintConfig = defineConfig([
       "@typescript-eslint/no-explicit-any": "off",
       "react/no-unescaped-entities": "off",
       "prefer-const": "off",
-      "@typescript-eslint/no-unused-vars": "off"
+      "@typescript-eslint/no-unused-vars": "off",
+      // Enforce rel="noopener noreferrer" on all target="_blank" links to prevent tabnabbing
+      "react/jsx-no-target-blank": ["error", { "allowReferrer": false }]
     }
   }
 ]);

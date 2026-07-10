@@ -53,5 +53,7 @@ export interface CalculatorConfig {
   calculate: (inputs: Record<string, any>) => CalculatorResult;
   educationalContent: EducationalSection[];
   faqs: FAQItem[];
+  /** Date string (e.g. "July 2026") indicating when this calculator's rates and formulas were last reviewed */
+  lastUpdated: string;
   isIndiaSpecific?: boolean;
 }

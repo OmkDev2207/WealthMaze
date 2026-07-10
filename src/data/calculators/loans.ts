@@ -77,7 +77,8 @@ export const loansCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "How does the interest rate affect my loan EMI?", answer: "A higher interest rate increases both your monthly EMI and the total interest payable. For example, a ₹20 Lakh loan at 8.5% for 15 years has an EMI of ~₹19,695, but at 10%, the EMI jumps to ~₹21,494." },
       { question: "How do I calculate loan EMI online?", answer: "Enter your loan principal amount, annual interest rate, and tenure into our free online EMI calculator to instantly view your monthly payment." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "loan-prepayment-calculator",
@@ -165,7 +166,8 @@ export const loansCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Are there penalties for home loan prepayment?", answer: "Under RBI rules in India, banks are not allowed to charge prepayment penalties on floating-rate home loans. For fixed-rate loans or personal loans, lenders may charge a 2-4% prepayment fee." },
       { question: "How do I calculate home loan prepayment savings?", answer: "Input your outstanding loan principal, interest rate, remaining tenure, and the prepayment amount into our prepayment calculator to see your savings." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "loan-comparison-calculator",
@@ -254,7 +256,8 @@ export const loansCalculators: CalculatorConfig[] = [
     faqs: [
       { question: "Is a lower EMI always better?", answer: "Not necessarily. A lower EMI achieved by extending the loan tenure (e.g. 15 to 20 years) results in a much higher total interest burden. Always compare both the EMI and the total interest payable." },
       { question: "How do I compare two loans side-by-side?", answer: "Enter the principal, interest rates, and tenures for both loan offers into the comparison calculator to instantly see differences in EMIs and total interest." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   },
   {
     id: "personal-loan-emi-calculator",
@@ -349,6 +352,7 @@ export const loansCalculators: CalculatorConfig[] = [
       { question: "What factors determine my personal loan interest rate?", answer: "Lenders decide your interest rate based on your credit score (CIBIL score), monthly income, employment status, employer profile, and your existing debt-to-income ratio." },
       { question: "Can I prepay or close my personal loan early?", answer: "Yes, most banks allow prepayment or foreclosure after a lock-in period (usually 6 to 12 EMIs). However, unlike home loans, personal loans may attract foreclosure fees of 2% to 4% of the outstanding principal balance." },
       { question: "How does the personal loan EMI calculator work?", answer: "The personal loan EMI calculator uses your principal loan amount, interest rate, and tenure to calculate the exact monthly payment and total interest cost." }
-    ]
+    ],
+  lastUpdated: "July 2026",
   }
 ];

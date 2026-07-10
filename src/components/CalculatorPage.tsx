@@ -391,31 +391,14 @@ function CalculatorPageInner({
     }, {} as Record<string, number>)
   );
 
-  // Sync state if calculatorId or overrides change
+  // Reset state when calculatorId or overrides change (no URL params — financial values stay private)
   React.useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const urlValues: Record<string, number> = {};
-    let hasUrlParams = false;
-
-    config.inputs.forEach((input) => {
-      const v = params.get(input.id);
-      if (v !== null) {
-        urlValues[input.id] = Number(v);
-        hasUrlParams = true;
-      }
-    });
-
-    if (hasUrlParams) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setValues((prev) => ({ ...prev, ...urlValues }));
-    } else {
-      setValues(
-        config.inputs.reduce((acc, input) => {
-          acc[input.id] = overrides && overrides[input.id] !== undefined ? overrides[input.id] : input.default;
-          return acc;
-        }, {} as Record<string, number>)
-      );
-    }
+    setValues(
+      config.inputs.reduce((acc, input) => {
+        acc[input.id] = overrides && overrides[input.id] !== undefined ? overrides[input.id] : input.default;
+        return acc;
+      }, {} as Record<string, number>)
+    );
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [calculatorId, overrides]);
 
@@ -443,13 +426,8 @@ function CalculatorPageInner({
     });
   }, [config.inputs, values, formatSummaryValue]);
 
-  // Update URL search parameters and local state
+  // Update local state only — financial values are never written to the URL to protect user privacy
   const handleValueChange = React.useCallback((id: string, val: number) => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      params.set(id, String(val));
-      window.history.replaceState(null, "", `${window.location.pathname}?${params.toString()}`);
-    }
     setValues((prev) => ({ ...prev, [id]: val }));
   }, []);
 
@@ -483,7 +461,7 @@ function CalculatorPageInner({
     return slugs.map((s) => getPostBySlug(s)).filter(Boolean) as NonNullable<ReturnType<typeof getPostBySlug>>[];
   }, [calculatorId, slug]);
 
-  const lastUpdated = "June 18, 2026";
+  const lastUpdated = config.lastUpdated;
   const displayTitle = customTitle || config.name;
   const displayDescription = customDescription || config.description;
   const displayEducationalContent = customEducationalContent || config.educationalContent;
@@ -513,7 +491,7 @@ function CalculatorPageInner({
           <Link
             href={`${siteConfig.url}/${config.id}`}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="text-[10px] font-bold text-emerald-500 hover:underline"
           >
             Full Version
@@ -583,7 +561,7 @@ function CalculatorPageInner({
           <a
             href={siteConfig.url}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="text-emerald-500 hover:underline font-semibold"
           >
             WealthMaze
@@ -740,7 +718,7 @@ function CalculatorPageInner({
                   <div className="relative">
                     <textarea
                       readOnly
-                      value={`<iframe src="${siteConfig.url}/embed/${config.id}" width="100%" height="700" style="border:none; border-radius:12px; overflow:hidden;" scrolling="no"></iframe>\n<p style="text-align:center; font-size:10px; color:#a1a1aa;">Calculators powered by <a href="${siteConfig.url}" target="_blank" rel="noopener">WealthMaze</a></p>`}
+                      value={`<iframe src="${siteConfig.url}/embed/${config.id}" width="100%" height="700" style="border:none; border-radius:12px; overflow:hidden;" scrolling="no"></iframe>\n<p style="text-align:center; font-size:10px; color:#a1a1aa;">Calculators powered by <a href="${siteConfig.url}" target="_blank" rel="noopener noreferrer">WealthMaze</a></p>`}
                       className="w-full h-20 text-[10px] font-mono p-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-1 focus:ring-emerald-500 text-zinc-600 dark:text-zinc-400"
                       onClick={(e) => (e.target as HTMLTextAreaElement).select()}
                     />
