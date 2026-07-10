@@ -164,7 +164,7 @@ export default function RootLayout({
                   <ul className="space-y-2.5 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
                     <li><Link href="/calculators" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">All Calculators Directory</Link></li>
                     <li><Link href="/blog" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Financial Knowledge Base</Link></li>
-                    <li><Link href="/financial-health-quiz" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Financial Health Quiz</Link></li>
+                    <li><Link href="/financial-health-score" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Financial Health Quiz</Link></li>
                     <li><Link href="/about" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About WealthMaze</Link></li>
                     <li><Link href="/author/om-k" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About the Author (Om K.)</Link></li>
                     <li><Link href="/methodology" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Calculator Methodology</Link></li>
